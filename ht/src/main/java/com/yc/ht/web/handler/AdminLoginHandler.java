@@ -2,9 +2,12 @@ package com.yc.ht.web.handler;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yc.ht.entity.Admin;
 import com.yc.ht.service.AdminService;
@@ -27,5 +30,17 @@ public class AdminLoginHandler {
 			session.setAttribute(ServletUtil.ERROR_MESSAGE, "用户名或密码错误!!!");
 			return "forward:/back/login.jsp";
 		}
+	}
+	
+	/**
+	 * 注销
+	 * @param session
+	 */
+	@RequestMapping(value="out",method=RequestMethod.POST)
+	@ResponseBody
+	public boolean out(HttpSession session){
+		LogManager.getLogger().debug("注销中...");
+		session.removeAttribute(ServletUtil.LOGIN_ADMIN);
+		return true;
 	}
 }
