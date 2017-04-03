@@ -28,7 +28,7 @@ public class SpecialHandler {
 		return specialService.listSpeical();
 	}
 	
-	@RequestMapping(value="list",method=RequestMethod.POST)
+/*	@RequestMapping(value="list",method=RequestMethod.POST)
 	@ResponseBody
 	public List<Special> special_music(HttpServletRequest request){
 		Object obj = (Object)request.getParameter("param");
@@ -39,5 +39,5 @@ public class SpecialHandler {
 			e.printStackTrace();
 		}
 		return null;
-	}
+	}*/
 }

@@ -2,6 +2,7 @@
 special();
 function special(){
 	$.get("special", function(data){
+		alert(data);
 		var specialStr = "";
 		for (var i = 0; i < data.length; i++) {
 			if(i==0){
@@ -49,20 +50,32 @@ $(".special_music").html(specialMusicStr);
 
 
 /////////////////////////////////站内歌曲显示///////////////////////////
-/*songList();
-function songList(){
-	$.get("songList", function(){
-			var specialStr = "";
-		for (var i = 0; i < data.length; i++) {
-	}, "json");
-}*/
-
 songList();
 function songList(){
-	$.get("song", function(){
-		
+	$.get("song", function(data){
+		var songListStr = "";
+		for (var i = 0; i < data.length; i++) {
+			songListStr+='<tr><td class="td"><span>'+data[i].soname+'</span></td>'+
+			'<td><a href="page/demo.jsp"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
+			'</a></td><td><a href=""><i class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td></tr>';
+		}
+		$("#mytablet").html(songListStr);
 	}, "json");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //轮播
