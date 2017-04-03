@@ -2,7 +2,7 @@
 special();
 function special(){
 	$.get("special", function(data){
-		alert(data);
+	//	alert(data);
 		var specialStr = "";
 		for (var i = 0; i < data.length; i++) {
 			if(i==0){
