@@ -43,15 +43,20 @@ a:hover{
 	background: #5a5c51;
 	margin-top: -20px;
 }
-#topnav{
-	width: 100%;
+	width:600px;
 	height: 30px;
 	margin-left: 70px;
 	border: none;
 }
-#topnav li:last-child{
+
+#topnav #search{
+	margin-top:50px;
 	padding-left:50px;
+	/* position:absolute; */
+	
+	
 }
+
 
 #topnav li a{
 	font-family: "微软雅黑";
