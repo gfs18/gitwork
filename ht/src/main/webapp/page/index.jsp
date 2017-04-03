@@ -111,14 +111,8 @@
 							<span class="span1">站内专辑</span>
 
 							<table id="mytablet">
-								<tr>
-									<td class="td"><span>1.成都</span></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
-								</tr>
-								<tr>
+								
+								<!-- <tr>
 									<td class="td"><span>2.生日那天</span></td>
 									<td><a href=""><i
 											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
@@ -188,7 +182,7 @@
 									<td><a href=""><i
 											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
 								</tr>
-
+ -->
 							</table>
 						</div>
 					</div>
