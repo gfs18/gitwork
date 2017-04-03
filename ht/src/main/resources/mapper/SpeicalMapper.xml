@@ -3,10 +3,27 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.ht.mapper.SpecialMapper">
-	<select id="findSpecial" resultType="Special">
-		select * from Special <!-- where spid=#{spid},sgid=#{sgid},spname=#{spname},
-		language=#{language},sppicPath=#{sppicPath},sppubTime=#{sppubTime} -->
+		<resultMap type="Special" id="SpecialMap">
+		<id column="spid" property="spid"/>
+		<result column="spname" property="spname"/>
+		<result column="sppicPath" property="sppicPath"/>
+		<result column="sppubTime" property="sppubTime"/>
+		<result column="spclick" property="spclick"/>
+		<association property="singer" column="sgid" javaType="Singer">
+			<id column="sgid" property="sgid"/>
+			<result column="sgname" property="sgname"/>
+		</association>
+	</resultMap>
+	
+	<select id="findSpecial" resultMap="SpecialMap">
+		select * from(select rownum rn,s.* from (select sp.*,sg.sgname from special sp,singer sg where sp.sgid=sg.sgid order by spclick desc) s where 6>rownum ) where rn>0
 	</select>
 	
+	<select id="specialDetail" parameterType="int" resultType="Special">
+		select * from special sp,singer sg where spid=#{spid} and sp.sgid=sg.sgid
+	</select>
 	
+	<select id="findSongBySpecial" parameterType="int" resultType="Song">
+		select * from song where spid=#{spid}
+	</select>
 </mapper>
