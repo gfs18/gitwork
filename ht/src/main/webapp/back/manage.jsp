@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="dist/css/bootstrap.css">
 </head>
 <body>
+	<!-- 头部 -->
 	<header>
 		<nav class="navbar navbar-ht">
 			<div class="container-fluid">
@@ -25,18 +26,21 @@
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left" id="topnav">
-						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div><a href="javascript:void(0)">Link</a></li>
-						<li><a href="javascript:void(0)">Link</a></li>
-						<li><a href="javascript:void(0)">Link</a></li>
+						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div>
+						<a href="javascript:void(0)">单曲管理</a></li>
+						<li><a href="javascript:void(0)">歌手管理</a></li>
+						<li><a href="javascript:void(0)">专辑管理</a></li>
+						<li><a href="javascript:void(0)">MV管理</a></li>
+						<li><a href="javascript:void(0)">用户管理</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="javascript:void(0)">Link</a></li>
+						<li><a href="javascript:void(0)">admin</a></li>
 						<li class="dropdown"><a href="javascript:void(0)"
 							class="dropdown-toggle" data-toggle="dropdown" role="button"
-							aria-haspopup="true" aria-expanded="false">Dropdown </a>
+							aria-haspopup="true" aria-expanded="false">设置 </a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
+								<li><a href="javascript:void(0)">注销</a></li>
+								<li><a href="javascript:void(0)">切换用户</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -44,8 +48,24 @@
 			</div>
 		</nav>
 	</header>
-
-
+	<!-- 内容 -->
+	<article>
+	
+	</article>
+	<!-- 底部 -->
+	<footer>
+		<div class="container-fluid" id="myfooter">
+			<div class="container" id="footer_content">
+				<div class="row" id="myrow">
+					<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3">关于我们</span> <span
+						class="col-lg-3 col-md-3 col-sm-3 col-xs-3">幻听服务</span> <span
+						class="col-lg-3 col-md-3 col-sm-3 col-xs-3">联系我们</span> <span
+						class="col-lg-3 col-md-3 col-sm-3 col-xs-3">招商合作</span>
+				</div>
+				<p>幻听-原创音乐网站-版权所有 ©</p>
+			</div>
+		</div>
+	</footer>
 
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>

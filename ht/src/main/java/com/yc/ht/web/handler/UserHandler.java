@@ -41,10 +41,12 @@ public class UserHandler {
 	 * 注销
 	 * @param session
 	 */
-	@RequestMapping(value="out",method=RequestMethod.GET)
-	public void out(HttpSession session){
+	@RequestMapping(value="out",method=RequestMethod.POST)
+	@ResponseBody
+	public boolean out(HttpSession session){
 		LogManager.getLogger().debug("注销中...");
 		session.removeAttribute(ServletUtil.LOGIN_USER);
+		return true;
 	}
 	
 	/**
