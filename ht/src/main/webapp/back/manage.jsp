@@ -15,7 +15,12 @@
 		<nav class="navbar navbar-ht">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="javascript:void(0)">Brand</a>
+					<a href="javascript:void(0)" class="navbar-brand">
+						<img src="images/log.png">
+					</a>
+					 <a href="javascript:void(0)" class="navbar-brand">
+					 	<h4>幻听音乐</h4>
+					 </a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -32,7 +37,6 @@
 							<ul class="dropdown-menu">
 								<li><a href="#">Action</a></li>
 								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
 							</ul>
 						</li>
 					</ul>
