@@ -46,6 +46,25 @@ specialMusicStr+='<div class="btns"><button class="mplay">'+
 
 $(".special_music").html(specialMusicStr);
 }*/
+
+
+/////////////////////////////////站内歌曲显示///////////////////////////
+/*songList();
+function songList(){
+	$.get("songList", function(){
+			var specialStr = "";
+		for (var i = 0; i < data.length; i++) {
+	}, "json");
+}*/
+
+songList();
+function songList(){
+	$.get("song", function(){
+		
+	}, "json");
+}
+
+
 //轮播
 $('.carousel').carousel({
 	interval:4000,
