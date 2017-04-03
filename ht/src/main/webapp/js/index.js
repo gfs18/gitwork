@@ -27,11 +27,11 @@ function special(){
 	$.get("special_music", function(data){
 alert("请求成功");
 }, "json");*/
-	/*$.post("special/list",{"param":param},function(data){
+/*$.post("special/list",{"param":param},function(data){
 
 
 	});*/
-	/*var specialMusicStr = "";
+/*var specialMusicStr = "";
 specialMusicStr+='<div class="left col-lg-4 col-md-4 hidden-sm hidden-xs"><img id="img" src=""/>';
 specialMusicStr+='<div class="cover"></div></div>';
 specialMusicStr+='<div class="right col-lg-8 col-md-8 col-sm-8 col-xs-8">'+
@@ -46,6 +46,25 @@ specialMusicStr+='<div class="btns"><button class="mplay">'+
 
 $(".special_music").html(specialMusicStr);
 }*/
+
+
+/////////////////////////////////站内歌曲显示///////////////////////////
+/*songList();
+function songList(){
+	$.get("songList", function(){
+			var specialStr = "";
+		for (var i = 0; i < data.length; i++) {
+	}, "json");
+}*/
+
+songList();
+function songList(){
+	$.get("song", function(){
+		
+	}, "json");
+}
+
+
 //轮播
 $('.carousel').carousel({
 	interval:4000,
