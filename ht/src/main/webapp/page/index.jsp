@@ -62,19 +62,19 @@
 								class="col-lg-2 col-md-2  hidden-xs  hidden-sm hidden-xs">MV</a></li>
 							<li><a href="page/friend.jsp"
 								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
-							<li>
-								<form class="navbar-form navbar-left" role="search">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Search">
-									</div>
-									<button type="submit" class="btn btn-default">Submit</button>
-								</form>
-							</li>
+						</ul>
+						<form  id="search" class="navbar-form navbar-left" role="search">
+							<div class="form-group" id="search">
+								<input type="text" class="form-control" placeholder="Search">
+							</div>
+							<button type="submit" class="btn btn-default">Submit</button>
+						</form>
 					</div>
-					</ul>
+					
 				</div>
-				</div>
+
 			</nav>
+
 		</nav>
 		<div class="banner">
 			<div class="row">
