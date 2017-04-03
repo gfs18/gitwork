@@ -10,3 +10,12 @@ function showDiv(){
 		$(".mydiv").css("display", "none");
 	}
 }
+
+//注销
+function loginOut(){
+	$.post("admin/out", function(data) {
+		if(data){
+			location.href="back/login.jsp";
+		}
+	},"json");
+}

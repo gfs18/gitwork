@@ -40,8 +40,8 @@
 							aria-haspopup="true" aria-expanded="false"><span
 								class="caret"></span> </a>
 							<ul class="dropdown-menu">
-								<li><a href="javascript:void(0)">注销</a></li>
-								<li><a href="javascript:void(0)">切换用户</a></li>
+								<li><a href="javascript:void(0)" onclick="loginOut()">注销</a></li>
+								<li><a href="back/login.jsp">切换用户</a></li>
 							</ul></li>
 						</c:if>
 					</ul>
@@ -53,7 +53,7 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation"><a href="javascript:void(0)">单曲信息</a></li>
+				<li role="presentation" class="active"><a href="javascript:void(0)">单曲信息</a></li>
 				<li role="presentation"><a href="javascript:void(0)">单曲查询</a></li>
 				<li role="presentation"><a href="javascript:void(0)">单曲修改</a></li>
 			</ul>
@@ -110,7 +110,7 @@
 					<li><a href="javascript:void(0)" aria-label="Previous"> <span
 							aria-hidden="true">&laquo;</span>
 					</a></li>
-					<li><a href="javascript:void(0)">1</a></li>
+					<li class="active"><a href="javascript:void(0)">1</a></li>
 					<li><a href="javascript:void(0)">2</a></li>
 					<li><a href="javascript:void(0)">3</a></li>
 					<li><a href="javascript:void(0)">4</a></li>
