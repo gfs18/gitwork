@@ -64,10 +64,10 @@
 								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 						</ul>
 						<form  id="search" class="navbar-form navbar-left" role="search">
-							<div class="form-group" id="search">
-								<input type="text" class="form-control" placeholder="Search">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="单曲/歌手/专辑">
 							</div>
-							<button type="submit" class="btn btn-default">Submit</button>
+							<button type="submit" class="btn btn-default">查询</button>
 						</form>
 					</div>
 					
