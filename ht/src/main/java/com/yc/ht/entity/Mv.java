@@ -1,0 +1,180 @@
+package com.yc.ht.entity;
+
+import java.util.Date;
+
+public class Mv {
+	private Integer mvid;           //mv编号
+	private String mvname;		//mv名字
+	private Integer sgid;			//歌手编号
+	private Integer soid;			//单曲编号
+	private String mvduration;	//mv时长
+	private String mvpicPath;	//图片路径
+	private Date mvpubTime;		//出版时间
+	private String mvPath;		//mv存放路径
+	
+	
+	public Mv() {
+		
+	}
+
+
+	
+
+
+	public Mv(Integer mvid, String mvname, Integer sgid, Integer soid, String mvduration, String mvpicPath,
+			Date mvpubTime, String mvPath) {
+		this.mvid = mvid;
+		this.mvname = mvname;
+		this.sgid = sgid;
+		this.soid = soid;
+		this.mvduration = mvduration;
+		this.mvpicPath = mvpicPath;
+		this.mvpubTime = mvpubTime;
+		this.mvPath = mvPath;
+	}
+
+
+
+
+
+	public Integer getMvid() {
+		return mvid;
+	}
+
+
+
+
+
+	public void setMvid(Integer mvid) {
+		this.mvid = mvid;
+	}
+
+
+
+
+
+	public String getMvname() {
+		return mvname;
+	}
+
+
+
+
+
+	public void setMvname(String mvname) {
+		this.mvname = mvname;
+	}
+
+
+
+
+
+	public Integer getSgid() {
+		return sgid;
+	}
+
+
+
+
+
+	public void setSgid(Integer sgid) {
+		this.sgid = sgid;
+	}
+
+
+
+
+
+	public Integer getSoid() {
+		return soid;
+	}
+
+
+
+
+
+	public void setSoid(Integer soid) {
+		this.soid = soid;
+	}
+
+
+
+
+
+	public String getMvduration() {
+		return mvduration;
+	}
+
+
+
+
+
+	public void setMvduration(String mvduration) {
+		this.mvduration = mvduration;
+	}
+
+
+
+
+
+	public String getMvpicPath() {
+		return mvpicPath;
+	}
+
+
+
+
+
+	public void setMvpicPath(String mvpicPath) {
+		this.mvpicPath = mvpicPath;
+	}
+
+
+
+
+
+	public Date getMvpubTime() {
+		return mvpubTime;
+	}
+
+
+
+
+
+	public void setMvpubTime(Date mvpubTime) {
+		this.mvpubTime = mvpubTime;
+	}
+
+
+
+
+
+	public String getMvPath() {
+		return mvPath;
+	}
+
+
+
+
+
+	public void setMvPath(String mvPath) {
+		this.mvPath = mvPath;
+	}
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "\nMv [mvid=" + mvid + ", mvname=" + mvname + ", sgid=" + sgid + ", soid=" + soid + ", mvduration="
+				+ mvduration + ", mvpicPath=" + mvpicPath + ", mvpubTime=" + mvpubTime + ", mvPath=" + mvPath + "]";
+	}
+	
+	
+	
+	
+	
+	
+	
+}

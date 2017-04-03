@@ -1,0 +1,140 @@
+/***************************标签*******************************/
+.lable {
+	width: 100%;
+	list-style: none;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    margin-left:30px;
+
+}
+
+.lable li a{
+	width: 91px;
+	height: 30px !important;
+	line-height: 30px !important;
+	text-decoration: none !important;
+    outline: none !important;
+    text-align: center;
+    float: left;
+}
+
+.mouseover{
+	color: #2DC17A !important;
+	
+}
+.click{
+	color: #fff !important;
+	background-color: #2DC17A; 
+}
+
+
+
+/*******************************内容******************************************/
+.special{
+    /*min-width:1140px;*/
+    width:100%;
+    height:750px;
+    margin-top: 10px;
+    padding-left:40px;
+    padding-top:20px;
+    position: relative;
+    border-top:2px solid #2DC17A;
+    border-left:1px solid #e1e1e2;
+    border-right:1px solid #e1e1e2;
+    border-bottom:1px solid #e1e1e2;
+}
+.class{
+    width:100%;
+    height:30px;
+    color:#000;
+    margin-top:20px;
+    padding-left:40px;
+    font-family: "微软雅黑";
+    font-size:20px;
+}
+.new_ul,.hot_ul,.china_ul,.hip_ul,.eng_ul{
+    list-style:none;
+}
+.hot_ul,.china_ul,.hip_ul,.eng_ul{
+    display: none;
+}
+.list_img{
+    width: 250px;
+    height:250px;
+    position: relative;
+    margin-bottom:15px;
+    overflow: hidden;
+}
+.list_img:hover .myimg{
+    -webkit-transform:scale(1.2,1.2);
+    -moz-transform:scale(1.2,1.2)
+}
+.list_img:hover .play img{
+    display:block;
+}
+.myimg{
+    cursor:pointer;
+}
+.list_img img{
+    width: 250px;
+    height:250px;
+    transition:all 1s;
+}
+.s_li{
+    float: left;
+    width:250px;
+    height:330px;
+    position:relative;
+    margin-right:20px;
+    overflow: hidden;
+    /*border:1px solid #000;*/
+}
+.play{
+    cursor: pointer;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:100;
+    padding:35%;
+    -webkit-transform:all 2s;
+    -moz-transform:all 2s;
+
+}
+.play img{
+    width:70px;
+    height:70px;
+    display:none;
+
+}
+.s_p{
+    width:100%;
+    height:20px;
+    cursor:pointer;
+    display:inline-block;
+}
+.s_li span:nth-of-type(3),.s_li span:nth-of-type(2){
+    color:#999999;
+}
+.s_li span:nth-of-type(1):hover,.s_li span:nth-of-type(2):hover{
+    color:#2DC17A;
+}
+
+
+.pagination{
+    width: 100%;
+    margin-left:400px;
+    margin-top: 30px;
+}
+.pagenation a{
+    color: #2DC17A !important;
+    border: none !important;
+}
+.pagenation a:hover{
+    color: #fff !important;
+    background-color: #2DC17A !important;
+}
+
