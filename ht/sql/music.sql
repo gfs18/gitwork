@@ -67,6 +67,7 @@ create table special(
       lgid number(20) not null,--语种编号
       sppicPath varchar2(100) not null,   --封面图片路径
       sppubTime date not null,   --出版时间
+      spclick number(20), --点击量
       mark varchar2(100)       --预留字段
 );
 

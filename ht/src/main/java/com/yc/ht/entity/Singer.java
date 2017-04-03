@@ -96,6 +96,4 @@ public class Singer {
 				+ ", sggender=" + sggender + ", languaes=" + languaes + ", sgpicPath=" + sgpicPath + ", sgintroduce="
 				+ sgintroduce + "]";
 	}
-
-	
 }
