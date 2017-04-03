@@ -1,0 +1,121 @@
+/***************************标签*******************************/
+.lable {
+	width: 100%;
+	list-style: none;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    margin-left:30px;
+
+}
+
+.lable li a{
+	width: 91px;
+	height: 30px !important;
+	line-height: 30px !important;
+	text-decoration: none !important;
+    outline: none !important;
+    text-align: center;
+    float: left;
+}
+
+.mouseover{
+	color: #2DC17A !important;
+	
+}
+.click{
+	color: #fff !important;
+	background-color: #2DC17A; 
+}
+
+
+
+/*******************************内容******************************************/
+
+.mv{
+    min-width:100%;
+    width:100%;
+    height:450px;
+    margin-left:30px;
+    padding-left:40px;
+    padding-top:10px;
+}
+.mv ul li{
+    margin-top:20px;
+}
+.class{
+    width:1000px;
+    height:50px;
+    color:#000;
+    border-bottom:2px solid #2DC17A;
+    margin-top:20px;
+    margin-left:40px;
+    padding-left:40px;
+    font-family: "微软雅黑";
+    font-size:20px;
+}
+.mv_list{
+    position: relative;
+
+}
+.mv_1{
+    list-style:none;
+    width:100%;
+    height:100%;
+}
+.mv_img{
+    width:100%;
+    height:100%;
+    float: left;
+    position:relative;
+    top:0px;
+    left:0px;
+}
+.mask{
+    width:300px;
+    height:160px;
+    cursor: pointer;
+    background:rgba(0,0,0,0.2) !important;
+    position:relative;
+    top:-165px;
+    left:0px;
+    border: none;
+}
+.mask img{
+    position:absolute;
+    top:30%;
+    left:35%;
+}
+.mv_img img{
+    width:300px;
+    height:160px;
+}
+.mask p{
+    width:100%;
+    height:30px;
+    padding-left:20px;
+    padding-top:5px;
+    position: absolute;
+    top:130px;
+    left:0px;
+    background:rgba(0,0,0,0.3);
+}
+.mv_info{
+    color:#ffffff;
+    font-family:"微软雅黑";
+}
+.pagination{
+    width: 100%;
+    margin-left:400px;
+    margin-top: 30px;
+}
+.pagenation a{
+    color: #2DC17A !important;
+    border: none !important;
+}
+.pagenation a:hover{
+    color: #fff !important;
+    background-color: #2DC17A !important;
+}
+
