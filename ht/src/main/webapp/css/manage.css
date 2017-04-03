@@ -2,13 +2,24 @@
   background-color: #6A6C62; /* #30C27B  */
 }
 .navbar-ht .navbar-brand {
-  color: #ffffff;
+  color: #30C27B;
 }
 .navbar-ht .navbar-brand:hover,
 .navbar-ht .navbar-brand:focus {
-  color: #ffffff;
+  color: #30C27B;
   background-color: transparent;
 }
+.navbar-brand img{
+	width: 40px;
+	height: 40px;
+	margin-top: -10px;
+}
+
+.navbar-brand h4{
+	margin-top: 0px;
+	margin-right: 20px;
+}
+
 .navbar-ht .navbar-text {
   color: #ffffff;
 }
