@@ -37,7 +37,7 @@
 						<li><a href="javascript:void(0)">admin</a></li>
 						<li class="dropdown"><a href="javascript:void(0)"
 							class="dropdown-toggle" data-toggle="dropdown" role="button"
-							aria-haspopup="true" aria-expanded="false">设置 </a>
+							aria-haspopup="true" aria-expanded="false"><span class="caret"></span> </a>
 							<ul class="dropdown-menu">
 								<li><a href="javascript:void(0)">注销</a></li>
 								<li><a href="javascript:void(0)">切换用户</a></li>
@@ -49,7 +49,7 @@
 	</header>
 	<!-- 内容 -->
 	<article>
-		<div class>
+		<div class=".navbar-left" id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
 				<li role="presentation"><a href="javascript:void(0)">Home</a></li>
 				<li role="presentation"><a href="javascript:void(0)">Profile</a></li>

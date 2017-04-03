@@ -4821,7 +4821,7 @@ a.badge:focus {
 }
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #3b94c7;
+  color: #30C27B;
   background-color: #ffffff;
 }
 .list-group-item > .badge {
@@ -4830,7 +4830,8 @@ a.badge:focus {
 .list-group-item > .badge + .badge {
   margin-right: 5px;
 }
-.nav-pills > li > a > .badge {
+.
+ > li > a > .badge {
   margin-left: 3px;
 }
 .jumbotron {

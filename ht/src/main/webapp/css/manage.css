@@ -50,7 +50,7 @@
   .navbar-ht .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-ht .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #444444;
-    background-color: transparent;
+    background-color: #6A6C62;
   }
 
 }
@@ -66,6 +66,14 @@
     margin-top:-10px;
     background-color:#2DC17A;
 }
+
+
+/**********************************内容*********************************************/
+#articleDiv{
+	
+	
+}
+
 
 
 
