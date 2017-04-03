@@ -26,8 +26,8 @@
 							<c:when test="${login_user !=null}">
 								<li><a href="javascript:void(0)"
 									class="hidden-md hidden-sm hidden-xs">${login_user }</a></li>
-								<li><a href='javascript:void()'
-									class="hidden-md hidden-sm hidden-xs" onclick='userLoginout()'
+								<li><a href='javascript:void(0)'
+									class="hidden-md hidden-sm hidden-xs" onclick='userout()'
 									id='tuichu'>退出</a></li>
 							</c:when>
 							<c:otherwise>

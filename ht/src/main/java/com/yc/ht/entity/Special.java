@@ -11,7 +11,7 @@ public class Special {
 	private String sppicPath; 	//封面图片路径
 	private Date sppubTime; 	//出版时间
 	private Singer singer;
-	private Double spclick;
+	private Double spclick; //点击量
 	public Special() {
 	}
 	

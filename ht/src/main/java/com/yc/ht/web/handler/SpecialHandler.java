@@ -25,13 +25,8 @@ public class SpecialHandler {
 	@RequestMapping(value="",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Special> specialList(){
-		System.out.println("专辑图片显示进来了");
 		return specialService.listSpeical();
 	}
-	
-	
-	
-	
 	
 	@RequestMapping(value="list",method=RequestMethod.POST)
 	@ResponseBody
