@@ -12,16 +12,15 @@
 </head>
 <body>
 	<header>
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-ht">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="javascript:void(0)">Brand</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="javascript:void(0)">Link <span
-								class="sr-only">(current)</span></a></li>
+					<ul class="nav navbar-nav navbar-left" id="topnav">
+						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div><a href="javascript:void(0)">Link</a></li>
 						<li><a href="javascript:void(0)">Link</a></li>
 						<li><a href="javascript:void(0)">Link</a></li>
 					</ul>
@@ -29,8 +28,7 @@
 						<li><a href="javascript:void(0)">Link</a></li>
 						<li class="dropdown"><a href="javascript:void(0)"
 							class="dropdown-toggle" data-toggle="dropdown" role="button"
-							aria-haspopup="true" aria-expanded="false">Dropdown <span
-								class="caret"></span></a>
+							aria-haspopup="true" aria-expanded="false">Dropdown </a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Action</a></li>
 								<li><a href="#">Another action</a></li>
