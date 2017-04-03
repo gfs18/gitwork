@@ -53,7 +53,7 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation active"><a href="javascript:void(0)">单曲信息</a></li>
+				<li role="presentation"><a href="javascript:void(0)">单曲信息</a></li>
 				<li role="presentation"><a href="javascript:void(0)">单曲查询</a></li>
 				<li role="presentation"><a href="javascript:void(0)">单曲修改</a></li>
 			</ul>
