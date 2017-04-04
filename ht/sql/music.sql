@@ -78,11 +78,11 @@ create table special(
       spclick number(20), --点击量
       mark varchar2(100)       --预留字段
 );
---insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
---1001,'images/zj-2.jpg',to_date('2016-11-4','yyyy-mm-dd'),'');
---insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
---1001,'images/zj-1.jpg',to_date('2016-11-4','yyyy-mm-dd'),'');
-
+insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
+1001,'images/zj-2.jpg',to_date('2016-11-4','yyyy-mm-dd'),20,'');
+insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
+1001,'images/zj-1.jpg',to_date('2016-11-4','yyyy-mm-dd'),20,'');
+select * from special;
 --drop table special;
 
 --单曲表

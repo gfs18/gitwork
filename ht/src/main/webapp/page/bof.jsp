@@ -72,6 +72,25 @@
 		<a href="page/index.html"><span
 			class="glyphicon glyphicon-chevron-left"></span> 回首页</a>
 	</header> -->
+	<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <!--Sidebar content-->
+    </div>
+    <div class="span10">
+      <!--Body content-->
+    </div>
+  </div>
+</div><div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <!--Sidebar content-->
+    </div>
+    <div class="span10">
+      <!--Body content-->
+    </div>
+  </div>
+</div>
 		<ul id="myul">
 		<li class="list_1">播放列表</li>
 		<li class="m_list" name="music/nhbk.mp3" id="0" onclick="show(0,this)">男孩别哭
