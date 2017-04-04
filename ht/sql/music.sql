@@ -71,6 +71,14 @@ create table special(
       mark varchar2(100)       --预留字段
 );
 
+insert into SPECIAL values(seq_special_spid.nextval,10001,'幻听',10001,'images/zj-2.jpg',to_date('2017-3-31','yyyy-mm-dd'),10.2,'');
+insert into SPECIAL values(seq_special_spid.nextval,10002,'过滤',10001,'images/zj-1.jpg',to_date('2017-3-31','yyyy-mm-dd'),1.3,'');
+insert into SPECIAL values(seq_special_spid.nextval,10003,'放心去飞',10003,'images/zj-3.jpg',to_date('2017-3-31','yyyy-mm-dd'),4.2,'');
+insert into SPECIAL values(seq_special_spid.nextval,10001,'红蔷薇白玫瑰',10004,'images/zj-4jpg.jpg',to_date('2017-3-31','yyyy-mm-dd'),6.2,'');
+insert into SPECIAL values(seq_special_spid.nextval,10004,'感动每一刻',10002,'images/zj-5.jpg',to_date('2017-3-31','yyyy-mm-dd'),8,'');
+insert into SPECIAL values(seq_special_spid.nextval,10001,'我知道你离我不远',10002,'images/zj-5.jpg',to_date('2017-3-31','yyyy-mm-dd'),10.99,'');
+insert into SPECIAL values(seq_special_spid.nextval,10004,'咔咔寿女',10002,'images/zj-5.jpg',to_date('2017-3-31','yyyy-mm-dd'),0.8,'');
+select * from special;
 --drop table special;
 
 --单曲表
