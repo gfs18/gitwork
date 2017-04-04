@@ -43,19 +43,21 @@ a:hover{
 	background: #5a5c51;
 	margin-top: -20px;
 }
-	width:600px;
-	height: 30px;
-	margin-left: 70px;
-	border: none;
+
+
+#search{
+	margin-top:7px;
+	margin-left: 150px;
 }
 
-#topnav #search{
-	margin-top:50px;
-	padding-left:50px;
-	/* position:absolute; */
-	
-	
+#search input{
+	background-color: #eee;
 }
+#search button{
+	background-color: #eee;
+	color: #777;
+}
+
 
 
 #topnav li a{
