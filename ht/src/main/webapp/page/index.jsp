@@ -26,8 +26,8 @@
 							<c:when test="${login_user !=null}">
 								<li><a href="javascript:void(0)"
 									class="hidden-md hidden-sm hidden-xs">${login_user }</a></li>
-								<li><a href='javascript:void()'
-									class="hidden-md hidden-sm hidden-xs" onclick='userLoginout()'
+								<li><a href='javascript:void(0)'
+									class="hidden-md hidden-sm hidden-xs" onclick='userout()'
 									id='tuichu'>退出</a></li>
 							</c:when>
 							<c:otherwise>
@@ -63,9 +63,24 @@
 							<li><a href="page/friend.jsp"
 								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 						</ul>
+<<<<<<< HEAD
+						<form id="search" class="navbar-form navbar-left" role="search">
+							<div class="form-group" id="search">
+								<input type="text" class="form-control" placeholder="Search">
+=======
+						<form  id="search" class="navbar-form navbar-left" role="search">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="单曲/歌手/专辑">
+>>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
+							</div>
+							<button type="submit" class="btn btn-default">查询</button>
+						</form>
 					</div>
+
 				</div>
+
 			</nav>
+
 		</nav>
 		<div class="banner">
 			<div class="row">
@@ -108,17 +123,11 @@
 						</div>
 
 						<div class="content1_1_2 hidden-md hidden-sm hidden-xs">
-							<span class="span1">站内专辑</span>
+							<span class="span1">站内歌曲</span>
 
 							<table id="mytablet">
-								<tr>
-									<td class="td"><span>1.成都</span></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
-								</tr>
-								<tr>
+
+								<!-- <tr>
 									<td class="td"><span>2.生日那天</span></td>
 									<td><a href=""><i
 											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
@@ -188,7 +197,44 @@
 									<td><a href=""><i
 											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
 								</tr>
-
+				------------------------------------------------------------------------------------				
+								 <div class="cpt cptBig">
+                            
+                                        <p class="cptT"><span class="icon icon-select_icon"></span><span class="num">49.1万</span></p>
+                                          
+                                            <img  _src="http://imge.kugou.com/soft/collection/480/20170331/20170331150607204938.jpg" width="325" height="325" src="http://www.kugou.com/yy/static/images/blank.gif" _def="http://static.kgimg.com/public/root/images/rankdefalut.jpg">
+                                        
+                                        <div class="Cover" >
+                                            <a target="_blank" href="http://www.kugou.com/yy/special/single/123120.html">
+                                            </a>
+                                            <div class="playBtn icon icon-play_s" data-index="0" data-id="123120">播放</div>
+                                        </div>
+                                        <p class="cptBg"></p>
+                                        <div class="cptB">
+                                            <p class="songListName">你曾予我怦然欢喜，未料爱情徒有虚名</p>
+                                            <p class="songListSinger">柠檬茶</p>
+                                        </div>
+                                </div>
+								
+								<a target="_blank" href="http://www.kugou.com/yy/special/single/123120.html">
+                                            </a>
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+ -->
 							</table>
 						</div>
 					</div>
@@ -402,8 +448,8 @@
 						</div>
 						<div class="login_content">
 							<form>
-								<input type="text" id="uname" placeholder="请输入您的用户名" /><br /> <input
-									type="password" id="pwd" placeholder="请输入您的密码" /><br />
+								<input type="text" id="uname" placeholder="请输入您的用户名" /><br />
+								<input type="password" id="pwd" placeholder="请输入您的密码" /><br />
 								<p id="go" onclick="userLogin()">登录</p>
 							</form>
 						</div>

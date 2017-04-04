@@ -1,9 +1,6 @@
 $("#topnav li").mouseover(function(){
 	$(".mydiv").css("left",($(this).width())*$(this).index());
 });
-$("#topnav li").mouseout(function(){
-	$(".mydiv").css("-webkit-animation","none");
-});
 
 function showDiv(){
 	if ($(window).width()<=1349) {
@@ -12,4 +9,13 @@ function showDiv(){
 	{
 		$(".mydiv").css("display", "none");
 	}
+}
+
+//注销
+function loginOut(){
+	$.post("admin/out", function(data) {
+		if(data){
+			location.href="back/login.jsp";
+		}
+	},"json");
 }

@@ -14,27 +14,30 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 
+import com.yc.ht.util.ServletUtil;
+
 /**
  *  过滤验证码
  */
-@WebFilter("/admin/login")
-public class VcodeFilter extends AbstractFilter{
+@WebFilter("/back/*")
+public class AdminBackFilter extends AbstractFilter{
    
 	@Override
 	public void init(FilterConfig fConfig) throws ServletException {
-		LogManager.getLogger().debug("初始验证码验证的过滤器VcodeFilter.....");
+		LogManager.getLogger().debug("初始化过滤登陆......");
 	}
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		HttpSession session = ((HttpServletRequest)request).getSession();
-		String srcCode = (String)session.getAttribute("rand"); //取到原始验证码
-		String inputCode = request.getParameter("vcode");
-		if(srcCode.intern() == inputCode.intern()){
-			LogManager.getLogger().debug("过滤器VcodeFilter验证验证码通过.....");
+		HttpServletRequest hs = (HttpServletRequest)request;
+		HttpSession session = hs.getSession();
+		String reqUriStr = hs.getRequestURI();
+		System.out.println(session.getAttribute(ServletUtil.LOGIN_ADMIN));
+		if(reqUriStr.endsWith("login.jsp") || session.getAttribute(ServletUtil.LOGIN_ADMIN) != null && !"".equals(session.getAttribute(ServletUtil.LOGIN_ADMIN))){
 			chain.doFilter(request, response);
 		}else{
-			LogManager.getLogger().debug("过滤器VcodeFilter验证验证码失败.....");
-			session.setAttribute("errorMsg", "验证码错误！！！");
+			session.setAttribute("errorMsg", "请登录！！！");
 			((HttpServletResponse) response).sendRedirect("/ht/back/login.jsp");
 		}
+		
+		
 	}
 }

@@ -34,9 +34,6 @@ public class SpecialHandler {
 	@ResponseBody
 	public Special specialDetail(int spid){
 		LogManager.getLogger().debug("根据专辑id获取详情。。。spid:"+spid);
-
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);//设定格式
-		System.out.println(dateFormat);
 		return specialService.specialDetail(spid);
 	}
 	
@@ -46,4 +43,5 @@ public class SpecialHandler {
 		LogManager.getLogger().debug("根据专辑获取歌曲。。。");
 		return specialService.findSongBySpecial(spid);
 	}
+
 }

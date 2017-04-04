@@ -31,38 +31,12 @@
   color: #F8F8F8;
   background-color: transparent;
 }
-.navbar-ht .navbar-nav > .active > a,
-.navbar-ht .navbar-nav > .active > a:hover,
-.navbar-ht .navbar-nav > .active > a:focus {
-  color: #ffffff;
-  background-color: #30C27B;
-}
-.navbar-ht .navbar-nav > .disabled > a,
-.navbar-ht .navbar-nav > .disabled > a:hover,
-.navbar-ht .navbar-nav > .disabled > a:focus {
-  color: #444444;
-  background-color: transparent;
-}
-.navbar-ht .navbar-toggle {
-  border-color: #333333;
-}
-.navbar-ht .navbar-toggle:hover,
-.navbar-ht .navbar-toggle:focus {
-  background-color: #333333;
-}
-.navbar-ht .navbar-toggle .icon-bar {
-  background-color: #ffffff;
-}
+
 .navbar-ht .navbar-collapse,
 .navbar-ht .navbar-form {
   border-color: #262626;
 }
-.navbar-ht .navbar-nav > .open > a,
-.navbar-ht .navbar-nav > .open > a:hover,
-.navbar-ht .navbar-nav > .open > a:focus {
-  background-color: #30C27B;
-  color: #ffffff;
-}
+
 @media (max-width: 639px) {
   .navbar-ht .navbar-nav .open .dropdown-menu > .dropdown-header {
     border-color: #30C27B;
@@ -75,41 +49,12 @@
   }
   .navbar-ht .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-ht .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ffffff;
-    background-color: transparent;
-  }
-  .navbar-ht .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar-ht .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar-ht .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #ffffff;
-    background-color: #30C27B;
-  }
-  .navbar-ht .navbar-nav .open .dropdown-menu > .disabled > a,
-  .navbar-ht .navbar-nav .open .dropdown-menu > .disabled > a:hover,
-  .navbar-ht .navbar-nav .open .dropdown-menu > .disabled > a:focus {
     color: #444444;
-    background-color: transparent;
+    background-color: #6A6C62;
   }
+
 }
-.navbar-ht .navbar-link {
-  color: #ffffff;
-}
-.navbar-ht .navbar-link:hover {
-  color: #ffffff;
-}
-.navbar-ht .btn-link {
-  color: #ffffff;
-}
-.navbar-ht .btn-link:hover,
-.navbar-ht .btn-link:focus {
-  color: #ffffff;
-}
-.navbar-ht .btn-link[disabled]:hover,
-fieldset[disabled] .navbar-ht .btn-link:hover,
-.navbar-ht .btn-link[disabled]:focus,
-fieldset[disabled] .navbar-ht .btn-link:focus {
-  color: #444444;
-}
+
 
 /***************************移动div*********************************/
 .mydiv{
@@ -122,183 +67,51 @@ fieldset[disabled] .navbar-ht .btn-link:focus {
     background-color:#2DC17A;
 }
 
-@-webkit-keyframes  move1{
-    20%{
-        left:40px;
-    }
-    40%{
-        left:0px;
-    }
-    60%{
-        left:-40px;
-    }
-    80%{
-        left:0px;
-    }
-    100%{
-        left:0px;
-    }
 
+/**********************************内容*********************************************/
+#articleDiv{
+	float:left;
+	width: 179px;
+	margin-top: -20px;
+	text-align: center;
 }
-@-moz-keyframes  move1{
-    20%{
-        left:40px;
-    }
-    40%{
-        left:0px;
-    }
-    60%{
-        left:-40px;
-    }
-    80%{
-        left:0px;
-    }
-    100%{
-        left:0px;
-    }
-
+.nav-pills > li > a {
+	height: 50px;
+	color: #30C27B;
+	line-height: 20px;
 }
-@-webkit-keyframes  move2{
-    20%{
-        left:140px;
-    }
-    40%{
-        left:100px;
-    }
-    60%{
-        left:60px;
-    }
-    80%{
-        left:100px;
-    }
-    100%{
-        left:100px;
-    }
 
+#panelDiv{
+	float:left;
+	width: 80%;
+	margin-top: -14px;
 }
-@-moz-keyframes  move2{
-    20%{
-        left:140px;
-    }
-    40%{
-        left:100px;
-    }
-    60%{
-        left:60px;
-    }
-    80%{
-        left:100px;
-    }
-    100%{
-        left:100px;
-    }
 
+#panelDiv nav{
+	text-align: center;
 }
-@-webkit-keyframes  move3{
-    20%{
-        left:240px;
-    }
-    40%{
-        left:200px;
-    }
-    60%{
-        left:160px;
-    }
-    80%{
-        left:200px;
-    }
-    100%{
-        left:200px;
-    }
 
+#panelDiv nav li{
+	color: #30C27B;
 }
-@-moz-keyframes  move3{
-    20%{
-        left:240px;
-    }
-    40%{
-        left:200px;
-    }
-    60%{
-        left:160px;
-    }
-    80%{
-        left:200px;
-    }
-    100%{
-        left:200px;
-    }
 
+/*******************************底部*****************************************/
+#myfooter{
+	float:left;
+    width:100%;
+    height:100px;
+    background-color:#6A6C62;
 }
-@-webkit-keyframes  move4{
-    20%{
-        left:340px;
-    }
-    40%{
-        left:300px;
-    }
-    60%{
-        left:260px;
-    }
-    80%{
-        left:300px;
-    }
-    100%{
-        left:300px;
-    }
 
+#footer_content{
+    width:400px;
+    height:20px;
 }
-@-moz-keyframes  move4{
-    20%{
-        left:340px;
-    }
-    40%{
-        left:300px;
-    }
-    60%{
-        left:260px;
-    }
-    80%{
-        left:300px;
-    }
-    100%{
-        left:300px;
-    }
-
+#myrow span,#footer_content p{
+    font-family:"微软雅黑";
+    margin-top:10px;
+    font-size:15px;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
 }
-@-webkit-keyframes  move5{
-    20%{
-        left:440px;
-    }
-    40%{
-        left:400px;
-    }
-    60%{
-        left:360px;
-    }
-    80%{
-        left:400px;
-    }
-    100%{
-        left:400px;
-    }
-
-}
-@-moz-keyframes  move5{
-    20%{
-        left:440px;
-    }
-    40%{
-        left:400px;
-    }
-    60%{
-        left:360px;
-    }
-    80%{
-        left:400px;
-    }
-    100%{
-        left:400px;
-    }
-
-

@@ -43,12 +43,23 @@ a:hover{
 	background: #5a5c51;
 	margin-top: -20px;
 }
-#topnav{
-	width: 100%;
-	height: 30px;
-	margin-left: 70px;
-	border: none;
+
+
+#search{
+	margin-top:7px;
+	margin-left: 150px;
 }
+
+#search input{
+	background-color: #eee;
+}
+#search button{
+	background-color: #eee;
+	color: #777;
+}
+
+
+
 #topnav li a{
 	font-family: "微软雅黑";
 	color: #fff !important;

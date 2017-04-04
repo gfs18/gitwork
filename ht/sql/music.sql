@@ -1,9 +1,20 @@
+drop table users;
+drop table singer;
+drop table special;
+drop table song;
+drop table mv;
+drop table languages;
+drop table musicStyle;
+drop table comments;
+drop table collects;
+drop table admin;
+
 --用户表
 create table users(
     userid number(20) primary key,--用户编号
     uname varchar2(20) not null,  --用户名
     upwd varchar2(40) not null,   --密码
-    uemail varchar2(20) not null, --邮箱
+    uemail varchar2(40) not null, --邮箱
    	upicPath varchar2(40),  --头像路径
     uintroduce varchar2(100),    --个人简介
     ucondition int default 1, --账号状态 1可用 0不可用
@@ -11,17 +22,16 @@ create table users(
   	mark varchar2(100)   ----预留字段 
 );
 
-alter table users modify uemail varchar2(40);
+--alter table users modify uemail varchar2(40);
 
 --drop table users;
 
-insert into users select seq_users_uid.nextval,
-dbms_random.string('1',dbms_random.value(4,10)),
-'3b3690fba8bd08059eae130425396eb05ded1b7d',
-'123456@qq.com',
-'','挺好!',1,1,'' from dual connect by level <100;
+--insert into users select seq_users_uid.nextval,dbms_random.string('1',dbms_random.value(4,10)),
+--'3b3690fba8bd08059eae130425396eb05ded1b7d','123456@qq.com',
+--'','挺好!',1,1,'' from dual connect by level <100;
+--insert into users values(seq_users_uid.nextval,'admin','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','picpath','很美啊',1,0,null);
 
-select * from users;
+--select * from users;
 
 
 --管理员
@@ -33,14 +43,12 @@ create table admin(
 	mark varchar2(100)   ----预留字段 
 );
 
-insert into admin select seq_aid.nextval,
-dbms_random.string('1',dbms_random.value(4,10)),
-'3b3690fba8bd08059eae130425396eb05ded1b7d',
-1,'' from dual connect by level <10;
+--insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.value(4,10)),'3b3690fba8bd08059eae130425396eb05ded1b7d',
+--1,'' from dual connect by level <10;
 
-select * from admin;
+--select * from admin;
 
-drop table admin;
+--drop table admin;
 
 
 --歌手表
@@ -70,6 +78,10 @@ create table special(
       spclick number(20), --点击量
       mark varchar2(100)       --预留字段
 );
+--insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
+--1001,'images/zj-2.jpg',to_date('2016-11-4','yyyy-mm-dd'),'');
+--insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
+--1001,'images/zj-1.jpg',to_date('2016-11-4','yyyy-mm-dd'),'');
 
 insert into SPECIAL values(seq_special_spid.nextval,10001,'幻听',10001,'images/zj-2.jpg',to_date('2017-3-31','yyyy-mm-dd'),10.2,'');
 insert into SPECIAL values(seq_special_spid.nextval,10002,'过滤',10001,'images/zj-1.jpg',to_date('2017-3-31','yyyy-mm-dd'),1.3,'');
@@ -97,7 +109,13 @@ create table song(
        vipDownload varchar2(10) default '否',    --是否是会员才能下载
        mark varchar2(100)       --预留字段
 );
-
+--insert into song values (seq_song_soid.nextval,1,2,'生日那天','images/2_1.png',
+--to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
+--insert into song values (seq_song_soid.nextval,1,2,'童话镇','images/2_1.png',
+--to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
+--insert into song values (seq_song_soid.nextval,1,2,'烟火','images/2_1.png',
+--to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
+--select * from song;
 --drop table song;
 
 --音乐语种表
