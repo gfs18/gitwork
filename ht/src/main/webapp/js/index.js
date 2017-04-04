@@ -56,7 +56,7 @@ function songList(){
 		var songListStr = "";
 		for (var i = 0; i < data.length; i++) {
 			songListStr+='<tr><td class="td"><span>'+data[i].soname+'</span></td>'+
-			'<td><a href="page/demo.jsp"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
+			'<td><a href="page/demo.jsp?songid='+data[i].soid+'"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
 			'</a></td><td><a href=""><i class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td></tr>';
 		}
 		$("#mytablet").html(songListStr);
