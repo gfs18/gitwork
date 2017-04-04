@@ -1,16 +1,15 @@
 package com.yc.ht.web.handler;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yc.ht.entity.Song;
@@ -35,6 +34,9 @@ public class SpecialHandler {
 	@ResponseBody
 	public Special specialDetail(int spid){
 		LogManager.getLogger().debug("根据专辑id获取详情。。。spid:"+spid);
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);//设定格式
+		System.out.println(dateFormat);
 		return specialService.specialDetail(spid);
 	}
 	
@@ -44,18 +46,4 @@ public class SpecialHandler {
 		LogManager.getLogger().debug("根据专辑获取歌曲。。。");
 		return specialService.findSongBySpecial(spid);
 	}
-	
-
-	/*@RequestMapping(value="list",method=RequestMethod.POST)
-	@ResponseBody
-	public List<Special> special_music(HttpServletRequest request){
-		Object obj = (Object)request.getParameter("param");
-		LogManager.getLogger().debug("专辑详情进来了   obj:"+obj.toString());
-		try {
-			request.getRequestDispatcher("special_music.html").forward(request, null);
-		} catch (ServletException | IOException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}*/
 }
