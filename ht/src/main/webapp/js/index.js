@@ -1,26 +1,25 @@
 /////////////////////////////////站内专辑显示///////////////////////////
 special();
 function special(){
-	$.get("special", function(data){
-	//	alert(data);
+	$.get("special/index", function(data){
 		var specialStr = "";
 		for (var i = 0; i < data.length; i++) {
 			if(i==0){
-				/*var Object=JSON.stringify(data[i]);  '+data[i]+'*/
-				specialStr+='<div class=""><a href="javascript:void(0)" onclick="specialDetail()">';
+				specialStr+='<div class=""><a href="page/special_music.jsp?spid='+data[i].spid+'">';
 				specialStr+='<img id="img2" src="'+data[i].sppicPath+'" /></a>';
-				specialStr+='<div class="bf1"><a href=""><i	class="glyphicon glyphicon-headphones pull-left"><span>0万</span></i></a>';
+				specialStr+='<div class="bf1"><a href=""><i	class="glyphicon glyphicon-headphones pull-left"><span>'+data[i].spclick+'</span></i></a>';
 				specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle"></i></a></div></div>';
 			}else{
-				specialStr+='<div class="zj1"><a href="javascript:void(0)" onclick="specialDetail()">';
+				specialStr+='<div class="zj1"><a href="page/special_music.jsp?spid='+data[i].spid+'">';
 				specialStr+='<img class="img3" src="'+data[i].sppicPath+'" /></a>';
-				specialStr+='<div class="bf2"><a href=""><i	class="glyphicon glyphicon-headphones pull-left headphones1"><span>0万</span></i></a>';
+				specialStr+='<div class="bf2"><a href=""><i	class="glyphicon glyphicon-headphones pull-left headphones1"><span>'+data[i].spclick+'</span></i></a>';
 				specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
 			}
-		}/*'+Object+'*/
+		}
 		$(".content1_1_1").html(specialStr);
 	}, "json");
 }
+
 
 
 /////////////////////////////////站内专辑跳转///////////////////////////
