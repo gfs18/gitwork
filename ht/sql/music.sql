@@ -65,7 +65,7 @@ create table singer(
 );
 
 -- drop table singer;
-
+select * from singer;
 
 --专辑表
 create table special(
@@ -117,7 +117,6 @@ create table song(
 --to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
 --select * from song;
 --drop table song;
-select * from singer;
 update song set sgid=10001;
 
 --音乐语种表

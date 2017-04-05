@@ -24,16 +24,20 @@ public class VcodeFilter extends AbstractFilter{
 	public void init(FilterConfig fConfig) throws ServletException {
 		LogManager.getLogger().debug("初始验证码验证的过滤器VcodeFilter.....");
 	}
+	
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpSession session = ((HttpServletRequest)request).getSession();
 		String srcCode = (String)session.getAttribute("rand"); //取到原始验证码
 		String inputCode = request.getParameter("vcode");
 		if(srcCode.intern() == inputCode.intern()){
+			System.out.println("这是在进行验证码校验...");
 			LogManager.getLogger().debug("过滤器VcodeFilter验证验证码通过.....");
+			System.out.println("验证码验证成功！！！");
 			chain.doFilter(request, response);
 		}else{
 			LogManager.getLogger().debug("过滤器VcodeFilter验证验证码失败.....");
 			session.setAttribute("errorMsg", "验证码错误！！！");
+			System.out.println(session.getAttribute("deployName"));
 			((HttpServletResponse) response).sendRedirect("/ht/back/login.jsp");
 		}
 	}
