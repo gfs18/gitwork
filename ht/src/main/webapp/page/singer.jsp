@@ -28,7 +28,7 @@
 						<li id="newL"><a href=""
 							class="hidden-md hidden-sm hidden-xs" id="out"
 							data-toggle="modal" data-target="#myModals">注册</a></li>
-						<li><a href="page/vip.html"
+						<li><a href="page/vip.jsp"
 							class="hidden-md hidden-sm hidden-xs">VIP</a></li>
 						<li><a href="" class="hidden-md hidden-sm hidden-xs">客服中心</a></li>
 					</ul>

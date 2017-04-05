@@ -28,7 +28,7 @@
   <body>
 
   <header>
-      <a href="index.html"><span class="glyphicon glyphicon-chevron-left"></span> 回首页</a>
+      <a href="index.jsp"><span class="glyphicon glyphicon-chevron-left"></span> 回首页</a>
   </header>
   <ul id="myul">
       <li class="list_1">播放列表</li>

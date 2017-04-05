@@ -1,31 +1,35 @@
 package com.yc.ht.entity;
 
-import java.util.Date;
-
 //专辑表
 public class Special {
 	private Integer spid;         //专辑编号
 	private Integer sgid;		  //歌手编号
 	private String spname;      //专辑名
-	private Languages language;	//语种编号
+	private Integer lgid;    //语种编号
+	private Languages language;	//语种
 	private String sppicPath; 	//封面图片路径
-	private Date sppubTime; 	//出版时间
-	private Singer singer;
+	private String sppubTime; 	//出版时间
+	private Singer singer;	//歌手
 	private Double spclick; //点击量
 	public Special() {
 	}
 	
-	public Special(Integer spid, Integer sgid, String spname, Languages language, String sppicPath, Date sppubTime,
-			Singer singer, Double spclick) {
+	
+
+	public Special(Integer spid, Integer sgid, String spname, Integer lgid, Languages language, String sppicPath,
+			String sppubTime, Singer singer, Double spclick) {
 		this.spid = spid;
 		this.sgid = sgid;
 		this.spname = spname;
+		this.lgid = lgid;
 		this.language = language;
 		this.sppicPath = sppicPath;
 		this.sppubTime = sppubTime;
 		this.singer = singer;
 		this.spclick = spclick;
 	}
+
+
 
 	public Integer getSpid() {
 		return spid;
@@ -57,10 +61,10 @@ public class Special {
 	public void setSppicPath(String sppicPath) {
 		this.sppicPath = sppicPath;
 	}
-	public Date getSppubTime() {
+	public String getSppubTime() {
 		return sppubTime;
 	}
-	public void setSppubTime(Date sppubTime) {
+	public void setSppubTime(String sppubTime) {
 		this.sppubTime = sppubTime;
 	}
 	public Singer getSinger() {
@@ -75,12 +79,18 @@ public class Special {
 	public void setSpclick(Double spclick) {
 		this.spclick = spclick;
 	}
+	public Integer getLgid() {
+		return lgid;
+	}
+	public void setLgid(Integer lgid) {
+		this.lgid = lgid;
+	}
 
 	@Override
 	public String toString() {
-		return "\nSpecial [spid=" + spid + ", sgid=" + sgid + ", spname=" + spname + ", language=" + language
-				+ ", sppicPath=" + sppicPath + ", sppubTime=" + sppubTime + ", singer=" + singer + ", spclick="
-				+ spclick + "]";
+		return "Special [spid=" + spid + ", sgid=" + sgid + ", spname=" + spname + ", lgid=" + lgid + ", language="
+				+ language + ", sppicPath=" + sppicPath + ", sppubTime=" + sppubTime + ", singer=" + singer
+				+ ", spclick=" + spclick + "]";
 	}
 	
 	

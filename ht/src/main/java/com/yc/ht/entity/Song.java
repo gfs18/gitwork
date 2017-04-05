@@ -16,10 +16,13 @@ public class Song {
 	private MusicStyle musicStyle;	//单曲类型
 	private String soduration;		//单曲时长
 	private String vipDownload;		//是否是会员才能下载
+	private Singer singer;
 	public Song() {
 	}
+	
 	public Song(Integer soid, Integer sgid, Integer spid, String soname, String sopicPath, Date sopubTime,
-			String solyricPath, String songPath, MusicStyle musicStyle, String soduration, String vipDownload) {
+			String solyricPath, String songPath, MusicStyle musicStyle, String soduration, String vipDownload,
+			Singer singer) {
 		this.soid = soid;
 		this.sgid = sgid;
 		this.spid = spid;
@@ -31,6 +34,15 @@ public class Song {
 		this.musicStyle = musicStyle;
 		this.soduration = soduration;
 		this.vipDownload = vipDownload;
+		this.singer = singer;
+	}
+
+	
+	public Singer getSinger() {
+		return singer;
+	}
+	public void setSinger(Singer singer) {
+		this.singer = singer;
 	}
 	public Integer getSoid() {
 		return soid;
@@ -102,11 +114,8 @@ public class Song {
 	public String toString() {
 		return "\nSong [soid=" + soid + ", sgid=" + sgid + ", spid=" + spid + ", soname=" + soname + ", sopicPath="
 				+ sopicPath + ", sopubTime=" + sopubTime + ", solyricPath=" + solyricPath + ", songPath=" + songPath
-				+ ", musicStyle=" + musicStyle + ", soduration=" + soduration + ", vipDownload=" + vipDownload + "]";
+				+ ", musicStyle=" + musicStyle + ", soduration=" + soduration + ", vipDownload=" + vipDownload
+				+ ", singer=" + singer + "]";
 	}
-	
-	
-	
-	
 	
 }

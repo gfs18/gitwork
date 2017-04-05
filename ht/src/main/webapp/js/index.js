@@ -20,6 +20,46 @@ function special(){
 	}, "json");
 }
 
+singer()
+function singer(){
+	$.get("singer/index",function(data){
+		alert(JSON.stringify(data));
+		var singerStr="";
+		for(var i=0;i<data.length;i++){
+			singerStr+='<div class="content3_1_1"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">'
+				+'<div class="thumbnail pull-left"><a href="page/singer_more.jsp?sgid='+data[i].sgid+'"> <img src="'+data[i].sgpicPath+'" />'
+				+'<div class="caption"><h3>'+data[i].sgname+'</h3></div></a></div></div></div>';
+		}
+		$(".content3_1").html(singerStr);
+	},"json");
+}
+
+/////////////////////////////////站内专辑跳转///////////////////////////
+/*function specialDetail(param){
+	$.get("special_music", function(data){
+alert("请求成功");
+}, "json");*/
+/*$.post("special/list",{"param":param},function(data){
+
+
+	});*/
+/*var specialMusicStr = "";
+specialMusicStr+='<div class="left col-lg-4 col-md-4 hidden-sm hidden-xs"><img id="img" src=""/>';
+specialMusicStr+='<div class="cover"></div></div>';
+specialMusicStr+='<div class="right col-lg-8 col-md-8 col-sm-8 col-xs-8">'+
+'<p class="info_1">Water Under the Bridge (无法挽回)</p>'+
+'<p class="info_2">歌手：Adele(阿黛尔)</p>'+
+'<p class="info_3">发行时间：2016-11-4</p>'+
+'<p class="info_4">hhhhhhh</p>'
+specialMusicStr+='<div class="btns"><button class="mplay">'+
+'<span class="glyphicon glyphicon-play"></span> 播放	</button>'+
+'<button class="add hidden-sm hidden-xs">'+
+'<span class="glyphicon glyphicon-heart-empty"></span> 收藏</button></div></div>';
+
+$(".special_music").html(specialMusicStr);
+}*/
+
+
 /////////////////////////////////站内歌曲显示///////////////////////////
 songList();
 function songList(){

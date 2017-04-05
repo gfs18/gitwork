@@ -36,15 +36,15 @@
 				<div class="row">
 					<ul class="nav navbar-nav navbar-left" id="topnav">
 						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
-							href="page/index.html"
+							href="page/index.jsp"
 							class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
-						<li><a href="page/singer.html"
+						<li><a href="page/singer.jsp"
 							class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
-						<li><a href="page/special.html"
+						<li><a href="page/special.jsp"
 							class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
-						<li><a href="page/mv.html"
+						<li><a href="page/mv.jsp"
 							class="col-lg-2 col-md-2  hidden-xs  hidden-sm hidden-xs">MV</a></li>
-						<li><a href="page/friend.html"
+						<li><a href="page/friend.jsp"
 							class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 
 					</ul>

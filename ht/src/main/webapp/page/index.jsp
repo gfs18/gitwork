@@ -63,6 +63,10 @@
 							<li><a href="page/friend.jsp"
 								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 						</ul>
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 						<form  id="search" class="navbar-form navbar-left" role="search">
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="单曲/歌手/专辑">
@@ -121,114 +125,7 @@
 
 							<table id="mytablet">
 
-								<!-- <tr>
-									<td class="td"><span>2.生日那天</span></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
-								</tr>
-								<tr>
-									<td class="td"><span>3.童话镇</span></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
-								</tr>
-								<tr>
-									<td class="td"><span>4.悲歌</span></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
-								</tr>
-								<tr>
-									<td class="td"><span>5.选择</span></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
-								</tr>
-								<tr>
-									<td class="td"><span>6.白</span></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
-								</tr>
-								<tr>
-									<td class="td"><span>7.蓝</span></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
-								</tr>
-								<tr>
-									<td class="td"><span>8.全世界谁倾听你</span></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
-								</tr>
-								<tr>
-									<td class="td"><span>9.Bad boy</span></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
-								</tr>
-								<tr>
-									<td class="td"><span>10.说散就散</span></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
-								</tr>
-								<tr>
-									<td class="td"><span>11.我从崖边跌落</span></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-play-circle tp1" title="播放"></i></a></td>
-									<td><a href=""><i
-											class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td>
-								</tr>
-				------------------------------------------------------------------------------------				
-								 <div class="cpt cptBig">
-                            
-                                        <p class="cptT"><span class="icon icon-select_icon"></span><span class="num">49.1万</span></p>
-                                          
-                                            <img  _src="http://imge.kugou.com/soft/collection/480/20170331/20170331150607204938.jpg" width="325" height="325" src="http://www.kugou.com/yy/static/images/blank.gif" _def="http://static.kgimg.com/public/root/images/rankdefalut.jpg">
-                                        
-                                        <div class="Cover" >
-                                            <a target="_blank" href="http://www.kugou.com/yy/special/single/123120.html">
-                                            </a>
-                                            <div class="playBtn icon icon-play_s" data-index="0" data-id="123120">播放</div>
-                                        </div>
-                                        <p class="cptBg"></p>
-                                        <div class="cptB">
-                                            <p class="songListName">你曾予我怦然欢喜，未料爱情徒有虚名</p>
-                                            <p class="songListSinger">柠檬茶</p>
-                                        </div>
-                                </div>
-								
-								<a target="_blank" href="http://www.kugou.com/yy/special/single/123120.html">
-                                            </a>
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
- -->
+								<!-- 显示歌曲 -->
 							</table>
 						</div>
 					</div>
@@ -319,7 +216,7 @@
 					</div>
 
 					<div class="content3_1">
-						<div class="content3_1_1">
+						<!-- <div class="content3_1_1">
 							<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
 								<div class="thumbnail pull-left">
 									<a href=""> <img src="images/chensheng.jpg" />
@@ -409,7 +306,7 @@
 									</a>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 
 				</div>

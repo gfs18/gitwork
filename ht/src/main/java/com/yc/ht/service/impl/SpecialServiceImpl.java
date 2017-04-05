@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Song;
 import com.yc.ht.entity.Special;
 import com.yc.ht.mapper.SpecialMapper;
@@ -31,10 +32,18 @@ public class SpecialServiceImpl implements SpecialService{
 		return specialMapper.specialDetail(spid);
 	}
 
-	/*@Override
-	public List<Special> listSpeicalMusic() {
-		return specialMapper.findSpecialMusic();
-	}*/
+	@Override
+	public PaginationBean<Special> allSpecial(String rows, String page) {
+		PaginationBean<Special> pb=new PaginationBean<Special>();
+		if(rows!=null){
+			pb.setPageSize(Integer.parseInt(rows));
+		}
+
+		if(page!=null){
+			pb.setCurrPage(Integer.parseInt(page));
+		}
+		return specialMapper.allSpecial(pb);
+	}
 	
 }
 

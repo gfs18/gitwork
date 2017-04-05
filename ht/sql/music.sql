@@ -69,7 +69,7 @@ insert into singer values(seq_singer_sgid.nextval,'张杰','Z','中国',10002,'�
 insert into singer values(seq_singer_sgid.nextval,'金沙','J','中国',10003,'女','images/jinsha.jpg', '金莎（Kym），出生于中国上海，曾就读于星海音乐学院、新加坡东亚商学院','');
 --select * from singer;
 -- drop table singer;
-
+select * from singer;
 
 --专辑表
 create table special(
@@ -124,8 +124,12 @@ create table song(
 --to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
 --select * from song;
 --drop table song;
+<<<<<<< HEAD
 update song set spid=10041 where  spid=10002;
 
+=======
+update song set sgid=10001;
+>>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 
 --音乐语种表
 create table languages(
@@ -133,6 +137,9 @@ create table languages(
 	language varchar2(20)       --语种
 );
 
+insert into LANGUAGES values(10001,'华语');
+insert into LANGUAGES values(10002,'日韩');
+insert into LANGUAGES values(10003,'欧美');
 --音乐类型表
 create table musicStyle(
 	msid number(20) primary key,   --类型编号
