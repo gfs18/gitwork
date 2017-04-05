@@ -28,7 +28,7 @@
 						<li id="newL"><a href=""
 							class="hidden-md hidden-sm hidden-xs" id="out"
 							data-toggle="modal" data-target="#myModals">注册</a></li>
-						<li><a href="page/vip.html"
+						<li><a href="page/vip.jsp"
 							class="hidden-md hidden-sm hidden-xs">VIP</a></li>
 						<li><a href="" class="hidden-md hidden-sm hidden-xs">客服中心</a></li>
 					</ul>
@@ -40,15 +40,15 @@
 					<div class="row">
 						<ul class="nav navbar-nav navbar-left" id="topnav">
 							<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div>
-								<a href="page/index.html"
+								<a href="page/index.jsp"
 								class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
-							<li><a href="page/singer.html"
+							<li><a href="page/singer.jsp"
 								class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
-							<li><a href="page/special.html"
+							<li><a href="page/special.jsp"
 								class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
-							<li><a href="page/mv.html"
+							<li><a href="page/mv.jsp"
 								class="col-lg-2 col-md-2  hidden-xs  hidden-sm hidden-xs">MV</a></li>
-							<li><a href="page/friend.html"
+							<li><a href="page/friend.jsp"
 								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 						</ul>
 					</div>
@@ -178,9 +178,9 @@
 						</li>
 						<li class="singer_list__item">
 							<div class="singer_list__item_box">
-								<a href="singer_more.html"><img src="images/qz.jpg"></a>
+								<a href="singer_more.jsp"><img src="images/qz.jpg"></a>
 								<h4>
-									<a href="singer_more.html">薛之谦</a>
+									<a href="singer_more.jsp">薛之谦</a>
 								</h4>
 							</div>
 						</li>
