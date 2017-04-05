@@ -26,7 +26,7 @@
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left" id="topnav">
 						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
-							href="back/manage.jsp">单曲管理</a></li>
+							href="javascript:void(0)">单曲管理</a></li>
 						<li><a href="javascript:void(0)">歌手管理</a></li>
 						<li><a href="javascript:void(0)">专辑管理</a></li>
 						<li><a href="javascript:void(0)">短片管理</a></li>
@@ -53,9 +53,9 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation" class="active"><a href="back/manage.jsp">单曲信息</a></li>
+				<li role="presentation" ><a href="back/manage.jsp">单曲信息</a></li>
 				<li role="presentation"><a href="back/manageRefer.jsp">单曲查询</a></li>
-				<li role="presentation"><a href="back/manageModify.jsp">单曲修改</a></li>
+				<li role="presentation" class="active"><a href="back/manageModify.jsp">单曲修改</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
@@ -69,7 +69,7 @@
 							<th>Username</th>
 						</tr>
 					</thead>
-					<tbody id="tableBody">
+					<tbody>
 						<tr>
 							<th>1</th>
 							<th>Mark</th>
@@ -171,6 +171,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/manage.js"></script>
+	<script type="text/javascript" src="js/manageModify.js"></script>
 </body>
 </html>

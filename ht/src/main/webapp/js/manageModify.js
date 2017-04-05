@@ -2,16 +2,6 @@ $("#topnav li").mouseover(function(){
 	$(".mydiv").css("left",($(this).width())*$(this).index());
 });
 
-$("#tableBody tr").mouseover(function(){
-	this.style.backgroundColor="#30C27B";
-	this.style.color="#ffffff";
-});
-
-$("#tableBody tr").mouseout(function(){
-	this.style.backgroundColor="";
-	this.style.color="#000000";
-});
-
 function showDiv(){
 	if ($(window).width()<=1349) {
 		$(".mydiv").css("display", "block");

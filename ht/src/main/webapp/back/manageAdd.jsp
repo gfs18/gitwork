@@ -53,8 +53,8 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation" class="active"><a href="back/manage.jsp">单曲信息</a></li>
-				<li role="presentation"><a href="back/manageRefer.jsp">单曲查询</a></li>
+				<li role="presentation"><a href="back/manage.jsp">单曲信息</a></li>
+				<li role="presentation" class="active"><a href="back/manageRefer.jsp">单曲查询</a></li>
 				<li role="presentation"><a href="back/manageModify.jsp">单曲修改</a></li>
 			</ul>
 		</div>
@@ -171,6 +171,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/manage.js"></script>
+	<script type="text/javascript" src="js/manageAdd.js"></script>
 </body>
 </html>
