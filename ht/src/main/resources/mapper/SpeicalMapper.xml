@@ -3,12 +3,13 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.ht.mapper.SpecialMapper">
+	<!-- 分页在index界面上显示专辑图片 -->
 	<select id="findSpecial" resultType="Special">
 		select * from(select rownum
 		rn,s.* from (select * from special order by spclick desc) s where 6>rownum ) where rn>0
 	</select>
 
-
+	<!-- 专辑的详情系显示 -->
 	<resultMap type="Special" id="SpecialDetailMap">
 		<id column="spid" property="spid" />
 		<result column="spname" property="spname" />
@@ -16,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="sppubTime" property="sppubTime" />
 		<result column="spclick" property="spclick" />
 		<association property="singer" column="sgid" javaType="Singer"
-			select="findSgname" />
+			select="findSgname" />  <!-- 通过singer的实体类将两个表连接 -->
 	</resultMap>
 	<select id="specialDetail" parameterType="int" resultMap="SpecialDetailMap">
 		select * from special sp where spid=#{spid}
@@ -29,4 +30,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findSongBySpecial" parameterType="int" resultType="Song">
 		select * from song where spid=#{spid}
 	</select>
+	
+	<!-- 是否还需要查询一遍歌手 -->
 </mapper>
