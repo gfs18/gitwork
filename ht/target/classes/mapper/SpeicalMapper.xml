@@ -3,12 +3,13 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.ht.mapper.SpecialMapper">
+	<!-- 首页中显示点击量前五的专辑 -->
 	<select id="findSpecial" resultType="Special">
 		select * from(select rownum
 		rn,s.* from (select * from special order by spclick desc) s where 6>rownum ) where rn>0
 	</select>
 
-
+	<!-- 专辑详情页面中根据专辑编号查询专辑详情 -->
 	<resultMap type="Special" id="SpecialDetailMap">
 		<id column="spid" property="spid" />
 		<result column="spname" property="spname" />
@@ -31,7 +32,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 
-
+	<!-- 专辑详情页面中根据专辑编号查询专辑包含的歌曲 -->
 	<resultMap type="Song" id="SongMap">
 		<id column="soid" property="soid" />
 		<result column="soname" property="soname" />
@@ -44,5 +45,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<select id="getSgname" parameterType="int" resultType="Singer">
 		select * from singer where sgid=#{sgid}
+	</select>
+	
+	<!-- 专辑页面中分页显示所有专辑 -->
+	<resultMap type="PaginationBean" id="PaginationBeanMap">
+		<collection property="rows" column="{pageSize=pageSize,currPage=currPage}" ofType="Special" select="getPartSpecial"/>
+	</resultMap>
+	
+	<select id="allSpecial" parameterType="PaginationBean" resultMap="PaginationBeanMap">
+		select count(1) total, ceil(count(1) / ${pageSize}) totalPage,${pageSize} pageSize,${currPage} currPage from special
+	</select>
+	<select id="getPartSpecial" resultType="Special">
+		select * from(select rownum
+		rn,s.* from (select * from special order by spclick desc) s where ${currPage} * ${pageSize}>rownum ) where rn>(${currPage}-1) * ${pageSize}
 	</select>
 </mapper>

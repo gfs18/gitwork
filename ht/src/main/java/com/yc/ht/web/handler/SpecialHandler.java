@@ -1,16 +1,15 @@
 package com.yc.ht.web.handler;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.util.SystemClock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Song;
 import com.yc.ht.entity.Special;
 import com.yc.ht.service.SpecialService;
@@ -25,7 +24,7 @@ public class SpecialHandler {
 	@RequestMapping(value="index",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Special> specialList(){
-		LogManager.getLogger().debug("专辑图片显示进来了");
+		LogManager.getLogger().debug("首页的专辑图片显示进来了");
 		return specialService.listSpeical();
 	}
 	
@@ -41,5 +40,12 @@ public class SpecialHandler {
 	public List<Song> specialSong(int spid){
 		LogManager.getLogger().debug("根据专辑获取歌曲。。。");
 		return specialService.findSongBySpecial(spid);
+	}
+	
+	@RequestMapping(value="", method=RequestMethod.GET)
+	@ResponseBody
+	public PaginationBean<Special> allSpecial(String rows,String page){
+		LogManager.getLogger().debug("专辑页面分页显示所有专辑。。。");
+		return specialService.allSpecial(rows, page);
 	}
 }
