@@ -1,27 +1,38 @@
 /////////////////////////////////站内专辑显示///////////////////////////
 special();
 function special(){
-	$.get("special", function(data){
-	//	alert(data);
+	$.get("special/index", function(data){
 		var specialStr = "";
 		for (var i = 0; i < data.length; i++) {
 			if(i==0){
-				/*var Object=JSON.stringify(data[i]);  '+data[i]+'*/
-				specialStr+='<div class=""><a href="javascript:void(0)" onclick="specialDetail()">';
+				specialStr+='<div class=""><a href="page/special_music.jsp?spid='+data[i].spid+'">';
 				specialStr+='<img id="img2" src="'+data[i].sppicPath+'" /></a>';
-				specialStr+='<div class="bf1"><a href=""><i	class="glyphicon glyphicon-headphones pull-left"><span>0万</span></i></a>';
+				specialStr+='<div class="bf1"><a href=""><i	class="glyphicon glyphicon-headphones pull-left"><span>'+data[i].spclick+'</span></i></a>';
 				specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle"></i></a></div></div>';
 			}else{
-				specialStr+='<div class="zj1"><a href="javascript:void(0)" onclick="specialDetail()">';
+				specialStr+='<div class="zj1"><a href="page/special_music.jsp?spid='+data[i].spid+'">';
 				specialStr+='<img class="img3" src="'+data[i].sppicPath+'" /></a>';
-				specialStr+='<div class="bf2"><a href=""><i	class="glyphicon glyphicon-headphones pull-left headphones1"><span>0万</span></i></a>';
+				specialStr+='<div class="bf2"><a href=""><i	class="glyphicon glyphicon-headphones pull-left headphones1"><span>'+data[i].spclick+'</span></i></a>';
 				specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
 			}
-		}/*'+Object+'*/
+		}
 		$(".content1_1_1").html(specialStr);
 	}, "json");
 }
 
+singer()
+function singer(){
+	$.get("singer/index",function(data){
+		alert(JSON.stringify(data));
+		var singerStr="";
+		for(var i=0;i<data.length;i++){
+			singerStr+='<div class="content3_1_1"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">'
+				+'<div class="thumbnail pull-left"><a href="page/singer_more.jsp?sgid='+data[i].sgid+'"> <img src="'+data[i].sgpicPath+'" />'
+				+'<div class="caption"><h3>'+data[i].sgname+'</h3></div></a></div></div></div>';
+		}
+		$(".content3_1").html(singerStr);
+	},"json");
+}
 
 /////////////////////////////////站内专辑跳转///////////////////////////
 /*function specialDetail(param){
@@ -56,7 +67,7 @@ function songList(){
 		var songListStr = "";
 		for (var i = 0; i < data.length; i++) {
 			songListStr+='<tr><td class="td"><span>'+data[i].soname+'</span></td>'+
-			'<td><a href="page/demo.jsp"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
+			'<td><a href="page/demo.jsp?songid='+data[i].soid+'"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
 			'</a></td><td><a href=""><i class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td></tr>';
 		}
 		$("#mytablet").html(songListStr);

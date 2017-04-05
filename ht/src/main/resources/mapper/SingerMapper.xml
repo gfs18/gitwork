@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 映射文件的命名空间namespace的值，与之对应的映射接口的全类名 -->
+<mapper namespace="com.yc.ht.mapper.SingerMapper">
+	<select id="findSinger" resultType="Singer">
+		select * from(select rownum rn, s.* from (select * from singer)s where 9>rownum ) where rn>0
+	</select>
+</mapper>

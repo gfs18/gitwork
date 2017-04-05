@@ -83,6 +83,14 @@ create table special(
 --insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
 --1001,'images/zj-1.jpg',to_date('2016-11-4','yyyy-mm-dd'),'');
 
+insert into SPECIAL values(seq_special_spid.nextval,10001,'幻听',10001,'images/zj-2.jpg',to_date('2017-3-31','yyyy-mm-dd'),10.2,'');
+insert into SPECIAL values(seq_special_spid.nextval,10002,'过滤',10001,'images/zj-1.jpg',to_date('2017-3-31','yyyy-mm-dd'),1.3,'');
+insert into SPECIAL values(seq_special_spid.nextval,10003,'放心去飞',10003,'images/zj-3.jpg',to_date('2017-3-31','yyyy-mm-dd'),4.2,'');
+insert into SPECIAL values(seq_special_spid.nextval,10001,'红蔷薇白玫瑰',10004,'images/zj-4jpg.jpg',to_date('2017-3-31','yyyy-mm-dd'),6.2,'');
+insert into SPECIAL values(seq_special_spid.nextval,10004,'感动每一刻',10002,'images/zj-5.jpg',to_date('2017-3-31','yyyy-mm-dd'),8,'');
+insert into SPECIAL values(seq_special_spid.nextval,10001,'我知道你离我不远',10002,'images/zj-5.jpg',to_date('2017-3-31','yyyy-mm-dd'),10.99,'');
+insert into SPECIAL values(seq_special_spid.nextval,10004,'咔咔寿女',10002,'images/zj-5.jpg',to_date('2017-3-31','yyyy-mm-dd'),0.8,'');
+select * from special;
 --drop table special;
 
 --单曲表
@@ -109,6 +117,8 @@ create table song(
 --to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
 --select * from song;
 --drop table song;
+select * from singer;
+update song set sgid=10001;
 
 --音乐语种表
 create table languages(
@@ -116,6 +126,9 @@ create table languages(
 	language varchar2(20)       --语种
 );
 
+insert into LANGUAGES values(10001,'华语');
+insert into LANGUAGES values(10002,'日韩');
+insert into LANGUAGES values(10003,'欧美');
 --音乐类型表
 create table musicStyle(
 	msid number(20) primary key,   --类型编号

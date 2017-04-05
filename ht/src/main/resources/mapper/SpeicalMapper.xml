@@ -3,27 +3,60 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.ht.mapper.SpecialMapper">
-		<resultMap type="Special" id="SpecialMap">
-		<id column="spid" property="spid"/>
-		<result column="spname" property="spname"/>
-		<result column="sppicPath" property="sppicPath"/>
-		<result column="sppubTime" property="sppubTime"/>
-		<result column="spclick" property="spclick"/>
-		<association property="singer" column="sgid" javaType="Singer">
-			<id column="sgid" property="sgid"/>
-			<result column="sgname" property="sgname"/>
-		</association>
+	<!-- 首页中显示点击量前五的专辑 -->
+	<select id="findSpecial" resultType="Special">
+		select * from(select rownum
+		rn,s.* from (select * from special order by spclick desc) s where 6>rownum ) where rn>0
+	</select>
+
+	<!-- 专辑详情页面中根据专辑编号查询专辑详情 -->
+	<resultMap type="Special" id="SpecialDetailMap">
+		<id column="spid" property="spid" />
+		<result column="spname" property="spname" />
+		<result column="sppicPath" property="sppicPath" />
+		<result column="sppubTime" property="sppubTime" />
+		<result column="spclick" property="spclick" />
+		<association property="singer" column="sgid" javaType="Singer"
+			select="findSgname" />
+		<!-- <association property="language" column="lgid" javaType="Languages" select="findLgname"/> -->
+	</resultMap>
+	<select id="specialDetail" parameterType="int" resultMap="SpecialDetailMap">
+		select * from special where spid=#{spid}
+	</select>
+	<select id="findSgname" parameterType="int" resultType="Singer">
+		select * from singer where sgid=#{sgid}
+	</select>
+	<!-- <select id="findLgname" parameterType="int " resultType="Languages">
+		select * from languages where lgid=#{lgid}
+	</select> -->
+
+
+
+	<!-- 专辑详情页面中根据专辑编号查询专辑包含的歌曲 -->
+	<resultMap type="Song" id="SongMap">
+		<id column="soid" property="soid" />
+		<result column="soname" property="soname" />
+		<result column="soduration" property="soduration" />
+		<association property="singer" column="sgid" javaType="Singer"
+			select="getSgname" />
+	</resultMap>
+	<select id="findSongBySpecial" parameterType="int" resultMap="SongMap">
+		select * from song where spid=#{spid}
+	</select>
+	<select id="getSgname" parameterType="int" resultType="Singer">
+		select * from singer where sgid=#{sgid}
+	</select>
+	
+	<!-- 专辑页面中分页显示所有专辑 -->
+	<resultMap type="PaginationBean" id="PaginationBeanMap">
+		<collection property="rows" column="{pageSize=pageSize,currPage=currPage}" ofType="Special" select="getPartSpecial"/>
 	</resultMap>
 	
-	<select id="findSpecial" resultMap="SpecialMap">
-		select * from(select rownum rn,s.* from (select sp.*,sg.sgname from special sp,singer sg where sp.sgid=sg.sgid order by spclick desc) s where 6>rownum ) where rn>0
+	<select id="allSpecial" parameterType="PaginationBean" resultMap="PaginationBeanMap">
+		select count(1) total, ceil(count(1) / ${pageSize}) totalPage,${pageSize} pageSize,${currPage} currPage from special
 	</select>
-	
-	<select id="specialDetail" parameterType="int" resultType="Special">
-		select * from special sp,singer sg where spid=#{spid} and sp.sgid=sg.sgid
-	</select>
-	
-	<select id="findSongBySpecial" parameterType="int" resultType="Song">
-		select * from song where spid=#{spid}
+	<select id="getPartSpecial" resultType="Special">
+		select * from(select rownum
+		rn,s.* from (select * from special order by spclick desc) s where ${currPage} * ${pageSize}>rownum ) where rn>(${currPage}-1) * ${pageSize}
 	</select>
 </mapper>

@@ -1,6 +1,6 @@
 package com.yc.ht.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.yc.ht.entity.PaginationBean;
+import com.yc.ht.entity.Song;
 import com.yc.ht.entity.Special;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring.xml")
@@ -19,16 +21,29 @@ public class SpecialServiceTest {
 	private SpecialService specialService;
 	@Test
 	public void testListSpeical() {
-		/*Special special=new Special();
-		special.setSpid(1001);
-		special.setSgid(1002);
-		special.setSpname("哈哈哈");
-		special.setSppicPath(sppicPath);*/
 		List<Special> special=specialService.listSpeical();
 		System.out.println(special);
 		assertNotNull(special);
-		
-				
 	}
 
+	@Test
+	public void testSpDetail() {
+		Special special=specialService.specialDetail(10013);
+		System.out.println(special);
+		assertNotNull(special);
+	}
+	
+	@Test
+	public void testSpecialSong() {
+		List<Song> song=specialService.findSongBySpecial(10013);
+		System.out.println(song);
+		assertNotNull(song);
+	}
+	
+	@Test
+	public void testAllSpecial() {
+		PaginationBean<Special> special=specialService.allSpecial("8", "1");
+		System.out.println(special);
+		assertNotNull(special);
+	}
 }

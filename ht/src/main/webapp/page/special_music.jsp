@@ -24,7 +24,7 @@
                 <ul class="nav navbar-nav navbar-right" id="nav_a">
                     <li><a href="javascript:" class="hidden-md hidden-sm hidden-xs" id="denglu" data-toggle="modal" data-target="#myModal">登录</a></li>
                     <li id="newL"><a href="" class="hidden-md hidden-sm hidden-xs" id="out" data-toggle="modal" data-target="#myModals">注册</a></li>
-                    <li><a href="vip.html" class="hidden-md hidden-sm hidden-xs">VIP</a></li>
+                    <li><a href="vip.jsp" class="hidden-md hidden-sm hidden-xs">VIP</a></li>
                     <li><a href="" class="hidden-md hidden-sm hidden-xs">客服中心</a></li>
                 </ul>
             </div>
@@ -33,9 +33,9 @@
             <div class="container">
                 <div class="row">
                     <ul class="nav navbar-nav navbar-left" id="topnav">
-                        <li><div class="mydiv hidden-md hidden-sm hidden-xs"></div><a href="page/index.html"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
-                        <li><a href="page/singer.html"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
-                        <li><a href="page/special.html"  class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
+                        <li><div class="mydiv hidden-md hidden-sm hidden-xs"></div><a href="page/index.jsp"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
+                        <li><a href="page/singer.jsp"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
+                        <li><a href="page/special.jsp"  class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
                         <li><a href=""  class="col-lg-2 col-md-2  hidden-xs  hidden-sm hidden-xs">MV</a></li>
                         <li><a href=""  class="col-lg-2 hidden-md hidden-sm hidden-xs">电台</a></li>
                     </ul>
@@ -47,23 +47,10 @@
 <article>
 <div class="container">
     <div class="special_music">
-       <div class="head row" id="S_big">
-            <div class="left col-lg-4 col-md-4 hidden-sm hidden-xs">
-                <img src="images/大图2.jpg">
-                <div class="cover"></div>
-            </div>
-            <div class="right col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                <p class="info_1">Water Under the Bridge (无法挽回)</p>
-                <p class="info_2">歌手：Adele(阿黛尔)</p>
-                <p class="info_3">发行时间：2016-11-4</p>
-                <p class="info_4">语种：英语</p>
-                <p class="info_5">唱片公司：XL Recordings</p>
-                <div class="btns">
-                    <button class="mplay"><span class="glyphicon glyphicon-play" ></span> 播放</button>
-                    <button class="add hidden-sm hidden-xs"><span class="glyphicon glyphicon-heart-empty" ></span> 收藏</button>
-                </div>
-            </div>
-        </div>
+    
+      <div class="head row" id="S_big">
+            <!-- 专辑详情 -->
+        </div> 
 	<div class="music_list">
         <div class="row" style="margin-left:0px">
             <div  class="list_no_1 col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
@@ -73,26 +60,7 @@
             <div  class=";list_add_1 col-lg-2 col-md-2 hidden-sm hidden-xs" style="border-left:1px solid #E1E1E1;">时长</div>
         </div>
     <div class="S_box">
-    <div class="row">
-        <div  class="list_no col-lg-1 col-md-1 col-sm-1 col-xs-1">1</div>
-        <div  class="list_name col-lg-7 col-md-7 col-sm-11 col-xs-11">
-            <a href=""><i class="glyphicon glyphicon-play-circle" id="tp1_1"  title="播放"></i></a>
-            <a href=""><i class="glyphicon glyphicon-save" id="tp2_1" title="下载"></i></a>
-            <a href="" class="m_name">River Flows In You</a>
-        </div>
-        <div  class="list_play col-lg-2 col-md-2 hidden-sm hidden-xs">Martin-Ermen</div>
-        <div  class="list_add col-lg-2 col-md-2 hidden-sm hidden-xs">3:20</div>
-    </div>
-    <div class="row">
-        <div  class="list_no col-lg-1 col-md-1 col-sm-1 col-xs-1">1</div>
-        <div  class="list_name col-lg-7 col-md-7 col-sm-11 col-xs-11">
-            <a href=""><i class="glyphicon glyphicon-play-circle" id="tp1_2"  title="播放"></i></a>
-            <a href=""><i class="glyphicon glyphicon-save" id="tp2_2" title="下载"></i></a>
-            <a href="" class="m_name">River Flows In You</a>
-        </div>
-        <div  class="list_play col-lg-2 col-md-2 hidden-sm hidden-xs">Martin-Ermen</div>
-        <div  class="list_add col-lg-2 col-md-2 hidden-sm hidden-xs">3:20</div>
-    </div>
+    <!--专辑包含歌曲 -->
     </div>
 </div>
 </div>
@@ -202,9 +170,10 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
-<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
 
 </body>
+
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/special_music.js"></script> 
 </html>

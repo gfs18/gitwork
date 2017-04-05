@@ -24,7 +24,7 @@
                     <ul class="nav navbar-nav navbar-right" id="nav_a">
                         <li><a href="javascript:" class="hidden-md hidden-sm hidden-xs" id="denglu" data-toggle="modal" data-target="#myModal">登录</a></li>
                         <li id="newL"><a href="" class="hidden-md hidden-sm hidden-xs" id="out" data-toggle="modal" data-target="#myModals">注册</a></li>
-                        <li><a href="page/vip.html" class="hidden-md hidden-sm hidden-xs">VIP</a></li>
+                        <li><a href="page/vip.jsp" class="hidden-md hidden-sm hidden-xs">VIP</a></li>
                         <li><a href="" class="hidden-md hidden-sm hidden-xs">客服中心</a></li>
                     </ul>
 				</div>
@@ -33,10 +33,10 @@
 				<div class="container">
                     <div class="row">
 					<ul class="nav navbar-nav navbar-left" id="topnav">
-						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div><a href="page/index.html"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
-						<li><a href="page/singer.html"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
-						<li><a href="page/special.html"  class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
-						<li><a href="page/mv.html"  class="col-lg-2 col-md-2  hidden-xs  hidden-sm hidden-xs">MV</a></li>
+						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div><a href="page/index.jsp"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
+						<li><a href="page/singer.jsp"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
+						<li><a href="page/special.jsp"  class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
+						<li><a href="page/mv.jsp"  class="col-lg-2 col-md-2  hidden-xs  hidden-sm hidden-xs">MV</a></li>
 						<li><a href=""  class="col-lg-2 hidden-md hidden-sm hidden-xs">电台</a></li>
 					</ul>
 				</div>
