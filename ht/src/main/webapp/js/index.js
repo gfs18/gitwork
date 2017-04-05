@@ -20,7 +20,19 @@ function special(){
 	}, "json");
 }
 
-
+singer()
+function singer(){
+	$.get("singer/index",function(data){
+		alert(JSON.stringify(data));
+		var singerStr="";
+		for(var i=0;i<data.length;i++){
+			singerStr+='<div class="content3_1_1"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">'
+				+'<div class="thumbnail pull-left"><a href="page/singer_more.jsp?sgid='+data[i].sgid+'"> <img src="'+data[i].sgpicPath+'" />'
+				+'<div class="caption"><h3>'+data[i].sgname+'</h3></div></a></div></div></div>';
+		}
+		$(".content3_1").html(singerStr);
+	},"json");
+}
 
 /////////////////////////////////站内专辑跳转///////////////////////////
 /*function specialDetail(param){

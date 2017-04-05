@@ -1,11 +1,10 @@
 package com.yc.ht.web.handler;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Locale;
 
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.util.SystemClock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,5 +42,4 @@ public class SpecialHandler {
 		LogManager.getLogger().debug("根据专辑获取歌曲。。。");
 		return specialService.findSongBySpecial(spid);
 	}
-
 }

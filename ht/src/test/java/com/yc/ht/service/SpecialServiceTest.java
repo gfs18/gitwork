@@ -27,14 +27,14 @@ public class SpecialServiceTest {
 
 	@Test
 	public void testSpDetail() {
-		Special special=specialService.specialDetail(10008);
+		Special special=specialService.specialDetail(10013);
 		System.out.println(special);
 		assertNotNull(special);
 	}
 	
 	@Test
 	public void testSpecialSong() {
-		List<Song> song=specialService.findSongBySpecial(10001);
+		List<Song> song=specialService.findSongBySpecial(10013);
 		System.out.println(song);
 		assertNotNull(song);
 	}

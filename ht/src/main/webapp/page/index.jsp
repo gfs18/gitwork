@@ -63,15 +63,10 @@
 							<li><a href="page/friend.jsp"
 								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 						</ul>
-<<<<<<< HEAD
-						<form id="search" class="navbar-form navbar-left" role="search">
-							<div class="form-group" id="search">
-								<input type="text" class="form-control" placeholder="Search">
-=======
+
 						<form  id="search" class="navbar-form navbar-left" role="search">
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="单曲/歌手/专辑">
->>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 							</div>
 							<button type="submit" class="btn btn-default">查询</button>
 						</form>
@@ -325,7 +320,7 @@
 					</div>
 
 					<div class="content3_1">
-						<div class="content3_1_1">
+						<!-- <div class="content3_1_1">
 							<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
 								<div class="thumbnail pull-left">
 									<a href=""> <img src="images/chensheng.jpg" />
@@ -415,7 +410,7 @@
 									</a>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 
 				</div>

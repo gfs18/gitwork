@@ -17,16 +17,32 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="spclick" property="spclick" />
 		<association property="singer" column="sgid" javaType="Singer"
 			select="findSgname" />
+		<!-- <association property="language" column="lgid" javaType="Languages" select="findLgname"/> -->
 	</resultMap>
 	<select id="specialDetail" parameterType="int" resultMap="SpecialDetailMap">
-		select * from special sp where spid=#{spid}
+		select * from special where spid=#{spid}
 	</select>
 	<select id="findSgname" parameterType="int" resultType="Singer">
-		select * from singer sg where sgid=#{sgid}
+		select * from singer where sgid=#{sgid}
 	</select>
+	<!-- <select id="findLgname" parameterType="int " resultType="Languages">
+		select * from languages where lgid=#{lgid}
+	</select> -->
 
 
-	<select id="findSongBySpecial" parameterType="int" resultType="Song">
+
+
+	<resultMap type="Song" id="SongMap">
+		<id column="soid" property="soid" />
+		<result column="soname" property="soname" />
+		<result column="soduration" property="soduration" />
+		<association property="singer" column="sgid" javaType="Singer"
+			select="getSgname" />
+	</resultMap>
+	<select id="findSongBySpecial" parameterType="int" resultMap="SongMap">
 		select * from song where spid=#{spid}
+	</select>
+	<select id="getSgname" parameterType="int" resultType="Singer">
+		select * from singer where sgid=#{sgid}
 	</select>
 </mapper>

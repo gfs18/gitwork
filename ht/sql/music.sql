@@ -117,6 +117,8 @@ create table song(
 --to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
 --select * from song;
 --drop table song;
+select * from singer;
+update song set sgid=10001;
 
 --音乐语种表
 create table languages(
@@ -124,6 +126,9 @@ create table languages(
 	language varchar2(20)       --语种
 );
 
+insert into LANGUAGES values(10001,'华语');
+insert into LANGUAGES values(10002,'日韩');
+insert into LANGUAGES values(10003,'欧美');
 --音乐类型表
 create table musicStyle(
 	msid number(20) primary key,   --类型编号
