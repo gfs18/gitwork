@@ -13,16 +13,14 @@ public class Song {
 	private Date sopubTime;			//出版时间
 	private String solyricPath;		//歌词路径
 	private String songPath;		//单曲存储路径
-	private MusicStyle musicStyle;	//单曲类型
 	private String soduration;		//单曲时长
 	private String vipDownload;		//是否是会员才能下载
 	private Singer singer;
 	public Song() {
 	}
-	
 	public Song(Integer soid, Integer sgid, Integer spid, String soname, String sopicPath, Date sopubTime,
-			String solyricPath, String songPath, MusicStyle musicStyle, String soduration, String vipDownload,
-			Singer singer) {
+			String solyricPath, String songPath, String soduration, String vipDownload, Singer singer) {
+		super();
 		this.soid = soid;
 		this.sgid = sgid;
 		this.spid = spid;
@@ -31,17 +29,8 @@ public class Song {
 		this.sopubTime = sopubTime;
 		this.solyricPath = solyricPath;
 		this.songPath = songPath;
-		this.musicStyle = musicStyle;
 		this.soduration = soduration;
 		this.vipDownload = vipDownload;
-		this.singer = singer;
-	}
-
-	
-	public Singer getSinger() {
-		return singer;
-	}
-	public void setSinger(Singer singer) {
 		this.singer = singer;
 	}
 	public Integer getSoid() {
@@ -92,12 +81,6 @@ public class Song {
 	public void setSongPath(String songPath) {
 		this.songPath = songPath;
 	}
-	public MusicStyle getMusicStyle() {
-		return musicStyle;
-	}
-	public void setMusicStyle(MusicStyle musicStyle) {
-		this.musicStyle = musicStyle;
-	}
 	public String getSoduration() {
 		return soduration;
 	}
@@ -110,12 +93,19 @@ public class Song {
 	public void setVipDownload(String vipDownload) {
 		this.vipDownload = vipDownload;
 	}
+	public Singer getSinger() {
+		return singer;
+	}
+	public void setSinger(Singer singer) {
+		this.singer = singer;
+	}
 	@Override
 	public String toString() {
-		return "\nSong [soid=" + soid + ", sgid=" + sgid + ", spid=" + spid + ", soname=" + soname + ", sopicPath="
+		return "Song [soid=" + soid + ", sgid=" + sgid + ", spid=" + spid + ", soname=" + soname + ", sopicPath="
 				+ sopicPath + ", sopubTime=" + sopubTime + ", solyricPath=" + solyricPath + ", songPath=" + songPath
-				+ ", musicStyle=" + musicStyle + ", soduration=" + soduration + ", vipDownload=" + vipDownload
-				+ ", singer=" + singer + "]";
+				+ ", soduration=" + soduration + ", vipDownload=" + vipDownload + ", singer=" + singer + "]";
 	}
+	
+	
 	
 }

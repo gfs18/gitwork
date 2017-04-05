@@ -29,3 +29,15 @@ function loginOut(){
 		}
 	},"json");
 }
+
+function showSongInfo(){
+	$.get("song/pagination",function(data){
+		alert(JSON.stringify(data));
+	});
+}
+showSongInfo();
+
+
+
+
+

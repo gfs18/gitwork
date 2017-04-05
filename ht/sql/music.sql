@@ -103,18 +103,17 @@ create table song(
        sopubTime date not null,            --出版时间
        solyricPath varchar2(40),      --歌词路径
        sopath varchar2(40) not null,  --单曲存储路径
-       lgid number(20) not null,--音乐语种编号
-       msid number(20) not null, --音乐类型编号
        soduration varchar2(20) not null,       --单曲时长
        vipDownload varchar2(10) default '否',    --是否是会员才能下载
        mark varchar2(100)       --预留字段
 );
+
 --insert into song values (seq_song_soid.nextval,1,2,'生日那天','images/2_1.png',
---to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
+--to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 --insert into song values (seq_song_soid.nextval,1,2,'童话镇','images/2_1.png',
---to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
+--to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 --insert into song values (seq_song_soid.nextval,1,2,'烟火','images/2_1.png',
---to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
+--to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 --select * from song;
 --drop table song;
 update song set sgid=10001;
@@ -173,7 +172,7 @@ create table collects(
 --drop sequence seq_collect_coid;
 
 --序列
---drop sequence seq_aid;
+--drop sequence seq_song_soid;
 create sequence seq_aid start with 10001;
 create sequence seq_msid start with 10001;
 create sequence seq_lgid start with 10001;
