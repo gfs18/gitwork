@@ -28,9 +28,7 @@ public class SongHandler {
 	@RequestMapping(value="pagination",method=RequestMethod.GET)
 	@ResponseBody
 	public PaginationBean<Song> songPagiagetionList(String pageS,String currP){
-		System.out.println("进来了 pagination pageSize:"+pageS+"--->currPage:"+currP);
-		 System.out.println(songService.listSong(pageS, currP));
-		return null;
+		return songService.listSong(pageS, currP);
 	}
 	
 	
