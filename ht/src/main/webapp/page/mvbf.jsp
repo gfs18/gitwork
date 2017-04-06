@@ -102,19 +102,8 @@
 		</div>
 	</div>
      </article>
-	<footer>
-		<div class="container-fluid"  id="myfooter">
-            <div class="container" id="footer_content">
-                <div class="row" id="myrow">
-                <span class="col-lg-3 col-md-3 col-sm-3 col-xs-3">关于我们</span>
-                <span class="col-lg-3 col-md-3 col-sm-3 col-xs-3">幻听服务</span>
-                <span class="col-lg-3 col-md-3 col-sm-3 col-xs-3">联系我们</span>
-                <span class="col-lg-3 col-md-3 col-sm-3 col-xs-3">招商合作</span>
-           </div>
-                <p>幻听-原创音乐网站-版权所有 ©</p>
-        </div>
-		</div>
-	</footer>
+	<!-- 底部注入 -->
+      <iframe width=100% height=105 src="iframe/footer.jsp"></iframe>
    
 	<div>
     <div id="mylogin">
