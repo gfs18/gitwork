@@ -8,18 +8,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Song;
 import com.yc.ht.service.SongService;
 
 @Controller("songHandler")
+@RequestMapping("song")
 public class SongHandler {
 	
 	@Autowired
 	private SongService songService;
 	
-	@RequestMapping(value="song",method=RequestMethod.GET)
+	@RequestMapping(value="",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Song> songList(){
 		return songService.listSong();
 	}
+	
+	@RequestMapping(value="pagination",method=RequestMethod.GET)
+	@ResponseBody
+	public PaginationBean<Song> songPagiagetionList(String pageS,String currP){
+		return songService.listSong(pageS, currP);
+	}
+	
+	
 }
