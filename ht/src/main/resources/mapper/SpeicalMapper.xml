@@ -57,6 +57,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<select id="getPartSpecial" resultType="Special">
 		select * from(select rownum
-		rn,s.* from (select * from special order by spclick desc) s where ${currPage} * ${pageSize}>rownum ) where rn>(${currPage}-1) * ${pageSize}
+		rn,s.* from (select * from special order by spclick desc) s where ${currPage} * 8>rownum ) where rn>(${currPage}-1) * 8
 	</select>
 </mapper>

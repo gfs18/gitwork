@@ -2,12 +2,7 @@
 specialDetail();
 function specialDetail(){
 	var spid=location.href.split("=")[1];
-	//alert(spid);
 	$.get("special/detail",{"spid":spid},function(data){
-		alert("====>"+JSON.stringify(data));
-		alert(data.sppubTime.substring(0,10));
-		//alert(data.singer.sgname+"data[Singer].sgname");
-		//alert(SimpleDateFormat("yyyy-MM-dd",data.sppubTime));
 		var spDetailStr="";
 		spDetailStr+='<div class="left col-lg-4 col-md-4 hidden-sm hidden-xs">';
 		spDetailStr+='<img id="img" src="'+data.sppicPath+'"><div class="cover"></div></div>';
@@ -32,7 +27,7 @@ function specialSong(){
 	            +'<a href=""><i class="glyphicon glyphicon-play-circle" id="tp1_1"  title="播放"></i></a>'
 	            +'<a href=""><i class="glyphicon glyphicon-save" id="tp2_1" title="下载"></i></a>'
 	            +' <a href="" class="m_name">'+data[i].soname+'</a></div>'
-	            +'<div  class="list_play col-lg-2 col-md-2 hidden-sm hidden-xs">'+data.singer.sgname+'</div>'
+	            +'<div  class="list_play col-lg-2 col-md-2 hidden-sm hidden-xs">'+data[i].singer.sgname+'</div>'
 	            +'<div  class="list_add col-lg-2 col-md-2 hidden-sm hidden-xs">'+data[i].soduration+'</div></div>';
 		}
 		

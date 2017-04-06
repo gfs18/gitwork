@@ -23,7 +23,6 @@ function special(){
 singer()
 function singer(){
 	$.get("singer/index",function(data){
-		alert(JSON.stringify(data));
 		var singerStr="";
 		for(var i=0;i<data.length;i++){
 			singerStr+='<div class="content3_1_1"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">'
