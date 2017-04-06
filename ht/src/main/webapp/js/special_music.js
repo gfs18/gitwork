@@ -1,11 +1,10 @@
-
+////////////////////////////////////显示专辑详情///////////////////////
 specialDetail();
 function specialDetail(){
 	var spid=location.href.split("=")[1];
-	//alert(spid);
 	$.get("special/detail",{"spid":spid},function(data){
-		alert("====>"+JSON.stringify(data));
-		alert(data.sppubTime.substring(0,10));
+	/*	alert("====>"+JSON.stringify(data));
+		alert(data.sppubTime.substring(0,10));*/
 		//alert(data.singer.sgname+"data[Singer].sgname");
 		//alert(SimpleDateFormat("yyyy-MM-dd",data.sppubTime));
 		var spDetailStr="";
@@ -16,11 +15,11 @@ function specialDetail(){
 		spDetailStr+='<p class="info_3">发行时间：'+data.sppubTime.substring(0,10)+'</p><p class="info_4">语种：'+data.language+'</p>';
 		spDetailStr+='<div class="btns"><button class="mplay"><span class="glyphicon glyphicon-play" ></span> 播放</button>';
 		spDetailStr+='<button class="add hidden-sm hidden-xs"><span class="glyphicon glyphicon-heart-empty" ></span> 收藏</button></div></div>';
-
 		$("#S_big").html(spDetailStr);
 	},"json");
 }
 
+////////////////////////////////////显示专辑里面的音乐///////////////////////
 specialSong();
 function specialSong(){
 	var spid=location.href.split("=")[1];
@@ -35,7 +34,6 @@ function specialSong(){
 	            +'<div  class="list_play col-lg-2 col-md-2 hidden-sm hidden-xs">'+data.singer.sgname+'</div>'
 	            +'<div  class="list_add col-lg-2 col-md-2 hidden-sm hidden-xs">'+data[i].soduration+'</div></div>';
 		}
-		
 		$(".S_box").html(musicStr);
 	},"json");
 }

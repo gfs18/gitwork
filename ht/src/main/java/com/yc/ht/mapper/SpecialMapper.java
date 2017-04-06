@@ -12,6 +12,7 @@ public interface SpecialMapper {
 
 	List<Song> findSongBySpecial(int spid);
 
+	//通过id找到专辑
 	Special specialDetail(int spid);
 
 	PaginationBean<Special> allSpecial(PaginationBean<Special> pb);
