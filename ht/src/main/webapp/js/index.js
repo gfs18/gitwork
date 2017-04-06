@@ -1,4 +1,4 @@
-/////////////////////////////////站内专辑显示///////////////////////////
+/////////////////////////////////站内专辑图片显示///////////////////////////
 special();
 function special(){
 	$.get("special/index", function(data){
@@ -72,21 +72,6 @@ function songList(){
 		$("#mytablet").html(songListStr);
 	}, "json");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //轮播
 $('.carousel').carousel({

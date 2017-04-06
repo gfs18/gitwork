@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="sppubTime" property="sppubTime" />
 		<result column="spclick" property="spclick" />
 		<association property="singer" column="sgid" javaType="Singer"
-			select="findSgname" />
+			select="findSgname" />  <!-- 通过singer的实体类将两个表连接 -->
 		<!-- <association property="language" column="lgid" javaType="Languages" select="findLgname"/> -->
 	</resultMap>
 	<select id="specialDetail" parameterType="int" resultMap="SpecialDetailMap">
@@ -43,6 +43,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findSongBySpecial" parameterType="int" resultMap="SongMap">
 		select * from song where spid=#{spid}
 	</select>
+	
+	<!-- 是否还需要查询一遍歌手 -->
 	<select id="getSgname" parameterType="int" resultType="Singer">
 		select * from singer where sgid=#{sgid}
 	</select>

@@ -63,91 +63,23 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>id</th>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Username</th>
+							<th>soname</th>
+							<th>sopicPath</th>
+							<th>sopubTime</th>
+							<th>solyricPath</th>
+							<th>sopath</th>
+							<th>soduration</th>
+							<th>vipDownload</th>
 						</tr>
 					</thead>
-					<tbody id="tableBody">
-						<tr>
-							<th>1</th>
-							<th>Mark</th>
-							<th>Otto</th>
-							<th>@mdo</th>
-						</tr>
-						<tr>
-							<th>2</th>
-							<th>Jacob</th>
-							<th>Thornton</th>
-							<th>@fat</th>
-						</tr>
-						<tr>
-							<th>3</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>4</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>5</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>1</th>
-							<th>Mark</th>
-							<th>Otto</th>
-							<th>@mdo</th>
-						</tr>
-						<tr>
-							<th>2</th>
-							<th>Jacob</th>
-							<th>Thornton</th>
-							<th>@fat</th>
-						</tr>
-						<tr>
-							<th>3</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>4</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>5</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-					</tbody>
+					<tbody id="tableBody"></tbody>
 				</table>
 			</div>
 
 			<!-- 分页 -->
 			<nav>
 				<ul class="pagination">
-					<li><a href="javascript:void(0)" aria-label="Previous"> <span
-							aria-hidden="true">&laquo;</span>
-					</a></li>
-					<li class="active"><a href="javascript:void(0)">1</a></li>
-					<li><a href="javascript:void(0)">2</a></li>
-					<li><a href="javascript:void(0)">3</a></li>
-					<li><a href="javascript:void(0)">4</a></li>
-					<li><a href="javascript:void(0)">5</a></li>
-					<li><a href="javascript:void(0)" aria-label="Next"> <span
-							aria-hidden="true">&raquo;</span>
-					</a></li>
+					
 				</ul>
 			</nav>
 

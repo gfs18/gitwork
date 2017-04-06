@@ -63,7 +63,11 @@ create table singer(
        sgintroduce varchar2(400)not null,     --歌手介绍
        mark varchar2(100)       --预留字段
 );
-
+insert into singer values(seq_singer_sgid.nextval,'夏婉安','X','中国',10001,'女','images/xwa.jpg','夏婉安,黑龙江哈尔滨人,最有潜力的90后网络原创歌手。\r\n','');
+insert into singer values(seq_singer_sgid.nextval,'韩红','H','中国',10001,'女','images/hh.jpg','韩红，全国政协委员，华录百纳娱乐公司董事长兼CEO。\r\n','');
+insert into singer values(seq_singer_sgid.nextval,'张杰','Z','中国',10002,'男','images/zhangjie.jpg', '张杰，1982年12月20日出生于四川成都，毕业于四川师范大学，中国内地流行歌手。\r\n','');
+insert into singer values(seq_singer_sgid.nextval,'金沙','J','中国',10003,'女','images/jinsha.jpg', '金莎（Kym），出生于中国上海，曾就读于星海音乐学院、新加坡东亚商学院','');
+--select * from singer;
 -- drop table singer;
 select * from singer;
 
@@ -78,10 +82,12 @@ create table special(
       spclick number(20), --点击量
       mark varchar2(100)       --预留字段
 );
---insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
---1001,'images/zj-2.jpg',to_date('2016-11-4','yyyy-mm-dd'),'');
---insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
---1001,'images/zj-1.jpg',to_date('2016-11-4','yyyy-mm-dd'),'');
+
+insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
+1001,'images/zj-2.jpg',to_date('2016-11-4','yyyy-mm-dd'),20,'');
+insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
+1001,'images/zj-1.jpg',to_date('2016-11-4','yyyy-mm-dd'),20,'');
+update  special  set sgid=10002  where sgid=1002;
 
 insert into SPECIAL values(seq_special_spid.nextval,10001,'幻听',10001,'images/zj-2.jpg',to_date('2017-3-31','yyyy-mm-dd'),10.2,'');
 insert into SPECIAL values(seq_special_spid.nextval,10002,'过滤',10001,'images/zj-1.jpg',to_date('2017-3-31','yyyy-mm-dd'),1.3,'');
@@ -90,6 +96,7 @@ insert into SPECIAL values(seq_special_spid.nextval,10001,'红蔷薇白玫瑰',1
 insert into SPECIAL values(seq_special_spid.nextval,10004,'感动每一刻',10002,'images/zj-5.jpg',to_date('2017-3-31','yyyy-mm-dd'),8,'');
 insert into SPECIAL values(seq_special_spid.nextval,10001,'我知道你离我不远',10002,'images/zj-5.jpg',to_date('2017-3-31','yyyy-mm-dd'),10.99,'');
 insert into SPECIAL values(seq_special_spid.nextval,10004,'咔咔寿女',10002,'images/zj-5.jpg',to_date('2017-3-31','yyyy-mm-dd'),0.8,'');
+
 select * from special;
 --drop table special;
 
@@ -103,21 +110,25 @@ create table song(
        sopubTime date not null,            --出版时间
        solyricPath varchar2(40),      --歌词路径
        sopath varchar2(40) not null,  --单曲存储路径
-       lgid number(20) not null,--音乐语种编号
-       msid number(20) not null, --音乐类型编号
        soduration varchar2(20) not null,       --单曲时长
        vipDownload varchar2(10) default '否',    --是否是会员才能下载
        mark varchar2(100)       --预留字段
 );
+
 --insert into song values (seq_song_soid.nextval,1,2,'生日那天','images/2_1.png',
---to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
+--to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 --insert into song values (seq_song_soid.nextval,1,2,'童话镇','images/2_1.png',
---to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
+--to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 --insert into song values (seq_song_soid.nextval,1,2,'烟火','images/2_1.png',
---to_date('2017-04-03','yyyy-mm-dd'),'','F:\test',3,4,'20','否','');
+--to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 --select * from song;
 --drop table song;
+<<<<<<< HEAD
+update song set spid=10041 where  spid=10002;
+
+=======
 update song set sgid=10001;
+>>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 
 --音乐语种表
 create table languages(
@@ -173,12 +184,12 @@ create table collects(
 --drop sequence seq_collect_coid;
 
 --序列
---drop sequence seq_aid;
+--drop sequence seq_song_soid;
 create sequence seq_aid start with 10001;
 create sequence seq_msid start with 10001;
 create sequence seq_lgid start with 10001;
 create sequence seq_users_uid start with 10001;
-create sequence seq_single_sgid start with 10001;
+create sequence seq_singer_sgid start with 10001;
 create sequence seq_special_spid start with 10001;
 create sequence seq_song_soid start with 10001;
 create sequence seq_mv_mvid start with 10001;
