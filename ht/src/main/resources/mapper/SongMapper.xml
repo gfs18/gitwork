@@ -33,4 +33,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where ${pageSize} *
 		${currPage} >= rownum) where rn > ( ${currPage} - 1) * ${pageSize}
 	</select>
+	
+	<!-- 单曲删除 -->
+	<delete id="removeSong" parameterType="integer">
+		delete song where soid=#{soid}
+	</delete>
 </mapper>

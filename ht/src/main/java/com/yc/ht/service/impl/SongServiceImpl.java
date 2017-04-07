@@ -53,6 +53,11 @@ public class SongServiceImpl implements SongService{
 		LogManager.getLogger().debug("总页面"+totalPage+"页 ; 总记录数"+pb.getTotal());
 		return pb;
 	}
+
+	@Override
+	public boolean removeSong(String soid) {
+		return songMapper.removeSong(Integer.valueOf(soid))>0;
+	}
 	
 }
 

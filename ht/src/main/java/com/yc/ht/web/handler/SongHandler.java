@@ -28,8 +28,13 @@ public class SongHandler {
 	@RequestMapping(value="pagination",method=RequestMethod.GET)
 	@ResponseBody
 	public PaginationBean<Song> songPagiagetionList(String pageS,String currP){
-		System.out.println("currP："+currP);
 		return songService.listSong(pageS, currP);
+	}
+	
+	@RequestMapping(value="remove",method=RequestMethod.POST)
+	@ResponseBody
+	public boolean removeSong(String id){
+		return songService.removeSong(id);
 	}
 	
 	

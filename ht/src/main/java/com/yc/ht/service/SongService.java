@@ -10,6 +10,8 @@ public interface SongService {
 	List<Song> listSong();
 	
 	PaginationBean<Song> listSong(String pageS,String currP);
+	
+	boolean removeSong(String soid);
 
 }
 

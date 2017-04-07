@@ -9,4 +9,6 @@ public interface SongMapper {
 	List<Song> findSong();
 	
 	PaginationBean<Song> findPaginationSong(PaginationBean<Song> userBean);//分页
+	
+	int removeSong(Integer soid);
 }

@@ -63,13 +63,14 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>soname</th>
-							<th>sopicPath</th>
-							<th>sopubTime</th>
-							<th>solyricPath</th>
-							<th>sopath</th>
-							<th>soduration</th>
-							<th>vipDownload</th>
+							<th>单曲名</th>
+							<th>图片路径</th>
+							<th>出版时间</th>
+							<th>歌词路径</th>
+							<th>单曲路径</th>
+							<th>单曲时长</th>
+							<th>是否为Vip下载</th>
+							<th>操作</th>
 						</tr>
 					</thead>
 					<tbody id="tableBody"></tbody>
@@ -78,9 +79,7 @@
 
 			<!-- 分页 -->
 			<nav>
-				<ul class="pagination">
-					
-				</ul>
+				<ul class="pagination"></ul>
 			</nav>
 
 		</div>

@@ -32,6 +32,7 @@ create table users(
 --insert into users values(seq_users_uid.nextval,'admin','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','picpath','很美啊',1,0,null);
 
 --select * from users;
+--delete users where userid=10184
 
 
 --管理员
@@ -164,7 +165,6 @@ create table mv(
 --评论表
 create table comments(
        cid number(20) primary key,--评论编号
-       soid number(20) not null, --被评论的歌曲编号
        userid number(20) not null,  --评论人编号
        content varchar2(100)not null, --评论内容
        commentTime date not null,   --评论时间
