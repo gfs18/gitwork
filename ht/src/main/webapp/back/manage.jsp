@@ -33,7 +33,7 @@
 						<li><a href="javascript:void(0)">用户管理</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<c:if test="${login_admin != null }">
+						<%-- <c:if test="${login_admin != null }"> --%>
 							<li><a href="javascript:void(0)">${login_admin }</a></li>
 							<li class="dropdown"><a href="javascript:void(0)"
 							class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -43,7 +43,7 @@
 								<li><a href="javascript:void(0)" onclick="loginOut()">注销</a></li>
 								<li><a href="back/login.jsp">切换用户</a></li>
 							</ul></li>
-						</c:if>
+						<%-- </c:if> --%>
 					</ul>
 				</div>
 			</div>

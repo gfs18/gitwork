@@ -56,7 +56,7 @@
            <p class="class">最新专辑</p>
             <div class="special">
                 <ul class="new_ul">
-                    <li class="s_li">
+                    <!-- <li class="s_li">
                         <div class="list_img">
                             <div class="play">
                                 <img src="images/cover_play.png">
@@ -503,10 +503,10 @@
                         <span class="s_p">SQUARE TWO</span>
                         <span class="s_p">BLACKPINK</span>
                         <span class="s_p">2016-11-01</span>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
-      <ul class="pagination pagination-lg">
+      <ul class="pagination pagination-lg" id="content">
           <li class="pagenation"><a href="#">&laquo;</a>
           <li class="pagenation"><a href="#">1</a>
           <li class="pagenation"><a href="#">2</a>
@@ -614,5 +614,7 @@
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/special.js"></script>
+    <script type="text/javascript" src="js/bootstrap-paginator.js"></script>
 </body>
 </html>
