@@ -21,7 +21,7 @@ create table users(
     uvip int default 0,  --会员状态 1是   0否
   	mark varchar2(100)   ----预留字段 
 );
-
+--select * from users;
 --alter table users modify uemail varchar2(40);
 
 --drop table users;
@@ -123,12 +123,10 @@ create table song(
 --to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 --select * from song;
 --drop table song;
-<<<<<<< HEAD
 update song set spid=10041 where  spid=10002;
 
-=======
+
 update song set sgid=10001;
->>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 
 --音乐语种表
 create table languages(
@@ -164,13 +162,16 @@ create table mv(
 --评论表
 create table comments(
        cid number(20) primary key,--评论编号
-       soid number(20) not null, --被评论的歌曲编号
        userid number(20) not null,  --评论人编号
-       content varchar2(100)not null, --评论内容
+       content varchar2(100), --评论内容
        commentTime date not null,   --评论时间
+       commentPicPath varchar2(40), --评论图片路径
        mark varchar2(100)     --预留字段  
 );
 
+insert into COMMENTS values (seq_comments_cid.nextval,10041,'我好喜欢童话这首歌錒！！！',to_date('2000-11-26 00:04','yyyy-mm-dd hh24:mi:ss'),'images/2_1.png','');
+insert into comments values (seq_comments_cid.nextval,10001,'hh我好喜欢童话这首歌錒！！！',sysdate,'images/2_1.png','')
+--select * from comments;
 --drop table comments;
 
 --用户收藏表

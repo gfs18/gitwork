@@ -55,38 +55,33 @@
 	<article>
 
 		<div class="container friend">
-
-			<input type="text" id="content" class="form-control"
-				placeholder="说点什么吧" />
-			<p>
-				<button class="btn btn-primary" onclick="addfb()" id="ok">发表</button>
-				<span class="add_img"><input class="myfile" type="file"
-					accept="image/gif, image/jpeg" /></span>
-			</p>
+			<form action="friend/commentInsert" method="post" enctype="multipart/form-data">
+				<input type="text" id="content" class="form-control" name="content"
+					placeholder="说点什么吧" src="images/2_1.png"/>
+				<p>
+					<button class="btn btn-primary"  id="ok">发表</button>
+					<span><input class="myfile" type="file" name="picData"
+						accept="image/*" onchange="chgPic(this)"/>
+						<img src="images/not_image.png" class="add_img"></span>
+						
+						
+		<!-- 
+		
+		<p><input id="upicPath" type="file" name="picData" onchange="chgPic(this)"/><br>
+				<img src="image/not_pic.jpg" id="pic" width="100" height="100">
+		</p>
+		function chgPic(obj){
+			$(".add_img").attr("src", window.URL.createObjectURL(obj.files[0]));
+		}
+			
+		-->
+						
+						
+				</p>
+			</form>
 			<p class="news">动态</p>
 			<div class="content">
-				<div class="con">
-				<div class="con_0 hidden-md hidden-sm hidden-xs"><img class="user_icon" src="images/user.jpg"></div>
-				<div class="con_1"><span>用户xx</span>：</div>
-				<div class="con_2">2016-11-11 11:11</div>
-				<div class="con_3">我发表了一段文字。。</div>
-				<div class="con_4"><img src="images/大图2.jpg"/></div>
-				</div>
-				<div class="con">
-				<div class="con_0 hidden-md hidden-sm hidden-xs"><img class="user_icon" src="images/user.jpg"></div>
-				<div class="con_1"><span>用户xx</span>：</div>
-				<div class="con_2">2016-11-11 11:11</div>
-				<div class="con_3">我发表了一段文字。。</div>
-				<div class="con_4"><img src="images/大图2.jpg"/></div>
-				</div>
-				<div class="con">
-				<div class="con_0 hidden-md hidden-sm hidden-xs"><img class="user_icon" src="images/user.jpg"></div>
-				<div class="con_1"><span>用户xx</span>：</div>
-				<div class="con_2">2016-11-11 11:11</div>
-				<div class="con_3">我发表了一段文字。。</div>
-				<div class="con_4"><img src="images/大图2.jpg"/></div>
-				</div>
-
+				<!-- 评论显示 -->
 			</div>
 		</div>
 		<p id="mymore" onclick="showMoreArticle()">更多动态</p>

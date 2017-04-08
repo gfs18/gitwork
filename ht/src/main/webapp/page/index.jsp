@@ -311,7 +311,7 @@
 	</article>
 	
 	<!-- 底部注入 -->
-      <iframe width=100% height=105 src="iframe/footer.jsp"></iframe>
+      <iframe width=100% height=108 src="iframe/footer.jsp"></iframe>
       
 	<div> 
 		<div id="mylogin">
