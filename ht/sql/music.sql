@@ -124,12 +124,8 @@ create table song(
 --to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 --select * from song;
 --drop table song;
-<<<<<<< HEAD
 update song set spid=10041 where  spid=10002;
 
-=======
-update song set sgid=10001;
->>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 
 --音乐语种表
 create table languages(

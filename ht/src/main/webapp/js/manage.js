@@ -3,10 +3,10 @@ function showSongInfo(pageS,currP){
 	$.get("song/pagination",{"pageS":pageS,"currP":currP},function(data){
 		var str = "";
 		for (var i = 0; i < data.rows.length; i++) {
-			str += "<tr class='tableoverout'><th>"+data.rows[i].soname+"</th><th>"+data.rows[i].sopicPath+"</th><th>"
+			str += "<tr class='tableoverout'><th>"+data.rows[i].soid+"</th><th>"+data.rows[i].soname+"</th><th>"+data.rows[i].sopicPath+"</th><th>"
 			+data.rows[i].sopubTime+"</th><th>"+data.rows[i].solyricPath+"</th><th>"
 			+data.rows[i].sopath+"</th><th>"+data.rows[i].soduration+"</th><th>"+data.rows[i].vipDownload+"</th>"
-			+"<th><a><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
+			+"<th><a href='back/manageModify.jsp?soid="+data.rows[i].soid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
 			+"<a onclick='removeSong("+data.rows[i].soid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
 		}
 		str +='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#ffffff";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';

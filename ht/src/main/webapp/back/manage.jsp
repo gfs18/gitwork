@@ -63,6 +63,7 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
+							<th>单曲编号</th>
 							<th>单曲名</th>
 							<th>图片路径</th>
 							<th>出版时间</th>

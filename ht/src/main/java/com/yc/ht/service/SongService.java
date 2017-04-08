@@ -9,9 +9,13 @@ public interface SongService {
 
 	List<Song> listSong();
 	
+	List<Song> findSongById(String soid);
+	
 	PaginationBean<Song> listSong(String pageS,String currP);
 	
 	boolean removeSong(String soid);
+	
+	boolean modifySong(Song song);
 
 }
 

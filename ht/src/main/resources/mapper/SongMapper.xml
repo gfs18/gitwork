@@ -11,6 +11,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from song 
 	</select>
 	
+	<!-- 更具id查询歌曲 -->
+	<select id="findSongById" parameterType="integer" resultType="Song">
+		select * from song where soid=#{soid}
+	</select>
+	
 	<!-- 单曲显示使用分页 -->
 	<resultMap type="PaginationBean" id="PaginationBeanMap">
 		<result column="pageSize" property="pageSize" />
@@ -38,4 +43,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="removeSong" parameterType="integer">
 		delete song where soid=#{soid}
 	</delete>
+	
+	<!-- 单曲修改 -->
+	<update id="modifySong" parameterType="Song">
+		update song set soname=#{soname},sopicPath=#{sopicPath},
+		solyricPath = #{solyricPath},sopath=#{sopath},vipDownload=#{vipDownload}
+		where soid=#{soid}
+	</update>
 </mapper>

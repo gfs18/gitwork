@@ -58,6 +58,16 @@ public class SongServiceImpl implements SongService{
 	public boolean removeSong(String soid) {
 		return songMapper.removeSong(Integer.valueOf(soid))>0;
 	}
+
+	@Override
+	public List<Song> findSongById(String soid) {
+		return songMapper.findSongById(Integer.valueOf(soid));
+	}
+
+	@Override
+	public boolean modifySong(Song song) {
+		return songMapper.modifySong(song)>0;
+	}
 	
 }
 
