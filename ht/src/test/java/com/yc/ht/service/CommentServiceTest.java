@@ -11,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.yc.ht.entity.Comments;
+import com.yc.ht.entity.PaginationBean;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring.xml")
@@ -21,7 +22,7 @@ public class CommentServiceTest {
 
 	@Test
 	public void testListComment() {
-		List<Comments> com=commentService.listComment();
+		PaginationBean<Comments> com=commentService.listComment(null, null);
 		System.out.println(com);
 		assertNotNull(com);
 	}

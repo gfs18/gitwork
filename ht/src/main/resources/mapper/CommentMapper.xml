@@ -5,11 +5,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 映射文件的命名空间namespace的值，与之对应的映射接口的全类名 -->
 <mapper namespace="com.yc.ht.mapper.CommentMapper">
-
-	<select id="findComment" resultType="Comments">
-		select * from Comments
+	<!-- 分页显示评论动态 -->
+	<select id="findComment" parameterType="PaginationBean" 
+		resultMap="PaginationBeanMap" useCache="false" flushCache="true">
+		select count(1) total,ceil(count(1)/${pageSize}) totalPage,
+		${pageSize} pageSize,${currPage} currPage from comments
 	</select>
-
+	<resultMap type="PaginationBean" id="PaginationBeanMap">
+		<result column="pageSize" property="pageSize" />
+		<result column="currPage" property="currPage" />
+		<collection property="rows"
+			column="{pageSize=pageSize,currPage=currPage}" ofType="Comments"
+			select="getComments" />
+	</resultMap>
+	<select id="getComments" resultType="Comments" useCache="false" flushCache="true">
+		select * from 
+		(select rownum rn,
+		c.* from (select * from Comments order by cid desc ) c
+		 where  ${pageSize} *${currPage} >=rownum) where rn>( ${currPage} - 1) * ${pageSize}
+	</select>
+		
+	<!-- 发表评论 -->
 	<insert id="insertComment" parameterType="Comments">
 		insert into comments values (seq_comments_cid.nextval,10001,
 		<choose>

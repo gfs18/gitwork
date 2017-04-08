@@ -44,8 +44,8 @@ create table admin(
 	mark varchar2(100)   ----预留字段 
 );
 
---insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.value(4,10)),'3b3690fba8bd08059eae130425396eb05ded1b7d',
---1,'' from dual connect by level <10;
+insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.value(4,10)),'3b3690fba8bd08059eae130425396eb05ded1b7d',
+1,'' from dual connect by level <10;
 
 --select * from admin;
 

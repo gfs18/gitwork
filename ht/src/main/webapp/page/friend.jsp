@@ -60,32 +60,22 @@
 				<input type="text" id="content" class="form-control" name="content"
 					placeholder="说点什么吧" src="images/2_1.png" />
 				<button class="btn btn-primary" id="ok">发表</button>
-				<span class="add_img">
-				<img src="images/not_image.png" class="show_img">
-				<input class="myfile" type="file" name="picData" accept="image/*"
-					onchange="chgPic(this)" />
+				<span class="add_img"> <img src="images/not_image.png"
+					class="show_img"> <input class="myfile" type="file"
+					name="picData" accept="image/*" onchange="chgPic(this)" />
 				</span>
-
-
-				<!-- 
-		<p><input id="upicPath" type="file" name="picData" onchange="chgPic(this)"/><br>
-				<img src="image/not_pic.jpg" id="pic" width="100" height="100">
-		</p>
-		function chgPic(obj){
-			$(".add_img").attr("src", window.URL.createObjectURL(obj.files[0]));
-		}
-			
-		-->
-
-
-				</p>
 			</form>
 			<p class="news">动态</p>
 			<div class="content">
 				<!-- 评论显示 -->
 			</div>
+			<!-- 分页 -->
+				<div>
+					<ul class="pagination"></ul>
+				</div>
+			
 		</div>
-		<p id="mymore" onclick="showMoreArticle()">更多动态</p>
+		<!-- <p id="mymore" onclick="showMoreArticle()">更多动态</p> -->
 	</article>
 
 	<!-- 底部注入 -->
@@ -142,5 +132,6 @@
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/friend.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
 </body>
 </html>

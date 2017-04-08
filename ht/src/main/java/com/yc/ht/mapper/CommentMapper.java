@@ -1,13 +1,12 @@
 package com.yc.ht.mapper;
 
-import java.util.List;
-
 import com.yc.ht.entity.Comments;
+import com.yc.ht.entity.PaginationBean;
 
 public interface CommentMapper {
 
-	List<Comments> findComment();
-
 	int insertComment(Comments comment);
+
+	PaginationBean<Comments> findComment(PaginationBean<Comments> comment);
 	
 }
