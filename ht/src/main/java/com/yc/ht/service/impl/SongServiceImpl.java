@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yc.ht.entity.PaginationBean;
+import com.yc.ht.entity.Singer;
 import com.yc.ht.entity.Song;
 import com.yc.ht.mapper.SongMapper;
 import com.yc.ht.service.SongService;
@@ -52,6 +53,12 @@ public class SongServiceImpl implements SongService{
 
 		LogManager.getLogger().debug("总页面"+totalPage+"页 ; 总记录数"+pb.getTotal());
 		return pb;
+	}
+
+	@Override
+	public List<Singer> Hot(String sgEname) {
+		// TODO Auto-generated method stub
+		return songMapper.HOT(sgEname);
 	}
 	
 }

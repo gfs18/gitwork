@@ -13,7 +13,7 @@ function showSongInfo(pageS,currP){
 	});
 }
 
-function paginationSong(totalP){
+function paginationSong(totalPage){
 	var pStr = "";
 	if(totalPage>=5){
 		pStr +='<li><a href="javascript:void(0)" onclick="paginatorPrevious('+totalP+')">&laquo;</a></li>';
