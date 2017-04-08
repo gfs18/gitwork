@@ -33,7 +33,7 @@
 						<li><a href="javascript:void(0)">用户管理</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<c:if test="${login_admin != null }">
+						<%-- <c:if test="${login_admin != null }"> --%>
 							<li><a href="javascript:void(0)">${login_admin }</a></li>
 							<li class="dropdown"><a href="javascript:void(0)"
 							class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -43,7 +43,7 @@
 								<li><a href="javascript:void(0)" onclick="loginOut()">注销</a></li>
 								<li><a href="back/login.jsp">切换用户</a></li>
 							</ul></li>
-						</c:if>
+						<%-- </c:if> --%>
 					</ul>
 				</div>
 			</div>
@@ -63,92 +63,24 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>id</th>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Username</th>
+							<th>单曲编号</th>
+							<th>单曲名</th>
+							<th>图片路径</th>
+							<th>出版时间</th>
+							<th>歌词路径</th>
+							<th>单曲路径</th>
+							<th>单曲时长</th>
+							<th>是否为Vip下载</th>
+							<th>操作</th>
 						</tr>
 					</thead>
-					<tbody id="tableBody">
-						<tr>
-							<th>1</th>
-							<th>Mark</th>
-							<th>Otto</th>
-							<th>@mdo</th>
-						</tr>
-						<tr>
-							<th>2</th>
-							<th>Jacob</th>
-							<th>Thornton</th>
-							<th>@fat</th>
-						</tr>
-						<tr>
-							<th>3</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>4</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>5</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>1</th>
-							<th>Mark</th>
-							<th>Otto</th>
-							<th>@mdo</th>
-						</tr>
-						<tr>
-							<th>2</th>
-							<th>Jacob</th>
-							<th>Thornton</th>
-							<th>@fat</th>
-						</tr>
-						<tr>
-							<th>3</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>4</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>5</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-					</tbody>
+					<tbody id="tableBody"></tbody>
 				</table>
 			</div>
 
 			<!-- 分页 -->
 			<nav>
-				<ul class="pagination">
-					<li><a href="javascript:void(0)" aria-label="Previous"> <span
-							aria-hidden="true">&laquo;</span>
-					</a></li>
-					<li class="active"><a href="javascript:void(0)">1</a></li>
-					<li><a href="javascript:void(0)">2</a></li>
-					<li><a href="javascript:void(0)">3</a></li>
-					<li><a href="javascript:void(0)">4</a></li>
-					<li><a href="javascript:void(0)">5</a></li>
-					<li><a href="javascript:void(0)" aria-label="Next"> <span
-							aria-hidden="true">&raquo;</span>
-					</a></li>
-				</ul>
+				<ul class="pagination"></ul>
 			</nav>
 
 		</div>

@@ -32,6 +32,7 @@ create table users(
 --insert into users values(seq_users_uid.nextval,'admin','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','picpath','很美啊',1,0,null);
 
 --select * from users;
+--delete users where userid=10184
 
 
 --管理员
@@ -127,6 +128,7 @@ update song set spid=10041 where  spid=10002;
 
 
 update song set sgid=10001;
+
 
 --音乐语种表
 create table languages(

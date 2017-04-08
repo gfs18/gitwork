@@ -8,5 +8,11 @@ import com.yc.ht.entity.Song;
 public interface SongMapper {
 	List<Song> findSong();
 	
+	List<Song> findSongById(Integer soid);
+	
 	PaginationBean<Song> findPaginationSong(PaginationBean<Song> userBean);//分页
+	
+	int removeSong(Integer soid);
+	
+	int modifySong(Song song);
 }
