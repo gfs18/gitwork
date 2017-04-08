@@ -29,3 +29,13 @@ function loginOut(){
 		}
 	},"json");
 }
+
+
+//网上查询单曲
+function internalSong(){
+	var soname = location.href.split("=")[1];
+	alert(soname);
+}
+internalSong();
+
+

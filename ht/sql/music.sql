@@ -21,7 +21,7 @@ create table users(
     uvip int default 0,  --会员状态 1是   0否
   	mark varchar2(100)   ----预留字段 
 );
-
+--select * from users;
 --alter table users modify uemail varchar2(40);
 
 --drop table users;
@@ -44,8 +44,8 @@ create table admin(
 	mark varchar2(100)   ----预留字段 
 );
 
---insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.value(4,10)),'3b3690fba8bd08059eae130425396eb05ded1b7d',
---1,'' from dual connect by level <10;
+insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.value(4,10)),'3b3690fba8bd08059eae130425396eb05ded1b7d',
+1,'' from dual connect by level <10;
 
 --select * from admin;
 
@@ -137,6 +137,9 @@ create table song(
 update song set spid=10041 where  spid=10002;
 
 
+update song set sgid=10001;
+
+
 --音乐语种表
 create table languages(
 	lgid number(20) primary key, --编号
@@ -172,11 +175,15 @@ create table mv(
 create table comments(
        cid number(20) primary key,--评论编号
        userid number(20) not null,  --评论人编号
-       content varchar2(100)not null, --评论内容
+       content varchar2(100), --评论内容
        commentTime date not null,   --评论时间
+       commentPicPath varchar2(100), --评论图片路径
        mark varchar2(100)     --预留字段  
 );
 
+insert into COMMENTS values (seq_comments_cid.nextval,10041,'我好喜欢童话这首歌錒！！！',to_date('2000-11-26 00:04','yyyy-mm-dd hh24:mi:ss'),'images/2_1.png','');
+insert into comments values (seq_comments_cid.nextval,10001,'hh我好喜欢童话这首歌錒！！！',sysdate,'images/2_1.png','')
+--select * from comments;
 --drop table comments;
 
 --用户收藏表

@@ -35,12 +35,13 @@ function paginationSong(totalP){
 }
 
 function paginatorPrevious(totalP){
-	count= count > 0?(count-1):0;
+	count= count > 0?(count-1):0 ;
 	showSongInfo(5,1 + 5*(count));
 }
 
 function paginatorNext(totalP){
-	count = count < (totalP / 5)?(count+1):totalP ;
+	var totalCount=parseInt(totalP/5);
+	count = count < totalCount?(count+1):totalCount ;
 	showSongInfo(5,1 + 5*(count) );
 }
 
