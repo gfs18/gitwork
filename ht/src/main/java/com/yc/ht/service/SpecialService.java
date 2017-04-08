@@ -21,7 +21,7 @@ public interface SpecialService {
 
 	PaginationBean<Special> hottestSpecial(String rows, String page);
 
-	PaginationBean<Special> getSpecialByStyle(String rows, String page, String style);
+	PaginationBean<Special> getSpecialByStyle(String rows, String page, int style);
 
 
 	//列出专辑音乐

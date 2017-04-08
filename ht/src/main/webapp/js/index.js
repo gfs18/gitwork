@@ -172,29 +172,8 @@ function run(){
 
 /////////////////////////////////专辑///////////////////////////
 
-$(".lable li").click(function(){
-	$(".special ul").css("display","none");
-	$(".special ul").eq($(this).index()).css("display","block");
-	$(".class").html($(".lable li a").eq($(this).index()).html());
 
-});
-
-$(".lable li a").on("click",function(){
-	$(".lable li a").removeClass("click");
-	$(this).addClass("click");
-
-});
-$(".lable li a").on("mouseover",function(){
-	$(".lable li a").removeClass("mouseover");
-	$(this).addClass("mouseover");
-
-});
-$(".lable li a").on("mouseout",function(){
-	$(".lable li a").removeClass("mouseover");
-
-});
-$(".lable li a").attr("style","color:#333");
-
+/*
 //播放
 
 var myflase=true;
@@ -263,3 +242,4 @@ $(".sj").on("click",function(){
 
 
 
+*/

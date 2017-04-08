@@ -50,25 +50,22 @@
    	  	  	<li class="col-lg-2 col-md-2 col-sm-3 col-xs-3" id="new_ul"><a href="javascript:void(0)" onclick="newestSpecial(8,1,0)" class="click">最新专辑</a></li>
    	  	  	<li class="col-lg-2 col-md-2 col-sm-3 col-xs-3" id="hot_ul"><a href="javascript:void(0)" onclick="hottestSpecial(8,1,0)">热门专辑</a></li>
    	  	  	<!-- 专辑类型 -->
-   	  	  	<!-- <li class="col-lg-2 col-md-2 col-sm-3 hidden-xs" id="china_ul"><a href="#">华语</a></li>
-   	  	  	<li class="col-lg-2 col-md-2 hidden-sm hidden-xs" id="hip_ul"><a href="#">日韩</a></li>
-   	  	  	<li class="col-lg-2 col-md-2 hidden-sm hidden-xs" id="eng_ul"><a href="#">欧美</a></li> -->
+   	  	  	<!-- <li class="col-lg-2 col-md-2 col-sm-3 hidden-xs" id="china_ul"><a href="javascript:void(0)">华语</a></li>
+   	  	  	<li class="col-lg-2 col-md-2 hidden-sm hidden-xs" id="hip_ul"><a href="javascript:void(0)">日韩</a></li>
+   	  	  	<li class="col-lg-2 col-md-2 hidden-sm hidden-xs" id="eng_ul"><a href="javascript:void(0)">欧美</a></li> -->
    	  </div>
            <p class="class">最新专辑</p>
             <div class="special">
                 <ul class="new_ul">
-                    <!-- 专辑分页显示 -->
+                    <!-- 最新专辑分页显示 -->
                 </ul>
+                <ul class="hot_ul"><!-- 热门专辑分页显示 --></ul>
+                <ul class="china_ul"></ul>
+                <ul class="hip_ul"></ul>
+                <ul class="eng_ul"></ul>
             </div>
       <ul class="pagination pagination-lg" id="page">
-      	<!-- 分页 -->
-          <!-- <li class="pagenation"><a href="#">&laquo;</a>
-          <li class="pagenation"><a href="#">1</a>
-          <li class="pagenation"><a href="#">2</a>
-          <li class="pagenation"><a href="#">3</a>
-          <li class="pagenation"><a href="#">4</a>
-          <li class="pagenation"><a href="#">5</a>
-          <li class="pagenation"><a href="#">&raquo;</a> -->
+      	<!-- 分页页码 -->
       </ul>
  </div>
 
@@ -168,8 +165,6 @@
 </div>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/special.js"></script>
-    <script type="text/javascript" src="js/bootstrap-paginator.js"></script>
 </body>
 </html>

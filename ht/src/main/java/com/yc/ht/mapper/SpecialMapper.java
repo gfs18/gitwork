@@ -22,6 +22,6 @@ public interface SpecialMapper {
 
 	PaginationBean<Special> hottestSpecial(PaginationBean<Special> pb);
 
-	PaginationBean<Special> getSpecialByStyle(PaginationBean<Special> pb, String style);
+	PaginationBean<Special> getSpecialByStyle(PaginationBean<Special> pb);
 	
 }

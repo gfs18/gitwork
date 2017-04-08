@@ -61,10 +61,10 @@ public class SpecialHandler {
 	}
 	
 	
-	@RequestMapping(value="{/style}", method=RequestMethod.GET)
+	@RequestMapping(value="language", method=RequestMethod.GET)
 	@ResponseBody
-	public PaginationBean<Special> getSpecialByStyle(String rows,String page,@PathVariable("{/style}")String style){
-		LogManager.getLogger().debug("专辑页面分页显示热门专辑。。。rows:"+rows+",page:"+page+",style:"+style);
+	public PaginationBean<Special> getSpecialByStyle(String rows,String page,int style){
+		LogManager.getLogger().debug("专辑页面根据类型分页显示专辑。。。rows:"+rows+",page:"+page+",style:"+style);
 		return specialService.getSpecialByStyle(rows, page,style);
 	}
 	

@@ -64,7 +64,7 @@ public class SpecialServiceImpl implements SpecialService{
 	}
 
 	@Override
-	public PaginationBean<Special> getSpecialByStyle(String rows, String page, String style) {
+	public PaginationBean<Special> getSpecialByStyle(String rows, String page, int style) {
 		PaginationBean<Special> pb=new PaginationBean<Special>();
 		if(rows!=null){
 			pb.setPageSize(Integer.parseInt(rows));
@@ -72,7 +72,9 @@ public class SpecialServiceImpl implements SpecialService{
 		if(page!=null){
 			pb.setCurrPage(Integer.parseInt(page));
 		}
-		return specialMapper.getSpecialByStyle(pb,style);
+		pb.setLanguages(style);
+		
+		return specialMapper.getSpecialByStyle(pb);
 	}
 	
 }

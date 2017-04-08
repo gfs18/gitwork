@@ -64,7 +64,7 @@ public class SpecialServiceTest {
 	
 	@Test
 	public void testGetSpecialByStyle() {
-		PaginationBean<Special> special=specialService.getSpecialByStyle("8", "1", "日韩");
+		PaginationBean<Special> special=specialService.getSpecialByStyle("8", "1", 10001);
 		System.out.println(special);
 		assertNotNull(special);
 	}
