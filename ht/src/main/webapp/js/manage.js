@@ -15,6 +15,7 @@ function showSongInfo(pageS,currP,count){
 }
 
 function paginationSong(data,count){
+	alert(JSON.stringify(data));
 	alert(count);
 	var totalPage = data.totalPage;
 	var pStr = "";
@@ -22,7 +23,7 @@ function paginationSong(data,count){
 		pStr +='<li><a href="javascript:void(0)" onclick="paginationSong('+data+','+( count>0?(count--):0 )+')" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
 		for (var j = 1; j <= 5; j++) {
 			pStr +='<li><a href="javascript:void(0)" onclick="showSongInfo(5,'+(j+(count*5))+','+count+')">'+(j+count*5)+'</a></li>';
-			alert(pStr);
+			//alert(pStr);
 		}
 		pStr +='<li><a href="javascript:void(0)" onclick="paginationSong('+data+','+( count<(data.totalPage/5)?(count++):data.totalPage )+')" aria-label="Next"> <span aria-hidden="true">&raquo;</span></a></li>';
 	/*}else{

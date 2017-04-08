@@ -3,13 +3,6 @@ specialDetail();
 function specialDetail(){
 	var spid=location.href.split("=")[1];
 	$.get("special/detail",{"spid":spid},function(data){
-<<<<<<< HEAD
-=======
-	/*	alert("====>"+JSON.stringify(data));
-		alert(data.sppubTime.substring(0,10));*/
-		//alert(data.singer.sgname+"data[Singer].sgname");
-		//alert(SimpleDateFormat("yyyy-MM-dd",data.sppubTime));
->>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 		var spDetailStr="";
 		spDetailStr+='<div class="left col-lg-4 col-md-4 hidden-sm hidden-xs">';
 		spDetailStr+='<img id="img" src="'+data.sppicPath+'"><div class="cover"></div></div>';

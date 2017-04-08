@@ -6,7 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 首页中显示点击量前五的专辑 -->
 	<select id="findSpecial" resultType="Special">
 		select * from(select rownum
-		rn,s.* from (select * from special order by spclick desc) s where 6>rownum ) where rn>0
+		rn,s.* from (select * from special order by spclick desc) s where
+		6>rownum ) where rn>0
 	</select>
 
 	<!-- 专辑详情页面中根据专辑编号查询专辑详情 -->
@@ -18,17 +19,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="spclick" property="spclick" />
 		<association property="singer" column="sgid" javaType="Singer"
 			select="findSgname" />  <!-- 通过singer的实体类将两个表连接 -->
-		<!-- <association property="language" column="lgid" javaType="Languages" select="findLgname"/> -->
+		<!-- <association property="language" column="lgid" javaType="Languages" 
+			select="findLgname"/> -->
 	</resultMap>
 	<select id="specialDetail" parameterType="int" resultMap="SpecialDetailMap">
-		select * from special where spid=#{spid}
+		select
+		* from special where spid=#{spid}
 	</select>
 	<select id="findSgname" parameterType="int" resultType="Singer">
-		select * from singer where sgid=#{sgid}
+		select *
+		from singer where sgid=#{sgid}
 	</select>
-	<!-- <select id="findLgname" parameterType="int " resultType="Languages">
-		select * from languages where lgid=#{lgid}
-	</select> -->
+	<!-- <select id="findLgname" parameterType="int " resultType="Languages"> 
+		select * from languages where lgid=#{lgid} </select> -->
 
 
 
@@ -43,22 +46,73 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findSongBySpecial" parameterType="int" resultMap="SongMap">
 		select * from song where spid=#{spid}
 	</select>
-	
+
 	<!-- 是否还需要查询一遍歌手 -->
 	<select id="getSgname" parameterType="int" resultType="Singer">
-		select * from singer where sgid=#{sgid}
+		select *
+		from singer where sgid=#{sgid}
+	</select>
+
+	<!-- 专辑页面中分页显示最新专辑-->
+	<resultMap type="PaginationBean" id="PaginationBeanMap">
+		<result column="pageSize" property="pageSize" />
+		<result column="currPage" property="currPage" />
+		<collection property="rows"
+			column="{pageSize=pageSize,currPage=currPage}" ofType="Special"
+			select="getNewestSpecial" />
+	</resultMap>
+
+	<select id="newestSpecial" parameterType="PaginationBean"
+		resultMap="PaginationBeanMap">
+		select count(1) total, ceil(count(1) / ${pageSize})
+		totalPage,${pageSize} pageSize,${currPage} currPage from special
+	</select>
+	<select id="getNewestSpecial" resultType="Special">
+		select * from(select
+		rownum rn,s.* from (select * from special order by sppubTime desc) s
+		where ${currPage} * ${pageSize} >=rownum ) where rn>(${currPage}-1) * ${pageSize}
 	</select>
 	
-	<!-- 专辑页面中分页显示所有专辑 -->
-	<resultMap type="PaginationBean" id="PaginationBeanMap">
-		<collection property="rows" column="{pageSize=pageSize,currPage=currPage}" ofType="Special" select="getPartSpecial"/>
+	
+	<!-- 分页显示最热专辑 -->
+	<resultMap type="PaginationBean" id="paginationHottest">
+		<result column="pageSize" property="pageSize" />
+		<result column="currPage" property="currPage" />
+		<collection property="rows"
+			column="{pageSize=pageSize,currPage=currPage}" ofType="Special"
+			select="getHottestSpecial" />
+	</resultMap>
+	<select id="hottestSpecial" parameterType="PaginationBean" resultMap="paginationHottest">
+		select count(1) total, ceil(count(1) / ${pageSize})
+		totalPage,${pageSize} pageSize,${currPage} currPage from special
+	</select>
+	<select id="getHottestSpecial" resultType="Special">
+		select * from(select
+		rownum rn,s.* from (select * from special order by spclick desc) s
+		where ${currPage} * ${pageSize} >=rownum ) where rn>(${currPage}-1) * ${pageSize}
+	</select>
+	
+	<!-- 查询语种类型 -->
+	<select id="specialStyle" resultType="Languages">
+		select * from languages
+	</select>
+	
+	
+	<resultMap type="PaginationBean" id="paginationSpeStyleMap">
+		<result column="pageSize" property="pageSize" />
+		<result column="currPage" property="currPage" />
+		<collection property="rows"
+			column="{pageSize=pageSize,currPage=currPage}" ofType="Special"
+			select="getSpecial" />
 	</resultMap>
 	
-	<select id="allSpecial" parameterType="PaginationBean" resultMap="PaginationBeanMap">
-		select count(1) total, ceil(count(1) / ${pageSize}) totalPage,${pageSize} pageSize,${currPage} currPage from special
+	<select id="getSpecialByStyle"  resultMap="paginationSpeStyleMap">
+		select count(1) total, ceil(count(1) / ${pageSize})
+		totalPage,${pageSize} pageSize,${currPage} currPage from special where lgid=#{2}
 	</select>
-	<select id="getPartSpecial" resultType="Special">
-		select * from(select rownum
-		rn,s.* from (select * from special order by spclick desc) s where ${currPage} * 8>rownum ) where rn>(${currPage}-1) * 8
+	<select id="getSpecial" resultType="Special">
+		select * from(select
+		rownum rn,s.* from (select * from special order by spclick desc) s
+		where ${currPage} * ${pageSize} >=rownum ) where rn>(${currPage}-1) * ${pageSize}
 	</select>
 </mapper>
