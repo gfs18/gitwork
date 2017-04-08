@@ -120,7 +120,21 @@
 
 
 /****manageModify.jsp****/
+#panelDiv .formDiv{
+	margin-left:200px;
+	margin-top:30px;
+	margin-bottom:50px;
+	width:300px;
+}
+#sopicPath{
+	width: 80px;
+	height: 80px;
+}
 
+#labelid{
+	font-size: 16px;
+	margin-left: 10px;
+}
 
 /*******************************底部*****************************************/
 #myfooter{

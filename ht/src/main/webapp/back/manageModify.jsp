@@ -36,13 +36,13 @@
 						<c:if test="${login_admin != null }">
 							<li><a href="javascript:void(0)">${login_admin }</a></li>
 							<li class="dropdown"><a href="javascript:void(0)"
-							class="dropdown-toggle" data-toggle="dropdown" role="button"
-							aria-haspopup="true" aria-expanded="false"><span
-								class="caret"></span> </a>
-							<ul class="dropdown-menu">
-								<li><a href="javascript:void(0)" onclick="loginOut()">注销</a></li>
-								<li><a href="back/login.jsp">切换用户</a></li>
-							</ul></li>
+								class="dropdown-toggle" data-toggle="dropdown" role="button"
+								aria-haspopup="true" aria-expanded="false"><span
+									class="caret"></span> </a>
+								<ul class="dropdown-menu">
+									<li><a href="javascript:void(0)" onclick="loginOut()">注销</a></li>
+									<li><a href="back/login.jsp">切换用户</a></li>
+								</ul></li>
 						</c:if>
 					</ul>
 				</div>
@@ -53,14 +53,51 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation" ><a href="back/manage.jsp">单曲信息</a></li>
+				<li role="presentation"><a href="back/manage.jsp">单曲信息</a></li>
 				<li role="presentation"><a href="back/manageRefer.jsp">单曲查询</a></li>
-				<li role="presentation" class="active"><a href="back/manageModify.jsp">单曲修改</a></li>
+				<li role="presentation" class="active"><a
+					href="back/manageModify.jsp">单曲修改</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
-			
-			
+			<div class="formDiv">
+				<form action="song/modify" method="post" enctype="multipart/form-data" >
+					<div class="form-group"> 
+						<label>编号:</label>
+						<label id="labelid"></label>
+						<input type="hidden" id="soid" class="form-control" name="soid" />
+					</div>
+					<div class="form-group">
+						<label for="soname">单曲名:</label> <input type="text"
+							class="form-control" id="soname" name="soname">
+					</div>
+					<div class="form-group">
+						<label>图片路径</label> <input type="file"
+						 name="picData" onchange="chgPic(this)"><img id="sopicPath"/>
+					</div>
+					<div class="form-group">
+						<label for="solyricPath">歌词路径</label> <input type="text"
+							class="form-control" id="solyricPath" name="solyricPath" />
+					</div>
+					<div class="form-group">
+						<label for="sopath">单曲路径</label> <input type="text" id="sopath"
+							class="form-control" name="sopath" />
+					</div>
+					<div class="form-group">
+						<label>是否vip下载</label>
+						<p>
+						<label class="radio-inline">
+						<input type="radio"	name="vipDownload" id="vipTrue" value="是">
+							是
+						</label> <label class="radio-inline">
+						<input type="radio" name="vipDownload" id="vipFlase" value="否">
+							否
+						</label>
+						</p>
+					</div>
+					<button type="submit" class="btn btn-default">修改</button>
+				</form>
+			</div>
 		</div>
 	</article>
 	<!-- 底部 -->
