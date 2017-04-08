@@ -47,11 +47,11 @@
    <article>
         <div class="container">
    	  <div class="lable row">
-   	  	  	<li class="col-lg-2 col-md-2 col-sm-3 col-xs-3" id="new_ul"><a href="#" class="click">最新专辑</a></li>
-   	  	  	<li class="col-lg-2 col-md-2 col-sm-3 col-xs-3" id="hot_ul"><a href="#">热门专辑</a></li>
-   	  	  	<li class="col-lg-2 col-md-2 col-sm-3 hidden-xs" id="china_ul"><a href="#">华语</a></li>
-   	  	  	<li class="col-lg-2 col-md-2 hidden-sm hidden-xs" id="hip_ul"><a href="#">日韩</a></li>
-   	  	  	<li class="col-lg-2 col-md-2 hidden-sm hidden-xs" id="eng_ul"><a href="#">欧美</a></li>
+   	  	  	<li class="col-lg-2 col-md-2 col-sm-3 col-xs-3" id="new_ul"><a href="javascript:void(0)" class="click">最新专辑</a></li>
+   	  	  	<li class="col-lg-2 col-md-2 col-sm-3 col-xs-3" id="hot_ul"><a href="javascript:void(0)">热门专辑</a></li>
+   	  	  	<li class="col-lg-2 col-md-2 col-sm-3 hidden-xs" id="china_ul"><a href="javascript:void(0)">华语</a></li>
+   	  	  	<li class="col-lg-2 col-md-2 hidden-sm hidden-xs" id="hip_ul"><a href="javascript:void(0)">日韩</a></li>
+   	  	  	<li class="col-lg-2 col-md-2 hidden-sm hidden-xs" id="eng_ul"><a href="javascript:void(0)">欧美</a></li>
    	  </div>
            <p class="class">最新专辑</p>
             <div class="special">

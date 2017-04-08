@@ -62,10 +62,9 @@
 		<div id="panelDiv">
 			<form class="form-inline">
 				<div class="form-group">
-				 <input type="text"
-						class="form-control" name="soname" id="songname" placeholder="单曲名">
+				 <input type="text" class="form-control" id="soname" placeholder="单曲名">
 				</div>
-				<button type="submit" class="btn btn-default">搜索</button>
+				<a class="btn btn-default" id="findName" onclick="findNameSong()">搜索</a>
 			</form>
 		</div>
 	</article>
