@@ -167,7 +167,7 @@ create table comments(
        userid number(20) not null,  --评论人编号
        content varchar2(100), --评论内容
        commentTime date not null,   --评论时间
-       commentPicPath varchar2(40), --评论图片路径
+       commentPicPath varchar2(100), --评论图片路径
        mark varchar2(100)     --预留字段  
 );
 

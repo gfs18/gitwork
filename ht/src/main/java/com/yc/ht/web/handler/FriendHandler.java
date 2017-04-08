@@ -28,7 +28,7 @@ public class FriendHandler {
 	@RequestMapping(value="commentShow",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Comments>  commentShowList(){
-		LogManager.getLogger().debug("friend的handler里面的显示进来了。。。");
+		LogManager.getLogger().debug("friend的handler里面的显示进来了。。。"+commentService.listComment());
 		return commentService.listComment();
 
 	}

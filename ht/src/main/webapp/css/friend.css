@@ -392,6 +392,19 @@
     background-repeat: no-repeat;
     background-image:url("../images/img.png");
 }
+.show_img{
+    position: relative;
+    border: none;
+    top:2px;
+    right:1px;
+    float:right;
+    width:30px;
+    height:25px;
+    cursor: pointer;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image:url("../images/img.png");
+}
 
 .form-control{
     /*width:100% !important;*/
