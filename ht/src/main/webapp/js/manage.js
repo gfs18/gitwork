@@ -15,6 +15,7 @@ function showSongInfo(pageS,currP){
 	});
 }
 
+
 function paginationSong(totalP){
 	var pStr = "";
 	if(totalP>=5){

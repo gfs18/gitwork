@@ -2,7 +2,9 @@ package com.yc.ht.web.handler;
 
 
 import java.io.IOException;
-import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.yc.ht.entity.Comments;
+import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.service.CommentService;
 import com.yc.ht.util.ServletUtil;
 
@@ -25,18 +28,19 @@ public class FriendHandler {
 	private CommentService commentService;
 
 	/*评论的显示*/
-	@RequestMapping(value="commentShow",method=RequestMethod.GET)
+	@RequestMapping(value="PaginationCommentShow",method=RequestMethod.GET)
 	@ResponseBody
-	public List<Comments>  commentShowList(){
-		LogManager.getLogger().debug("friend的handler里面的显示进来了。。。"+commentService.listComment());
-		return commentService.listComment();
+	public PaginationBean<Comments>  PaginationCommentShowList(String pageS,String currP){
+		LogManager.getLogger().debug("friend的handler里面的显示进来了。。。"+commentService.listComment(pageS, currP));
+		return commentService.listComment(pageS, currP);
 
 	}
+		
 
 	/*评论的插入*/
 	@RequestMapping(value="commentInsert",method=RequestMethod.POST)
 	@ResponseBody
-	public void commentPublish(@RequestParam("picData") MultipartFile picData ,String content,Comments comment){
+	public void  commentPublish(@RequestParam("picData") MultipartFile picData ,String content,Comments comment,HttpServletResponse response) throws IOException{
 		LogManager.getLogger().debug("friend的handler里面的插入进来了。。。");
 		
 		if(content!=null){
@@ -47,8 +51,6 @@ public class FriendHandler {
 				e.printStackTrace();
 			}
 		}
-		
-		
 		String picPath=null;
 		if(picData!=null && !picData.isEmpty()){//判断是否有文件上传
 			try {
@@ -59,9 +61,9 @@ public class FriendHandler {
 				e.printStackTrace();
 			}
 		}
-		
-		System.out.println("上传图片===>"+comment);
+		LogManager.getLogger().debug("上传图片===>"+comment);
 		commentService.updateComment(comment);
+		response.sendRedirect("../page/friend.jsp");
 		return;
 	}
 }

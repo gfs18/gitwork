@@ -44,8 +44,8 @@ create table admin(
 	mark varchar2(100)   ----预留字段 
 );
 
---insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.value(4,10)),'3b3690fba8bd08059eae130425396eb05ded1b7d',
---1,'' from dual connect by level <10;
+insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.value(4,10)),'3b3690fba8bd08059eae130425396eb05ded1b7d',
+1,'' from dual connect by level <10;
 
 --select * from admin;
 
@@ -98,6 +98,16 @@ insert into SPECIAL values(seq_special_spid.nextval,10004,'感动每一刻',1000
 insert into SPECIAL values(seq_special_spid.nextval,10001,'我知道你离我不远',10002,'images/zj-5.jpg',to_date('2017-3-31','yyyy-mm-dd'),10.99,'');
 insert into SPECIAL values(seq_special_spid.nextval,10004,'咔咔寿女',10002,'images/zj-5.jpg',to_date('2017-3-31','yyyy-mm-dd'),0.8,'');
 
+insert into SPECIAL values(seq_special_spid.nextval,10001,'相信',10001,'images/zj-2.jpg',to_date('2017-2-20','yyyy-mm-dd'),10.3,'');
+insert into SPECIAL values(seq_special_spid.nextval,10002,'过滤1',10001,'images/zj-1.jpg',to_date('2017-2-12','yyyy-mm-dd'),8.3,'');
+insert into SPECIAL values(seq_special_spid.nextval,10003,'放心去飞1',10003,'images/zj-3.jpg',to_date('2017-2-12','yyyy-mm-dd'),6.8,'');
+insert into SPECIAL values(seq_special_spid.nextval,10001,'红蔷薇白玫瑰1',10004,'images/zj-4jpg.jpg',to_date('2017-2-12','yyyy-mm-dd'),7.2,'');
+insert into SPECIAL values(seq_special_spid.nextval,10004,'感动每一刻1',10002,'images/zj-5.jpg',to_date('2017-2-12','yyyy-mm-dd'),8.88,'');
+insert into SPECIAL values(seq_special_spid.nextval,10001,'我知道你离我不远1',10002,'images/zj-5.jpg',to_date('2017-2-2','yyyy-mm-dd'),13.99,'');
+insert into SPECIAL values(seq_special_spid.nextval,10004,'咔咔寿女1',10002,'images/zj-5.jpg',to_date('2017-2-11','yyyy-mm-dd'),0.98,'');
+insert into SPECIAL values(seq_special_spid.nextval,10004,'感动每一刻2',10002,'images/zj-5.jpg',to_date('2017-2-12','yyyy-mm-dd'),8.88,'');
+insert into SPECIAL values(seq_special_spid.nextval,10001,'我知道你离我不远2',10002,'images/zj-5.jpg',to_date('2017-2-2','yyyy-mm-dd'),13.99,'');
+insert into SPECIAL values(seq_special_spid.nextval,10004,'咔咔寿女2',10002,'images/zj-5.jpg',to_date('2017-2-11','yyyy-mm-dd'),0.98,'');
 select * from special;
 --drop table special;
 
@@ -201,7 +211,6 @@ create sequence seq_song_soid start with 10001;
 create sequence seq_mv_mvid start with 10001;
 create sequence seq_comments_cid start with 10001;
 create sequence seq_collect_coid start with 10001;
-
 
 
 
