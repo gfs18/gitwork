@@ -72,7 +72,7 @@
 								<div id="formRefer">
 									<input type="text" class="form-control" id="soname"
 										placeholder="需要添加的单曲名"><a class="btn btn-default"
-										id="findName" onclick="">搜索</a>
+										onclick="">搜索</a>
 								</div>
 							</th>
 						</tr>
