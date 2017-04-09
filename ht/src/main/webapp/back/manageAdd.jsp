@@ -36,13 +36,13 @@
 						<c:if test="${login_admin != null }">
 							<li><a href="javascript:void(0)">${login_admin }</a></li>
 							<li class="dropdown"><a href="javascript:void(0)"
-							class="dropdown-toggle" data-toggle="dropdown" role="button"
-							aria-haspopup="true" aria-expanded="false"><span
-								class="caret"></span> </a>
-							<ul class="dropdown-menu">
-								<li><a href="javascript:void(0)" onclick="loginOut()">注销</a></li>
-								<li><a href="back/login.jsp">切换用户</a></li>
-							</ul></li>
+								class="dropdown-toggle" data-toggle="dropdown" role="button"
+								aria-haspopup="true" aria-expanded="false"><span
+									class="caret"></span> </a>
+								<ul class="dropdown-menu">
+									<li><a href="javascript:void(0)" onclick="loginOut()">注销</a></li>
+									<li><a href="back/login.jsp">切换用户</a></li>
+								</ul></li>
 						</c:if>
 					</ul>
 				</div>
@@ -54,8 +54,9 @@
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
 				<li role="presentation"><a href="back/manage.jsp">单曲信息</a></li>
-				<li role="presentation" class="active"><a href="back/manageRefer.jsp">单曲查询</a></li>
-				<li role="presentation"><a href="back/manageModify.jsp">单曲修改</a></li>
+				<li role="presentation"><a href="back/manageRefer.jsp">单曲查询</a></li>
+				<li role="presentation" class="active"><a
+					href="back/manageAdd.jsp">单曲添加</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
@@ -67,6 +68,13 @@
 							<th>First Name</th>
 							<th>Last Name</th>
 							<th>Username</th>
+							<th>
+								<div id="formRefer">
+									<input type="text" class="form-control" id="soname"
+										placeholder="需要添加的单曲名"><a class="btn btn-default"
+										id="findName" onclick="">搜索</a>
+								</div>
+							</th>
 						</tr>
 					</thead>
 					<tbody id="tableBody">
@@ -75,60 +83,35 @@
 							<th>Mark</th>
 							<th>Otto</th>
 							<th>@mdo</th>
+							<th></th>
 						</tr>
 						<tr>
 							<th>2</th>
 							<th>Jacob</th>
 							<th>Thornton</th>
 							<th>@fat</th>
+							<th></th>
 						</tr>
 						<tr>
 							<th>3</th>
 							<th>Larry</th>
 							<th>the Bird</th>
 							<th>@twitter</th>
+							<th></th>
 						</tr>
 						<tr>
 							<th>4</th>
 							<th>Larry</th>
 							<th>the Bird</th>
 							<th>@twitter</th>
+							<th></th>
 						</tr>
 						<tr>
 							<th>5</th>
 							<th>Larry</th>
 							<th>the Bird</th>
 							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>1</th>
-							<th>Mark</th>
-							<th>Otto</th>
-							<th>@mdo</th>
-						</tr>
-						<tr>
-							<th>2</th>
-							<th>Jacob</th>
-							<th>Thornton</th>
-							<th>@fat</th>
-						</tr>
-						<tr>
-							<th>3</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>4</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-						</tr>
-						<tr>
-							<th>5</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
+							<th></th>
 						</tr>
 					</tbody>
 				</table>

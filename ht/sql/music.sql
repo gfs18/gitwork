@@ -158,6 +158,9 @@ create table mv(
        mvpath varchar2(40)not null,   --mv存放路径
        mark varchar2(100)  --预留字段  
 );
+insert into mv select seq_mv_mvid.nextval,dbms_random.string('1',dbms_random.value(4,10)),
+10018,10024,'210','f:/a',to_date('2017-04-03','yyyy-mm-dd'),
+'f:/b','' from dual connect by level <10;
 
 --drop table mv;
 

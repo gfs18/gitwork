@@ -68,6 +68,11 @@ public class SongServiceImpl implements SongService{
 	public boolean modifySong(Song song) {
 		return songMapper.modifySong(song)>0;
 	}
+
+	@Override
+	public List<Song> findSongByName(String soname) {
+		return songMapper.findSongByName(soname);
+	}
 	
 }
 
