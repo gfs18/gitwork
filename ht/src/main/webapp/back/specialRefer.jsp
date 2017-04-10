@@ -53,18 +53,17 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation"><a href="back/manage.jsp">单曲信息</a></li>
-				<li role="presentation" class="active"><a
-					href="back/manageRefer.jsp">单曲查询</a></li>
-				<li role="presentation"><a href="back/manageModify.jsp">单曲修改</a></li>
+				<li role="presentation"><a href="back/specialInfo.jsp">专辑信息</a></li>
+				<li role="presentation" class="active"><a href="back/specialRefer.jsp">专辑查询</a></li>
+				<li role="presentation"><a href="back/specialModify.jsp">专辑修改</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
 			<form class="form-inline">
 				<div class="form-group">
-				 <input type="text" class="form-control" id="soname" placeholder="单曲名">
+				 <input type="text" class="form-control" id="spname" placeholder="请输入要查找的专辑名">
 				</div>
-				<a class="btn btn-default" id="findName" onclick="findNameSong()">搜索</a>
+				<a class="btn btn-default" id="findName" onclick="specialSearch()">搜索</a>
 			</form>
 		</div>
 	</article>
@@ -86,6 +85,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/manageRefer.js"></script>
+	<script type="text/javascript" src="js/specialInfo.js"></script>
 </body>
 </html>

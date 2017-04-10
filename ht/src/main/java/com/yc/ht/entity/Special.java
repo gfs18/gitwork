@@ -88,7 +88,7 @@ public class Special {
 
 	@Override
 	public String toString() {
-		return "Special [spid=" + spid + ", sgid=" + sgid + ", spname=" + spname + ", lgid=" + lgid + ", language="
+		return "\nSpecial [spid=" + spid + ", sgid=" + sgid + ", spname=" + spname + ", lgid=" + lgid + ", language="
 				+ language + ", sppicPath=" + sppicPath + ", sppubTime=" + sppubTime + ", singer=" + singer
 				+ ", spclick=" + spclick + "]";
 	}

@@ -1,5 +1,6 @@
 package com.yc.ht.service;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
@@ -65,6 +66,20 @@ public class SpecialServiceTest {
 	@Test
 	public void testGetSpecialByStyle() {
 		PaginationBean<Special> special=specialService.getSpecialByStyle("8", "1", 10001);
+		System.out.println(special);
+		assertNotNull(special);
+	}
+	
+	@Test
+	public void testSpecialDelete() {
+		 boolean result=specialService.specialDelete("10009");
+		System.out.println(result);
+		assertEquals(true,result);
+	}
+	
+	@Test
+	public void testSpecialBack() {
+		 PaginationBean<Special> special=specialService.specialBack("5", "1");
 		System.out.println(special);
 		assertNotNull(special);
 	}

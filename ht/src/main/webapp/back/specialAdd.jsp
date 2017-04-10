@@ -33,7 +33,7 @@
 						<li><a href="javascript:void(0)">用户管理</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<%-- <c:if test="${login_admin != null }"> --%>
+						<c:if test="${login_admin != null }">
 							<li><a href="javascript:void(0)">${login_admin }</a></li>
 							<li class="dropdown"><a href="javascript:void(0)"
 							class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -43,7 +43,7 @@
 								<li><a href="javascript:void(0)" onclick="loginOut()">注销</a></li>
 								<li><a href="back/login.jsp">切换用户</a></li>
 							</ul></li>
-						<%-- </c:if> --%>
+						</c:if>
 					</ul>
 				</div>
 			</div>
@@ -53,9 +53,9 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation" class="active"><a href="back/manage.jsp">单曲信息</a></li>
-				<li role="presentation"><a href="back/manageRefer.jsp">单曲查询</a></li>
-				<li role="presentation"><a href="back/manageModify.jsp">单曲修改</a></li>
+				<li role="presentation"><a href="back/specialInfo.jsp">专辑信息</a></li>
+				<li role="presentation" class="active"><a href="back/specialRefer.jsp">专辑查询</a></li>
+				<li role="presentation"><a href="back/specialModify.jsp">专辑修改</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
@@ -63,24 +63,126 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>单曲编号</th>
-							<th>单曲名</th>
+							<th>专辑编号</th>
+							<th>专辑名</th>
+							<th>歌手编号</th>
+							<th>语种编号</th>
 							<th>图片路径</th>
 							<th>出版时间</th>
-							<th>歌词路径</th>
-							<th>单曲路径</th>
-							<th>单曲时长</th>
-							<th>是否为Vip下载</th>
+							<th>点击量</th>
 							<th>操作</th>
 						</tr>
 					</thead>
-					<tbody id="tableBody"></tbody>
+					<tbody id="tableBody">
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 
 			<!-- 分页 -->
 			<nav>
-				<ul class="pagination"></ul>
+				<ul class="pagination">
+					<li><a href="javascript:void(0)" aria-label="Previous"> <span
+							aria-hidden="true">&laquo;</span>
+					</a></li>
+					<li class="active"><a href="javascript:void(0)">1</a></li>
+					<li><a href="javascript:void(0)">2</a></li>
+					<li><a href="javascript:void(0)">3</a></li>
+					<li><a href="javascript:void(0)">4</a></li>
+					<li><a href="javascript:void(0)">5</a></li>
+					<li><a href="javascript:void(0)" aria-label="Next"> <span
+							aria-hidden="true">&raquo;</span>
+					</a></li>
+				</ul>
 			</nav>
 
 		</div>
@@ -103,6 +205,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/manage.js"></script>
+	<script type="text/javascript" src="js/manageAdd.js"></script>
 </body>
 </html>
