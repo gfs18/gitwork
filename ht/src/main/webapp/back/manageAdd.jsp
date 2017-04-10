@@ -70,9 +70,9 @@
 							<th>Username</th>
 							<th>
 								<div id="formRefer">
-									<input type="text" class="form-control" id="soname"
+									<input type="text" class="form-control" id="referName"
 										placeholder="需要添加的单曲名"><a class="btn btn-default"
-										onclick="">搜索</a>
+										onclick="InterNameReger()">搜索</a>
 								</div>
 							</th>
 						</tr>
