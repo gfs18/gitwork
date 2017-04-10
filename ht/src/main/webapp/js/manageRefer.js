@@ -20,9 +20,9 @@ function loginOut(){
 	},"json");
 }
 
-//搜索
+/*//搜索
 function findNameSong(){
 	var soname = $.trim($("#soname").val());
 	$("#findName").attr("href","back/manageAdd.jsp?soname="+soname);
-}
+}*/
 

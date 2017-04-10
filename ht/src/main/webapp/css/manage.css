@@ -3,6 +3,20 @@
 	padding: 0px;
 }
 
+.show_img{
+    position: relative;
+    border: none;
+    top:2px;
+    right:1px;
+    float:right;
+    width:30px;
+    height:25px;
+    cursor: pointer;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image:url("../images/img.png");
+}
+
 .navbar-ht {
   background-color: #6A6C62; /* #30C27B  */
 }
