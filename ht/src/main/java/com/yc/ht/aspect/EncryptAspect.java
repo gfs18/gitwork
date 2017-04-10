@@ -15,7 +15,7 @@ import com.yc.ht.util.Encrypt;
 @Aspect
 public class EncryptAspect {
 	
-	@Before("execution(* com.yc.ht.service.impl.UserServiceImpl.*(..))")
+	@Before("execution(* com.yc.ht.service.impl.UserServiceImpl.*(com.yc.ht.entity.Users))")
 	public void beforeMathod(JoinPoint joinPoint){
 		Users user= (Users) joinPoint.getArgs()[0];
 		LogManager.getLogger().debug("对密码加密中....");

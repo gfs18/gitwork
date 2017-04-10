@@ -1,6 +1,5 @@
 package com.yc.ht.entity;
 
-import java.util.Date;
 
 
 //单曲表
@@ -10,7 +9,7 @@ public class Song {
 	private Integer spid;			//专辑编号		 
 	private String soname;			//单曲名
 	private String sopicPath;		//图片路径
-	private Date sopubTime;			//出版时间
+	private String sopubTime;			//出版时间
 	private String solyricPath;		//歌词路径
 	private String sopath;		//单曲存储路径
 	private String soduration;		//单曲时长
@@ -20,8 +19,9 @@ public class Song {
 	}
 	
 	
-	public Song(Integer soid, Integer sgid, Integer spid, String soname, String sopicPath, Date sopubTime,
+	public Song(Integer soid, Integer sgid, Integer spid, String soname, String sopicPath, String sopubTime,
 			String solyricPath, String sopath, String soduration, String vipDownload, Singer singer) {
+
 		this.soid = soid;
 		this.sgid = sgid;
 		this.spid = spid;
@@ -72,10 +72,10 @@ public class Song {
 	public void setSopicPath(String sopicPath) {
 		this.sopicPath = sopicPath;
 	}
-	public Date getSopubTime() {
+	public String getSopubTime() {
 		return sopubTime;
 	}
-	public void setSopubTime(Date sopubTime) {
+	public void setSopubTime(String sopubTime) {
 		this.sopubTime = sopubTime;
 	}
 	public String getSolyricPath() {

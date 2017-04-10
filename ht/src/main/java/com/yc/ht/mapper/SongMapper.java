@@ -10,9 +10,12 @@ public interface SongMapper {
 	
 	List<Song> findSongById(Integer soid);
 	
+	List<Song> findSongByName(String soname);
+	
 	PaginationBean<Song> findPaginationSong(PaginationBean<Song> userBean);//分页
 	
 	int removeSong(Integer soid);
 	
 	int modifySong(Song song);
+	
 }
