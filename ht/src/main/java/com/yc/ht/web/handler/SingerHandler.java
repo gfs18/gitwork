@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.yc.ht.entity.Languages;
 import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Singer;
+import com.yc.ht.entity.Song;
 import com.yc.ht.service.SingerService;
 
 @Controller("singerHandler")
@@ -32,15 +33,10 @@ public class SingerHandler {
 	@ResponseBody
 	public List<Languages> load(Languages languages){
 		return singerService.inquire(languages);
-		
 	}
 	
-	/*@RequestMapping(value="n",method=RequestMethod.GET)
-	@ResponseBody
-	public List<Singer> loadName(Singer singer){
-		return userService.refer(singer);
-		
-	}*/
+	
+	
 	
 	@RequestMapping(value="{lgid}",method=RequestMethod.GET)
 	@ResponseBody
@@ -57,8 +53,16 @@ public class SingerHandler {
 	@RequestMapping(value="pagination",method=RequestMethod.GET)
 	@ResponseBody
 	public PaginationBean<Singer> songPagiagetionList(String pageS,String currP){
-		System.out.println("currP当前页....："+currP+"------"+"pageSize每页显示的数据条数........"+pageS);
+		LogManager.getLogger().debug("currP当前页....："+currP+"------"+"pageSize每页显示的数据条数........"+pageS);
 		return singerService.listSong(pageS, currP);
+	}
+	
+
+	@RequestMapping(value="Spagination",method=RequestMethod.GET)
+	@ResponseBody
+	public PaginationBean<Singer> SPagiagetionList(String PageSize,String currPage){
+		System.out.println("PageSize。。。。"+PageSize+"currPage。。。"+currPage);
+		return singerService.listSinger(PageSize, currPage);
 	}
 	
 }

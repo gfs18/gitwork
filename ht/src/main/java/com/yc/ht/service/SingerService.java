@@ -20,4 +20,5 @@ public interface SingerService {
 	List<Singer> WHole(Singer singer);
 
 	PaginationBean<Singer> listSong(String pageS,String currP);
+	PaginationBean<Singer> listSinger(String pageSize, String currPage);
 }

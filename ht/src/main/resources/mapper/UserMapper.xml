@@ -14,28 +14,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="zhuce" parameterType="Users">
 		insert into users values (seq_users_uid.nextval,#{uname},#{upwd},#{uemail},'','',default,default,'')
 	</insert>
-
-	<!--分页
-	<resultMap type="PaginationBean" id="PaginationBeanMap">
-		<result column="pageSize" property="pageSize" />
-		<result column="currPage" property="currPage" />
-		<collection property="rows"
-			column="{pageSize=pageSize,currPage=currPage}" ofType="User"
-			select="getPaginationUser" />
-	</resultMap>
-
-	<select id="getPartUser" parameterType="PaginationBean"
-		resultMap="PaginationBeanMap" useCache="false" flushCache="true">
-		select count(1) total,ceil(count(1)/${pageSize}) totalPage,
-		${pageSize} pageSize,${currPage} currPage from users
+    
+     
+    
+     
+	<select id="Singgg" parameterType="Song" resultType="Song" >
+		 select * from song  	
 	</select>
-
-	<select id="getPaginationUser" resultType="User" useCache="false" flushCache="true">
-		select * from
-		(select n.*,rownum rn from (select *
-		from users order by 1) n
-		where ${pageSize} *
-		${currPage} >= rownum) where rn > ( ${currPage} - 1) * ${pageSize}
-	</select> -->
+	
+	<select id="Sonngg" parameterType="String" resultType="Singer" >
+		 select * from Singer where sgid like '${_parameter}' 
+		 							 	
+	</select>
 	
 </mapper>

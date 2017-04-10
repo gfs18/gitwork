@@ -18,7 +18,7 @@ function paginationSong(totalPage){
 	if(totalPage>=5){
 		pStr +='<li><a href="javascript:void(0)" onclick="paginatorPrevious('+totalP+')">&laquo;</a></li>';
 		for (var j = 1; j <= 5; j++) {
-			pStr +='<li><a href="javascript:void(0)" onclick="showSongInfo(5,'+(j+(count*5))+')">'+(j+count*5)+'</a></li>';
+		pStr +='<li><a href="javascript:void(0)" onclick="showSongInfo(5,'+(j+(count*5))+')">'+(j+count*5)+'</a></li>';
 		}
 		pStr +='<li><a href="javascript:void(0)" onclick="paginatorNext('+totalP+')" >&raquo;</a></li>';
 	}else{

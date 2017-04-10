@@ -50,12 +50,12 @@
         <div class="container">
         <div class="row" id="headrow">
             <div id="singer" class="col-lg-4 col-md-4 hidden-sm hidden-xs">
-                <img src="images/singer1.jpg" id="currentUserPhoto"/>
+                <!-- <img src="images/singer1.jpg" id="currentUserPhoto"/> -->
             </div>
             <div id="singer_right" class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <p id="singer_name">薛之谦</p>
+               <!--  <p id="singer_name">薛之谦</p>
                 <p id="singer_info">歌手介绍：</p>
-                <p id="singer_opus">单曲 <span id="opus"> &nbsp;0&nbsp;</span>&nbsp;&nbsp;&nbsp;专辑&nbsp;<span id="special">&nbsp;1</span>&nbsp;</p>
+                <p id="singer_opus">单曲 <span id="opus"> &nbsp;0&nbsp;</span>&nbsp;&nbsp;&nbsp;专辑&nbsp;<span id="special">&nbsp;1</span>&nbsp;</p> -->
             </div>
             <div class="btns">
                 <button class="t_play"><span class="glyphicon glyphicon-play" ></span> 播放歌手歌曲</button>
@@ -68,31 +68,31 @@
                     <div  class="opus_no_1 col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
                     <div  class="opus_name_! col-lg-7 col-md-7 col-sm-11 col-xs-11" style="border-left:1px solid #E1E1E1; ">
                         <span class="m_name_1">歌曲名</span></div>
-                    <div  class="opus_play_1 col-lg-2 col-md-2 hidden-sm hidden-xs" style="border-left:1px solid #E1E1E1;">歌手</div>
-                    <div  class="opus_add_1 col-lg-2 col-md-2 hidden-sm hidden-xs" style="border-left:1px solid #E1E1E1;">时长</div>
+                    <div  class="opus_play_1 col-lg-2 col-md-2 hidden-sm hidden-xs" style="border-left:1px solid #E1E1E1;">时长</div>
+                    <div  class="opus_add_1 col-lg-2 col-md-2 hidden-sm hidden-xs" style="border-left:1px solid #E1E1E1;">歌手</div>
                 </div>
                 <div id="big">
-                <div class="row">
-                    <div  class="opus_no col-lg-1 col-md-1 col-sm-1 col-xs-1">1</div>
-                    <div  class="opus_name col-lg-7 col-md-7 col-sm-11 col-xs-11">
-                        <a href=""><i class="glyphicon glyphicon-play-circle" id="tp1_1" title="播放"></i></a>
-                        <a href=""><i class="glyphicon glyphicon-save" id="tp2_1" title="下载"></i></a>
-                        <a href="" class="m_name">River Flows In You</a>
-                    </div>
-                    <div  class="opus_play col-lg-2 col-md-2 hidden-sm hidden-xs">Martin-Ermen</div>
-                    <div  class="opus_add col-lg-2 col-md-2 hidden-sm hidden-xs">3:20</div>
-                </div>
-                <div class="row">
-                    <div  class="opus_no col-lg-1 col-md-1 col-sm-1 col-xs-1">1</div>
-                    <div  class="opus_name col-lg-7 col-md-7 col-sm-11 col-xs-11">
+                
+                
+                <div class="row" >
+               
+                	<div id="ROW">
+                	<!--  <div  class="opus_no col-lg-1 col-md-1 col-sm-1 col-xs-1">1</div> -->
+                    <!-- <div  class="opus_name col-lg-7 col-md-7 col-sm-11 col-xs-11">
                         <i class="glyphicon glyphicon-play-circle" id="tp1_2"  title="播放"></i>
                         <i class="glyphicon glyphicon-save " id="tp2_2" title="下载"></i>
                         <a href="" class="m_name">River Flows In You</a>
                     </div>
-                    <div  class="opus_play col-lg-2 col-md-2 hidden-sm hidden-xs">Martin-Ermen</div>
-                    <div  class="opus_add col-lg-2 col-md-2 hidden-sm hidden-xs">3:20</div>
+                    <div  class="opus_add col-lg-2 col-md-2 hidden-sm hidden-xs">3:20</div> -->
+                     </div>
+                     
+                    <div id="ROW1">
+                   <!--  <div  class="opus_play col-lg-2 col-md-2 hidden-sm hidden-xs">Martin-Ermen</div> -->
+                    </div>
                 </div>
+                
                 </div>
+                
             </div>
         </div>
     </div>
@@ -148,5 +148,6 @@
 <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/singer-more.js"></script>
 </body>
 </html>

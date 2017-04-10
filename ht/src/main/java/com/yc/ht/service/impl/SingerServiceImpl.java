@@ -88,4 +88,34 @@ public class SingerServiceImpl implements SingerService {
 		return pb;
 	}
 
+
+	@Override
+	public PaginationBean<Singer> listSinger(String pageSize, String currPage) {
+		int pageSize1 = 10;
+		int currPage1 = 1;
+		PaginationBean<Singer> pb = new PaginationBean<Singer>();
+		if(pageSize != null){
+			pageSize1 = Integer.parseInt(pageSize);
+		}
+		if(currPage != null){
+			currPage1 =  Integer.parseInt(currPage);
+			if(currPage1 <=0){
+				currPage1 = 1;
+			}
+		}
+		pb.setCurrPage(currPage1);
+		pb.setPageSize(pageSize1);
+
+		pb = singerMapper.findPaginationSinger(pb);
+		
+		Integer totalPage = pb.getTotalPage();
+		if(currPage1 >= totalPage ){
+			currPage1 = totalPage;
+		}
+		pb.setCurrPage(currPage1);
+
+		LogManager.getLogger().debug("总页面"+totalPage+"页 ; 总记录数"+pb.getTotal());
+		return pb;
+	}
+
 }

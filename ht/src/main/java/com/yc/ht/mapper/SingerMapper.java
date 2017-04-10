@@ -21,4 +21,6 @@ public interface SingerMapper {
 	List<Singer> WHOle(Singer singer);
 
 	PaginationBean<Singer> findPaginationSong(PaginationBean<Singer> pb);
+
+	PaginationBean<Singer> findPaginationSinger(PaginationBean<Singer> pb);
 }

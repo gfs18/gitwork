@@ -1,16 +1,21 @@
 package com.yc.ht.web.handler;
 
 
+import java.util.List;
+
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.yc.ht.entity.Singer;
+import com.yc.ht.entity.Song;
 import com.yc.ht.entity.Users;
 import com.yc.ht.service.UserService;
 import com.yc.ht.util.EmailUtils;
@@ -79,13 +84,26 @@ public class UserHandler {
 	public boolean Register(String code,Users user,HttpSession session){
 		String a=(String) session.getAttribute(ServletUtil.CODE);
 		if(code.equals(a)){
-			System.out.println("输入的验证码是对的");
+			LogManager.getLogger().debug("输入的验证码是对的");
 			session.setMaxInactiveInterval(1*60);
 			return userService.zc(user);
 		}else{
 			LogManager.getLogger().debug("注册失败！");
 		}
 		return false;
+	}
+	
+	@RequestMapping(value="{lgid}",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Singer> Son( @PathVariable("lgid") String lgid){
+		System.out.println("lgid.............."+lgid.toString());
+		return userService.Sonng(lgid);
+	}
+	
+	@RequestMapping(value="Sin",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Song> Sing(Song song){
+		return userService.Singg(song);
 	}
 	
 }
