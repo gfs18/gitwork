@@ -10,7 +10,15 @@ public interface SongService {
 
 	List<Song> listSong();
 	
+	List<Song> findSongById(String soid);
+	
+	List<Song> findSongByName(String soname);
+	
 	PaginationBean<Song> listSong(String pageS,String currP);
+	
+	boolean removeSong(String soid);
+	
+	boolean modifySong(Song song);
 
 	List<Singer> Hot(String sgEname);
 

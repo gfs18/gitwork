@@ -4,51 +4,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 映射文件的命名空间namespace的值，与之对应的映射接口的全类名 -->
-<mapper namespace="com.yc.ht.mapper.SongMapper">
-
-	<!--index界面的歌曲显示  -->
-	<select id="findSong"  resultType="Song">
-		select * from song 
-	</select>
+<mapper namespace="com.yc.ht.mapper.MvMapper">
 	
-	<!-- 更具id查询歌曲 -->
-	<select id="findSongById" parameterType="integer" resultType="Song">
-		select * from song where soid=#{soid}
-	</select>
-	
-	<!-- 单曲显示使用分页 -->
+	<!-- Mv显示使用分页 -->
 	<resultMap type="PaginationBean" id="PaginationBeanMap">
 		<result column="pageSize" property="pageSize" />
 		<result column="currPage" property="currPage" />
 		<collection property="rows"
-			column="{pageSize=pageSize,currPage=currPage}" ofType="Song"
-			select="getPaginationSong" />
+			column="{pageSize=pageSize,currPage=currPage}" ofType="Mv"
+			select="getPaginationMv" />
 	</resultMap>
 
-	<select id="findPaginationSong" parameterType="PaginationBean"
+	<select id="findPaginationMv" parameterType="PaginationBean"
 		resultMap="PaginationBeanMap" useCache="false" flushCache="true">
 		select count(1) total,ceil(count(1)/${pageSize}) totalPage,
-		${pageSize} pageSize,${currPage} currPage from song
+		${pageSize} pageSize,${currPage} currPage from mv
 	</select>
 
-	<select id="getPaginationSong" resultType="Song" useCache="false" flushCache="true">
+	<select id="getPaginationMv" resultType="Mv" useCache="false" flushCache="true">
 		select * from
 		(select n.*,rownum rn from (select *
-		from song order by 1) n
+		from mv order by 1) n
 		where ${pageSize} *
 		${currPage} >= rownum) where rn > ( ${currPage} - 1) * ${pageSize}
 	</select>
 	
-
-	<select id="HOT" resultType="Singer" parameterType="String">
-		select * from singer where sgEname like '${_parameter}'
-	</select>
-	<!-- 单曲删除 -->
-	<delete id="removeSong" parameterType="integer">
-		delete song where soid=#{soid}
+	<!-- MV删除 -->
+	<delete id="removeMv" parameterType="integer">
+		delete mv where mvid=#{mvid}
 	</delete>
 	
-	<!-- 单曲修改 -->
+<!-- 	单曲修改
 	<update id="modifySong" parameterType="Song">
 		update song
 		<set>
@@ -61,8 +47,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where soid=#{soid}
 	</update>
 	
-	<!-- 单曲查询(根据soname) -->
+	单曲查询(根据soname)
 	<select id="findSongByName" parameterType="string" resultType="Song">
 		select * from song where soname like '%${_parameter}%'
-	</select>
+	</select> -->
 </mapper>

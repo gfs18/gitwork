@@ -220,10 +220,9 @@ function paginatorPrevious(totalPage){
 
 function paginatorNext(totalPage){
 	count = count < (totalPage / 5)?(count+1):totalPage ;
-	alert(count);
+	//alert(count);
 	loaName(5,1 + 5*(count) );
 }
-
 
 
 

@@ -78,4 +78,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		${currPage} >= rownum) where rn > ( ${currPage} - 1) * ${pageSize}
 	</select>
 	
+	
+	
+	<update id="modifySinger" parameterType="Singer">
+		update Singer
+		<set>
+			<if test="sgname!=null">sgname=#{sgname},</if>
+			<if test="sgEname!=null">sgEname=#{sgEname},</if>
+			<if test="sgnation!=null">sgnation=#{sgnation},</if>
+			<if test="sggender!=null">sggender=#{sggender},</if>
+			<if test="sgpicPath!=null">sgpicPath=#{sgpicPath},</if>
+			<if test="sgintroduce!=null">sgintroduce = #{sgintroduce},</if>
+		</set>
+		where sgid=#{sgid}
+	</update>
+	
+	
+	<select id="findSingerById" parameterType="String" resultType="Singer">
+		select * from Singer where sgid=#{sgid}
+	</select>
+	
+	
+	<delete id="removeSinger" parameterType="String">
+		delete Singer where sgid=#{sgid}
+	</delete>
+	
+	
+	<select id="findSingerByName" parameterType="String" resultType="Singer">
+		select * from Singer where sgname like '%${_parameter}%'
+	</select>
 </mapper>

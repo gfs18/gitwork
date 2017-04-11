@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.yc.ht.entity.Languages;
 import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Singer;
+import com.yc.ht.entity.Song;
 import com.yc.ht.mapper.SingerMapper;
 import com.yc.ht.service.SingerService;
 
@@ -118,4 +119,29 @@ public class SingerServiceImpl implements SingerService {
 		return pb;
 	}
 
+
+	@Override
+	public List<Singer> findSingerById(String sgid) {
+		return singerMapper.findSingerById(sgid);
+	}
+	
+
+	@Override
+	public boolean modifySinger(Singer singer) {
+		return singerMapper.modifySinger(singer)>0;
+	}
+
+
+	@Override
+	public boolean removeSinger(String sgid) {
+		return singerMapper.removeSinger(sgid)>0;
+	}
+
+
+	@Override
+	public List<Singer> findSingerByName(String sgname) {
+		return singerMapper.findSingerByName(sgname);
+	}
+	
+	
 }

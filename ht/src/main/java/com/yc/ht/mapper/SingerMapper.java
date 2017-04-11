@@ -23,4 +23,12 @@ public interface SingerMapper {
 	PaginationBean<Singer> findPaginationSong(PaginationBean<Singer> pb);
 
 	PaginationBean<Singer> findPaginationSinger(PaginationBean<Singer> pb);
+
+	List<Singer> findSingerById(String sgid);
+
+	int modifySinger(Singer singer);
+
+	int removeSinger(String sgid);
+
+	List<Singer> findSingerByName(String sgname);
 }

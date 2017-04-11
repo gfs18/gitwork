@@ -20,9 +20,12 @@ function loginOut(){
 	},"json");
 }
 
-//搜索
-function findNameSong(){
-	var soname = $.trim($("#soname").val());
-	$("#findName").attr("href","back/manage.jsp?soname="+soname);
+
+function findNameSinger(){
+	var sgname = $.trim($("#sgname").val());
+	//alert(sgname);
+	$("#findName").attr("href","back/singer.jsp?sgname="+sgname);
 }
+
+
 

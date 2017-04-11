@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,8 +36,8 @@
 				<div class="row">
 					<ul class="nav navbar-nav navbar-left" id="topnav">
 						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
-							href="page/index.jsp"
-							class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
+							href="page/index.jsp" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"
+							id="">首页</a></li>
 						<li><a href="page/singer.jsp"
 							class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
 						<li><a href="page/special.jsp"
@@ -55,45 +55,31 @@
 	<article>
 
 		<div class="container friend">
-
-			<input type="text" id="content" class="form-control"
-				placeholder="说点什么吧" />
-			<p>
-				<button class="btn btn-primary" onclick="addfb()" id="ok">发表</button>
-				<span class="add_img"><input class="myfile" type="file"
-					accept="image/gif, image/jpeg" /></span>
-			</p>
+			<form action="friend/commentInsert" method="post"
+				enctype="multipart/form-data">
+				<input type="text" id="content" class="form-control" name="content"
+					placeholder="说点什么吧" src="images/2_1.png" />
+				<button class="btn btn-primary" id="ok">发表</button>
+				<span class="add_img"> <img src="images/not_image.png"
+					class="show_img"> <input class="myfile" type="file"
+					name="picData" accept="image/*" onchange="chgPic(this)" />
+				</span>
+			</form>
 			<p class="news">动态</p>
 			<div class="content">
-				<div class="con">
-				<div class="con_0 hidden-md hidden-sm hidden-xs"><img class="user_icon" src="images/user.jpg"></div>
-				<div class="con_1"><span>用户xx</span>：</div>
-				<div class="con_2">2016-11-11 11:11</div>
-				<div class="con_3">我发表了一段文字。。</div>
-				<div class="con_4"><img src="images/大图2.jpg"/></div>
-				</div>
-				<div class="con">
-				<div class="con_0 hidden-md hidden-sm hidden-xs"><img class="user_icon" src="images/user.jpg"></div>
-				<div class="con_1"><span>用户xx</span>：</div>
-				<div class="con_2">2016-11-11 11:11</div>
-				<div class="con_3">我发表了一段文字。。</div>
-				<div class="con_4"><img src="images/大图2.jpg"/></div>
-				</div>
-				<div class="con">
-				<div class="con_0 hidden-md hidden-sm hidden-xs"><img class="user_icon" src="images/user.jpg"></div>
-				<div class="con_1"><span>用户xx</span>：</div>
-				<div class="con_2">2016-11-11 11:11</div>
-				<div class="con_3">我发表了一段文字。。</div>
-				<div class="con_4"><img src="images/大图2.jpg"/></div>
-				</div>
-
+				<!-- 评论显示 -->
 			</div>
+			<!-- 分页 -->
+				<div>
+					<ul class="pagination"></ul>
+				</div>
+			
 		</div>
-		<p id="mymore" onclick="showMoreArticle()">更多动态</p>
+		<!-- <p id="mymore" onclick="showMoreArticle()">更多动态</p> -->
 	</article>
-	
+
 	<!-- 底部注入 -->
-      <iframe width=100% height=105 src="iframe/footer.jsp"></iframe>
+	<iframe width=100% height=105 src="iframe/footer.jsp"></iframe>
 
 	<div>
 		<div id="mylogin">
@@ -107,8 +93,8 @@
 						</div>
 						<div class="login_content">
 							<form>
-								<input type="text" id="uname" placeholder="请输入您的用户名" /><br /> <input
-									type="text" id="pwd" placeholder="请输入您的密码" /><br />
+								<input type="text" id="uname" placeholder="请输入您的用户名" /><br />
+								<input type="text" id="pwd" placeholder="请输入您的密码" /><br />
 								<button id="go">登录</button>
 							</form>
 						</div>
@@ -129,9 +115,9 @@
 						</div>
 						<div class="reg_content">
 							<form>
-								<input type="text" id="newname" placeholder="设置我的账户名" /><br /> <input
-									type="text" id="newpwd" placeholder="请设置我的密码" /><br /> <input
-									type="email" id="email" placeholder="您的邮箱账户" /><br /> <input
+								<input type="text" id="newname" placeholder="设置我的账户名" /><br />
+								<input type="text" id="newpwd" placeholder="请设置我的密码" /><br />
+								<input type="email" id="email" placeholder="您的邮箱账户" /><br /> <input
 									type="text" id="txt" placeholder="请输入您收到的验证码" /><br />
 								<button id="new">马上注册</button>
 							</form>
@@ -146,5 +132,6 @@
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/friend.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
 </body>
 </html>

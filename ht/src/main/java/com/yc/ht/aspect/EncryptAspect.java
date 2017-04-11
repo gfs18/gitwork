@@ -16,6 +16,9 @@ import com.yc.ht.util.Encrypt;
 public class EncryptAspect {
 	
 
+
+
+
 	@Before("execution(* com.yc.ht.service.impl.UserServiceImpl.*(com.yc.ht.entity.Users))")
 	public void beforeMathod(JoinPoint joinPoint){
 		Users user= (Users) joinPoint.getArgs()[0];

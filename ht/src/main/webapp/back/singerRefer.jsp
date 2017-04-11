@@ -63,9 +63,9 @@
 			<form class="form-inline">
 				<div class="form-group">
 				 <input type="text"
-						class="form-control" name="soname" id="songname" placeholder="单曲名">
+						class="form-control" name="soname" id="sgname" placeholder="歌手名">
 				</div>
-				<button type="submit" class="btn btn-default">搜索</button>
+				<a class="btn btn-default" id="findName" onclick="findNameSinger()">搜索</a>
 			</form>
 		</div>
 	</article>
@@ -87,6 +87,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/manageRefer.js"></script>
+	<script type="text/javascript" src="js/singerRefer.js"></script>
 </body>
 </html>

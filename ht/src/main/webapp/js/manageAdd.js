@@ -15,12 +15,10 @@ $("#tableBody tr").mouseout(function(){
 function showDiv(){
 	if ($(window).width()<=1349) {
 		$(".mydiv").css("display", "block");
-	}else
-	{
+	}else{
 		$(".mydiv").css("display", "none");
 	}
 }
-
 //注销
 function loginOut(){
 	$.post("admin/out", function(data) {
@@ -29,3 +27,6 @@ function loginOut(){
 		}
 	},"json");
 }
+
+
+

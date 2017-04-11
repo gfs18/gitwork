@@ -59,7 +59,46 @@
 			</ul>
 		</div>
 		<div id="panelDiv">
-			
+			<div class="formDiv">
+				<form action="singer/modify" method="post" enctype="multipart/form-data" >
+					<div class="form-group"> 
+						<label>编号:</label>
+						<label id="labelid"></label>
+						<input type="hidden" id="sgid" class="form-control" name="sgid" />
+					</div>
+					<div class="form-group">
+						<label for="soname">歌手名:</label> <input type="text"
+							class="form-control" id="sgname" name="sgname">
+					</div>
+					<div class="form-group">
+						<label for="sgEname">歌手英文名:</label> <input type="text"
+							class="form-control" id="sgEname" name="sgEname">
+					</div>
+					<div class="form-group">
+						<label for="sgnation">国籍:</label> <input type="text"
+							class="form-control" id="sgnation" name="sgnation">
+					</div>
+					<div class="form-group">
+						<label>音乐语种:</label> 
+						<label id="languaes"></label>
+						<input type="hidden" id="languaes" class="form-control" name="languaes" />
+					</div>
+					<div class="form-group">
+						<label for="sggender">性别:</label> <input type="text"
+							class="form-control" id="sggender" name="sggender">
+					</div>
+					<div class="form-group">
+						<label>头像</label> <input type="file"
+						 name="picData" onchange="chgPic(this)"><img src="image/not_pic.jpg" id="sgpicPath"/>
+					</div>         
+					<div class="form-group">
+						<label for="sgintroduce">歌手介绍</label> <input type="text"
+							class="form-control" id="sgintroduce" name="sgintroduce" />
+					</div>
+					
+					<button type="submit" class="btn btn-default">修改</button>
+				</form>
+			</div>
 			
 		</div>
 	</article>
@@ -81,6 +120,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/manageModify.js"></script>
+	<script type="text/javascript" src="js/singerModify.js"></script>
 </body>
 </html>

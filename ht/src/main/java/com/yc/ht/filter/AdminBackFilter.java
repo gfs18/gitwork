@@ -19,7 +19,7 @@ import com.yc.ht.util.ServletUtil;
 /**
  *  过滤验证码
  */
-@WebFilter("/back/*")
+//@WebFilter("/back/*")
 public class AdminBackFilter extends AbstractFilter{
    
 	@Override
@@ -30,7 +30,6 @@ public class AdminBackFilter extends AbstractFilter{
 		HttpServletRequest hs = (HttpServletRequest)request;
 		HttpSession session = hs.getSession();
 		String reqUriStr = hs.getRequestURI();
-		System.out.println(session.getAttribute(ServletUtil.LOGIN_ADMIN));
 		if(reqUriStr.endsWith("login.jsp") || session.getAttribute(ServletUtil.LOGIN_ADMIN) != null && !"".equals(session.getAttribute(ServletUtil.LOGIN_ADMIN))){
 			chain.doFilter(request, response);
 		}else{
