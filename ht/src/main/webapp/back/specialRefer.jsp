@@ -29,7 +29,7 @@
 							href="javascript:void(0)">单曲管理</a></li>
 						<li><a href="javascript:void(0)">歌手管理</a></li>
 						<li><a href="back/specialInfo.jsp">专辑管理</a></li>
-						<li><a href="back/mvmanage.jsp">短片管理</a></li>
+						<li><a href="javascript:void(0)">短片管理</a></li>
 						<li><a href="javascript:void(0)">用户管理</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
@@ -53,18 +53,17 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation"><a href="back/manage.jsp">单曲信息</a></li>
-				<li role="presentation" class="active"><a
-					href="back/manageRefer.jsp">单曲查询</a></li>
-				<li role="presentation"><a href="back/manageAdd.jsp">单曲添加</a></li>
+				<li role="presentation"><a href="back/specialInfo.jsp">专辑信息</a></li>
+				<li role="presentation" class="active"><a href="back/specialRefer.jsp">专辑查询</a></li>
+				<li role="presentation"><a href="back/specialModify.jsp">专辑修改</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
 			<form class="form-inline">
 				<div class="form-group">
-				 <input type="text" class="form-control" id="soname" placeholder="单曲名">
+				 <input type="text" class="form-control" id="spname" placeholder="请输入要查找的专辑名">
 				</div>
-				<a class="btn btn-default" id="findName" onclick="findNameSong()">搜索</a>
+				<a class="btn btn-default" id="findName" onclick="specialSearch()">搜索</a>
 			</form>
 		</div>
 	</article>
@@ -86,6 +85,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/manageRefer.js"></script>
+	<script type="text/javascript" src="js/specialInfo.js"></script>
 </body>
 </html>

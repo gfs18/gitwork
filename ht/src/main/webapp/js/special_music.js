@@ -8,7 +8,7 @@ function specialDetail(){
 		spDetailStr+='<img id="img" src="'+data.sppicPath+'"><div class="cover"></div></div>';
 		spDetailStr+='<div class="right col-lg-8 col-md-8 col-sm-8 col-xs-8">';
 		spDetailStr+='<p class="info_1">'+data.spname+'</p><p class="info_2">歌手：'+data.singer.sgname+'</p>';
-		spDetailStr+='<p class="info_3">发行时间：'+data.sppubTime.substring(0,10)+'</p><p class="info_4">语种：'+data.language+'</p>';
+		spDetailStr+='<p class="info_3">发行时间：'+data.sppubTime.substring(0,10)+'</p><p class="info_4">语种：'+data.language.language+'</p>';
 		spDetailStr+='<div class="btns"><button class="mplay"><span class="glyphicon glyphicon-play" ></span> 播放</button>';
 		spDetailStr+='<button class="add hidden-sm hidden-xs"><span class="glyphicon glyphicon-heart-empty" ></span> 收藏</button></div></div>';
 		$("#S_big").html(spDetailStr);
