@@ -20,7 +20,6 @@ public class Song {
 	
 	public Song(Integer soid, Integer sgid, Integer spid, String soname, String sopicPath, String sopubTime,
 			String solyricPath, String sopath, String soduration, String vipDownload, Singer singer) {
-		super();
 		this.soid = soid;
 		this.sgid = sgid;
 		this.spid = spid;

@@ -5,8 +5,14 @@ function showUserManage(pageS,currP){
 	$.get("user/pagination",{"pageS":pageS,"currP":currP},function(data){
 		var str = "";
 		for (var i = 0; i < data.rows.length; i++) {
+			var img=data.rows[i].upicPath;
+			if(img!=null){
+				img=data.rows[i].upicPath;
+			}else{
+				img="images/not_image.png";
+			}
 			str += "<tr class='tableoverout'><th>"+data.rows[i].userid+"</th><th>"+data.rows[i].uname+"</th><th>"
-			+data.rows[i].uemail+"</th><th>"+data.rows[i].upicPath+"</th><th>"
+			+data.rows[i].uemail+"</th><th>"+'<img src='+img +' class="show_img">'+"</th><th>"
 			+data.rows[i].uintroduce+"</th><th>"+data.rows[i].ucondition+"</th><th>"+data.rows[i].uvip+"</th>"
 			+"<th><a href='back/userManageModify.jsp?userid="+data.rows[i].userid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
 			+"<a onclick='removeUser("+data.rows[i].userid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
@@ -89,15 +95,18 @@ function referUser(){
 		$.post("user/referUser/"+uname,function(data){
 			var str = "";
 			for (var i = 0; i < data.length; i++) {
+				var img=data[i].upicPath;
+				if(img!=null){
+					img=data[i].upicPath;
+				}else{
+					img="images/not_image.png";
+				}
 				str += "<tr class='tableoverout'><th>"+data[i].userid+"</th><th>"+data[i].uname+"</th><th>"
-				+data[i].uemail+"</th><th>"+'<img src='+data[i].upicPath+' class="show_img">'+"</th><th>"
+				+data[i].uemail+"</th><th>"+'<img src='+img+' class="show_img">'+"</th><th>"
 				+data[i].uintroduce+"</th><th>"+data[i].ucondition+"</th><th>"+data[i].uvip+"</th>"
 				+"<th><a href='back/userManageModify.jsp?userid="+data[i].userid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
 				+"<a onclick='removeReferUser("+data[i].userid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
 			}
-			
-			
-			
 			
 			//行变色
 			str +='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#ffffff";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
