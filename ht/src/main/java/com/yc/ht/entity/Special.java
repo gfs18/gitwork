@@ -12,8 +12,8 @@ public class Special {
 	private Double spclick; //点击量
 	public Special() {
 	}
-	
-	
+
+
 
 	public Special(Integer spid, Integer sgid, String spname, Languages language, String sppicPath,
 			String sppubTime, Singer singer, Double spclick) {
@@ -84,6 +84,6 @@ public class Special {
 				+ language + ", sppicPath=" + sppicPath + ", sppubTime=" + sppubTime + ", singer=" + singer
 				+ ", spclick=" + spclick + "]";
 	}
-	
-	
+
+
 }

@@ -1,6 +1,8 @@
 package com.yc.ht.web.handler;
 
 
+
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.mail.MessagingException;
@@ -14,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
 import com.yc.ht.entity.Singer;
+
+import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Song;
 import com.yc.ht.entity.Users;
 import com.yc.ht.service.UserService;
@@ -28,6 +33,12 @@ public class UserHandler {
 	@Autowired
 	private UserService userService;
 	
+	/**
+	 * 用户登录
+	 * @param user
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping(value="login",method=RequestMethod.GET)
 	@ResponseBody
 	public Users login(Users user,HttpSession session){
@@ -93,6 +104,7 @@ public class UserHandler {
 		return false;
 	}
 	
+
 	@RequestMapping(value="{lgid}",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Singer> Son( @PathVariable("lgid") String lgid){
@@ -104,6 +116,42 @@ public class UserHandler {
 	@ResponseBody
 	public List<Song> Sing(Song song){
 		return userService.Singg(song);
+	}
+	/**
+	 * 用户的分页显示
+	 * @param pageS
+	 * @param currP
+	 * @return
+	 */
+	@RequestMapping(value="pagination",method=RequestMethod.GET)
+	@ResponseBody
+	public PaginationBean<Users> UsersPagiagetionList(String pageS,String currP){
+		return userService.listUsers(pageS, currP);
+	}
+	
+	/**
+	 * 用户的删除
+	 */
+	@RequestMapping(value="remove",method=RequestMethod.POST)
+	@ResponseBody
+	public boolean removeUser(String userid){
+		return userService.removeUser(userid);
+	}
+	
+	/**
+	 * 用户的查询
+	 */
+	@RequestMapping(value="referUser/{uname}",method=RequestMethod.POST)
+	@ResponseBody
+	public List<Users> ReferUserList(@PathVariable("uname") String uname){
+		if(uname!=null){
+			try {
+				uname=new String(uname.getBytes("ISO-8859-1"),"UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+		}
+		return userService.listReferUser(uname);
 	}
 	
 }

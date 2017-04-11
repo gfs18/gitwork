@@ -6,14 +6,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 映射文件的命名空间namespace的值，与之对应的映射接口的全类名 -->
 <mapper namespace="com.yc.ht.mapper.UserMapper">
 
-	<!--用户登录  -->
+	<!--用户登录 -->
 	<select id="login" parameterType="Users" resultType="Users">
-		select * from users where (uname=#{uname} and upwd=#{upwd}) or (uemail=#{uname} and upwd = #{upwd})
+		select *
+		from users where (uname=#{uname} and upwd=#{upwd}) or (uemail=#{uname}
+		and upwd = #{upwd})
 	</select>
-	
+
+	<!-- 用户注册 -->
 	<insert id="zhuce" parameterType="Users">
-		insert into users values (seq_users_uid.nextval,#{uname},#{upwd},#{uemail},'','',default,default,'')
+		insert into users values
+		(seq_users_uid.nextval,#{uname},#{upwd},#{uemail},'','',default,default,'')
 	</insert>
+
     
      
     
@@ -27,4 +32,41 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 							 	
 	</select>
 	
+
+
+	<!-- 后台管理中的用户分页显示 -->
+	<select id="findPaginationUsers" parameterType="PaginationBean"
+		resultMap="PaginationBeanMap" useCache="false" flushCache="true">
+		select
+		count(1) total,ceil(count(1)/${pageSize}) totalPage,
+		${pageSize}
+		pageSize,${currPage} currPage from users
+	</select>
+	<resultMap type="PaginationBean" id="PaginationBeanMap">
+		<result column="pageSize" property="pageSize" />
+		<result column="currPage" property="currPage" />
+		<collection property="rows"
+			column="{pageSize=pageSize,currPage=currPage}" ofType="Users" select="getUsers" />
+	</resultMap>
+	<select id="getUsers" resultType="Users" useCache="false"
+		flushCache="true">
+		select * from
+		(select n.*,rownum rn from (select *
+		from users
+		order by 1) n
+		where ${pageSize} *
+		${currPage} >= rownum) where rn > (
+		${currPage} - 1) * ${pageSize}
+	</select>
+
+	<!-- 用户删除 -->
+	<delete id="deleteUser" parameterType="integer">
+		delete users where
+		userid=#{userid}
+	</delete>
+
+	<!-- 后台用户的查找 -->
+	<select id="findReferUser" parameterType="string" resultType="Users">
+		select * from users	where uname like '%${_parameter}%'
+	</select>
 </mapper>

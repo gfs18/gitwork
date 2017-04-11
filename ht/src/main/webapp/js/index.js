@@ -3,7 +3,7 @@ special();
 function special(){
 	$.get("special/index", function(data){
 		var specialStr = "";
-		for (var i = 0; i < data.length; i++) {
+		for (var i = 0; i <5; i++) {
 			if(i==0){
 				specialStr+='<div class=""><a href="page/special_music.jsp?spid='+data[i].spid+'">';
 				specialStr+='<img id="img2" src="'+data[i].sppicPath+'" /></a>';

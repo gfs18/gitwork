@@ -26,10 +26,10 @@
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left" id="topnav">
 						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
-							href="back/manage.jsp">单曲管理</a></li>
+							href="javascript:void(0)">单曲管理</a></li>
 						<li><a href="javascript:void(0)">歌手管理</a></li>
 						<li><a href="back/specialInfo.jsp">专辑管理</a></li>
-						<li><a href="back/mvmanage.jsp">短片管理</a></li>
+						<li><a href="javascript:void(0)">短片管理</a></li>
 						<li><a href="javascript:void(0)">用户管理</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
@@ -53,87 +53,18 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation"><a href="back/manage.jsp">单曲信息</a></li>
-				<li role="presentation"><a href="back/manageRefer.jsp">单曲查询</a></li>
-				<li role="presentation" class="active"><a
-					href="back/manageAdd.jsp">单曲添加</a></li>
+				<li role="presentation"><a href="back/specialInfo.jsp">专辑信息</a></li>
+				<li role="presentation" class="active"><a href="back/specialRefer.jsp">专辑查询</a></li>
+				<li role="presentation"><a href="back/specialModify.jsp">专辑修改</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
-			<div class="panel panel-default">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Username</th>
-							<th>
-								<div id="formRefer">
-									<input type="text" class="form-control" id="referName"
-										placeholder="需要添加的单曲名"><a class="btn btn-default"
-										onclick="InterNameReger()">搜索</a>
-								</div>
-							</th>
-						</tr>
-					</thead>
-					<tbody id="tableBody">
-						<tr>
-							<th>1</th>
-							<th>Mark</th>
-							<th>Otto</th>
-							<th>@mdo</th>
-							<th></th>
-						</tr>
-						<tr>
-							<th>2</th>
-							<th>Jacob</th>
-							<th>Thornton</th>
-							<th>@fat</th>
-							<th></th>
-						</tr>
-						<tr>
-							<th>3</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-							<th></th>
-						</tr>
-						<tr>
-							<th>4</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-							<th></th>
-						</tr>
-						<tr>
-							<th>5</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-							<th></th>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-
-			<!-- 分页 -->
-			<nav>
-				<ul class="pagination">
-					<li><a href="javascript:void(0)" aria-label="Previous"> <span
-							aria-hidden="true">&laquo;</span>
-					</a></li>
-					<li class="active"><a href="javascript:void(0)">1</a></li>
-					<li><a href="javascript:void(0)">2</a></li>
-					<li><a href="javascript:void(0)">3</a></li>
-					<li><a href="javascript:void(0)">4</a></li>
-					<li><a href="javascript:void(0)">5</a></li>
-					<li><a href="javascript:void(0)" aria-label="Next"> <span
-							aria-hidden="true">&raquo;</span>
-					</a></li>
-				</ul>
-			</nav>
-
+			<form class="form-inline">
+				<div class="form-group">
+				 <input type="text" class="form-control" id="spname" placeholder="请输入要查找的专辑名">
+				</div>
+				<a class="btn btn-default" id="findName" onclick="specialSearch()">搜索</a>
+			</form>
 		</div>
 	</article>
 	<!-- 底部 -->
@@ -154,6 +85,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/manageAdd.js"></script>
+	<script type="text/javascript" src="js/specialInfo.js"></script>
 </body>
 </html>

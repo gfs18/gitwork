@@ -3,6 +3,21 @@
 	padding: 0px;
 }
 
+/* 后台用户头像显示 show_img*/
+.show_img{
+    position: relative;
+    border: none;
+    top:2px;
+    right:1px;
+    float:left;
+    width:35px;
+    height:30px;
+    cursor: pointer;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image:url("../images/img.png");
+}
+
 .navbar-ht {
   background-color: #6A6C62; /* #30C27B  */
 }
@@ -90,7 +105,10 @@
 #panelDiv{
 	float:left;
 	width: 80%;
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 	margin-top: -14px;
 }
 

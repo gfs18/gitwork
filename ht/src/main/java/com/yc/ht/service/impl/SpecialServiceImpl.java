@@ -2,6 +2,7 @@ package com.yc.ht.service.impl;
 
 import java.util.List;
 
+import org.aspectj.apache.bcel.generic.InstructionTargeter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -75,6 +76,34 @@ public class SpecialServiceImpl implements SpecialService{
 		pb.setLanguages(style);
 		
 		return specialMapper.getSpecialByStyle(pb);
+	}
+
+
+	@Override
+	public boolean specialDelete(String spid) {
+		return specialMapper.specialDelete(Integer.valueOf(spid))>0;
+	}
+
+	@Override
+	public boolean specialModify(int spid) {
+		return specialMapper.specialModify(spid)>0;
+	}
+
+	@Override
+	public PaginationBean<Special> specialBack(String rows, String page) {
+		PaginationBean<Special> pb=new PaginationBean<Special>();
+		if(rows!=null){
+			pb.setPageSize(Integer.parseInt(rows));
+		}
+		if(page!=null){
+			pb.setCurrPage(Integer.parseInt(page));
+		}
+		return specialMapper.specialBack(pb);
+	}
+
+	@Override
+	public List<Special> specialSearch(String spname) {
+		return specialMapper.specialSearch(spname);
 	}
 	
 }

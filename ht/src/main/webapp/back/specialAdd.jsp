@@ -29,20 +29,20 @@
 							href="back/manage.jsp">单曲管理</a></li>
 						<li><a href="javascript:void(0)">歌手管理</a></li>
 						<li><a href="back/specialInfo.jsp">专辑管理</a></li>
-						<li><a href="back/mvmanage.jsp">短片管理</a></li>
+						<li><a href="javascript:void(0)">短片管理</a></li>
 						<li><a href="javascript:void(0)">用户管理</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<c:if test="${login_admin != null }">
 							<li><a href="javascript:void(0)">${login_admin }</a></li>
 							<li class="dropdown"><a href="javascript:void(0)"
-								class="dropdown-toggle" data-toggle="dropdown" role="button"
-								aria-haspopup="true" aria-expanded="false"><span
-									class="caret"></span> </a>
-								<ul class="dropdown-menu">
-									<li><a href="javascript:void(0)" onclick="loginOut()">注销</a></li>
-									<li><a href="back/login.jsp">切换用户</a></li>
-								</ul></li>
+							class="dropdown-toggle" data-toggle="dropdown" role="button"
+							aria-haspopup="true" aria-expanded="false"><span
+								class="caret"></span> </a>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:void(0)" onclick="loginOut()">注销</a></li>
+								<li><a href="back/login.jsp">切换用户</a></li>
+							</ul></li>
 						</c:if>
 					</ul>
 				</div>
@@ -53,10 +53,9 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation"><a href="back/manage.jsp">单曲信息</a></li>
-				<li role="presentation"><a href="back/manageRefer.jsp">单曲查询</a></li>
-				<li role="presentation" class="active"><a
-					href="back/manageAdd.jsp">单曲添加</a></li>
+				<li role="presentation"><a href="back/specialInfo.jsp">专辑信息</a></li>
+				<li role="presentation" class="active"><a href="back/specialRefer.jsp">专辑查询</a></li>
+				<li role="presentation"><a href="back/specialModify.jsp">专辑修改</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
@@ -64,54 +63,106 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>id</th>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Username</th>
-							<th>
-								<div id="formRefer">
-									<input type="text" class="form-control" id="referName"
-										placeholder="需要添加的单曲名"><a class="btn btn-default"
-										onclick="InterNameReger()">搜索</a>
-								</div>
-							</th>
+							<th>专辑编号</th>
+							<th>专辑名</th>
+							<th>歌手编号</th>
+							<th>语种编号</th>
+							<th>图片路径</th>
+							<th>出版时间</th>
+							<th>点击量</th>
+							<th>操作</th>
 						</tr>
 					</thead>
 					<tbody id="tableBody">
 						<tr>
-							<th>1</th>
-							<th>Mark</th>
-							<th>Otto</th>
-							<th>@mdo</th>
-							<th></th>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
 						</tr>
 						<tr>
-							<th>2</th>
-							<th>Jacob</th>
-							<th>Thornton</th>
-							<th>@fat</th>
-							<th></th>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
 						</tr>
 						<tr>
-							<th>3</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-							<th></th>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
 						</tr>
 						<tr>
-							<th>4</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-							<th></th>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
 						</tr>
 						<tr>
-							<th>5</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-							<th></th>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
+						</tr>
+						<tr>
+							<th>10001</th>
+							<th>hello</th>
+							<th>10001</th>
+							<th>10001</th>
+							<th>d:\music</th>
+							<th>2017-4-9</th>
+							<th>0</th>
 						</tr>
 					</tbody>
 				</table>

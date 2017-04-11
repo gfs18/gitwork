@@ -29,4 +29,10 @@ function loginOut(){
 }
 
 
+function InterNameReger(){
+	var name = $("#referName").val();
+	
+}
+
+
 

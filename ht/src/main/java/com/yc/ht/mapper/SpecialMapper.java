@@ -23,5 +23,13 @@ public interface SpecialMapper {
 	PaginationBean<Special> hottestSpecial(PaginationBean<Special> pb);
 
 	PaginationBean<Special> getSpecialByStyle(PaginationBean<Special> pb);
+
+	int specialDelete(Integer spid);
+
+	int specialModify(int spid);
+
+	PaginationBean<Special> specialBack(PaginationBean<Special> pb);
+
+	List<Special> specialSearch(String spname);
 	
 }
