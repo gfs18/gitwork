@@ -1,10 +1,12 @@
 package com.yc.ht.web.handler;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,6 +29,7 @@ public class SongHandler {
 	@ResponseBody
 	public List<Song> songList(String soid){
 		if(soid!=null){
+			System.out.println(songService.findSongById(soid));
 			return songService.findSongById(soid);
 		}else{
 			return songService.listSong();
@@ -57,12 +60,22 @@ public class SongHandler {
 			}
 		}
 		song.setSopicPath(picPath);
-		System.out.println(song);
 		if(songService.modifySong(song)){
 			return "redirect:/back/manage.jsp";
 		}else{
 			return "forward:/back/manageModify.jsp";
 		}
+	}
+	
+	@RequestMapping(value="refer/{soname}",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Song> referSong(@PathVariable("soname") String soname){
+		try {
+			soname = new String(soname.getBytes("iso-8859-1"),"utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		return songService.findSongByName(soname);
 	}
 	
 }

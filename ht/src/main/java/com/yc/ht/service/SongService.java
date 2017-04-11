@@ -11,6 +11,8 @@ public interface SongService {
 	
 	List<Song> findSongById(String soid);
 	
+	List<Song> findSongByName(String soname);
+	
 	PaginationBean<Song> listSong(String pageS,String currP);
 	
 	boolean removeSong(String soid);

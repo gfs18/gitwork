@@ -1,6 +1,5 @@
 package com.yc.ht.entity;
 
-import java.util.Date;
 
 public class Mv {
 	private Integer mvid;           //mv编号
@@ -9,7 +8,7 @@ public class Mv {
 	private Integer soid;			//单曲编号
 	private String mvduration;	//mv时长
 	private String mvpicPath;	//图片路径
-	private Date mvpubTime;		//出版时间
+	private String mvpubTime;		//出版时间
 	private String mvPath;		//mv存放路径
 	
 	
@@ -22,7 +21,7 @@ public class Mv {
 
 
 	public Mv(Integer mvid, String mvname, Integer sgid, Integer soid, String mvduration, String mvpicPath,
-			Date mvpubTime, String mvPath) {
+			String mvpubTime, String mvPath) {
 		this.mvid = mvid;
 		this.mvname = mvname;
 		this.sgid = sgid;
@@ -133,7 +132,7 @@ public class Mv {
 
 
 
-	public Date getMvpubTime() {
+	public String getMvpubTime() {
 		return mvpubTime;
 	}
 
@@ -141,7 +140,7 @@ public class Mv {
 
 
 
-	public void setMvpubTime(Date mvpubTime) {
+	public void setMvpubTime(String mvpubTime) {
 		this.mvpubTime = mvpubTime;
 	}
 

@@ -1,6 +1,5 @@
 package com.yc.ht.entity;
 
-import java.util.Date;
 
 
 //单曲表
@@ -116,8 +115,5 @@ public class Song {
 				+ sopicPath + ", sopubTime=" + sopubTime + ", solyricPath=" + solyricPath + ", sopath=" + sopath
 				+ ", soduration=" + soduration + ", vipDownload=" + vipDownload + "]";
 	}
-	
-	
-	
 	
 }
