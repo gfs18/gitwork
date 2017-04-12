@@ -27,15 +27,13 @@
 					<ul class="nav navbar-nav navbar-left" id="topnav">
 						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
 							href="back/manage.jsp">单曲管理</a></li>
-
-						<li><a href="back/singer.jsp">歌手管理</a></li>
-						<li><a href="back/specialInfo.jsp">专辑管理</a></li>
-
-						<li><a href="back/mvmanage.jsp">短片管理</a></li>
+						<li><a href="javascript:void(0)">歌手管理</a></li>
+						<li><a href="javascript:void(0)">专辑管理</a></li>
+						<li><a href="javascript:void(0)">短片管理</a></li>
 						<li><a href="back/userManage.jsp">用户管理</a></li>
-						</ul>
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<c:if test="${login_admin != null }">
+						<%-- <c:if test="${login_admin != null }"> --%>
 							<li><a href="javascript:void(0)">${login_admin }</a></li>
 							<li class="dropdown"><a href="javascript:void(0)"
 							class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -45,7 +43,7 @@
 								<li><a href="javascript:void(0)" onclick="loginOut()">注销</a></li>
 								<li><a href="back/login.jsp">切换用户</a></li>
 							</ul></li>
-						</c:if>
+						<%-- </c:if> --%>
 					</ul>
 				</div>
 			</div>
@@ -55,9 +53,10 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation" class="active"><a href="back/manage.jsp">单曲信息</a></li>
-				<li role="presentation"><a href="back/manageRefer.jsp">单曲查询</a></li>
-				<li role="presentation"><a href="back/manageAdd.jsp">单曲添加</a></li>
+				<li role="presentation" class="active"><a href="back/userManage.jsp">用户信息</a></li>
+				<li role="presentation"><a href="back/userManageRefer.jsp">用户查询</a></li>
+				<li role="presentation"><a href="back/userManageAdd.jsp">用户添加</a></li>
+				<li role="presentation"><a href="back/userManageModify.jsp">用户修改</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
@@ -65,14 +64,13 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>单曲编号</th>
-							<th>单曲名</th>
-							<th>图片路径</th>
-							<th>出版时间</th>
-							<th>歌词路径</th>
-							<th>单曲路径</th>
-							<th>单曲时长</th>
-							<th>是否为Vip下载</th>
+							<th>用户编号</th>
+							<th>用户名</th>
+							<th>用户邮箱</th>
+							<th>头像</th>
+							<th>简介</th>
+							<th>用户状态</th>
+							<th>会员状态</th>
 							<th>操作</th>
 						</tr>
 					</thead>
@@ -105,6 +103,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/manage.js"></script>
+	<script type="text/javascript" src="js/userManage.js"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yc.ht.entity.PaginationBean;
+import com.yc.ht.entity.Singer;
 import com.yc.ht.entity.Song;
 import com.yc.ht.mapper.SongMapper;
 import com.yc.ht.service.SongService;
@@ -55,6 +56,11 @@ public class SongServiceImpl implements SongService{
 	}
 
 	@Override
+
+	public List<Singer> Hot(String sgEname) {
+		// TODO Auto-generated method stub
+		return songMapper.HOT(sgEname);
+}
 	public boolean removeSong(String soid) {
 		return songMapper.removeSong(Integer.valueOf(soid))>0;
 	}
@@ -72,6 +78,7 @@ public class SongServiceImpl implements SongService{
 	@Override
 	public List<Song> findSongByName(String soname) {
 		return songMapper.findSongByName(soname);
+
 	}
 	
 }

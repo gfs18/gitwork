@@ -23,12 +23,15 @@ create table users(
 );
 --select * from users;
 --alter table users modify uemail varchar2(40);
+--insert into users values(seq_users_uid.nextval,'哈哈哈哈','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/bg.png','很美啊',1,0,null);
+--insert into users values(seq_users_uid.nextval,'admin','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','picpath','很美啊',1,0,null);
+
 
 --drop table users;
 
---insert into users select seq_users_uid.nextval,dbms_random.string('1',dbms_random.value(4,10)),
---'3b3690fba8bd08059eae130425396eb05ded1b7d','123456@qq.com',
---'','挺好!',1,1,'' from dual connect by level <100;
+insert into users select seq_users_uid.nextval,dbms_random.string('1',dbms_random.value(4,10)),
+'3b3690fba8bd08059eae130425396eb05ded1b7d','123456@qq.com',
+'','挺好!',1,1,'' from dual connect by level <10;
 --insert into users values(seq_users_uid.nextval,'admin','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','picpath','很美啊',1,0,null);
 
 --select * from users;
@@ -61,9 +64,10 @@ create table singer(
        lgid number(20) not null,--音乐语种编号
        sggender varchar2(10) not null,  --性别
        sgpicPath varchar2(40) not null, --头像路径
-       sgintroduce varchar2(400)not null,     --歌手介绍
+       sgintroduce varchar2(1000)not null,     --歌手介绍
        mark varchar2(100)       --预留字段
 );
+--alter singer modify sgsgintroduce varchar2(1000);
 insert into singer values(seq_singer_sgid.nextval,'夏婉安','X','中国',10001,'女','images/xwa.jpg','夏婉安,黑龙江哈尔滨人,最有潜力的90后网络原创歌手。\r\n','');
 insert into singer values(seq_singer_sgid.nextval,'韩红','H','中国',10001,'女','images/hh.jpg','韩红，全国政协委员，华录百纳娱乐公司董事长兼CEO。\r\n','');
 insert into singer values(seq_singer_sgid.nextval,'张杰','Z','中国',10002,'男','images/zhangjie.jpg', '张杰，1982年12月20日出生于四川成都，毕业于四川师范大学，中国内地流行歌手。\r\n','');
@@ -79,11 +83,13 @@ create table special(
       spname varchar2(50)not null,     --专辑名
       lgid number(20) not null,--语种编号
       sppicPath varchar2(100) not null,   --封面图片路径
+      spintroduce varchar2(1000), --专辑描述
       sppubTime date not null,   --出版时间
       spclick number(20,2), --点击量
       spintroduce varchar2(1000),
       mark varchar2(100)       --预留字段
 );
+
 
 insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
 1001,'images/zj-2.jpg',to_date('2016-11-4','yyyy-mm-dd'),20,'');

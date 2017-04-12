@@ -20,3 +20,12 @@ function loginOut(){
 	},"json");
 }
 
+
+function findNameSinger(){
+	var sgname = $.trim($("#sgname").val());
+	//alert(sgname);
+	$("#findName").attr("href","back/singer.jsp?sgname="+sgname);
+}
+
+
+

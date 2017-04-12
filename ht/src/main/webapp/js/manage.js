@@ -1,10 +1,11 @@
 var count= 0 ;
+showSongInfo(5,1);
 function showSongInfo(pageS,currP){
 	$.get("song/pagination",{"pageS":pageS,"currP":currP},function(data){
 		var str = "";
 		for (var i = 0; i < data.rows.length; i++) {
 			str += "<tr class='tableoverout'><th>"+data.rows[i].soid+"</th><th>"+data.rows[i].soname+"</th><th>"+data.rows[i].sopicPath+"</th><th>"
-			+data.rows[i].sopubTime+"</th><th>"+data.rows[i].solyricPath+"</th><th>"
+			+data.rows[i].sopubTime.split('.')[0]+"</th><th>"+data.rows[i].solyricPath+"</th><th>"
 			+data.rows[i].sopath+"</th><th>"+data.rows[i].soduration+"</th><th>"+data.rows[i].vipDownload+"</th>"
 			+"<th><a href='back/manageModify.jsp?soid="+data.rows[i].soid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
 			+"<a onclick='removeSong("+data.rows[i].soid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
@@ -16,15 +17,22 @@ function showSongInfo(pageS,currP){
 }
 
 
+
+
+
 function paginationSong(totalP){
 	var pStr = "";
 	if(totalP>=5){
 		pStr +='<li><a href="javascript:void(0)" onclick="paginatorPrevious('+totalP+')">&laquo;</a></li>';
+
+		
 		for (var j = 1; j <= 5; j++) {
 			pStr +='<li><a href="javascript:void(0)" onclick="showSongInfo(5,'+(j+(count*5))+')">'+(j+count*5)+'</a></li>';
 		}
 		pStr +='<li><a href="javascript:void(0)" onclick="paginatorNext('+totalP+')" >&raquo;</a></li>';
-	}else{
+		
+	}
+		else{
 		pStr +='<li><a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
 		for (var i = 1; i <= totalP; i++) {
 			pStr +='<li><a href="javascript:void(0)" onclick="showSongInfo(5,'+i+')">'+i+'</a></li>';
@@ -56,7 +64,6 @@ function removeSong(id){
 	},"json");
 }
 
-
 $("#topnav li").mouseover(function(){
 	$(".mydiv").css("left",($(this).width())*$(this).index());
 });
@@ -79,8 +86,9 @@ function loginOut(){
 	},"json");
 }
 
+
 //查询单曲
-function ReferSong(pageS,currP){
+function ReferSong(){
 	var soname = location.href.split("=")[1];
 	if(soname != null && soname !=""){
 		$.get("song/refer/"+soname,function(data){
@@ -99,7 +107,7 @@ function ReferSong(pageS,currP){
 		showSongInfo(5,1);
 	}
 }
-ReferSong(5,1);
+ReferSong();
 
 
 

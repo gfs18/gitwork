@@ -26,14 +26,12 @@
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left" id="topnav">
 						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
-							href="back/manage.jsp">单曲管理</a></li>
-
-						<li><a href="back/singer.jsp">歌手管理</a></li>
-						<li><a href="back/specialInfo.jsp">专辑管理</a></li>
-
-						<li><a href="back/mvmanage.jsp">短片管理</a></li>
-						<li><a href="back/userManage.jsp">用户管理</a></li>
-						</ul>
+							href="javascript:void(0)">单曲管理</a></li>
+						<li><a href="javascript:void(0)">歌手管理</a></li>
+						<li><a href="javascript:void(0)">专辑管理</a></li>
+						<li><a href="javascript:void(0)">短片管理</a></li>
+						<li><a href="javascript:void(0)">用户管理</a></li>
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<c:if test="${login_admin != null }">
 							<li><a href="javascript:void(0)">${login_admin }</a></li>
@@ -55,36 +53,53 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation" class="active"><a href="back/manage.jsp">单曲信息</a></li>
+				<li role="presentation" ><a href="back/manage.jsp">单曲信息</a></li>
 				<li role="presentation"><a href="back/manageRefer.jsp">单曲查询</a></li>
-				<li role="presentation"><a href="back/manageAdd.jsp">单曲添加</a></li>
+				<li role="presentation" class="active"><a href="back/manageModify.jsp">单曲修改</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
-			<div class="panel panel-default">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>单曲编号</th>
-							<th>单曲名</th>
-							<th>图片路径</th>
-							<th>出版时间</th>
-							<th>歌词路径</th>
-							<th>单曲路径</th>
-							<th>单曲时长</th>
-							<th>是否为Vip下载</th>
-							<th>操作</th>
-						</tr>
-					</thead>
-					<tbody id="tableBody"></tbody>
-				</table>
+			<div class="formDiv">
+				<form action="singer/modify" method="post" enctype="multipart/form-data" >
+					<div class="form-group"> 
+						<label>编号:</label>
+						<label id="labelid"></label>
+						<input type="hidden" id="sgid" class="form-control" name="sgid" />
+					</div>
+					<div class="form-group">
+						<label for="soname">歌手名:</label> <input type="text"
+							class="form-control" id="sgname" name="sgname">
+					</div>
+					<div class="form-group">
+						<label for="sgEname">歌手英文名:</label> <input type="text"
+							class="form-control" id="sgEname" name="sgEname">
+					</div>
+					<div class="form-group">
+						<label for="sgnation">国籍:</label> <input type="text"
+							class="form-control" id="sgnation" name="sgnation">
+					</div>
+					<div class="form-group">
+						<label>音乐语种:</label> 
+						<label id="languaes"></label>
+						<input type="hidden" id="languaes" class="form-control" name="languaes" />
+					</div>
+					<div class="form-group">
+						<label for="sggender">性别:</label> <input type="text"
+							class="form-control" id="sggender" name="sggender">
+					</div>
+					<div class="form-group">
+						<label>头像</label> <input type="file"
+						 name="picData" onchange="chgPic(this)"><img src="image/not_pic.jpg" id="sgpicPath"/>
+					</div>         
+					<div class="form-group">
+						<label for="sgintroduce">歌手介绍</label> <input type="text"
+							class="form-control" id="sgintroduce" name="sgintroduce" />
+					</div>
+					
+					<button type="submit" class="btn btn-default">修改</button>
+				</form>
 			</div>
-
-			<!-- 分页 -->
-			<nav>
-				<ul class="pagination"></ul>
-			</nav>
-
+			
 		</div>
 	</article>
 	<!-- 底部 -->
@@ -105,6 +120,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/manage.js"></script>
+	<script type="text/javascript" src="js/singerModify.js"></script>
 </body>
 </html>

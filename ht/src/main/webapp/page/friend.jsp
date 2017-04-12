@@ -70,10 +70,10 @@
 				<!-- 评论显示 -->
 			</div>
 			<!-- 分页 -->
-				<div>
-					<ul class="pagination"></ul>
-				</div>
-			
+			<div id="paginationDiv">
+				<ul class="pagination"></ul>
+			</div>
+
 		</div>
 		<!-- <p id="mymore" onclick="showMoreArticle()">更多动态</p> -->
 	</article>
