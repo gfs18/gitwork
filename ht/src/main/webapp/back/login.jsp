@@ -19,7 +19,7 @@
 		<p id="til"><img src="images/log.png" style="width: 40px;height: 40px;"><strong>幻听音乐</strong></p>
 		<form action="admin/login" id="loginForm" method="POST">
 			<p id="error"><label>${errorMsg }</label></p><c:remove var="errorMsg" scope="session"/>
-			<p><input name="aname" placeholder="请输入用户名或id" required="required" id="aname" value="DJJPYMU"></p>
+			<p><input name="aname" placeholder="请输入用户名或id" required="required" id="aname" value="CRJSE"></p>
 			<p><input type="password" name="apwd" placeholder="请输入密码" required="required" id="apwd"></p>
 			<p><img src="vcode.jpg" title="看不清,换一张"/>&nbsp;<input name="vcode" placeholder="请输入验证码"  id="vcode" required="required"></p>
 			<p><a id="btnLogin" href="javascript:void(0)">登录</a></p>

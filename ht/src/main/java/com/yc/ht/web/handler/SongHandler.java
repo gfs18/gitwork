@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.yc.ht.entity.PaginationBean;
+import com.yc.ht.entity.Singer;
 import com.yc.ht.entity.Song;
 import com.yc.ht.service.SongService;
 import com.yc.ht.util.InternetRes;
@@ -45,6 +46,12 @@ public class SongHandler {
 		return songService.listSong(pageS, currP);
 	}
 
+	@RequestMapping(value="{sgEname}",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Singer> HOT(@PathVariable("sgEname") String sgEname){
+		return songService.Hot(sgEname);
+	}
+
 	@RequestMapping(value="remove",method=RequestMethod.POST)
 	@ResponseBody
 	public boolean removeSong(String id){
@@ -68,6 +75,7 @@ public class SongHandler {
 		}else{
 			return "forward:/back/manageModify.jsp";
 		}
+
 	}
 
 	@RequestMapping(value="refer/{soname}",method=RequestMethod.GET)

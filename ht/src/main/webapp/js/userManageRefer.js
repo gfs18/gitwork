@@ -11,12 +11,12 @@ function showDiv(){
 	}
 }
 
-//注销
-function loginOut(){
-	$.post("admin/out", function(data) {
-		if(data){
-			location.href="back/login.jsp";
-		}
-	},"json");
+
+//搜索
+function findUser(){
+	var uname = $.trim($("#uname").val());
+	$("#referUser").attr("href","back/userManage.jsp?uname="+uname);
 }
+
+
 

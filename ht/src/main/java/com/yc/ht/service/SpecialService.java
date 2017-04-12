@@ -23,6 +23,15 @@ public interface SpecialService {
 
 	PaginationBean<Special> getSpecialByStyle(String rows, String page, int style);
 
+	boolean specialDelete(String spid);
+
+	boolean specialModify(int spid);
+
+	PaginationBean<Special> specialBack(String rows, String page);
+
+	List<Special> specialSearch(String spname);
+
+
 
 	//列出专辑音乐
 	//List<Special> listSpeicalMusic();

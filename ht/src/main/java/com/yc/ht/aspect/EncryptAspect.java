@@ -15,6 +15,10 @@ import com.yc.ht.util.Encrypt;
 @Aspect
 public class EncryptAspect {
 	
+
+
+
+
 	@Before("execution(* com.yc.ht.service.impl.UserServiceImpl.*(com.yc.ht.entity.Users))")
 	public void beforeMathod(JoinPoint joinPoint){
 		Users user= (Users) joinPoint.getArgs()[0];
@@ -23,13 +27,14 @@ public class EncryptAspect {
 		LogManager.getLogger().debug("加密成功....");
 	}
 	
-	
 	@Before("execution(* com.yc.ht.service.impl.AdminServiceImpl.login(..))")
-	public void beforeMathodAdmin(JoinPoint joinPoint){
+	public void zc(JoinPoint joinPoint){
 		Admin admin= (Admin) joinPoint.getArgs()[0];
 		LogManager.getLogger().debug("对密码加密中....");
 		admin.setApwd(Encrypt.md5AndSha(admin.getApwd()));
 		LogManager.getLogger().debug("加密成功....");
 	}
+	
+	
 	
 }

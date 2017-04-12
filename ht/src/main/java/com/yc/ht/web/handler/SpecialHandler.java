@@ -1,13 +1,10 @@
 package com.yc.ht.web.handler;
 
 import java.util.List;
-import java.util.Map;
 
-import org.apache.ibatis.annotations.Param;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,7 +14,11 @@ import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Song;
 import com.yc.ht.entity.Special;
 import com.yc.ht.service.SpecialService;
-
+/**
+ * 
+ * @author Lcl
+ *
+ */
 @Controller("specialHandler")
 @RequestMapping("special")
 public class SpecialHandler {
@@ -74,5 +75,36 @@ public class SpecialHandler {
 	public List<Languages> specialStyle(){
 		LogManager.getLogger().debug("专辑页面显示专辑类型。。");
 		return specialService.specialStyle();
+	}
+	
+	
+	//后台
+	@RequestMapping(value="back", method=RequestMethod.GET)
+	@ResponseBody
+	public PaginationBean<Special> specialBack(String rows,String page){
+		LogManager.getLogger().debug("后台显示专辑信息");
+		return specialService.specialBack(rows,page);
+	}
+	
+	@RequestMapping(value="delete", method=RequestMethod.POST)
+	@ResponseBody
+	public boolean specialDelete(String spid){
+		LogManager.getLogger().debug("后台删除专辑");
+		return specialService.specialDelete(spid);
+	}
+	
+	@RequestMapping(value="modify", method=RequestMethod.POST)
+	@ResponseBody
+	public boolean specialModify(int spid){
+		LogManager.getLogger().debug("后台修改专辑");
+		return specialService.specialModify(spid);
+	}
+	
+	@RequestMapping(value="search", method=RequestMethod.POST)
+	@ResponseBody
+	public List<Special> specialSearch(String spname){
+		LogManager.getLogger().debug("后台搜索专辑");
+		//return specialService.specialSearch(spname);
+		return null;
 	}
 }

@@ -25,10 +25,10 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left" id="topnav">
-						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
-							href="javascript:void(0)">单曲管理</a></li>
-						<li><a href="javascript:void(0)">歌手管理</a></li>
-						<li><a href="javascript:void(0)">专辑管理</a></li>
+						<li><div class="mydiv hidden-md hidden-sm hidden-xs">
+						</div><a href="back/manage.jsp">单曲管理</a></li>
+						<li><a href="back/singer.jsp">歌手管理</a></li>
+						<li><a href="back/specialInfo.jsp">专辑管理</a></li>
 						<li><a href="back/mvmanage.jsp">短片管理</a></li>
 						<li><a href="javascript:void(0)">用户管理</a></li>
 					</ul>
