@@ -54,8 +54,8 @@
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
 				<li role="presentation"><a href="back/specialInfo.jsp">专辑信息</a></li>
-				<li role="presentation" class="active"><a href="back/specialRefer.jsp">专辑查询</a></li>
-				<li role="presentation"><a href="back/specialModify.jsp">专辑修改</a></li>
+				<li role="presentation"><a href="back/specialRefer.jsp">专辑查询</a></li>
+				<li role="presentation" class="active"><a href="back/specialAdd.jsp">专辑添加</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
@@ -65,8 +65,8 @@
 						<tr>
 							<th>专辑编号</th>
 							<th>专辑名</th>
-							<th>歌手编号</th>
-							<th>语种编号</th>
+							<th>歌手</th>
+							<th>所属语种</th>
 							<th>图片路径</th>
 							<th>出版时间</th>
 							<th>点击量</th>

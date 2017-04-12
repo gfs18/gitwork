@@ -10,13 +10,13 @@ public class Special {
 	private String sppubTime; 	//出版时间
 	private Singer singer;	//歌手
 	private Double spclick; //点击量
+	private String spintroduce;//专辑介绍
 	public Special() {
 	}
 
 
-
-	public Special(Integer spid, Integer sgid, String spname, Languages language, String sppicPath,
-			String sppubTime, Singer singer, Double spclick) {
+	public Special(Integer spid, Integer sgid, String spname, Languages language, String sppicPath, String sppubTime,
+			Singer singer, Double spclick, String spintroduce) {
 		this.spid = spid;
 		this.sgid = sgid;
 		this.spname = spname;
@@ -25,9 +25,8 @@ public class Special {
 		this.sppubTime = sppubTime;
 		this.singer = singer;
 		this.spclick = spclick;
+		this.spintroduce = spintroduce;
 	}
-
-
 
 	public Integer getSpid() {
 		return spid;
@@ -77,12 +76,19 @@ public class Special {
 	public void setSpclick(Double spclick) {
 		this.spclick = spclick;
 	}
+	public String getSpintroduce() {
+		return spintroduce;
+	}
+	public void setSpintroduce(String spintroduce) {
+		this.spintroduce = spintroduce;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Special [spid=" + spid + ", sgid=" + sgid + ", spname=" + spname  + ", language="
-				+ language + ", sppicPath=" + sppicPath + ", sppubTime=" + sppubTime + ", singer=" + singer
-				+ ", spclick=" + spclick + "]";
+		return "\nSpecial [spid=" + spid + ", sgid=" + sgid + ", spname=" + spname + ", language=" + language
+				+ ", sppicPath=" + sppicPath + ", sppubTime=" + sppubTime + ", singer=" + singer + ", spclick="
+				+ spclick + ", spintroduce=" + spintroduce + "]";
 	}
 
 

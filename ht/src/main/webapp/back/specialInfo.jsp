@@ -55,7 +55,7 @@
 			<ul class="nav nav-pills nav-stacked">
 				<li role="presentation" class="active"><a href="back/specialInfo.jsp">专辑信息</a></li>
 				<li role="presentation"><a href="back/specialRefer.jsp">专辑查询</a></li>
-				<li role="presentation"><a href="back/specialModify.jsp">专辑修改</a></li>
+				<li role="presentation"><a href="back/specialAdd.jsp">专辑添加</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">

@@ -26,7 +26,7 @@ public interface SpecialMapper {
 
 	int specialDelete(Integer spid);
 
-	int specialModify(int spid);
+	int specialModify(Special special);
 
 	PaginationBean<Special> specialBack(PaginationBean<Special> pb);
 

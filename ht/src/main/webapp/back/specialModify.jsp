@@ -55,45 +55,41 @@
 			<ul class="nav nav-pills nav-stacked">
 				<li role="presentation"><a href="back/specialInfo.jsp">专辑信息</a></li>
 				<li role="presentation" ><a href="back/specialRefer.jsp">专辑查询</a></li>
-				<li role="presentation" class="active"><a href="back/specialModify.jsp">专辑修改</a></li>
+				<li role="presentation"><a href="back/specialAdd.jsp">专辑添加</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
 			<div class="formDiv">
-				<form action="song/modify" method="post" enctype="multipart/form-data" >
+				<form action="special/modify" method="post" enctype="multipart/form-data" >
 					<div class="form-group"> 
 						<label>编号:</label>
 						<label id="labelid"></label>
-						<input type="hidden" id="soid" class="form-control" name="soid" />
+						<input type="hidden" id="spid" class="form-control" name="spid" />
 					</div>
 					<div class="form-group">
-						<label for="soname">单曲名:</label> <input type="text"
-							class="form-control" id="soname" name="soname">
+						<label for="spname">专辑名:</label> <input type="text"
+							class="form-control" id="spname" name="spname">
+					</div>
+					<div class="form-group">
+						<label for="sgname">歌手:</label> <input type="text"
+							class="form-control" id="sgname" name="sgname">
+					</div>
+					<div class="form-group">
+						<label for="language">所属语种:</label> <input class="form-control" id="language" name="language"/>
 					</div>
 					<div class="form-group">
 						<label>图片路径</label> <input type="file"
 						 name="picData" onchange="chgPic(this)"><img id="sopicPath"/>
 					</div>
 					<div class="form-group">
-						<label for="solyricPath">歌词路径</label> <input type="text"
-							class="form-control" id="solyricPath" name="solyricPath" />
+						<label for="sppubTime">出版时间</label> <input type="text"
+							class="form-control" id="sppubTime" name="sppubTime" />
 					</div>
 					<div class="form-group">
-						<label for="sopath">单曲路径</label> <input type="text" id="sopath"
-							class="form-control" name="sopath" />
+						<label for="spclick">点击量</label> <input type="text" id="spclick"
+							class="form-control" name="spclick" />
 					</div>
-					<div class="form-group">
-						<label>是否vip下载</label>
-						<p>
-						<label class="radio-inline">
-						<input type="radio"	name="vipDownload" id="vipTrue" value="是">
-							是
-						</label> <label class="radio-inline">
-						<input type="radio" name="vipDownload" id="vipFlase" value="否">
-							否
-						</label>
-						</p>
-					</div>
+					
 					<button type="submit" class="btn btn-default">修改</button>
 				</form>
 			</div>
@@ -117,6 +113,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/manageModify.js"></script>
+	<script type="text/javascript" src="js/specialModify.js"></script>
 </body>
 </html>
