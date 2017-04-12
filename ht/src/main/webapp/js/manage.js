@@ -80,7 +80,7 @@ function loginOut(){
 }
 
 //查询单曲
-function ReferSong(pageS,currP){
+function ReferSong(){
 	var soname = location.href.split("=")[1];
 	if(soname != null && soname !=""){
 		$.get("song/refer/"+soname,function(data){
@@ -99,7 +99,7 @@ function ReferSong(pageS,currP){
 		showSongInfo(5,1);
 	}
 }
-ReferSong(5,1);
+ReferSong();
 
 
 

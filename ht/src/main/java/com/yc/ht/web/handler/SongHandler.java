@@ -1,8 +1,10 @@
 package com.yc.ht.web.handler;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Song;
 import com.yc.ht.service.SongService;
+import com.yc.ht.util.InternetRes;
 import com.yc.ht.util.ServletUtil;
 
 @Controller("songHandler")
@@ -66,7 +69,7 @@ public class SongHandler {
 			return "forward:/back/manageModify.jsp";
 		}
 	}
-	
+
 	@RequestMapping(value="refer/{soname}",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Song> referSong(@PathVariable("soname") String soname){
@@ -77,5 +80,25 @@ public class SongHandler {
 		}
 		return songService.findSongByName(soname);
 	}
-	
+
+	@RequestMapping(value="add",method=RequestMethod.POST)
+	@ResponseBody
+	public boolean songAdd(String soname,String sgname,String solyricPath){
+		System.out.println("soname:"+soname+",sgname:"+sgname+",solyricPath:"+solyricPath);
+		//歌词网上下载
+		String[] strs = solyricPath.split("/");
+		File file = new File(ServletUtil.UPLOAD_DIR+File.separator+"solyric");
+		if(!file.exists()){
+			file.mkdirs();
+		}
+		String solyricName = "solyric"+File.separator+strs[(strs.length-1)];
+		if(solyricPath != null && !"".equals(solyricPath)){//判断是否文件上传
+			InternetRes.getInternetRes(solyricPath,solyricName);
+			solyricPath = ServletUtil.VIRTUAL_UPLOAD_DIR + solyricName;
+		}
+		
+		
+		
+		return true;
+	}
 }
