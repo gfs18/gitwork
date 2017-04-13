@@ -19,6 +19,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(seq_users_uid.nextval,#{uname},#{upwd},#{uemail},'','',default,default,'')
 	</insert>
 
+    
+     
+    
+     
+	<select id="Singgg" parameterType="String" resultType="Song" >
+		 select * from song where sgid like '${_parameter}'  	
+	</select>
+	
+	<select id="Sonngg" parameterType="String" resultType="Singer" >
+		 select * from Singer where sgid like '${_parameter}' 
+		 							 	
+	</select>
+	
+
+
 	<!-- 后台管理中的用户分页显示 -->
 	<select id="findPaginationUsers" parameterType="PaginationBean"
 		resultMap="PaginationBeanMap" useCache="false" flushCache="true">

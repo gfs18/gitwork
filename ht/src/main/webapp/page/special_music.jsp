@@ -51,8 +51,13 @@
       <div class="head row" id="S_big">
             <!-- 专辑详情 -->
         </div> 
+        <div class="specialDetail">
+        	<h4>专辑介绍：</h4>
+        	<div class="info"></div>
+        </div>
+        
 	<div class="music_list">
-        <div class="row" style="margin-left:0px">
+        <div class="row" style="margin-left:0px;margin-top: 2px">
             <div  class="list_no_1 col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
             <div  class="list_name_! col-lg-7 col-md-7 col-sm-11 col-xs-11" style="border-left:1px solid #E1E1E1; ">
                 <span class="m_name_1">歌曲名</span></div>

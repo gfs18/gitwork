@@ -64,11 +64,11 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>id</th>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Username</th>
-							<th>
+							<th width="100px">单曲名</th>
+							<th width="150px">歌手名</th>
+							<th>专辑名</th>
+							<th>歌词路径</th>
+							<th width="200px">
 								<div id="formRefer">
 									<input type="text" class="form-control" id="referName"
 										placeholder="需要添加的单曲名"><a class="btn btn-default"
@@ -78,62 +78,10 @@
 						</tr>
 					</thead>
 					<tbody id="tableBody">
-						<tr>
-							<th>1</th>
-							<th>Mark</th>
-							<th>Otto</th>
-							<th>@mdo</th>
-							<th></th>
-						</tr>
-						<tr>
-							<th>2</th>
-							<th>Jacob</th>
-							<th>Thornton</th>
-							<th>@fat</th>
-							<th></th>
-						</tr>
-						<tr>
-							<th>3</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-							<th></th>
-						</tr>
-						<tr>
-							<th>4</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-							<th></th>
-						</tr>
-						<tr>
-							<th>5</th>
-							<th>Larry</th>
-							<th>the Bird</th>
-							<th>@twitter</th>
-							<th></th>
-						</tr>
+						<!-- 显示 -->
 					</tbody>
 				</table>
 			</div>
-
-			<!-- 分页 -->
-			<nav>
-				<ul class="pagination">
-					<li><a href="javascript:void(0)" aria-label="Previous"> <span
-							aria-hidden="true">&laquo;</span>
-					</a></li>
-					<li class="active"><a href="javascript:void(0)">1</a></li>
-					<li><a href="javascript:void(0)">2</a></li>
-					<li><a href="javascript:void(0)">3</a></li>
-					<li><a href="javascript:void(0)">4</a></li>
-					<li><a href="javascript:void(0)">5</a></li>
-					<li><a href="javascript:void(0)" aria-label="Next"> <span
-							aria-hidden="true">&raquo;</span>
-					</a></li>
-				</ul>
-			</nav>
-
 		</div>
 	</article>
 	<!-- 底部 -->

@@ -3,6 +3,8 @@ specialDetail();
 function specialDetail(){
 	var spid=location.href.split("=")[1];
 	$.get("special/detail",{"spid":spid},function(data){
+		alert(JSON.stringify(data));
+		alert(data.spintroduce);
 		var spDetailStr="";
 		spDetailStr+='<div class="left col-lg-4 col-md-4 hidden-sm hidden-xs">';
 		spDetailStr+='<img id="img" src="'+data.sppicPath+'"><div class="cover"></div></div>';
@@ -12,6 +14,7 @@ function specialDetail(){
 		spDetailStr+='<div class="btns"><button class="mplay"><span class="glyphicon glyphicon-play" ></span> 播放</button>';
 		spDetailStr+='<button class="add hidden-sm hidden-xs"><span class="glyphicon glyphicon-heart-empty" ></span> 收藏</button></div></div>';
 		$("#S_big").html(spDetailStr);
+		$(".info").html(data.spintroduce);
 	},"json");
 }
 

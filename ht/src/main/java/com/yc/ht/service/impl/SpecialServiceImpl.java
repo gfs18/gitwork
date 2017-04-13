@@ -85,8 +85,8 @@ public class SpecialServiceImpl implements SpecialService{
 	}
 
 	@Override
-	public boolean specialModify(int spid) {
-		return specialMapper.specialModify(spid)>0;
+	public boolean specialModify(Special special) {
+		return specialMapper.specialModify(special)>0;
 	}
 
 	@Override

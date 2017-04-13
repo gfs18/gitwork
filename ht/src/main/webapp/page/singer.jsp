@@ -59,363 +59,86 @@
 	<article>
 		<div id="mygroup">
 			<div class="group">
-				<li><a href="#">全部</a></li>
-				<li><a href="#">华语男歌手</a></li>
-				<li><a href="#">华语女歌手</a></li>
-				<li><a href="#">华语女歌手</a></li>
-				<li><a href="#">日韩男歌手</a></li>
-				<li><a href="#">日韩女歌手</a></li>
-				<li><a href="#">日韩组合</a></li>
-				<li><a href="#">欧美男歌手</a></li>
-				<li><a href="#">欧美女歌手</a></li>
-				<li><a href="#">欧美组合</a></li>
-				<li><a href="#">其他</a></li>
-
+				<li><a href="javascript:void(0)">全部</a></li>
+				<div id="loa">
+				
+				</div>
+				<li><a href="javascript:void(0)">其他</a></li>
 			</div>
 
 			<div class="English">
 				<li class="order"><a href="#">热门</a></li>
-				<li class="lish"><a href="#">A</a></li>
-				<li class="lish"><a href="#">B</a></li>
-				<li class="lish"><a href="#">D</a></li>
-				<li class="lish"><a href="#">E</a></li>
-				<li class="lish"><a href="#">F</a></li>
-				<li class="lish"><a href="#">G</a></li>
-				<li class="lish"><a href="#">H</a></li>
-				<li class="lish"><a href="#">I</a></li>
-				<li class="lish"><a href="#">J</a></li>
-				<li class="lish"><a href="#">K</a></li>
-				<li class="lish"><a href="#">L</a></li>
-				<li class="lish"><a href="#">M</a></li>
-				<li class="lish"><a href="#">N</a></li>
-				<li class="lish"><a href="#">O</a></li>
-				<li class="lish"><a href="#">P</a></li>
-				<li class="lish"><a href="#">Q</a></li>
-				<li class="lish"><a href="#">R</a></li>
-				<li class="lish"><a href="#">S</a></li>
-				<li class="lish"><a href="#">T</a></li>
-				<li class="lish"><a href="#">U</a></li>
-				<li class="lish"><a href="#">V</a></li>
-				<li class="lish"><a href="#">W</a></li>
-				<li class="lish"><a href="#">X</a></li>
-				<li class="lish"><a href="#">Y</a></li>
-				<li class="lish"><a href="#">Z</a></li>
+				<li class="lish" ><a href="javascript:void(0)" id="hoo" onclick="hot('A')">A</a></li>
+				<li class="lish" ><a href="javascript:void(0)" id="hoo" onclick="hot('B')">B</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('D')">D</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('E')">E</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('F')">F</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('G')">G</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('H')">H</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('I')">I</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('J')">J</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('K')">K</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('L')">L</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('M')">M</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('N')">N</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('O')">O</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('P')">P</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('Q')">Q</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('R')">R</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('S')">S</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('T')">T</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('U')">U</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('V')">V</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('W')">W</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('X')">X</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('Y')">Y</a></li>
+				<li class="lish"><a href="javascript:void(0)" id="hoo" onclick="hot('Z')">Z</a></li>
 				<li class="order"><a href="#">其他</a></li>
 			</div>
 		</div>
 		<div class="book">
+			
 			<div class="page_left">
-				<ul class="singer_list__list">
-					<li class="singer_list__item">
-						<div class="singer_list__item_box">
-							<a href=""><img src="images/chensheng.jpg"></a>
-							<h4>
-								<a href="">陈楚生</a>
-							</h4>
-						</div>
-					</li>
-					<li class="singer_list__item">
-						<div class="singer_list__item_box">
-							<a href=""><img src="images/cjy.jpg"></a>
-							<h4>
-								<a href="">蔡键雅</a>
-							</h4>
-						</div>
-					</li>
-					<li class="singer_list__item">
-						<div class="singer_list__item_box">
-							<a href=""><img src="images/dengziqi.jpg"></a>
-							<h4>
-								<a href="">邓紫棋</a>
-							</h4>
-						</div>
-					</li>
-					<li class="singer_list__item">
-						<div class="singer_list__item_box">
-							<a href=""><img src="images/hx.jpg"></a>
-							<h4>
-								<a href="">胡夏</a>
-							</h4>
-						</div>
-					</li>
-					<li class="singer_list__item">
-						<div class="singer_list__item_box">
-							<a href=""><img src="images/llh.jpg"></a>
-							<h4>
-								<a href="">刘力扬</a>
-							</h4>
-						</div>
-					</li>
-					<li class="singer_list__item">
-						<div class="singer_list__item_box">
-							<a href=""><img src="images/lxj.jpg"></a>
-							<h4>
-								<a href="">刘惜君</a>
-							</h4>
-						</div>
-					</li>
+				<ul class="singer_list__list" id="picture">
+
 				</ul>
 				<p class="p1">1</p>
 			</div>
+			
 
 			<div class="page_right">
-				<span><ul class="singer_list__list">
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/wangsulong.jpg"></a>
-								<h4>
-									<a href="">汪苏泷</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/xusong.jpg"></a>
-								<h4>
-									<a href="">许嵩</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href="singer_more.jsp"><img src="images/qz.jpg"></a>
-								<h4>
-									<a href="singer_more.jsp">薛之谦</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/zhuojielun.jpg"></a>
-								<h4>
-									<a href="">周杰伦</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/cyx.jpg"></a>
-								<h4>
-									<a href="">陈奕迅</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/ljj.jpg"></a>
-								<h4>
-									<a href="">林俊杰</a>
-								</h4>
-							</div>
-						</li>
-					</ul>
-					<p class="p2">2</p></span> <span>
-					<ul class="singer_list__list">
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/yy.jpg"></a>
-								<h4>
-									<a href="">杨洋</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/ycl.jpg"></a>
-								<h4>
-									<a href="">杨丞琳</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/yk.jpg"></a>
-								<h4>
-									<a href="">杨坤</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/hge.jpg"></a>
-								<h4>
-									<a href="">胡歌</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/fwq.jpg"></a>
-								<h4>
-									<a href="">范玮琪</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/dc.jpg"></a>
-								<h4>
-									<a href="">邓超</a>
-								</h4>
-							</div>
-						</li>
+				<span><ul class="singer_list__list" id="picture1">
+						
+					  </ul>
+						<p class="p2">2</p>
+				</span> 
+					
+					
+				<span>
+					<ul class="singer_list__list" id="picture2">
+						
 					</ul>
 					<p class="p1">3</p>
 				</span>
+				
 			</div>
+			
+			
 			<div class="page_right">
-				<span><ul class="singer_list__list">
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/ryl.jpg"></a>
-								<h4>
-									<a href="">乔任梁</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/qw.jpg"></a>
-								<h4>
-									<a href="">戚薇</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/szh.jpg"></a>
-								<h4>
-									<a href="">孙子涵</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/tg.jpg"></a>
-								<h4>
-									<a href="">唐古</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/kzxd.jpg"></a>
-								<h4>
-									<a href="">筷子兄弟</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/xyx.jpg"></a>
-								<h4>
-									<a href="">萧亚轩</a>
-								</h4>
-							</div>
-						</li>
+				<span><ul class="singer_list__list" id="picture3">
+						
+						
 					</ul>
-					<p class="p2">4</p></span> <span><ul class="singer_list__list">
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/xwa.jpg"></a>
-								<h4>
-									<a href="">夏婉安</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/hh.jpg"></a>
-								<h4>
-									<a href="">韩红</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/huayuqunxing.jpg"></a>
-								<h4>
-									<a href="">华语群星</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/zhangjie.jpg"></a>
-								<h4>
-									<a href="">张杰</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/jinsha.jpg"></a>
-								<h4>
-									<a href="">金沙</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/lh.jpg"></a>
-								<h4>
-									<a href="">鹿晗</a>
-								</h4>
-							</div>
-						</li>
+					
+					<p class="p2">4</p></span> <span><ul class="singer_list__list" id="picture4">
+						
+						
+						
 					</ul>
 					<p class="p1">5</p></span>
 			</div>
 			<div class="page_right_end">
-				<span><ul class="singer_list__list">
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/liutao.jpg"></a>
-								<h4>
-									<a href="">刘涛</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/liudhua.jpg"></a>
-								<h4>
-									<a href="">刘德华</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/bwb.jpg"></a>
-								<h4>
-									<a href="">潘玮柏</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/sdal.jpg"></a>
-								<h4>
-									<a href="">苏打绿</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/wlh.jpg"></a>
-								<h4>
-									<a href="">王力宏</a>
-								</h4>
-							</div>
-						</li>
-						<li class="singer_list__item">
-							<div class="singer_list__item_box">
-								<a href=""><img src="images/rzr.jpg"></a>
-								<h4>
-									<a href="">容祖儿</a>
-								</h4>
-							</div>
-						</li>
+				<span><ul class="singer_list__list" id="picture5">
 					</ul>
 					<p class="p2">End</p></span>
 			</div>
@@ -425,47 +148,12 @@
 			class="carousel-control right" id="carouse_right"
 			onclick="show_right()" data-slide="next">&rsaquo;</a>
 		<div class="singer_list_mytxt">
-			<ul class="singer_list_txt">
-				<li class="singer_list_txt__item"><a href="">MC梦柯</a></li>
-				<li class="singer_list_txt__item"><a href="">张学良</a></li>
-				<li class="singer_list_txt__item"><a href="">汪峰</a></li>
-				<li class="singer_list_txt__item"><a href="">Jam</a></li>
-				<li class="singer_list_txt__item"><a href="">7妹</a></li>
-				<li class="singer_list_txt__item"><a href="">雨宗林</a></li>
-				<li class="singer_list_txt__item"><a href="">华晨雨</a></li>
-				<li class="singer_list_txt__item"><a href="">周传雄</a></li>
-				<li class="singer_list_txt__item"><a href="">陈粒</a></li>
-				<li class="singer_list_txt__item"><a href="">Eminem (艾米纳姆)</a></li>
-				<li class="singer_list_txt__item"><a href="">One Direction
-						(单向组合)</a></li>
-				<li class="singer_list_txt__item"><a href="">蒋蒋</a></li>
-				<li class="singer_list_txt__item"><a href="">蒙面哥</a></li>
-				<li class="singer_list_txt__item"><a href="">高安</a></li>
-				<li class="singer_list_txt__item"><a href="">小沈阳</a></li>
-				<li class="singer_list_txt__item"><a href="">云菲菲</a></li>
-				<li class="singer_list_txt__item"><a href="">本兮</a></li>
-				<li class="singer_list_txt__item"><a href="">梁静茹</a></li>
-				<li class="singer_list_txt__item"><a href="">阿悄</a></li>
-				<li class="singer_list_txt__item"><a href="">高进</a></li>
-				<li class="singer_list_txt__item"><a href="">王杰</a></li>
-				<li class="singer_list_txt__item"><a href="">邓丽君</a></li>
-				<li class="singer_list_txt__item"><a href="">李宇春</a></li>
-				<li class="singer_list_txt__item"><a href="">欢子</a></li>
-				<li class="singer_list_txt__item"><a href="">童可可</a></li>
-				<li class="singer_list_txt__item"><a href="">郁可唯</a></li>
-				<li class="singer_list_txt__item"><a href="">大张伟</a></li>
-				<li class="singer_list_txt__item"><a href="">五月天</a></li>
-				<li class="singer_list_txt__item"><a href="">海明威</a></li>
-				<li class="singer_list_txt__item"><a href="">卫兰</a></li>
-			</ul>
-			<ul class="pagination pagination-lg">
-				<li class="pagenation"><a href="#">&laquo;</a></li>
-				<li class="pagenation"><a href="#">1</a></li>
-				<li class="pagenation"><a href="#">2</a></li>
-				<li class="pagenation"><a href="#">3</a></li>
-				<li class="pagenation"><a href="#">4</a></li>
-				<li class="pagenation"><a href="#">5</a></li>
-				<li class="pagenation"><a href="#">&raquo;</a></li>
+			<div id="sName">
+				
+			</div>
+			
+			<ul class="pagination pagination-lg" id="pagination">
+				
 			</ul>
 		</div>
 

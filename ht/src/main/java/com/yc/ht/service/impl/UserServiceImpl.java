@@ -2,9 +2,14 @@ package com.yc.ht.service.impl;
 
 import java.util.List;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+
+import com.yc.ht.entity.Singer;
+import com.yc.ht.entity.Song;
 
 import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Users;
@@ -32,6 +37,22 @@ public class UserServiceImpl implements UserService {
 	public boolean zc(Users user) {
 		return userMapper.zhuce(user) >0;
 	}
+
+
+	
+
+	@Override
+	public List<Song> Singg(String lgid) {
+		// TODO Auto-generated method stub
+		return userMapper.Singgg(lgid);
+	}
+
+	@Override
+	public List<Singer> Sonng(String lgid) {
+		// TODO Auto-generated method stub
+		return userMapper.Sonngg(lgid);
+	}
+
 
 	/**
 	 * 后台用户分页显示

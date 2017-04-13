@@ -4,9 +4,9 @@ function showSpecialInfo(rows,page){
 	$.get("special/back",{"rows":rows,"page":page},function(data){
 		var str = "";
 		for (var i = 0; i < data.rows.length; i++) {
-			str += "<tr class='tableoverout'><th>"+data.rows[i].spid+"</th><th>"+data.rows[i].spname+"</th><th>"+data.rows[i].singer.sgname+"</th><th>"
-			+data.rows[i].language.language+"</th><th>"+data.rows[i].sppicPath+"</th><th>"
-			+data.rows[i].sppubTime.substring(0,10)+"</th><th>"+data.rows[i].spclick+"</th>"
+			str += "<tr class='tableoverout'><th>"+data.rows[i].spid+"</th><th>"+data.rows[i].spname+"<input  hidden='true' id='spname' style='width:100px'/></th><th>"+data.rows[i].singer.sgname+"<select  hidden='true' /></th><th>"
+			+data.rows[i].language.language+"<select  hidden='true' /></th><th>"+data.rows[i].sppicPath+"</th><th>"
+			+data.rows[i].sppubTime.substring(0,10)+"<input  hidden='true' id='sppubTime' style='width:80px'/></th><th>"+data.rows[i].spclick+"<input  hidden='true' id='spclick' style='width:30px'/></th>"
 			+"<th><a href='back/specialModify.jsp?spid="+data.rows[i].spid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
 			+"<a onclick='removeSpecial("+data.rows[i].spid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
 		}
@@ -85,19 +85,31 @@ function loginOut(){
 
 
 //查询专辑
+specialSearch();
 function specialSearch(){
-	var spname = $.trim($("#spname").val());
-	$("#findName").attr("href","back/specialInfo.jsp?spname="+spname);
 	var spname=location.href.split("=")[1];
-	alert(spname);
 	if(spname!=null){
-		$.post("special/search",{"spname":spname},function(data){
-			alert(11111);
+		$.get("special/search/"+spname,function(data){
+				var specialStr="";
+				for(var i=0;i<data.length;i++){
+					specialStr+="<tr class='tableoverout'><th>"+data[i].spid+"</th><th>"+data[i].spname+"</th><th>"+data[i].singer.sgname+"</th><th>"
+					+data[i].language.language+"</th><th>"+data[i].sppicPath+"</th><th>"
+					+data[i].sppubTime.substring(0,10)+"</th><th>"+data[i].spclick+"</th>"
+					+"<th><a href='back/specialModify.jsp?spid="+data[i].spid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
+					+"<a onclick='removeSpecial("+data[i].spid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
+				}
+				specialStr +='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#ffffff";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
+				$("#tableBody").html(specialStr);
+				$(".pagination").html("");
 		},"json");
+	}else{
+		showSpecialInfo(5, 1);
 	}
-	
 }
 
-
+function modify(spid){
+	$(this).show();
+	
+}
 
 
