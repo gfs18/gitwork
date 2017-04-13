@@ -27,7 +27,7 @@
 					<ul class="nav navbar-nav navbar-left" id="topnav">
 						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
 							href="javascript:void(0)">单曲管理</a></li>
-						<li><a href="javascript:void(0)">歌手管理</a></li>
+						<li><a href="back/singer.jsp">歌手管理</a></li>
 						<li><a href="javascript:void(0)">专辑管理</a></li>
 						<li><a href="javascript:void(0)">短片管理</a></li>
 						<li><a href="javascript:void(0)">用户管理</a></li>
@@ -53,7 +53,7 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation" ><a href="back/singer.jsp">歌手信息</a></li>
+				<li role="presentation" ><a href="back/manage.jsp">歌手信息</a></li>
 				<li role="presentation"><a href="back/manageRefer.jsp">歌手查询</a></li>
 				<li role="presentation" class="active"><a href="back/manageModify.jsp">歌手修改</a></li>
 				<li role="presentation"><a href="back/singerADD.jsp">歌手增加</a></li>
@@ -81,7 +81,7 @@
 					</div>
 					<div class="form-group">
 						<label>音乐语种:</label> 
-						<label id="labelid1"></label>
+						<label id="languaes"></label>
 						<input type="hidden" id="languaes" class="form-control" name="languaes" />
 					</div>
 					<div class="form-group">

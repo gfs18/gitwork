@@ -112,10 +112,11 @@ public class UserHandler {
 		return userService.Sonng(lgid);
 	}
 	
-	@RequestMapping(value="Sin",method=RequestMethod.GET)
+	@RequestMapping(value="Sin/{lgid}",method=RequestMethod.GET)
 	@ResponseBody
-	public List<Song> Sing(Song song){
-		return userService.Singg(song);
+	public List<Song> Sing(@PathVariable("lgid") String  lgid){
+		return userService.Singg(lgid);
+		
 	}
 	/**
 	 * 用户的分页显示

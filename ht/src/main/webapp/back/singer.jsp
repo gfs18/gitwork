@@ -56,6 +56,7 @@
 				<li role="presentation" class="active"><a href="back/singer.jsp">歌手信息</a></li>
 				<li role="presentation"><a href="back/singerRefer.jsp">歌手查询</a></li>
 				<li role="presentation"><a href="back/singerModify.jsp">歌手修改</a></li>
+				<li role="presentation"><a href="back/singerADD.jsp">歌手增加</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">

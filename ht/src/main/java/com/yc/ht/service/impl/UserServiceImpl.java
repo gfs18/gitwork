@@ -42,9 +42,9 @@ public class UserServiceImpl implements UserService {
 	
 
 	@Override
-	public List<Song> Singg(Song song) {
+	public List<Song> Singg(String lgid) {
 		// TODO Auto-generated method stub
-		return userMapper.Singgg(song);
+		return userMapper.Singgg(lgid);
 	}
 
 	@Override

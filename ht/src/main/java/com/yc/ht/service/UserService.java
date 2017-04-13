@@ -18,7 +18,7 @@ public interface UserService {
 
 	List<Singer> Sonng(String lgid);
 
-	List<Song> Singg(Song song);
+	List<Song> Singg(String lgid);
 
 	PaginationBean<Users> listUsers(String pageS, String currP);//在后台用户管理中分页显示用户
 
