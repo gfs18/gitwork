@@ -23,7 +23,7 @@ create table users(
 );
 --select * from users;
 --alter table users modify uemail varchar2(40);
---insert into users values(seq_users_uid.nextval,'哈哈哈哈','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/bg.png','很美啊',1,0,null);
+--insert into users values(seq_users_uid.nextval,'哈哈哈哈','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/bg.png','很美啊',0,1,null);
 --insert into users values(seq_users_uid.nextval,'admin','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','picpath','很美啊',1,0,null);
 
 

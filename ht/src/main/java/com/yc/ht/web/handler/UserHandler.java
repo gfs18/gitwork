@@ -134,6 +134,7 @@ public class UserHandler {
 				e.printStackTrace();
 			}
 		}
+		System.out.println("----->"+userService.listReferUser(uname));
 		return userService.listReferUser(uname);
 	}
 	

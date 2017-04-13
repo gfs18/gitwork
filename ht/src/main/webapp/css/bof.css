@@ -37,6 +37,8 @@ a:hover{
 }
 .navbar-nav li a:hover{
 	color: #2DC17A !important;
+	
+	color: #008080!important;
 }
 #navbartop{
 	opacity: 0.9;
