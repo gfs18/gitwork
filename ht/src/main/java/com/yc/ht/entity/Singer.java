@@ -13,17 +13,23 @@ public class Singer {
 	
 	public Singer() {
 	}
+	
 
-	public Singer(Integer sgid, String sgname, String sgEname, String sgnation, String sggender, String lgid,
-			String sgpicPath, String sgintroduce) {
-		this.sgid = sgid;
+	public Singer(String sgname, String sgEname, String sgnation, String sggender, String sgpicPath,
+			String sgintroduce) {
 		this.sgname = sgname;
 		this.sgEname = sgEname;
 		this.sgnation = sgnation;
 		this.sggender = sggender;
-		this.lgid = lgid;
 		this.sgpicPath = sgpicPath;
 		this.sgintroduce = sgintroduce;
+	}
+
+	public Singer(Integer sgid,String sgname, String sgEname, String sgnation, String sggender, String lgid,
+			String sgpicPath, String sgintroduce) {
+		this(sgname, sgEname, sgnation, sggender, sgpicPath, sgintroduce);
+		this.sgid = sgid;
+		this.lgid = lgid;
 	}
 
 	public Integer getSgid() {

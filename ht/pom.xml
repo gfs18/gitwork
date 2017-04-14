@@ -127,10 +127,18 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- 邮件发送 -->
 		<dependency>
 			<groupId>com.sun.mail</groupId>
 			<artifactId>javax.mail</artifactId>
 			<version>1.5.6</version>
+		</dependency>
+
+		<!-- 汉字转化为拼音 -->
+		<dependency>
+			<groupId>com.belerweb</groupId>
+			<artifactId>pinyin4j</artifactId>
+			<version>2.5.0</version>
 		</dependency>
 	</dependencies>
 	<build>
