@@ -19,7 +19,7 @@ public interface UserMapper {
 
 	List<Singer> Sonngg(String lgid);
 
-	List<Song> Singgg(Song song);
+	List<Song> Singgg(String lgid);
 
 	
 	PaginationBean<Users> findPaginationUsers(PaginationBean<Users> userBean);//后台管理中的用户分页显示

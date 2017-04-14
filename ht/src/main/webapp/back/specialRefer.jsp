@@ -55,7 +55,7 @@
 			<ul class="nav nav-pills nav-stacked">
 				<li role="presentation"><a href="back/specialInfo.jsp">专辑信息</a></li>
 				<li role="presentation" class="active"><a href="back/specialRefer.jsp">专辑查询</a></li>
-				<li role="presentation"><a href="back/specialModify.jsp">专辑修改</a></li>
+				<li role="presentation"><a href="back/specialAdd.jsp">专辑添加</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
@@ -63,7 +63,7 @@
 				<div class="form-group">
 				 <input type="text" class="form-control" id="spname" placeholder="请输入要查找的专辑名">
 				</div>
-				<a class="btn btn-default" id="findName" onclick="specialSearch()">搜索</a>
+				<a class="btn btn-default" id="findName" onclick="findNameSpecial()">搜索</a>
 			</form>
 		</div>
 	</article>
@@ -85,6 +85,7 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/specialRefer.js"></script>
 	<script type="text/javascript" src="js/specialInfo.js"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@
 /*******************************内容******************************************/
 .head{
     width:100%;
-    height:350px;
+    height:300px;
     /*border:1px solid #990000;*/
 }
 .left{
@@ -87,10 +87,10 @@
 /**********************列表***********************/
 .music_list{
     width:100%;
-    height:500px;
+    height:450px;
     font-family:"微软雅黑";
     font-size:15px;
-    /*border:1px solid #000000;*/
+    border-top:2px solid #2DC17A;
 }
 
 
@@ -137,7 +137,10 @@
     margin-left:15px !important;
 }
 
-
+.specialDetail{
+	padding-top: -100px;
+	margin-bottom: 20px;
+}
 
 
 

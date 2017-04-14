@@ -25,7 +25,7 @@ public interface SpecialService {
 
 	boolean specialDelete(String spid);
 
-	boolean specialModify(int spid);
+	boolean specialModify(Special special);
 
 	PaginationBean<Special> specialBack(String rows, String page);
 

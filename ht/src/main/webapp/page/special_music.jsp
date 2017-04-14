@@ -51,8 +51,13 @@
       <div class="head row" id="S_big">
             <!-- 专辑详情 -->
         </div> 
+        <div class="specialDetail">
+        	<h4>专辑介绍：</h4>
+        	<div class="info"></div>
+        </div>
+        
 	<div class="music_list">
-        <div class="row" style="margin-left:0px">
+        <div class="row" style="margin-left:0px;margin-top: 2px">
             <div  class="list_no_1 col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
             <div  class="list_name_! col-lg-7 col-md-7 col-sm-11 col-xs-11" style="border-left:1px solid #E1E1E1; ">
                 <span class="m_name_1">歌曲名</span></div>
@@ -72,6 +77,7 @@
 <!-- 底部注入 -->
       <iframe width=100% height=105 src="iframe/footer.jsp"></iframe>
       
+<!-- 底部音乐播放 -->
     <nav class="navbar navbar-default navbar-fixed-bottom bg">
         <audio id="music" src="music/夏婉安 - 一个人.mp3"></audio>
         <i><img class="show" id="show" src="images/playbar_02.png"></i>
@@ -118,6 +124,8 @@
         </div>
         <p class="shuo">0</p>
     </nav>
+    
+    
 <div>
     <div id="mylogin">
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -167,4 +175,5 @@
 <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 <script type="text/javascript" src="dist/js/bootstrap.js"></script>
 <script type="text/javascript" src="js/special_music.js"></script> 
+<script type="text/javascript" src="js/index.js"></script>
 </html>

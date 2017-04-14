@@ -30,7 +30,7 @@
 						<li><a href="javascript:void(0)">歌手管理</a></li>
 						<li><a href="javascript:void(0)">专辑管理</a></li>
 						<li><a href="javascript:void(0)">短片管理</a></li>
-						<li><a href="javascript:void(0)">用户管理</a></li>
+						<li><a href="back/userManage.jsp">用户管理</a></li>
 					</ul>
 					
 					
@@ -59,7 +59,6 @@
 			<ul class="nav nav-pills nav-stacked">
 				<li role="presentation" class="active"><a href="back/userManage.jsp">用户信息</a></li>
 				<li role="presentation"><a href="back/userManageRefer.jsp">用户查询</a></li>
-				<li role="presentation"><a href="back/userManageAdd.jsp">用户添加</a></li>
 				<li role="presentation"><a href="back/userManageModify.jsp">用户修改</a></li>
 			</ul>
 		</div>
@@ -67,35 +66,36 @@
 			<div class="formDiv">
 				<form action="song/modify" method="post" enctype="multipart/form-data" >
 					<div class="form-group"> 
-						<label>编号:</label>
+						<label>用户编号:</label>
 						<label id="labelid"></label>
 						<input type="hidden" id="soid" class="form-control" name="soid" />
 					</div>
 					<div class="form-group">
-						<label for="soname">单曲名:</label> <input type="text"
+						<label for="soname">用户名:</label> <input type="text"
 							class="form-control" id="soname" name="soname">
 					</div>
 					<div class="form-group">
-						<label>图片路径</label> <input type="file"
-						 name="picData" onchange="chgPic(this)"><img id="sopicPath"/>
-					</div>
-					<div class="form-group">
-						<label for="solyricPath">歌词路径</label> <input type="text"
+						<label for="solyricPath">用户邮箱:</label> <input type="text"
 							class="form-control" id="solyricPath" name="solyricPath" />
 					</div>
 					<div class="form-group">
-						<label for="sopath">单曲路径</label> <input type="text" id="sopath"
+						<label>头像:</label><img src="images/not_image.png" class="show_img"> <input type="file"
+						 name="picData" onchange="chgPic(this)"><img id="sopicPath"/>
+					</div>
+					
+					<div class="form-group">
+						<label for="sopath">简介:</label> <input type="text" id="sopath"
 							class="form-control" name="sopath" />
 					</div>
 					<div class="form-group">
-						<label>是否vip下载</label>
+						<label>会员状态</label>
 						<p>
 						<label class="radio-inline">
-						<input type="radio"	name="vipDownload" id="vipTrue" value="是">
-							是
+						<input type="radio"	name="vipDownload" id="vipTrue" value="会员">
+							会员
 						</label> <label class="radio-inline">
-						<input type="radio" name="vipDownload" id="vipFlase" value="否">
-							否
+						<input type="radio" name="vipDownload" id="vipFlase" value="非会员">
+							非会员
 						</label>
 						</p>
 					</div>

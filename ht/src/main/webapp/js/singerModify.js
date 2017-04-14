@@ -31,8 +31,8 @@ function init(){
 			$("#sgname").val(data[0].sgname);
 			$("#sgEname").val(data[0].sgEname);
 			$("#sgnation").val(data[0].sgnation);
-			$("#languaes").val(data[0].lgid);
-			$("#labelid").html(data[0].lgid);
+			$("#languaes").val(data[0].languaes);
+			$("#labelid1").html(data[0].languaes);
 			$("#sggender").val(data[0].sggender);
 			$("#sgpicPath").attr("src",(data[0].sopicPath == "" || data[0].sgpicPath == null) ? "images/huayuqunxing.jpg" : data[0].sgpicPath);
 			$("#sgintroduce").val(data[0].sgintroduce);

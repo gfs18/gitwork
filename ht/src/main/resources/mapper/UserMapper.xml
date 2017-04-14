@@ -23,8 +23,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
      
     
      
-	<select id="Singgg" parameterType="Song" resultType="Song" >
-		 select * from song  	
+	<select id="Singgg" parameterType="String" resultType="Song" >
+		 select * from song where sgid like '${_parameter}'  	
 	</select>
 	
 	<select id="Sonngg" parameterType="String" resultType="Singer" >

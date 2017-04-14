@@ -55,7 +55,6 @@
 			<ul class="nav nav-pills nav-stacked">
 				<li role="presentation" class="active"><a href="back/userManage.jsp">用户信息</a></li>
 				<li role="presentation"><a href="back/userManageRefer.jsp">用户查询</a></li>
-				<li role="presentation"><a href="back/userManageAdd.jsp">用户添加</a></li>
 				<li role="presentation"><a href="back/userManageModify.jsp">用户修改</a></li>
 			</ul>
 		</div>

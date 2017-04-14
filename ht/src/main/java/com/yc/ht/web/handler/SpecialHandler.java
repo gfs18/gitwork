@@ -1,19 +1,25 @@
 package com.yc.ht.web.handler;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.yc.ht.entity.Languages;
 import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Song;
 import com.yc.ht.entity.Special;
 import com.yc.ht.service.SpecialService;
+import com.yc.ht.util.ServletUtil;
 /**
  * 
  * @author Lcl
@@ -93,18 +99,35 @@ public class SpecialHandler {
 		return specialService.specialDelete(spid);
 	}
 	
-	@RequestMapping(value="modify", method=RequestMethod.POST)
-	@ResponseBody
-	public boolean specialModify(int spid){
-		LogManager.getLogger().debug("后台修改专辑");
-		return specialService.specialModify(spid);
+
+	@RequestMapping(value="modify",method=RequestMethod.POST)
+	public String specialModify(Special special,@RequestParam("picData") MultipartFile picData){
+		String picPath = null;
+		if(picData != null && !picData.isEmpty()){//判断是否文件上传
+			try {
+				picData.transferTo(ServletUtil.getUploadFile(picData.getOriginalFilename()));
+				picPath = ServletUtil.VIRTUAL_UPLOAD_DIR + picData.getOriginalFilename();
+			} catch (IllegalStateException | IOException e) {
+				e.printStackTrace();
+			}
+		}
+		special.setSppicPath(picPath);
+		if(specialService.specialModify(special)){
+			return "redirect:/back/specialInfo.jsp";
+		}else{
+			return "forward:/back/specialModify.jsp";
+		}
 	}
 	
-	@RequestMapping(value="search", method=RequestMethod.POST)
+	@RequestMapping(value="search/{spname}", method=RequestMethod.GET)
 	@ResponseBody
-	public List<Special> specialSearch(String spname){
+	public List<Special> specialSearch(@PathVariable("spname") String spname){
 		LogManager.getLogger().debug("后台搜索专辑");
-		//return specialService.specialSearch(spname);
-		return null;
+		try {
+			spname = new String(spname.getBytes("iso-8859-1"),"utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		return specialService.specialSearch(spname);
 	}
 }
