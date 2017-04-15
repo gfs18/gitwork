@@ -21,7 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		${pageSize} pageSize,${currPage} currPage from mv
 	</select>
 
-	<select id="getPaginationMv" resultType="Mv" useCache="false" flushCache="true">
+	<select id="getPaginationMv" resultMap="MvMap" useCache="false" flushCache="true">
 		select * from
 		(select n.*,rownum rn from (select *
 		from mv order by 1) n
@@ -29,26 +29,41 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		${currPage} >= rownum) where rn > ( ${currPage} - 1) * ${pageSize}
 	</select>
 	
+	<resultMap type="Mv" id="MvMap">
+		<id column="mvid" property="mvid"/>
+		<result column="mvname" property="mvname" />
+		<result column="sgname" property="sgname" />
+		<result column="soname" property="soname" />
+		<result column="mvduration" property="mvduration" />
+		<result column="mvpicPath" property="mvpicPath" />	
+		<result column="mvpubTime" property="mvpubTime" />	
+		<result column="mvPath" property="mvPath" />	
+		
+		<association property="singer"
+			column="sgid" javaType="Singer"
+			select="findSingerName" /><!-- 通过singer的实体类将两个表连接 -->
+		<association property="song"
+			column="soid" javaType="Song"
+			select="findSongName" /><!-- 通过song的实体类将两个表连接 -->
+	</resultMap>
+
+	<select id="findSingerName" parameterType="int" resultType="Singer">
+		select *
+		from singer where sgid=#{sgid}
+	</select>
+	<select id="findSongName" parameterType="int" resultType="Song"> 
+		select * from song where soid=#{soid} 
+	</select>
+	
+	
 	<!-- MV删除 -->
 	<delete id="removeMv" parameterType="integer">
 		delete mv where mvid=#{mvid}
 	</delete>
 	
-<!-- 	单曲修改
-	<update id="modifySong" parameterType="Song">
-		update song
-		<set>
-			<if test="soname!=null">soname=#{soname},</if>
-			<if test="sopicPath !=null">sopicPath=#{sopicPath},</if>
-			<if test="solyricPath !=null">solyricPath = #{solyricPath},</if>
-			<if test="sopath !=null">sopath=#{sopath},</if>
-			<if test="vipDownload != null">vipDownload=#{vipDownload}</if>
-		</set>
-		where soid=#{soid}
-	</update>
-	
-	单曲查询(根据soname)
-	<select id="findSongByName" parameterType="string" resultType="Song">
-		select * from song where soname like '%${_parameter}%'
-	</select> -->
+	<!-- MV的查询 -->
+	<select id="findReferMV" parameterType="String" resultMap="MvMap"> 
+		select * from Mv where mvName like '%${_parameter}%'
+	</select>
+
 </mapper>

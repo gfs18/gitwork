@@ -132,6 +132,11 @@ create table song(
        vipDownload varchar2(10) default '否',    --是否是会员才能下载
        mark varchar2(100)       --预留字段
 );
+
+--insert into song values (10024,1,2,'童话镇','images/2_1.png',
+to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
+insert into song values(seq_song_soid.nextval,10001,10076,'忘记时间','images/singer1.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/wangjishijian.lrc','music/wangjishijian.mp3','3:50','','');
+
 insert into song values(seq_song_soid.nextval,10001,10076,'忘记时间','images/singer1.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/wangjishijian.lrc','music/wangjishijian.mp3','3:50','','');
 insert into song values(seq_song_soid.nextval,10001,10076,'会不会','images/mv-0.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/yuai.lrc','music/yuai.mp3','4:10','','');
 insert into song values(seq_song_soid.nextval,10001,10076,'哈哈','images/singer1.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/wangjishijian.lrc','music/wangjishijian.mp3','3:50','','');
@@ -143,8 +148,7 @@ insert into song values(seq_song_soid.nextval,10002,10073,'哈哈','images/singe
 insert into song values(seq_song_soid.nextval,10002,10073,'快快快','images/mv-0.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/yuai.lrc','music/yuai.mp3','4:10','','');
 --insert into song values (seq_song_soid.nextval,1,2,'生日那天','images/2_1.png',
 --to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
---insert into song values (seq_song_soid.nextval,1,2,'童话镇','images/2_1.png',
---to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
+
 --insert into song values (seq_song_soid.nextval,1,2,'烟火','images/2_1.png',
 --to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 --select * from song;
@@ -184,6 +188,24 @@ create table mv(
        mvpath varchar2(40)not null,   --mv存放路径
        mark varchar2(100)  --预留字段  
 );
+
+--select * from mv;
+insert into mv values(10000,dbms_random.string('1',dbms_random.value(4,10)),
+10001,10023,'210','images/bwb.jpg',to_date('2017-04-03','yyyy-mm-dd'),
+'f:/b','');
+insert into mv values(1999,dbms_random.string('1',dbms_random.value(4,10)),
+10002,10021,'210','images/bwb.jpg',to_date('2017-04-03','yyyy-mm-dd'),
+'f:/b','');
+insert into mv values(1998,dbms_random.string('1',dbms_random.value(4,10)),
+10003,10022,'210','images/bwb.jpg',to_date('2017-04-03','yyyy-mm-dd'),
+'f:/b','');
+insert into mv values(seq_mv_mvid.nextval,dbms_random.string('1',dbms_random.value(4,10)),
+10002,10021,'210','images/bwb.jpg',to_date('2017-04-03','yyyy-mm-dd'),
+'f:/b','');
+insert into mv values(seq_mv_mvid.nextval,dbms_random.string('1',dbms_random.value(4,10)),
+10003,10022,'210','images/bwb.jpg',to_date('2017-04-03','yyyy-mm-dd'),
+'f:/b','');
+
 insert into mv select seq_mv_mvid.nextval,dbms_random.string('1',dbms_random.value(4,10)),
 10018,10024,'210','f:/a',to_date('2017-04-03','yyyy-mm-dd'),
 'f:/b','' from dual connect by level <10;

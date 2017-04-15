@@ -31,7 +31,7 @@
 						<li><a href="back/singer.jsp">歌手管理</a></li>
 						<li><a href="back/specialInfo.jsp">专辑管理</a></li>
 
-						<li><a href="back/mvmanage.jsp">短片管理</a></li>
+						<li><a href="back/mvManage.jsp">短片管理</a></li>
 						<li><a href="back/userManage.jsp">用户管理</a></li>
 						</ul>
 					<ul class="nav navbar-nav navbar-right">

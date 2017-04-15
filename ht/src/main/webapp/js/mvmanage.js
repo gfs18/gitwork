@@ -1,11 +1,18 @@
 var count= 0 ;
 function showMvInfo(pageS,currP){
-	$.get("mv/pagination",{"pageS":pageS,"currP":currP},function(data){
+	$.post("mv/pagination",{"pageS":pageS,"currP":currP},function(data){
 		var str = "";
-		for (var i = 0; i < data.rows.length; i++) {
-			str += "<tr class='tableoverout'><th>"+data.rows[i].mvid+"</th><th>"+data.rows[i].mvname+"</th><th>"+data.rows[i].sgid+"</th><th>"
-			+data.rows[i].soid+"</th><th>"+data.rows[i].mvduration+"</th><th>"
-			+data.rows[i].mvpicPath+"</th><th>"+data.rows[i].mvpubTime+"</th><th>"+data.rows[i].mvPath+"</th>"
+		for (var i = 0; i < 3; i++) {
+			var img=data.rows[i].mvpicPath;   
+			if(img!=null){
+				img=data.rows[i].mvpicPath;
+			}else{
+				img="images/not_image.png";
+			}
+			str += "<tr class='tableoverout'><th>"+data.rows[i].mvid+"</th><th>"+data.rows[i].mvname+"</th><th>"+data.rows[i].singer.sgname+"</th><th>"
+			+data.rows[i].song.soname+"</th><th>"+data.rows[i].mvduration+"</th>"
+			+"<th>"+'<img src='+img +' class="show_img">'+"</th>"
+			+"<th>"+data.rows[i].mvpubTime+"</th><th>"+data.rows[i].mvPath+"</th>"
 			+"<th><a href='back/mvmanageModify.jsp?soid="+data.rows[i].mvid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
 			+"<a onclick='removeMv("+data.rows[i].mvid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
 		}
@@ -44,14 +51,15 @@ function paginatorNext(totalP){
 	showMvInfo(5,1 + 5*(count) );
 }
 
+/*后台删除MV*/
 function removeMv(id){
 	$.post("mv/remove",{"id":id},function(data){
 		if(data){
-			alert("修改成功!!!");
+			alert("删除成功!!!");
 		}else{
-			alert("修改失败...");
+			alert("删除失败...");
 		}
-		location.href="back/mvmanage.jsp";
+		location.href="back/mvManage.jsp";
 	},"json");
 }
 
@@ -78,28 +86,49 @@ function loginOut(){
 	},"json");
 }
 
-//查询单曲
-function ReferMv(pageS,currP){
-	var soname = location.href.split("=")[1];
-	if(soname != null && soname !=""){
-		/*$.get("mv/refer/"+soname,function(data){
+
+//后台搜索MV
+referMV();
+function referMV(){
+	var mvName=location.href.split('=')[1];
+	if(mvName!=null && mvName !=""){
+		$.post("mv/refer/"+mvName,function(data){
+			alert("mvName:"+mvName+"data:"+data);
 			var str = "";
-			for (var i = 0; i < data.length; i++) {
-				str += "<tr class='tableoverout'><th>"+data[i].soid+"</th><th>"+data[i].soname+"</th><th>"+data[i].sopicPath+"</th><th>"
-				+data[i].sopubTime+"</th><th>"+data[i].solyricPath+"</th><th>"
-				+data[i].sopath+"</th><th>"+data[i].soduration+"</th><th>"+data[i].vipDownload+"</th>"
-				+"<th><a href='back/mvmanageModify.jsp?soid="+data[i].soid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
-				+"<a onclick='removeMv("+data[i].soid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
+			for (var i = 0; i <1; i++) {
+				var img=data[i].mvpicPath;   
+				if(img!=null){
+					img=data[i].mvpicPath;
+				}else{
+					img="images/not_image.png";
+				}
+				str += "<tr class='tableoverout'><th>"+data[i].mvid+"</th><th>"+data[i].mvname+"</th><th>"+data[i].singer.sgname+"</th><th>"
+				+data[i].song.soname+"</th><th>"+data[i].mvduration+"</th>"
+				+"<th>"+'<img src='+img +' class="show_img">'+"</th>"
+				+"<th>"+data[i].mvpubTime+"</th><th>"+data[i].mvPath+"</th>"
+				+"<th><a href='back/mvmanageModify.jsp?soid="+data[i].mvid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
+				+"<a onclick='removeMv("+data[i].mvid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
 			}
+			//行变色
 			str +='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#ffffff";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
 			$("#tableBody").html(str);
-		},"json");*/
+			$(".pagination").html("");
+		});
 	}else{
 		showMvInfo(5,1);
 	}
 }
-ReferMv(5,1);
 
-
+//搜索后的删除再将剩下的用户刷新
+function removeReferUser(userid){
+	$.post("user/remove",{"userid":userid},function(data){
+		if(data){
+			alert("删除成功!!!");
+		}else{
+			alert("删除失败...");
+		}
+		referUser();
+	},"json");
+}
 
 
