@@ -18,16 +18,27 @@ public class Song {
 	public Song() {
 	}
 	
-	public Song(Integer soid, Integer sgid, Integer spid, String soname, String sopicPath, String sopubTime,
-			String solyricPath, String sopath, String soduration, String vipDownload, Singer singer) {
-		this.soid = soid;
+	public Song(Integer sgid, String soname) {
 		this.sgid = sgid;
-		this.spid = spid;
 		this.soname = soname;
+	}
+
+
+	public Song(Integer sgid, Integer spid, String soname, String sopicPath, String solyricPath, String sopath) {
+		this(sgid, soname);
+		this.spid = spid;
 		this.sopicPath = sopicPath;
-		this.sopubTime = sopubTime;
 		this.solyricPath = solyricPath;
 		this.sopath = sopath;
+	}
+
+
+
+	public Song(Integer soid, Integer sgid, Integer spid, String soname, String sopicPath, String sopubTime,
+			String solyricPath, String sopath, String soduration, String vipDownload, Singer singer) {
+		this(sgid, spid, soname, sopicPath, solyricPath, sopath);
+		this.soid = soid;
+		this.sopubTime = sopubTime;
 		this.soduration = soduration;
 		this.vipDownload = vipDownload;
 		this.singer = singer;

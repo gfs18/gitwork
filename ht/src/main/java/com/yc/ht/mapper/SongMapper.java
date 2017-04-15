@@ -13,6 +13,8 @@ public interface SongMapper {
 	
 	List<Song> findSongByName(String soname);
 	
+	Song findSongName(Song song);
+	
 	PaginationBean<Song> findPaginationSong(PaginationBean<Song> userBean);//分页
 
 
@@ -23,5 +25,5 @@ public interface SongMapper {
 	
 	int modifySong(Song song);
 	
-
+	int addSong(Song song);
 }
