@@ -59,7 +59,7 @@ insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.valu
 create table singer(
        sgid number(20) primary key,     --歌手编号
        sgname varchar2(20) not null,  --歌手名
-       sgEname varchar2(20) not null, --歌手英文名
+       sgEname varchar2(40) not null, --歌手英文名
        sgnation varchar2(20),  --国籍
        lgid number(20) not null,--音乐语种编号
        sggender varchar2(10) not null,  --性别
@@ -67,7 +67,7 @@ create table singer(
        sgintroduce varchar2(1000)not null,     --歌手介绍
        mark varchar2(100)       --预留字段
 );
---alter singer modify sgsgintroduce varchar2(1000);
+--select seq_singer_sgid.nextval from dual;
 insert into singer values(seq_singer_sgid.nextval,'夏婉安','X','中国',10001,'女','images/xwa.jpg','夏婉安,黑龙江哈尔滨人,最有潜力的90后网络原创歌手。\r\n','');
 insert into singer values(seq_singer_sgid.nextval,'韩红','H','中国',10001,'女','images/hh.jpg','韩红，全国政协委员，华录百纳娱乐公司董事长兼CEO。\r\n','');
 insert into singer values(seq_singer_sgid.nextval,'张杰','Z','中国',10002,'男','images/zhangjie.jpg', '张杰，1982年12月20日出生于四川成都，毕业于四川师范大学，中国内地流行歌手。\r\n','');

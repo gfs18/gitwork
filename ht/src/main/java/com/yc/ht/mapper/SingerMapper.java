@@ -30,5 +30,9 @@ public interface SingerMapper {
 
 	int removeSinger(String sgid);
 
-	List<Singer> findSingerByName(String sgname);
+	List<Singer> findSingerByNames(String sgname);//模糊查询
+	
+	Singer findSingerbyName(String sgname);//姓名查询
+	
+	int addSinger(Singer singer);
 }
