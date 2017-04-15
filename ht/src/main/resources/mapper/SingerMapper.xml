@@ -9,16 +9,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from(select rownum rn, s.* from (select * from singer)s where 9>rownum ) where rn>0
 	</select>
 	
-	<select id="refer"  resultType="Languages" >
-		select * from languages
+	<!-- 中国男歌手 -->
+	<select id="refer"  resultType="Singer" >
+		select * from Singer
 	</select>
 	
 	<select id="refre" resultType="Singer" parameterType="Singer">
 		select * from singer 
 	</select>
 	
-	<select id="clikee" resultType="Singer" parameterType="String">
-		 select * from singer where lgid like '${_parameter}' 
+	<!-- 查询中国男歌手  String sgna,String sgen-->
+	<select id="clikee" resultType="Singer">
+		select * from singer where sgnation = #{sg} and sggender = #{sge}
 	</select>
 	
 	 <!-- <select id="HOT" resultType="Singer" parameterType="String">

@@ -8,7 +8,6 @@ function showSingerInfo(PageSize,currPage){
 				"<th>"+data.rows[i].sgname+"</th>" +
 				"<th>"+data.rows[i].sgEname+"</th>" +
 				"<th>"+data.rows[i].sgnation+"</th>" +
-				"<th>"+data.rows[i].languaes+"</th>" +
 				"<th>"+data.rows[i].sggender+"</th>" +
 				"<th><img src="+data.rows[i].sgpicPath+" id='dpic' width='50' height='50'></th>" +
 				"<th>"+data.rows[i].sgintroduce+"</th>" +         
@@ -78,7 +77,7 @@ function Refersinger(){
 					"<th>"+data[i].sgname+"</th>" +
 					"<th>"+data[i].sgEname+"</th>" +
 					"<th>"+data[i].sgnation+"</th>" +
-					"<th>"+data[i].languaes+"</th>" +
+					
 					"<th>"+data[i].sggender+"</th>" +
 					"<th><img src="+data[i].sgpicPath+" id='dpic' width='50' height='50'></th>" +
 					"<th>"+data[i].sgintroduce+"</th>" +         
