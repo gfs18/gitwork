@@ -155,4 +155,15 @@ public class UserHandler {
 		return userService.listReferUser(uname);
 	}
 	
+	/**
+	 * 用户的修改
+	 */
+	@RequestMapping(value="modify",method=RequestMethod.POST)
+	@ResponseBody
+	public boolean modifyUser(Users user){
+		System.out.println("----"+user);
+		return userService.modifyUser(user);
+	}
+	
+	
 }

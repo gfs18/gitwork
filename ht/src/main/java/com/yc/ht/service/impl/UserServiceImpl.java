@@ -39,17 +39,13 @@ public class UserServiceImpl implements UserService {
 	}
 
 
-	
-
 	@Override
 	public List<Song> Singg(String lgid) {
-		// TODO Auto-generated method stub
 		return userMapper.Singgg(lgid);
 	}
 
 	@Override
 	public List<Singer> Sonng(String lgid) {
-		// TODO Auto-generated method stub
 		return userMapper.Sonngg(lgid);
 	}
 
@@ -97,6 +93,14 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<Users> listReferUser(String uname) {
 		return userMapper.findReferUser(uname);
+	}
+
+	/**
+	 * 后台用户的修改
+	 */
+	@Override
+	public boolean modifyUser(Users user) {
+		return userMapper.updateUser(user)>0;
 	}
 	
 }
