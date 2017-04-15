@@ -1,6 +1,7 @@
 package com.yc.ht.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.yc.ht.entity.Languages;
 import com.yc.ht.entity.PaginationBean;
@@ -21,7 +22,7 @@ public interface SpecialService {
 
 	PaginationBean<Special> hottestSpecial(String rows, String page);
 
-	PaginationBean<Special> getSpecialByStyle(String rows, String page, int style);
+	//PaginationBean<Special> getSpecialByStyle(String rows, String page, int lgid);
 
 	boolean specialDelete(String spid);
 
@@ -30,6 +31,16 @@ public interface SpecialService {
 	PaginationBean<Special> specialBack(String rows, String page);
 
 	List<Special> specialSearch(String spname);
+
+	/*int fingSgid(String sgname);*/
+
+	int findLgid(String lgname);
+
+	boolean addLanguage(String lgname);
+
+	List<String> specialStyleName();
+
+	PaginationBean<Special> getSpecialByStyle(Map<String, Object> map);
 
 
 

@@ -5,6 +5,7 @@ public class Special {
 	private Integer spid;         //专辑编号
 	private Integer sgid;		  //歌手编号
 	private String spname;      //专辑名
+	private Integer lgid;	//语种编号
 	private Languages language;	//语种
 	private String sppicPath; 	//封面图片路径
 	private String sppubTime; 	//出版时间
@@ -14,12 +15,12 @@ public class Special {
 	public Special() {
 	}
 
-
-	public Special(Integer spid, Integer sgid, String spname, Languages language, String sppicPath, String sppubTime,
-			Singer singer, Double spclick, String spintroduce) {
+	public Special(Integer spid, Integer sgid, String spname, Integer lgid, Languages language, String sppicPath,
+			String sppubTime, Singer singer, Double spclick, String spintroduce) {
 		this.spid = spid;
 		this.sgid = sgid;
 		this.spname = spname;
+		this.lgid = lgid;
 		this.language = language;
 		this.sppicPath = sppicPath;
 		this.sppubTime = sppubTime;
@@ -28,6 +29,14 @@ public class Special {
 		this.spintroduce = spintroduce;
 	}
 
+
+
+	public Integer getLgid() {
+		return lgid;
+	}
+	public void setLgid(Integer lgid) {
+		this.lgid = lgid;
+	}
 	public Integer getSpid() {
 		return spid;
 	}

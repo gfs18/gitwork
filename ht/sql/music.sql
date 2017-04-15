@@ -83,10 +83,9 @@ create table special(
       spname varchar2(50)not null,     --专辑名
       lgid number(20) not null,--语种编号
       sppicPath varchar2(100) not null,   --封面图片路径
-      spintroduce varchar2(1000), --专辑描述
       sppubTime date not null,   --出版时间
       spclick number(20,2), --点击量
-      spintroduce varchar2(1000),
+      spintroduce varchar2(1000),--专辑描述
       mark varchar2(100)       --预留字段
 );
 
@@ -160,6 +159,7 @@ create table languages(
 	lgid number(20) primary key, --编号
 	language varchar2(20)       --语种
 );
+insert into languages values(seq_lgid.nextval,'彝语')
 
 insert into LANGUAGES values(10001,'华语');
 insert into LANGUAGES values(10002,'日韩');
@@ -199,6 +199,7 @@ create table comments(
        commentPicPath varchar2(100), --评论图片路径
        mark varchar2(100)     --预留字段  
 );
+--drop table comments
 
 insert into COMMENTS values (seq_comments_cid.nextval,10041,'我好喜欢童话这首歌錒！！！',to_date('2000-11-26 00:04','yyyy-mm-dd hh24:mi:ss'),'images/2_1.png','');
 insert into comments values (seq_comments_cid.nextval,10001,'hh我好喜欢童话这首歌錒！！！',sysdate,'images/2_1.png','')
@@ -228,7 +229,7 @@ create sequence seq_mv_mvid start with 10001;
 create sequence seq_comments_cid start with 10001;
 create sequence seq_collect_coid start with 10001;
 
-
+select * from special where lgid=10001
 
 
 

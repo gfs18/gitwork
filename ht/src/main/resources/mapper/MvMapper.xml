@@ -34,6 +34,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete mv where mvid=#{mvid}
 	</delete>
 	
+	<!-- 首页显示专辑 -->
+	<select id="findMv" resultType="Mv">
+		select * from mv order by mvpubTime
+	</select>
+	
 <!-- 	单曲修改
 	<update id="modifySong" parameterType="Song">
 		update song

@@ -33,30 +33,22 @@ function singer(){
 	},"json");
 }
 
-/////////////////////////////////站内专辑跳转///////////////////////////
-/*function specialDetail(param){
-	$.get("special_music", function(data){
-alert("请求成功");
-}, "json");*/
-/*$.post("special/list",{"param":param},function(data){
 
+///首页mv显示///
+function loadMv(){
+	$.get("mv/index",function(data){
+		var mvStr="";
+		for (var i = 0; i < 6; i++) {
+			mvStr+='<li><div class="mv-1"><a href=""><img src="'+data[i].mvpicPath+'"></a></div>';
+			mvStr+='<div class="mv_2"><a href=""><span>'+data[i].mvname+'</span><span class="mv_2_1">'+data[i].sgid+'</span></a></div>';
+			mvStr+='<div class="mv_3"><img src="images/cover_play.png"></div>';
+			mvStr+='<div class="mv_4"></div></li>';
+		}
 
-	});*/
-/*var specialMusicStr = "";
-specialMusicStr+='<div class="left col-lg-4 col-md-4 hidden-sm hidden-xs"><img id="img" src=""/>';
-specialMusicStr+='<div class="cover"></div></div>';
-specialMusicStr+='<div class="right col-lg-8 col-md-8 col-sm-8 col-xs-8">'+
-'<p class="info_1">Water Under the Bridge (无法挽回)</p>'+
-'<p class="info_2">歌手：Adele(阿黛尔)</p>'+
-'<p class="info_3">发行时间：2016-11-4</p>'+
-'<p class="info_4">hhhhhhh</p>'
-specialMusicStr+='<div class="btns"><button class="mplay">'+
-'<span class="glyphicon glyphicon-play"></span> 播放	</button>'+
-'<button class="add hidden-sm hidden-xs">'+
-'<span class="glyphicon glyphicon-heart-empty"></span> 收藏</button></div></div>';
-
-$(".special_music").html(specialMusicStr);
-}*/
+		$("#warp").html(mvStr);
+	},"json");
+}
+loadMv();
 
 
 /////////////////////////////////站内歌曲显示///////////////////////////
@@ -64,7 +56,7 @@ songList();
 function songList(){
 	$.get("song", function(data){
 		var songListStr = "";
-		for (var i = 0; i < data.length; i++) {
+		for (var i = 0; i < 11; i++) {
 			songListStr+='<tr><td class="td"><span>'+data[i].soname+'</span></td>'+
 			'<td><a href="page/demo.jsp?songid='+data[i].soid+'"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
 			'</a></td><td><a href=""><i class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td></tr>';

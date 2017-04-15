@@ -1,5 +1,8 @@
 package com.yc.ht.web.handler;
 
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +30,13 @@ public class MvHandler {
 	@ResponseBody
 	public boolean removeMv(String id){
 		return mvservice.removeMv(id);
+	}
+	
+	@RequestMapping(value="index",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Mv> findMv(){
+		LogManager.getLogger().debug("mv进来");
+		return mvservice.findMv();
 	}
 	
 }

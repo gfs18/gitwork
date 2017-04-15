@@ -160,6 +160,11 @@
 	margin-left: 10px;
 }
 
+
+#sppicPath{
+	width: 80px;
+	height: 80px;
+}
 /**************************manageAdd.css*********************************/
 #formRefer{
 	width: 200px;

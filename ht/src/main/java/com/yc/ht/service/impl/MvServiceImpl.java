@@ -1,5 +1,7 @@
 package com.yc.ht.service.impl;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,6 +50,11 @@ public class MvServiceImpl implements MvService{
 	@Override
 	public boolean removeMv(String id) {
 		return mvMapper.removeMv(Integer.valueOf(id))>0;
+	}
+
+	@Override
+	public List<Mv> findMv() {
+		return mvMapper.findMv();
 	}
 
 }

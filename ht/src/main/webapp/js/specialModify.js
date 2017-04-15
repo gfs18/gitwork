@@ -28,9 +28,9 @@ function init(){
 			$("#spid").val(data.spid);
 			$("#labelid").html(data.spid);
 			$("#spname").val(data.spname);
-			$("#sgname").val(data.singer.sgname);
-			$("#language").val(data.language.language);
-			$("#sopicPath").attr("src",(data.sppicPath == "" || data.sppicPath == null) ? "images/not_pic.jpg" : data.sppicPath);
+		/*	$("#sgname").val(data.singer.sgname);*/
+			$("#lgname").val(data.language.language);
+			$("#sppicPath").attr("src",(data.sppicPath == "" || data.sppicPath == null) ? "images/not_pic.jpg" : data.sppicPath);
 			$("#sppubTime").val(data.sppubTime.substring(0,10));
 			$("#spclick").val(data.spclick);
 		},"json");

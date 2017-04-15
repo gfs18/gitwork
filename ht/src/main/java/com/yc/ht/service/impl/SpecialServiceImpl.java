@@ -1,8 +1,8 @@
 package com.yc.ht.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
-import org.aspectj.apache.bcel.generic.InstructionTargeter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -65,17 +65,17 @@ public class SpecialServiceImpl implements SpecialService{
 	}
 
 	@Override
-	public PaginationBean<Special> getSpecialByStyle(String rows, String page, int style) {
-		PaginationBean<Special> pb=new PaginationBean<Special>();
+	public PaginationBean<Special> getSpecialByStyle(Map<String, Object> map) {
+		/*PaginationBean<Special> pb=new PaginationBean<Special>();
 		if(rows!=null){
 			pb.setPageSize(Integer.parseInt(rows));
 		}
 		if(page!=null){
 			pb.setCurrPage(Integer.parseInt(page));
 		}
-		pb.setLanguages(style);
-		
-		return specialMapper.getSpecialByStyle(pb);
+		*/
+		//System.out.println("getSpecialByStyle:"+specialMapper.getSpecialByStyle(map));
+		return specialMapper.getSpecialByStyle(map);
 	}
 
 
@@ -105,5 +105,26 @@ public class SpecialServiceImpl implements SpecialService{
 	public List<Special> specialSearch(String spname) {
 		return specialMapper.specialSearch(spname);
 	}
+
+	/*@Override
+	public int fingSgid(String sgname) {
+		return specialMapper.findSgid(sgname);
+	}*/
+
+	@Override
+	public int findLgid(String lgname) {
+		return specialMapper.findLgid(lgname);
+	}
+
+	@Override
+	public boolean addLanguage(String lgname) {
+		return specialMapper.addLanguage(lgname)>0;
+	}
+
+	@Override
+	public List<String> specialStyleName() {
+		return specialMapper.specialStyleName();
+	}
+
 	
 }

@@ -26,7 +26,7 @@
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left" id="topnav">
 						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
-							href="javascript:void(0)">单曲管理</a></li>
+							href="back/manage.jsp">单曲管理</a></li>
 						<li><a href="javascript:void(0)">歌手管理</a></li>
 						<li><a href="back/specialInfo.jsp">专辑管理</a></li>
 						<li><a href="javascript:void(0)">短片管理</a></li>
@@ -70,16 +70,16 @@
 						<label for="spname">专辑名:</label> <input type="text"
 							class="form-control" id="spname" name="spname">
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label for="sgname">歌手:</label> <input type="text"
 							class="form-control" id="sgname" name="sgname">
-					</div>
+					</div> -->
 					<div class="form-group">
-						<label for="language">所属语种:</label> <input class="form-control" id="language" name="language"/>
+						<label for="lgname">所属语种:</label> <input class="form-control" id="lgname" name="lgname"/>
 					</div>
 					<div class="form-group">
 						<label>图片路径</label> <input type="file"
-						 name="picData" onchange="chgPic(this)"><img id="sopicPath"/>
+						 name="picData" onchange="chgPic(this)"><img id="sppicPath"/>
 					</div>
 					<div class="form-group">
 						<label for="sppubTime">出版时间</label> <input type="text"

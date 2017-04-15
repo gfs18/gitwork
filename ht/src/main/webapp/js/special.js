@@ -36,8 +36,8 @@ function newestSpecial(rows,page){
 	$.get("special/newest",{"rows":rows,"page":page},function(data){
 		var newestSpeStr="";
 		for(var i=0;i<data.rows.length;i++){
-			newestSpeStr+='<li class="s_li"><div class="list_img"><div class="play">'
-				+'<img src="images/cover_play.png"></div><img src="'+data.rows[i].sppicPath+'" class="myimg"></div>'
+			newestSpeStr+='<li class="s_li"><div class="list_img"><a href="page/special_music.jsp?spid='+data.rows[i].spid+'">'
+				+'<img src="'+data.rows[i].sppicPath+'" class="myimg"></a></div>'
 				+'<span class="s_p">'+data.rows[i].spname+'</span><span class="s_p">点击量：'+data.rows[i].spclick+'</span>'
 				+'<span class="s_p">'+data.rows[i].sppubTime.substring(0,10)+'</span></li>';
 		}
@@ -80,12 +80,12 @@ function hottestSpecial(rows,page){
 		var hottestSpeStr="";
 		for(var i=0;i<data.rows.length;i++){
 			
-			hottestSpeStr+='<li class="s_li"><div class="list_img"><div class="play">'
-				+'<img src="images/cover_play.png"></div><img src="'+data.rows[i].sppicPath+'" class="myimg"></div>'
+			hottestSpeStr+='<li class="s_li"><div class="list_img"><a href="page/special_music.jsp?spid='+data.rows[i].spid+'">'
+				+'<img src="'+data.rows[i].sppicPath+'" class="myimg" href="page/special_music.jsp?spid='+data.rows[i].spid+'"></a></div>'
 				+'<span class="s_p">'+data.rows[i].spname+'</span><span class="s_p">点击量：'+data.rows[i].spclick+'</span>'
 				+'<span class="s_p">'+data.rows[i].sppubTime.substring(0,10)+'</span></li>';
 		}
-		$(".hot_ul").html(hottestSpeStr);
+		$(".new_ul").html(hottestSpeStr);
 		
 		hottestPagination(data.totalPage);
 	});
@@ -99,18 +99,15 @@ function specialStyle(){
 	$.get("special/style",function(data){
 		///alert(JSON.stringify(data));
 		for(var i=0;i<data.length;i++){
-			if(i==0){
-				$(".lable").append('<li class="col-lg-2 col-md-2 col-sm-3 hidden-xs" id="china_ul"><a href="javascript:void(0)" onclick="getSpecialByStyle(8,1,'+data[i].lgid+')">'+data[i].language+'</a></li>');
-			}else if(i==1){
-				$(".lable").append('<li class="col-lg-2 col-md-2 hidden-sm hidden-xs" id="hip_ul"><a href="javascript:void(0)" onclick="getSpecialByStyle(8,1,'+data[i].lgid+')">'+data[i].language+'</a></li>');
-			}else{
-				$(".lable").append('<li class="col-lg-2 col-md-2 hidden-sm hidden-xs" id="eng_ul"><a href="javascript:void(0)" onclick="getSpecialByStyle(8,1,'+data[i].lgid+')">'+data[i].language+'</a></li>');
-			}
+			$(".lable").append('<li class="col-lg-2 col-md-2 col-sm-3 hidden-xs" id="china_ul"><a href="javascript:void(0)" onclick="getSpecialByStyle(8,1,'+data[i].lgid+')">'+data[i].language+'</a></li>');
 		}
+		
+		
 		$(".lable").append('<script type="text/javascript">'+
 				'$(".lable li").click(function(){'+
-				'$(".special ul").css("display","none");'+
-				'$(".special ul").eq($(this).index()).css("display","block");'+
+				/*'$(".special ul").css("display","none");});'+
+				'alert($(this).index());if($(this).index()>1){$(this).index();}'+*/
+				/*'$(".special ul").eq($(this).index()).css("display","block");'+*/
 				'$(".class").html($(".lable li a").eq($(this).index()).html());});'+
 				'$(".lable li a").on("click",function(){'+
 				'$(".lable li a").removeClass("click");'+
@@ -126,52 +123,44 @@ function specialStyle(){
 
 
 //分页操作
-function Pagination(totalP,style){
+function Pagination(totalP,lgid){
 	var pStr = "";
 	if(totalP>=5){
-		pStr +='<li><a href="javascript:void(0)" onclick="paginatorPrevious('+totalP+','+style+')">&laquo;</a></li>';
+		pStr +='<li><a href="javascript:void(0)" onclick="paginatorPrevious('+totalP+','+lgid+')">&laquo;</a></li>';
 		for (var j = 1; j <= 5; j++) {
 			pStr +='<li><a href="javascript:void(0)" onclick="getSpecialByStyle(8,'+(j+(count*5))+','+style+')">'+(j+count*5)+'</a></li>';
 		}
-		pStr +='<li><a href="javascript:void(0)" onclick="paginatorNext('+totalP+','+style+')" >&raquo;</a></li>';
+		pStr +='<li><a href="javascript:void(0)" onclick="paginatorNext('+totalP+','+lgid+')" >&raquo;</a></li>';
 	}else{
 		pStr +='<li><a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
 		for (var i = 1; i <= totalP; i++) {
-			pStr +='<li><a href="javascript:void(0)" onclick="getSpecialByStyle(8,'+i+','+style+')">'+i+'</a></li>';
+			pStr +='<li><a href="javascript:void(0)" onclick="getSpecialByStyle(8,'+i+','+lgid+')">'+i+'</a></li>';
 		}
 		pStr +='<li><a href="javascript:void(0)" aria-label="Next"> <span aria-hidden="true">&raquo;</span></a></li>';
 	}
 	$(".pagination").html(pStr);
 }
 
-function paginatorPrevious(totalP,style){
+function paginatorPrevious(totalP,lgid){
 	count= count > 0?(count-1):0;
-	getSpecialByStyle(5,1 + 5*(count),style);
+	getSpecialByStyle(5,1 + 5*(count),lgid);
 }
 
-function paginatorNext(totalP,style){
+function paginatorNext(totalP,lgid){
 	count = count < (totalP / 5)?(count+1):totalP ;
-	getSpecialByStyle(5,1 + 5*(count) ,style);
+	getSpecialByStyle(5,1 + 5*(count) ,lgid);
 }
 //根据语种类型分页显示专辑
-function getSpecialByStyle(rows,page,style){
-	//alert(rows+"***********"+page+"****"+style);
-	$.get("special/language",{"rows":rows,"page":page,"style":style},function(data){
-		alert(JSON.stringify(data));
+function getSpecialByStyle(rows,page,lgid){
+	$.get("special/language",{"rows":rows,"page":page,"lgid":lgid},function(data){
 		var speStr="";
 		for(var i=0;i<data.rows.length;i++){
-			speStr+='<li class="s_li"><div class="list_img"><div class="play">'
-				+'<img src="images/cover_play.png"></div><img src="'+data.rows[i].sppicPath+'" class="myimg"></div>'
+			speStr+='<li class="s_li"><div class="list_img"><a href="page/special_music.jsp?spid='+data.rows[i].spid+'">'
+			+'<img src="'+data.rows[i].sppicPath+'" class="myimg" href="page/special_music.jsp?spid='+data.rows[i].spid+'"></a></div>'
 				+'<span class="s_p">'+data.rows[i].spname+'</span><span class="s_p">点击量：'+data.rows[i].spclick+'</span>'
 				+'<span class="s_p">'+data.rows[i].sppubTime.substring(0,10)+'</span></li>';
 		}
-		if(style==10001){
-			$(".china_ul").html(speStr);
-		}else if(style==10002){
-			$(".hip_ul").html(speStr);
-		}else{
-			$(".eng_ul").html(speStr);
-		}
-		Pagination(data.totalPage,style);
+		$(".new_ul").html(speStr);
+		Pagination(data.totalPage,lgid);
 	});
 }
