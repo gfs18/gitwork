@@ -148,7 +148,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- 根据专辑名查询专辑信息 -->
-	<select id="specialFindByName" parameterType="string" resultMap="SpecialMap">
+	<select id="specialFindByName" parameterType="string" resultMap="SpecialDetailMap">
 		select * from special where spname= #{spname}
 	</select>
 	
