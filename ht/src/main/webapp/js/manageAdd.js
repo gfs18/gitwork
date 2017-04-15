@@ -47,21 +47,31 @@ function InterNameReger(){
 	});
 }
 
+
+
+/**
+ * 添加单曲信息
+ * @param song
+ * @param tingid
+ * @param albumid
+ */
 function AddSongInfo(song,tingid,albumid){
 	var songth =  $(song).parent().parent().children();
-	//获取专辑信息
-	var albumInfo= $.get("http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.album.getAlbumInfo&format=json&album_id="+albumid,function(data){
-		return data;
-	},"jsonp");
-	
-	alert(albumInfo.albumInfo);
-	$.post("song/add",{"soname":songth[0].innerText,"sgname":songth[1].innerText,"solyricPath":songth[3].innerText},function(data){
-		alert(data);
-	},"json");
-	
-	$.get("http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.artist.getinfo&format=json&tinguid="+tingid,function(data){
-		alert(data);
+	//获取歌手信息
+	$.get("http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.artist.getinfo&format=json&tinguid="+tingid,function(InterSinger){
+		$.post("singer/add",InterSinger,function(sgreq){
+			//获取专辑信息
+			$.get("http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.album.getAlbumInfo&format=json&album_id="+albumid,function(InterAlbum){
+				alert(JSON.stringify(InterAlbum.albumInfo));
+				$.post("special/add?sgid="+sgreq.sgid,InterAlbum.albumInfo,function(abreq){
+					alert(abreq.spid);
+					//添加单曲信息
+					$.post("song/add",{"soname":songth[0].innerText,"sgname":songth[1].innerText,"spname":songth[2].innerText,"solyricPath":songth[3].innerText},function(data){
+						alert(data);
+					},"json");
+				},"json");
+			},"jsonp");
+		},"json");
 	},"jsonp");
 }
-
 

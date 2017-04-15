@@ -14,6 +14,17 @@ public class Special {
 	private String spintroduce;//专辑介绍
 	public Special() {
 	}
+	
+
+	public Special(Integer sgid, String spname, Languages language, String sppicPath, String sppubTime,
+			String spintroduce) {
+		this.sgid = sgid;
+		this.spname = spname;
+		this.language = language;
+		this.sppicPath = sppicPath;
+		this.sppubTime = sppubTime;
+		this.spintroduce = spintroduce;
+	}
 
 	public Special(Integer spid, Integer sgid, String spname, Integer lgid, Languages language, String sppicPath,
 			String sppubTime, Singer singer, Double spclick, String spintroduce) {
@@ -28,7 +39,6 @@ public class Special {
 		this.spclick = spclick;
 		this.spintroduce = spintroduce;
 	}
-
 
 
 	public Integer getLgid() {

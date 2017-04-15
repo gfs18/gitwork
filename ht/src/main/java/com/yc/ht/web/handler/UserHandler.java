@@ -74,6 +74,7 @@ public class UserHandler {
 	@RequestMapping(value="f",method=RequestMethod.POST)
 	@ResponseBody
 	public Users fa(Users user,HttpSession session1){
+	
 		try {
 			EmailUtils emailUtils=new EmailUtils();
 			emailUtils.setMail(user.getUemail(), session1);
@@ -108,14 +109,15 @@ public class UserHandler {
 	@RequestMapping(value="{lgid}",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Singer> Son( @PathVariable("lgid") String lgid){
-		System.out.println("lgid.............."+lgid.toString());
+		LogManager.getLogger().debug("lgid.............."+lgid.toString());
 		return userService.Sonng(lgid);
 	}
 	
-	@RequestMapping(value="Sin",method=RequestMethod.GET)
+	@RequestMapping(value="Sin/{lgid}",method=RequestMethod.GET)
 	@ResponseBody
-	public List<Song> Sing(Song song){
-		return userService.Singg(song);
+	public List<Song> Sing(@PathVariable("lgid") String  lgid){
+		return userService.Singg(lgid);
+		
 	}
 	/**
 	 * 用户的分页显示
@@ -153,5 +155,16 @@ public class UserHandler {
 		}
 		return userService.listReferUser(uname);
 	}
+	
+	/**
+	 * 用户的修改
+	 */
+	@RequestMapping(value="modify",method=RequestMethod.POST)
+	@ResponseBody
+	public boolean modifyUser(Users user){
+		System.out.println("----"+user);
+		return userService.modifyUser(user);
+	}
+	
 	
 }

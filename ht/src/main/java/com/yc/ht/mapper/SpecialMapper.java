@@ -43,4 +43,7 @@ public interface SpecialMapper {
 
 	List<String> specialStyleName();
 	
+	Special specialFindByName(String spname);
+	
+	int specialAdd(Special special);
 }

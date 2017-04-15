@@ -106,10 +106,7 @@ public class SpecialServiceImpl implements SpecialService{
 		return specialMapper.specialSearch(spname);
 	}
 
-	/*@Override
-	public int fingSgid(String sgname) {
-		return specialMapper.findSgid(sgname);
-	}*/
+
 
 	@Override
 	public int findLgid(String lgname) {
@@ -126,5 +123,14 @@ public class SpecialServiceImpl implements SpecialService{
 		return specialMapper.specialStyleName();
 	}
 
+	@Override
+	public Special SpecialFindByName(String spname) {
+		return specialMapper.specialFindByName(spname);
+	}
+
+	@Override
+	public boolean specialAdd(Special special) {
+		return specialMapper.specialAdd(special)>0;
+	}
 	
 }

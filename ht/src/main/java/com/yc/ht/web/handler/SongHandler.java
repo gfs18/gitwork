@@ -29,7 +29,7 @@ public class SongHandler {
 	@Autowired
 	private SongService songService;
 
-	@RequestMapping(value="",method=RequestMethod.GET)
+	@RequestMapping(value="list",method=RequestMethod.POST)
 	@ResponseBody
 	public List<Song> songList(String soid){
 		if(soid!=null){
@@ -104,7 +104,6 @@ public class SongHandler {
 			InternetRes.getInternetRes(solyricPath,solyricName);
 			solyricPath = ServletUtil.VIRTUAL_UPLOAD_DIR + solyricName;
 		}
-		
 		
 		
 		return true;

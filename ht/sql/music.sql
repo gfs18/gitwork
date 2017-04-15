@@ -23,7 +23,7 @@ create table users(
 );
 --select * from users;
 --alter table users modify uemail varchar2(40);
---insert into users values(seq_users_uid.nextval,'哈哈哈哈','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/bg.png','很美啊',1,0,null);
+--insert into users values(seq_users_uid.nextval,'哈哈哈哈','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/bg.png','很美啊',0,1,null);
 --insert into users values(seq_users_uid.nextval,'admin','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','picpath','很美啊',1,0,null);
 
 
@@ -59,15 +59,14 @@ insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.valu
 create table singer(
        sgid number(20) primary key,     --歌手编号
        sgname varchar2(20) not null,  --歌手名
-       sgEname varchar2(20) not null, --歌手英文名
+       sgEname varchar2(40) not null, --歌手英文名
        sgnation varchar2(20),  --国籍
-       lgid number(20) not null,--音乐语种编号
        sggender varchar2(10) not null,  --性别
        sgpicPath varchar2(40) not null, --头像路径
        sgintroduce varchar2(1000)not null,     --歌手介绍
        mark varchar2(100)       --预留字段
 );
---alter singer modify sgsgintroduce varchar2(1000);
+--select seq_singer_sgid.nextval from dual;
 insert into singer values(seq_singer_sgid.nextval,'夏婉安','X','中国',10001,'女','images/xwa.jpg','夏婉安,黑龙江哈尔滨人,最有潜力的90后网络原创歌手。\r\n','');
 insert into singer values(seq_singer_sgid.nextval,'韩红','H','中国',10001,'女','images/hh.jpg','韩红，全国政协委员，华录百纳娱乐公司董事长兼CEO。\r\n','');
 insert into singer values(seq_singer_sgid.nextval,'张杰','Z','中国',10002,'男','images/zhangjie.jpg', '张杰，1982年12月20日出生于四川成都，毕业于四川师范大学，中国内地流行歌手。\r\n','');
@@ -88,8 +87,8 @@ create table special(
       spintroduce varchar2(1000),--专辑描述
       mark varchar2(100)       --预留字段
 );
-
-
+--select * from special;
+--delete SPECIAL where spid = 10002
 insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
 1001,'images/zj-2.jpg',to_date('2016-11-4','yyyy-mm-dd'),20,'');
 insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
@@ -131,6 +130,11 @@ create table song(
        vipDownload varchar2(10) default '否',    --是否是会员才能下载
        mark varchar2(100)       --预留字段
 );
+
+--insert into song values (10024,1,2,'童话镇','images/2_1.png',
+to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
+insert into song values(seq_song_soid.nextval,10001,10076,'忘记时间','images/singer1.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/wangjishijian.lrc','music/wangjishijian.mp3','3:50','','');
+
 insert into song values(seq_song_soid.nextval,10001,10076,'忘记时间','images/singer1.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/wangjishijian.lrc','music/wangjishijian.mp3','3:50','','');
 insert into song values(seq_song_soid.nextval,10001,10076,'会不会','images/mv-0.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/yuai.lrc','music/yuai.mp3','4:10','','');
 insert into song values(seq_song_soid.nextval,10001,10076,'哈哈','images/singer1.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/wangjishijian.lrc','music/wangjishijian.mp3','3:50','','');
@@ -142,8 +146,7 @@ insert into song values(seq_song_soid.nextval,10002,10073,'哈哈','images/singe
 insert into song values(seq_song_soid.nextval,10002,10073,'快快快','images/mv-0.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/yuai.lrc','music/yuai.mp3','4:10','','');
 --insert into song values (seq_song_soid.nextval,1,2,'生日那天','images/2_1.png',
 --to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
---insert into song values (seq_song_soid.nextval,1,2,'童话镇','images/2_1.png',
---to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
+
 --insert into song values (seq_song_soid.nextval,1,2,'烟火','images/2_1.png',
 --to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 --select * from song;
@@ -184,6 +187,24 @@ create table mv(
        mvpath varchar2(40)not null,   --mv存放路径
        mark varchar2(100)  --预留字段  
 );
+
+--select * from mv;
+insert into mv values(10000,dbms_random.string('1',dbms_random.value(4,10)),
+10001,10023,'210','images/bwb.jpg',to_date('2017-04-03','yyyy-mm-dd'),
+'f:/b','');
+insert into mv values(1999,dbms_random.string('1',dbms_random.value(4,10)),
+10002,10021,'210','images/bwb.jpg',to_date('2017-04-03','yyyy-mm-dd'),
+'f:/b','');
+insert into mv values(1998,dbms_random.string('1',dbms_random.value(4,10)),
+10003,10022,'210','images/bwb.jpg',to_date('2017-04-03','yyyy-mm-dd'),
+'f:/b','');
+insert into mv values(seq_mv_mvid.nextval,dbms_random.string('1',dbms_random.value(4,10)),
+10002,10021,'210','images/bwb.jpg',to_date('2017-04-03','yyyy-mm-dd'),
+'f:/b','');
+insert into mv values(seq_mv_mvid.nextval,dbms_random.string('1',dbms_random.value(4,10)),
+10003,10022,'210','images/bwb.jpg',to_date('2017-04-03','yyyy-mm-dd'),
+'f:/b','');
+
 insert into mv select seq_mv_mvid.nextval,dbms_random.string('1',dbms_random.value(4,10)),
 10018,10024,'210','f:/a',to_date('2017-04-03','yyyy-mm-dd'),
 'f:/b','' from dual connect by level <10;

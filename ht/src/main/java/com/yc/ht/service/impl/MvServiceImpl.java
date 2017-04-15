@@ -18,6 +18,7 @@ public class MvServiceImpl implements MvService{
 	@Autowired
 	private MvMapper mvMapper;
 	
+	/*MV的分页显示*/
 	@Override
 	public PaginationBean<Mv> listMv(String pageS, String currP) {
 		int pageSize = 10;
@@ -47,6 +48,7 @@ public class MvServiceImpl implements MvService{
 		return pb;
 	}
 
+	/*删除MV*/
 	@Override
 	public boolean removeMv(String id) {
 		return mvMapper.removeMv(Integer.valueOf(id))>0;
@@ -55,6 +57,11 @@ public class MvServiceImpl implements MvService{
 	@Override
 	public List<Mv> findMv() {
 		return mvMapper.findMv();
+	}
+	/*查找MV*/
+	@Override
+	public List<Mv> listReferMv(String mvName) {
+		return mvMapper.findReferMV(mvName);
 	}
 
 }

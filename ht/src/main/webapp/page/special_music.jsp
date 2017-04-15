@@ -77,6 +77,7 @@
 <!-- 底部注入 -->
       <iframe width=100% height=105 src="iframe/footer.jsp"></iframe>
       
+<!-- 底部音乐播放 -->
     <nav class="navbar navbar-default navbar-fixed-bottom bg">
         <audio id="music" src="music/夏婉安 - 一个人.mp3"></audio>
         <i><img class="show" id="show" src="images/playbar_02.png"></i>
@@ -123,6 +124,8 @@
         </div>
         <p class="shuo">0</p>
     </nav>
+    
+    
 <div>
     <div id="mylogin">
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -172,4 +175,5 @@
 <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 <script type="text/javascript" src="dist/js/bootstrap.js"></script>
 <script type="text/javascript" src="js/special_music.js"></script> 
+<script type="text/javascript" src="js/index.js"></script>
 </html>

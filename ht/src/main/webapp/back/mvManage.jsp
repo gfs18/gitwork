@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
 <link rel="shortcut icon" type="image/icon" href="images/log.png" />
-<link rel="stylesheet" type="text/css" href="css/manage.css" />
+<link rel="stylesheet" type="text/css" href="css/mvmanage.css" />
 <link rel="stylesheet" href="dist/css/bootstrap.css">
 </head>
 <body>
@@ -23,7 +23,7 @@
 					</a>
 				</div>
 				<div class="collapse navbar-collapse"
-					id="bs-example-navbar-collapse-1">
+					id="bs-example-navbar-collapse-1">			
 					<ul class="nav navbar-nav navbar-left" id="topnav">
 						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
 							href="back/manage.jsp">单曲管理</a></li>
@@ -53,10 +53,9 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation" class="active"><a href="back/singer.jsp">歌手信息</a></li>
-				<li role="presentation"><a href="back/singerRefer.jsp">歌手查询</a></li>
-				<li role="presentation"><a href="back/singerModify.jsp">歌手修改</a></li>
-				<li role="presentation"><a href="back/singerADD.jsp">歌手增加</a></li>
+				<li role="presentation" class="active"><a href="back/mvManage.jsp">MV信息</a></li>
+				<li role="presentation"><a href="back/mvManageRefer.jsp">MV查询</a></li>
+				<li role="presentation"><a href="back/mvManageAdd.jsp">MV添加</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
@@ -64,28 +63,24 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>歌手编号</th>
-							<th>歌手名</th>
-							<th>歌手英文名</th>
-							<th>国籍</th>
-							<th>音乐语种编号</th>
-							<th>性别</th>
-							<th>头像路径</th>
-							<th>歌手介绍</th>
+							<th>Mv编号</th>
+							<th>Mv名称</th>
+							<th>歌手名称</th>
+							<th>单曲名称</th>
+							<th>MV时长</th>
+							<th>图片路径</th>
+							<th>出版时间</th>
+							<th>MV路径</th>
 							<th>操作</th>
 						</tr>
 					</thead>
-					<tbody id="tableBody">
-						
-					</tbody>
+					<tbody id="tableBody"></tbody>
 				</table>
 			</div>
 
 			<!-- 分页 -->
 			<nav>
-				<ul class="pagination">
-					
-				</ul>
+				<ul class="pagination"></ul>
 			</nav>
 
 		</div>
@@ -108,9 +103,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	 <script type="text/javascript" src="js/manage.js"></script> 
-	<script type="text/javascript" src="js/singermanage.js"></script>
-	<script type="text/javascript" src="js/singer.js"></script>
-	<script type="text/javascript" src="js/singerRefer.js"></script>
+	<script type="text/javascript" src="js/mvmanage.js"></script>
 </body>
 </html>

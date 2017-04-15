@@ -7,23 +7,27 @@ public class Singer {
 	private String sgEname;			//歌手英文名
 	private String sgnation;		//国籍
 	private String sggender;		//性别
-	private String lgid;		//音乐语种编号
 	private String sgpicPath;		//头像路径
 	private String sgintroduce;		//歌手介绍
 	
 	public Singer() {
 	}
+	
 
-	public Singer(Integer sgid, String sgname, String sgEname, String sgnation, String sggender, String lgid,
-			String sgpicPath, String sgintroduce) {
-		this.sgid = sgid;
+	public Singer(String sgname, String sgEname, String sgnation, String sggender, String sgpicPath,
+			String sgintroduce) {
 		this.sgname = sgname;
 		this.sgEname = sgEname;
 		this.sgnation = sgnation;
 		this.sggender = sggender;
-		this.lgid = lgid;
 		this.sgpicPath = sgpicPath;
 		this.sgintroduce = sgintroduce;
+	}
+
+	public Singer(Integer sgid,String sgname, String sgEname, String sgnation, String sggender,
+			String sgpicPath, String sgintroduce) {
+		this(sgname, sgEname, sgnation, sggender, sgpicPath, sgintroduce);
+		this.sgid = sgid;
 	}
 
 	public Integer getSgid() {
@@ -66,14 +70,6 @@ public class Singer {
 		this.sggender = sggender;
 	}
 
-	public String getLanguaes() {
-		return lgid;
-	}
-
-	public void setLanguaes(String languaes) {
-		this.lgid = languaes;
-	}
-
 	public String getSgpicPath() {
 		return sgpicPath;
 	}
@@ -93,7 +89,7 @@ public class Singer {
 	@Override
 	public String toString() {
 		return "\nSinger [sgid=" + sgid + ", sgname=" + sgname + ", sgEname=" + sgEname + ", sgnation=" + sgnation
-				+ ", sggender=" + sggender + ", lgid=" + lgid + ", sgpicPath=" + sgpicPath + ", sgintroduce="
+				+ ", sggender=" + sggender + ", sgpicPath=" + sgpicPath + ", sgintroduce="
 				+ sgintroduce + "]";
 	}
 }

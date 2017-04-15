@@ -147,12 +147,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from special where spname like '%${_parameter}%'
 	</select>
 	
+	<!-- 根据专辑名查询专辑信息 -->
+	<select id="specialFindByName" parameterType="string" resultMap="SpecialMap">
+		select * from special where spname= #{spname}
+	</select>
+	
 	<!-- 修改专辑 -->
 	<update id="specialModify" parameterType="Special" >
 		update special
 		<trim prefix="set" suffixOverrides=",">
 			<if test="spname!=null">spname=#{spname},</if>
-			<!-- <if test="sgid!=null">sgid=#{sgid},</if> -->
 			<if test="lgid!=null">lgid=#{lgid},</if>
 			<if test="sppicPath!=null">sppicPath=#{sppicPath},</if>
 			<if test="sppubTime!=null">sppubTime=to_date(#{sppubTime},'yyyy-mm-dd'),</if>
@@ -160,10 +164,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</trim> 
 		where spid=#{spid}
 	</update>
-	<!-- 修改专辑信息时需要根据语种名查语种编号 -->
-	<!-- <select id="findSgid" parameterType="string" resultType="int">
-		select sgid from singer where sgname=#{sgname}
-	</select> -->
+
 	
 	<select id="findLgid" parameterType="string" resultType="int">
 		select lgid from languages where language=#{language}
@@ -176,5 +177,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="specialStyleName" resultType="string">
 		select language from languages
 	</select>
+	
+	
+	<!-- 添加专辑 -->
+	<insert id="specialAdd" parameterType="Special">
+		insert into special values(seq_special_spid.nextval,#{sgid},#{spname},#{language.lgid},#{sppicPath},#{spintroduce},to_date('${sppubTime}','yyyy-MM-dd'),0,'')
+	</insert>
 	
 </mapper>

@@ -76,18 +76,10 @@
                 
                 <div class="row" >
                
-                	<div id="ROW">
-                	<!--  <div  class="opus_no col-lg-1 col-md-1 col-sm-1 col-xs-1">1</div> -->
-                    <!-- <div  class="opus_name col-lg-7 col-md-7 col-sm-11 col-xs-11">
-                        <i class="glyphicon glyphicon-play-circle" id="tp1_2"  title="播放"></i>
-                        <i class="glyphicon glyphicon-save " id="tp2_2" title="下载"></i>
-                        <a href="" class="m_name">River Flows In You</a>
-                    </div>
-                    <div  class="opus_add col-lg-2 col-md-2 hidden-sm hidden-xs">3:20</div> -->
-                     </div>
+                	<div id="ROW"></div>
                      
                     <div id="ROW1">
-                   <!--  <div  class="opus_play col-lg-2 col-md-2 hidden-sm hidden-xs">Martin-Ermen</div> -->
+                 
                     </div>
                 </div>
                 

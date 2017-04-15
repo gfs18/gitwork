@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 映射文件的命名空间namespace的值，与之对应的映射接口的全类名 -->
+<mapper namespace="com.yc.ht.mapper.LanguageMapper">
+	
+	<!-- 根据语言查询 -->
+	<select id="findLanguageByName" parameterType="string" resultType="Languages">
+		select * from languages where language = #{language}		
+	</select>
+	
+	<!-- 添加语言类型 -->
+	<insert id="addLanguage" parameterType="string">
+		insert into languages values(seq_lgid.nextval,#{language})
+	</insert>
+</mapper>

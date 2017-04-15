@@ -13,9 +13,9 @@ function showDiv(){
 
 
 //搜索
-function findUser(){
-	var uname = $.trim($("#uname").val());
-	$("#referUser").attr("href","back/userManage.jsp?uname="+uname);
+function findMV(){
+	var mvName = $.trim($("#mvName").val());
+	$("#referMV").attr("href","back/mvManage.jsp?mvName="+mvName);
 	//location.herf="back/userManage.jsp";
 }
 

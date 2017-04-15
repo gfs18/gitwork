@@ -52,10 +52,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	
-	
-	
-	
-	
 	<resultMap type="PaginationBean" id="PaginationBeanMapS">
 		<result column="pageSize" property="pageSize" />
 		<result column="currPage" property="currPage" />
@@ -77,7 +73,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where ${pageSize} *
 		${currPage} >= rownum) where rn > ( ${currPage} - 1) * ${pageSize}
 	</select>
-	
 	
 	
 	<update id="modifySinger" parameterType="Singer">
@@ -104,7 +99,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	
 	
-	<select id="findSingerByName" parameterType="String" resultType="Singer">
+	<select id="findSingerByNames" parameterType="String" resultType="Singer">
 		select * from Singer where sgname like '%${_parameter}%'
 	</select>
+	
+	<select id="findSingerbyName" parameterType="string" resultType="Singer">
+		select * from Singer where sgname = #{sgname}	
+	</select>
+	
+	<insert id="addSinger" parameterType="Singer">
+		insert into singer values(seq_singer_sgid.nextval,#{sgname},#{sgEname},#{sgnation},#{sggender},
+		<choose><when test="sgpicPath !=null">#{sgpicPath}</when><otherwise>'images/not_pic.jpg'</otherwise></choose>,
+		<choose><when test="sgintroduce !=null">#{sgintroduce}</when><otherwise>'没有介绍'</otherwise></choose>,'')
+	</insert>
+	
 </mapper>

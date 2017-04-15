@@ -32,8 +32,6 @@ public interface SpecialService {
 
 	List<Special> specialSearch(String spname);
 
-	/*int fingSgid(String sgname);*/
-
 	int findLgid(String lgname);
 
 	boolean addLanguage(String lgname);
@@ -42,10 +40,9 @@ public interface SpecialService {
 
 	PaginationBean<Special> getSpecialByStyle(Map<String, Object> map);
 
+	Special SpecialFindByName(String spname);
 
-
-	//列出专辑音乐
-	//List<Special> listSpeicalMusic();
+	boolean specialAdd(Special special);
 	
 }
 

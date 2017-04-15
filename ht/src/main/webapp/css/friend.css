@@ -392,6 +392,8 @@
     background-repeat: no-repeat;
     background-image:url("../images/img.png");
 }
+
+/* 发表评论时图片的最初样式 */
 .show_img{
     position: relative;
     border: none;
@@ -403,7 +405,6 @@
     cursor: pointer;
     background-size: 100%;
     background-repeat: no-repeat;
-    background-image:url("../images/img.png");
 }
 
 .form-control{

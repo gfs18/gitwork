@@ -18,12 +18,14 @@ public interface UserService {
 
 	List<Singer> Sonng(String lgid);
 
-	List<Song> Singg(Song song);
+	List<Song> Singg(String lgid);
 
 	PaginationBean<Users> listUsers(String pageS, String currP);//在后台用户管理中分页显示用户
 
 	boolean removeUser(String userid);//用户删除
 
 	List<Users> listReferUser(String uname);//用户的查找
+
+	boolean modifyUser(Users user);//用户的修改
 
 }

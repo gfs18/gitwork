@@ -17,7 +17,7 @@ function showSingerInfo(PageSize,currPage){
 				"</tr>";
 		}      
 		
-		str+='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#100C27B";this.style.color="#FF0000 ";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
+		str+='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#ffffff";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
 		$("#tableBody").html(str+"</hr>");
 		paginationSinger(data.totalPage);
 	},"json");
