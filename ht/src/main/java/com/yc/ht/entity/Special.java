@@ -14,18 +14,26 @@ public class Special {
 	public Special() {
 	}
 
+	
 
-	public Special(Integer spid, Integer sgid, String spname, Languages language, String sppicPath, String sppubTime,
-			Singer singer, Double spclick, String spintroduce) {
-		this.spid = spid;
+	public Special(Integer sgid, String spname, Languages language, String sppicPath, String sppubTime,
+			String spintroduce) {
 		this.sgid = sgid;
 		this.spname = spname;
 		this.language = language;
 		this.sppicPath = sppicPath;
 		this.sppubTime = sppubTime;
+		this.spintroduce = spintroduce;
+	}
+
+
+
+	public Special(Integer spid, Integer sgid, String spname, Languages language, String sppicPath, String sppubTime,
+			Singer singer, Double spclick, String spintroduce) {
+		this(sgid, spname, language, sppicPath, sppubTime, spintroduce);
+		this.spid = spid;
 		this.singer = singer;
 		this.spclick = spclick;
-		this.spintroduce = spintroduce;
 	}
 
 	public Integer getSpid() {

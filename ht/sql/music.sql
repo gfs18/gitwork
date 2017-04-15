@@ -61,7 +61,6 @@ create table singer(
        sgname varchar2(20) not null,  --歌手名
        sgEname varchar2(40) not null, --歌手英文名
        sgnation varchar2(20),  --国籍
-       lgid number(20) not null,--音乐语种编号
        sggender varchar2(10) not null,  --性别
        sgpicPath varchar2(40) not null, --头像路径
        sgintroduce varchar2(1000)not null,     --歌手介绍
@@ -86,11 +85,10 @@ create table special(
       spintroduce varchar2(1000), --专辑描述
       sppubTime date not null,   --出版时间
       spclick number(20,2), --点击量
-      spintroduce varchar2(1000),
       mark varchar2(100)       --预留字段
 );
-
-
+--select * from special;
+--delete SPECIAL where spid = 10002
 insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
 1001,'images/zj-2.jpg',to_date('2016-11-4','yyyy-mm-dd'),20,'');
 insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',

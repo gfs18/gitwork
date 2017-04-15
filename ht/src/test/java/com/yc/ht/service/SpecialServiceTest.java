@@ -111,4 +111,13 @@ public class SpecialServiceTest {
 		System.out.println(result);
 		assertEquals(true,result);
 	}
+	
+	
+	@Test
+	public void testSpecialAdd() {
+		Languages languages = new Languages(1002, "国语");
+		Special special = new Special(10011, "魔杰座", languages, "/upload/images\274049161.jpg", "2008-10-15", "周杰伦2008年最新魔幻杰作“魔杰座”魔术师与小丑的顶尖对决 周杰伦粉墨登场秀时尚版“烟熏小丑妆”9/24预购起跑 12款“魔杰桌历”迎2009 “魔杰方块”等歌迷挑战近来不断深入钻研魔术的周杰伦,已经预言了自己的新专辑将与魔术有关,即将在10月9日推出个人第九张专辑“魔杰座”！本是摩羯座的周杰伦,以音符和创意,变出星空中的新星座“魔杰座”,这个令星座专家摸不透的神秘星座,形状有时是扑克牌上的骑士,有时又变成鬼牌上的小丑,变换不同的形体和曲风,在新专辑的预购海报设计上就以扑克牌的设计概念,呈现出魔术师与小丑的顶尖对决！这款以黑桃J扑克牌设计的海报一曝光就令人觉得相当有趣,象征周杰伦的音乐蕴");
+		boolean result=specialService.specialAdd(special);
+		System.out.println(result);
+	}
 }

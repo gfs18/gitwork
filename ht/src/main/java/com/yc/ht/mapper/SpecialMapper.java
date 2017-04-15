@@ -32,4 +32,7 @@ public interface SpecialMapper {
 
 	List<Special> specialSearch(String spname);
 	
+	Special specialFindByName(String spname);
+	
+	int specialAdd(Special special);
 }
