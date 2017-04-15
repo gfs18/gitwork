@@ -19,7 +19,7 @@ import com.yc.ht.util.ServletUtil;
 /**
  *  过滤验证码
  */
-//@WebFilter("/back/*")
+@WebFilter("/back/*")
 public class AdminBackFilter extends AbstractFilter{
    
 	@Override
