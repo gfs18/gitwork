@@ -108,10 +108,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<insert id="addSinger" parameterType="Singer">
-		insert into singer values(seq_singer_sgid.nextval,#{sgname},#{sgEname},#{sgnation},
-		<choose>
-			<when test="lgid !=null">#{lgid}</when><otherwise>10001</otherwise>
-		</choose>,#{sggender},
+		insert into singer values(seq_singer_sgid.nextval,#{sgname},#{sgEname},#{sgnation},#{sggender},
 		<choose><when test="sgpicPath !=null">#{sgpicPath}</when><otherwise>'images/not_pic.jpg'</otherwise></choose>,
 		<choose><when test="sgintroduce !=null">#{sgintroduce}</when><otherwise>'没有介绍'</otherwise></choose>,'')
 	</insert>

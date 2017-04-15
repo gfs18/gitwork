@@ -74,6 +74,7 @@ public class UserHandler {
 	@RequestMapping(value="f",method=RequestMethod.POST)
 	@ResponseBody
 	public Users fa(Users user,HttpSession session1){
+	
 		try {
 			EmailUtils emailUtils=new EmailUtils();
 			emailUtils.setMail(user.getUemail(), session1);
@@ -108,7 +109,7 @@ public class UserHandler {
 	@RequestMapping(value="{lgid}",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Singer> Son( @PathVariable("lgid") String lgid){
-		System.out.println("lgid.............."+lgid.toString());
+		LogManager.getLogger().debug("lgid.............."+lgid.toString());
 		return userService.Sonng(lgid);
 	}
 	

@@ -150,6 +150,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<association property="language" column="lgid" javaType="Languages" 
 			select="backFindLgname"/>
 	</resultMap>
+	
 	<select id="backFindSgname" parameterType="int" resultType="Singer">
 		select *
 		from singer where sgid=#{sgid}
@@ -164,9 +165,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from special where spname like '%${_parameter}%'
 	</select>
 	
+	<!-- 根据专辑名查询专辑信息 -->
+	<select id="specialFindByName" parameterType="string" resultMap="SpecialMap">
+		select * from special where spname= #{spname}
+	</select>
+	
 	<!-- 修改专辑 -->
-	
-	
 	<update id="specialModify" parameterType="Special" >
 		<selectKey keyColumn="sgid" keyProperty="sgid" order="BEFORE" databaseId="int">
 			select sgid from singer where sgname=#{sgname}
@@ -181,4 +185,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</trim> 
 		where spid=#{spid}
 	</update>
+	
+	
+	<!-- 添加专辑 -->
+	<insert id="specialAdd" parameterType="Special">
+		insert into special values(seq_special_spid.nextval,#{sgid},#{spname},#{language.lgid},#{sppicPath},#{spintroduce},to_date('${sppubTime}','yyyy-MM-dd'),0,'')
+	</insert>
+	
 </mapper>

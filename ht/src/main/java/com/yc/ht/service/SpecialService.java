@@ -31,8 +31,10 @@ public interface SpecialService {
 
 	List<Special> specialSearch(String spname);
 
+	Special SpecialFindByName(String spname);
 
-
+	boolean specialAdd(Special special);
+	
 	//列出专辑音乐
 	//List<Special> listSpeicalMusic();
 	

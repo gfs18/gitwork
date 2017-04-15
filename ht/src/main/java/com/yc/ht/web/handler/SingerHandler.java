@@ -123,11 +123,9 @@ public class SingerHandler {
 	@ResponseBody
 	public Map<String, String> addSinger(String name,String country,String gender,String avatar_s500,String intro){
 		if(avatar_s500.isEmpty()){
-			System.out.println("avatar_s500  为空...");
 			avatar_s500 = null;
 		}
 		if(intro.isEmpty()){
-			System.out.println("intro  为空...");
 			intro = null;
 		}
 		Singer sgr = singerService.findSingerName(name);
@@ -160,9 +158,7 @@ public class SingerHandler {
 				gender = "女";
 			}
 			Singer singer = new Singer(name, ChineseToEnglish.getPingYin(name), country, gender, avatar_s500, intro);
-			System.out.println("add ---> intro:"+intro);
 			boolean result = singerService.addSinger(singer);
-			System.out.println(result);
 			if(result){
 				map.put("sgid", String.valueOf(singerService.findSingerName(name).getSgid()));
 			}

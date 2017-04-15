@@ -1,8 +1,11 @@
 package com.yc.ht.web.handler;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +19,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.yc.ht.entity.Languages;
 import com.yc.ht.entity.PaginationBean;
+import com.yc.ht.entity.Singer;
 import com.yc.ht.entity.Song;
 import com.yc.ht.entity.Special;
+import com.yc.ht.service.LanguageService;
 import com.yc.ht.service.SpecialService;
+import com.yc.ht.util.ChineseToEnglish;
+import com.yc.ht.util.InternetRes;
 import com.yc.ht.util.ServletUtil;
 /**
  * 
@@ -31,6 +38,9 @@ public class SpecialHandler {
 	
 	@Autowired
 	public SpecialService specialService;
+	
+	@Autowired
+	public LanguageService languageService;
 	
 	@RequestMapping(value="index",method=RequestMethod.GET)
 	@ResponseBody
@@ -129,5 +139,51 @@ public class SpecialHandler {
 			e.printStackTrace();
 		}
 		return specialService.specialSearch(spname);
+	}
+	
+	
+	@RequestMapping(value="add",method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String,String> addSpecial(String sgid,String title,String language,String pic_s500,String info,String publishtime){
+		if(pic_s500.isEmpty()){
+			pic_s500 = null;
+		}
+		if(info.isEmpty()){
+			info = null;
+		}
+		Special spc = specialService.SpecialFindByName(title);
+		Map<String, String> map = new HashMap<String,String>();
+		if(spc != null && !"".equals(spc)){
+			map.put("spid", String.valueOf(spc.getSpid()));
+		}else{
+			if(pic_s500 != null){
+				//文件下载
+				String[] strs = pic_s500.split("@")[0].split("/");
+				File file = new File(ServletUtil.UPLOAD_DIR+File.separator+"images");
+				if(!file.exists()){
+					file.mkdirs();
+				}
+				String solyricName = "images"+File.separator+strs[(strs.length-1)];
+				if(pic_s500 != null && !"".equals(pic_s500)){//判断是否文件上传
+					InternetRes.getInternetRes(pic_s500,solyricName);
+					pic_s500 = ServletUtil.VIRTUAL_UPLOAD_DIR + solyricName;
+				}
+			}
+			
+			if(info != null){
+				info = info.trim().substring(0, 300);
+			}
+			Languages languages = languageService.findLanguageByName(language);
+			if(languages ==null || "".equals(languages)){
+				languageService.addLanguage(language);
+				languages = languageService.findLanguageByName(language);
+			}
+			Special special = new Special(Integer.valueOf(sgid), title, languages, pic_s500, publishtime, info);
+			boolean result =specialService.specialAdd(special);
+			if(result){
+				map.put("spid", String.valueOf(specialService.SpecialFindByName(title).getSpid()));
+			}
+		}
+		return map;
 	}
 }

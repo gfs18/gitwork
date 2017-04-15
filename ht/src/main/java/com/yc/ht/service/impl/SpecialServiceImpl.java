@@ -105,5 +105,15 @@ public class SpecialServiceImpl implements SpecialService{
 	public List<Special> specialSearch(String spname) {
 		return specialMapper.specialSearch(spname);
 	}
+
+	@Override
+	public Special SpecialFindByName(String spname) {
+		return specialMapper.specialFindByName(spname);
+	}
+
+	@Override
+	public boolean specialAdd(Special special) {
+		return specialMapper.specialAdd(special)>0;
+	}
 	
 }
