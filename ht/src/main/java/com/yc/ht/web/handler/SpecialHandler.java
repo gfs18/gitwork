@@ -35,65 +35,65 @@ import com.yc.ht.util.ServletUtil;
 @Controller("specialHandler")
 @RequestMapping("special")
 public class SpecialHandler {
-	
+
 	@Autowired
 	public SpecialService specialService;
-	
+
 	@Autowired
 	public LanguageService languageService;
-	
+
 	@RequestMapping(value="index",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Special> specialList(){
 		LogManager.getLogger().debug("首页的专辑图片显示进来了");
 		return specialService.listSpeical();
 	}
-	
+
 	@RequestMapping(value="detail", method=RequestMethod.GET)
 	@ResponseBody
 	public Special specialDetail(int spid){
 		LogManager.getLogger().debug("根据专辑id获取详情。。。spid:"+spid);
 		return specialService.specialDetail(spid);
 	}
-	
+
 	@RequestMapping(value="music", method=RequestMethod.GET)
 	@ResponseBody
 	public List<Song> specialSong(int spid){
 		LogManager.getLogger().debug("根据专辑获取歌曲。。。");
 		return specialService.findSongBySpecial(spid);
 	}
-	
+
 	@RequestMapping(value="newest", method=RequestMethod.GET)
 	@ResponseBody
 	public PaginationBean<Special> newestSpecial(String rows,String page){
 		LogManager.getLogger().debug("专辑页面分页显示最新专辑。。。rows:"+rows+",page:"+page);
 		return specialService.newestSpecial(rows, page);
 	}
-	
+
 	@RequestMapping(value="hottest", method=RequestMethod.GET)
 	@ResponseBody
 	public PaginationBean<Special> hottestSpecial(String rows,String page){
 		LogManager.getLogger().debug("专辑页面分页显示热门专辑。。。rows:"+rows+",page:"+page);
 		return specialService.hottestSpecial(rows, page);
 	}
-	
-	
+
+
 	@RequestMapping(value="language", method=RequestMethod.GET)
 	@ResponseBody
 	public PaginationBean<Special> getSpecialByStyle(String rows,String page,int style){
 		LogManager.getLogger().debug("专辑页面根据类型分页显示专辑。。。rows:"+rows+",page:"+page+",style:"+style);
 		return specialService.getSpecialByStyle(rows, page,style);
 	}
-	
-	
+
+
 	@RequestMapping(value="style", method=RequestMethod.GET)
 	@ResponseBody
 	public List<Languages> specialStyle(){
 		LogManager.getLogger().debug("专辑页面显示专辑类型。。");
 		return specialService.specialStyle();
 	}
-	
-	
+
+
 	//后台
 	@RequestMapping(value="back", method=RequestMethod.GET)
 	@ResponseBody
@@ -101,14 +101,14 @@ public class SpecialHandler {
 		LogManager.getLogger().debug("后台显示专辑信息");
 		return specialService.specialBack(rows,page);
 	}
-	
+
 	@RequestMapping(value="delete", method=RequestMethod.POST)
 	@ResponseBody
 	public boolean specialDelete(String spid){
 		LogManager.getLogger().debug("后台删除专辑");
 		return specialService.specialDelete(spid);
 	}
-	
+
 
 	@RequestMapping(value="modify",method=RequestMethod.POST)
 	public String specialModify(Special special,@RequestParam("picData") MultipartFile picData){
@@ -128,7 +128,7 @@ public class SpecialHandler {
 			return "forward:/back/specialModify.jsp";
 		}
 	}
-	
+
 	@RequestMapping(value="search/{spname}", method=RequestMethod.GET)
 	@ResponseBody
 	public List<Special> specialSearch(@PathVariable("spname") String spname){
@@ -140,11 +140,12 @@ public class SpecialHandler {
 		}
 		return specialService.specialSearch(spname);
 	}
-	
-	
+
+
 	@RequestMapping(value="add",method=RequestMethod.POST)
 	@ResponseBody
 	public Map<String,String> addSpecial(String sgid,String title,String language,String pic_s500,String info,String publishtime){
+		Map<String, String> map = new HashMap<String,String>();
 		if(pic_s500.isEmpty()){
 			pic_s500 = null;
 		}
@@ -152,7 +153,6 @@ public class SpecialHandler {
 			info = null;
 		}
 		Special spc = specialService.SpecialFindByName(title);
-		Map<String, String> map = new HashMap<String,String>();
 		if(spc != null && !"".equals(spc)){
 			map.put("spid", String.valueOf(spc.getSpid()));
 		}else{
@@ -169,9 +169,11 @@ public class SpecialHandler {
 					pic_s500 = ServletUtil.VIRTUAL_UPLOAD_DIR + solyricName;
 				}
 			}
-			
+
 			if(info != null){
-				info = info.trim().substring(0, 300);
+				if(info.length()>300){
+					info = info.trim().substring(0, 300);
+				}
 			}
 			Languages languages = languageService.findLanguageByName(language);
 			if(languages ==null || "".equals(languages)){

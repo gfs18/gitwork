@@ -91,21 +91,46 @@ public class SongHandler {
 
 	@RequestMapping(value="add",method=RequestMethod.POST)
 	@ResponseBody
-	public boolean songAdd(String soname,String sgname,String solyricPath){
-		System.out.println("soname:"+soname+",sgname:"+sgname+",solyricPath:"+solyricPath);
-		//歌词网上下载
-		String[] strs = solyricPath.split("/");
-		File file = new File(ServletUtil.UPLOAD_DIR+File.separator+"solyric");
-		if(!file.exists()){
-			file.mkdirs();
+	public boolean songAdd(String soname,String sgid,String spid,String songPic,String solyricPath){
+		Song s = songService.findSongName(new Song(Integer.valueOf(sgid), soname));
+		if(s == null || "".equals(s) ){
+			//图片下载
+			if(songPic != null && !songPic.isEmpty() && !"".equals(songPic)){
+				//文件下载
+				String[] strs = songPic.split("@")[0].split("/");
+				File file = new File(ServletUtil.UPLOAD_DIR+File.separator+"images");
+				if(!file.exists()){
+					file.mkdirs();
+				}
+				String solyricName = "images"+File.separator+strs[(strs.length-1)];
+				if(songPic != null && !"".equals(songPic)){//判断是否文件上传
+					InternetRes.getInternetRes(songPic,solyricName);
+					songPic = ServletUtil.VIRTUAL_UPLOAD_DIR + solyricName;
+				}
+			}else{
+				songPic = "images/not_pic.jpg";
+			}
+			//歌词网上下载
+			String[] strs = solyricPath.split("/");
+			File file = new File(ServletUtil.UPLOAD_DIR+File.separator+"solyric");
+			if(!file.exists()){
+				file.mkdirs();
+			}
+			String solyricName = "solyric"+File.separator+strs[(strs.length-1)];
+			if(solyricPath != null && !"".equals(solyricPath)){//判断是否文件上传
+				InternetRes.getInternetRes(solyricPath,solyricName);
+				solyricPath = ServletUtil.VIRTUAL_UPLOAD_DIR + solyricName;
+			}
+			Song song =null;
+			if(spid == null || "".equals(spid)){
+				song= new Song(Integer.valueOf(sgid), null , soname, songPic, solyricPath, ServletUtil.VIRTUAL_UPLOAD_DIR+"music/");
+			}else{
+				song = new Song(Integer.valueOf(sgid), Integer.valueOf(spid), soname, songPic, solyricPath, ServletUtil.VIRTUAL_UPLOAD_DIR+"music/");
+			}
+			System.out.println(song);
+			return songService.addSong(song);
+		}else{
+			return false;
 		}
-		String solyricName = "solyric"+File.separator+strs[(strs.length-1)];
-		if(solyricPath != null && !"".equals(solyricPath)){//判断是否文件上传
-			InternetRes.getInternetRes(solyricPath,solyricName);
-			solyricPath = ServletUtil.VIRTUAL_UPLOAD_DIR + solyricName;
-		}
-		
-		
-		return true;
 	}
 }

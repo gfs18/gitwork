@@ -148,7 +148,9 @@ public class SingerHandler {
 			}
 			
 			if(intro != null){
-				intro = intro.trim().substring(0, 300);
+				if(intro.length()>300){
+					intro = intro.trim().substring(0, 300);
+				}
 			}
 			
 			//性别格式转变

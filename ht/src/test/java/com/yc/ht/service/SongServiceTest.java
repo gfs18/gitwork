@@ -24,5 +24,18 @@ public class SongServiceTest {
 		System.out.println(song);
 		assertNotNull(song);
 	}
+	
+	@Test
+	public void testfindSong() {
+		Song song=songService.findSongName(new Song(1003,"童话镇"));
+		System.out.println(song);
+	}
+	
+	@Test
+	public void testAddSong() {
+		Song song = new Song(10013, 10003, "稻香", "/upload/images\274049161.jpg", "/upload/solyric\13762398.lrc", "/upload/music/");
+		boolean result=songService.addSong(song);
+		System.out.println(result);
+	}
 
 }
