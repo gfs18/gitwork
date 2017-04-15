@@ -3,7 +3,9 @@ package com.yc.ht.service;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +15,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.yc.ht.entity.Languages;
 import com.yc.ht.entity.PaginationBean;
-import com.yc.ht.entity.Singer;
 import com.yc.ht.entity.Song;
 import com.yc.ht.entity.Special;
 
@@ -72,8 +73,12 @@ public class SpecialServiceTest {
 
 	@Test
 	public void testGetSpecialByStyle() {
-		PaginationBean<Special> special=specialService.getSpecialByStyle("8", "1", 10001);
-		System.out.println(special);
+		Map<String,Object> map=new HashMap<String,Object>();
+		map.put("pageSize", 8);
+		map.put("currPage", 1);
+		map.put("lgid", 10001);
+		PaginationBean<Special> special=specialService.getSpecialByStyle(map);
+		System.out.println("******"+specialService.getSpecialByStyle(map));
 		assertNotNull(special);
 	}
 
@@ -101,17 +106,21 @@ public class SpecialServiceTest {
 	@Test
 	public void testSpecialModify() {
 		Special special=new Special();
-		Singer singer=new Singer();
-		singer.setSgname("韩红");
-		special.setSpid(10010);
-		special.setSinger(singer);
-		special.setSpclick(6.3);
+		special.setSpid(10063);
+		special.setLgid(10001);
+		special.setSpclick(6.0);
 		special.setSppubTime("2017-4-10");
 		boolean result=specialService.specialModify(special);
 		System.out.println(result);
 		assertEquals(true,result);
 	}
 	
+	@Test
+	public void testFindLgid() {
+		int lgid=specialService.findLgid("回火");
+		System.out.println(lgid);
+		assertNotNull(lgid);
+	}
 	
 	@Test
 	public void testSpecialAdd() {

@@ -32,7 +32,7 @@ function paginationSong(totalP){
 		pStr +='<li><a href="javascript:void(0)" onclick="paginatorNext('+totalP+')" >&raquo;</a></li>';
 		
 	}
-		else{
+	else{
 		pStr +='<li><a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
 		for (var i = 1; i <= totalP; i++) {
 			pStr +='<li><a href="javascript:void(0)" onclick="showSongInfo(5,'+i+')">'+i+'</a></li>';

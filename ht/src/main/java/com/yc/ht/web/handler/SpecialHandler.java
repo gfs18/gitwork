@@ -19,12 +19,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.yc.ht.entity.Languages;
 import com.yc.ht.entity.PaginationBean;
-import com.yc.ht.entity.Singer;
 import com.yc.ht.entity.Song;
 import com.yc.ht.entity.Special;
 import com.yc.ht.service.LanguageService;
 import com.yc.ht.service.SpecialService;
-import com.yc.ht.util.ChineseToEnglish;
 import com.yc.ht.util.InternetRes;
 import com.yc.ht.util.ServletUtil;
 /**
@@ -73,16 +71,20 @@ public class SpecialHandler {
 	@RequestMapping(value="hottest", method=RequestMethod.GET)
 	@ResponseBody
 	public PaginationBean<Special> hottestSpecial(String rows,String page){
-		LogManager.getLogger().debug("专辑页面分页显示热门专辑。。。rows:"+rows+",page:"+page);
+		LogManager.getLogger().debug("专辑页面分页显示热门专辑。。。pagesize:"+rows+",currpage:"+page);
 		return specialService.hottestSpecial(rows, page);
 	}
 
 
 	@RequestMapping(value="language", method=RequestMethod.GET)
 	@ResponseBody
-	public PaginationBean<Special> getSpecialByStyle(String rows,String page,int style){
-		LogManager.getLogger().debug("专辑页面根据类型分页显示专辑。。。rows:"+rows+",page:"+page+",style:"+style);
-		return specialService.getSpecialByStyle(rows, page,style);
+	public PaginationBean<Special> getSpecialByStyle(String rows,String page,int lgid){
+		Map<String,Object> map=new HashMap<String,Object>();
+		map.put("pageSize", rows);
+		map.put("currPage", page);
+		map.put("lgid", lgid);
+		LogManager.getLogger().debug("专辑页面根据类型分页显示专辑。。。rows:"+rows+",page:"+page+",style:"+lgid);
+		return specialService.getSpecialByStyle(map);
 	}
 
 
@@ -111,7 +113,14 @@ public class SpecialHandler {
 
 
 	@RequestMapping(value="modify",method=RequestMethod.POST)
-	public String specialModify(Special special,@RequestParam("picData") MultipartFile picData){
+	public String specialModify(@RequestParam("picData") MultipartFile picData,Special special,String lgname){
+		LogManager.getLogger().debug("后台修改专辑");
+		List<String> languages=specialService.specialStyleName();
+		if(!languages.contains(lgname)){
+			specialService.addLanguage(lgname);
+		}
+		int lgid=specialService.findLgid(lgname);
+		special.setLgid(lgid);
 		String picPath = null;
 		if(picData != null && !picData.isEmpty()){//判断是否文件上传
 			try {

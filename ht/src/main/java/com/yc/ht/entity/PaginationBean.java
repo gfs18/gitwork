@@ -12,7 +12,6 @@ public class PaginationBean <T> {
 	private Integer total; //总数据条数
 	private List<T> rows;//要显示数据的集合
 	
-	private int style;
 	public PaginationBean() {
 	}
 	
@@ -20,25 +19,6 @@ public class PaginationBean <T> {
 		this.totalPage = totalPage;
 		this.total = total;
 		this.rows = rows;
-	}
-	
-	
-	public PaginationBean(Integer currPage, Integer pageSize, Integer totalPage, Integer total, List<T> rows,
-			int style) {
-		this.currPage = currPage;
-		this.pageSize = pageSize;
-		this.totalPage = totalPage;
-		this.total = total;
-		this.rows = rows;
-		this.style = style;
-	}
-
-	public int getLanguages() {
-		return style;
-	}
-
-	public void setLanguages(int style) {
-		this.style = style;
 	}
 
 	public Integer getCurrPage() {
@@ -71,17 +51,11 @@ public class PaginationBean <T> {
 	public void setRows(List<T> rows) {
 		this.rows = rows;
 	}
-	/*@Override
-	public String toString() {
-		return "PaginationBean [currPage=" + currPage + ", pageSize=" + pageSize + ", totalPage=" + totalPage
-				+ ", total=" + total + ", rows=" + rows + "]";
-	}*/
 
 	@Override
 	public String toString() {
 		return "PaginationBean [currPage=" + currPage + ", pageSize=" + pageSize + ", totalPage=" + totalPage
-				+ ", total=" + total + ", rows=" + rows + ", style=" + style + "]";
+				+ ", total=" + total + ", rows=" + rows + "]";
 	}
-	
 	
 }

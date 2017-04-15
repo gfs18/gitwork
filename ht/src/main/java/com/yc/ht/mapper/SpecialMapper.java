@@ -1,6 +1,9 @@
 package com.yc.ht.mapper;
 
 import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Param;
 
 import com.yc.ht.entity.Languages;
 import com.yc.ht.entity.PaginationBean;
@@ -22,7 +25,7 @@ public interface SpecialMapper {
 
 	PaginationBean<Special> hottestSpecial(PaginationBean<Special> pb);
 
-	PaginationBean<Special> getSpecialByStyle(PaginationBean<Special> pb);
+	PaginationBean<Special> getSpecialByStyle(Map<String, Object> map);
 
 	int specialDelete(Integer spid);
 
@@ -31,6 +34,14 @@ public interface SpecialMapper {
 	PaginationBean<Special> specialBack(PaginationBean<Special> pb);
 
 	List<Special> specialSearch(String spname);
+
+	/*int findSgid(String sgname);*/
+
+	int findLgid(String lgname);
+
+	int addLanguage(String lgname);
+
+	List<String> specialStyleName();
 	
 	Special specialFindByName(String spname);
 	

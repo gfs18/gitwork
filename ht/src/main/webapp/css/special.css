@@ -54,12 +54,12 @@
     font-family: "微软雅黑";
     font-size:20px;
 }
-.new_ul,.hot_ul,.china_ul,.hip_ul,.eng_ul{
+/* .new_ul,.hot_ul,.china_ul,.hip_ul,.eng_ul{
     list-style:none;
 }
 .hot_ul,.china_ul,.hip_ul,.eng_ul{
     display: none;
-}
+} */
 .list_img{
     width: 250px;
     height:250px;
@@ -107,7 +107,7 @@
 .play img{
     width:70px;
     height:70px;
-    display:none;
+   /*  display:none; */
 
 }
 .s_p{
