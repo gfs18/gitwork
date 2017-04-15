@@ -6,19 +6,34 @@ function showUserManage(pageS,currP){
 		var str = "";
 		for (var i = 0; i < data.rows.length; i++) {
 			var img=data.rows[i].upicPath;
+			var ucondition=data.rows[i].ucondition;
+			var uvip=data.rows[i].uvip;
 			if(img!=null){
 				img=data.rows[i].upicPath;
 			}else{
 				img="images/not_image.png";
 			}
-			str += "<tr class='tableoverout'><th>"+data.rows[i].userid+"</th><th>"+data.rows[i].uname+"</th><th>"
+			if(ucondition==1){
+				var strOptions='<select id="uconditionValue" style="border:1px solid #c0c0c0; width: 70px; height:25px;"><option value="0" >'+"可用"+'</option><option value="1">'+"不可用"+'</option></select>';
+			}else{
+				var strOptions='<select id="uconditionValue" style="border:1px solid #c0c0c0; width: 70px; height:25px;"><option value="0" >'+"不可用"+'</option><option value="1">'+"可用"+'</option></select>';
+			}
+			if(uvip==1){
+				var strOptions1='<select id="uvipValue" style="border:1px solid #c0c0c0; width: 70px; height:25px;"><option value="0">'+"会员"+'</option><option value="1">'+"非会员"+'</option></select>';
+			}else{
+				var strOptions1='<select id="uvipValue" style="border:1px solid #c0c0c0; width: 70px; height:25px;"><option value="0">'+"非会员"+'</option><option value="1">'+"会员"+'</option></select>';
+			}
+			str += "<tr class='tableoverout'><th id='useridValue'>"+data.rows[i].userid+"</th><th>"+data.rows[i].uname+"</th><th>"
 			+data.rows[i].uemail+"</th><th>"+'<img src='+img +' class="show_img">'+"</th><th>"
-			+data.rows[i].uintroduce+"</th><th>"+data.rows[i].ucondition+"</th><th>"+data.rows[i].uvip+"</th>"
-			+"<th><a href='back/userManageModify.jsp?userid="+data.rows[i].userid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
+			+data.rows[i].uintroduce+"</th><th>"+strOptions+"</th>"
+			+"<th>"+strOptions1+"</th>"
+			+"<th><a onclick='modifyUser("+data.rows[i].userid+")'><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></a>&nbsp;&nbsp;"
 			+"<a onclick='removeUser("+data.rows[i].userid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
+		
+		
 		}
 		//行变色
-		str +='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#ffffff";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
+		str +='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#008080";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
 		$("#tableBody").html(str);
 		paginationUserManage(data.totalPage);
 	});
@@ -96,15 +111,30 @@ function referUser(){
 			var str = "";
 			for (var i = 0; i < data.length; i++) {
 				var img=data[i].upicPath;
+				var ucondition=data[i].ucondition;
+				var uvip=data[i].uvip;
 				if(img!=null){
 					img=data[i].upicPath;
 				}else{
 					img="images/not_image.png";
 				}
+				if(ucondition==1){
+					ucondition="可用";
+				}else{
+					ucondition="不可用";
+				}
+				if(uvip=1){
+					uvip="会员";
+				}else{
+					uvip="非";
+				}
 				str += "<tr class='tableoverout'><th>"+data[i].userid+"</th><th>"+data[i].uname+"</th><th>"
 				+data[i].uemail+"</th><th>"+'<img src='+img+' class="show_img">'+"</th><th>"
-				+data[i].uintroduce+"</th><th>"+data[i].ucondition+"</th><th>"+data[i].uvip+"</th>"
-				+"<th><a href='back/userManageModify.jsp?userid="+data[i].userid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
+				+data[i].uintroduce+"</th><th>"
+				+'<select><option style="width:10px">'+ucondition+'</option>'
+				+'<option style="width:10px">'+ucondition+'</option></select>'
+				+"</th><th>"+uvip+"</th>"
+				+"<th><a href='back/userManageModify.jsp?uname="+data[i].uname+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
 				+"<a onclick='removeReferUser("+data[i].userid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
 			}
 			
@@ -117,7 +147,7 @@ function referUser(){
 		showUserManage(5,1);
 	}
 }
-//搜索删除用户后刷新
+//删除搜索后得到的用户后刷新
 function removeReferUser(userid){
 	$.post("user/remove",{"userid":userid},function(data){
 		if(data){
@@ -128,6 +158,25 @@ function removeReferUser(userid){
 		referUser();
 	},"json");
 }
+
+
+//修改用户的状态
+function modifyUser(userid){
+	var obj = document.getElementById("uconditionValue");
+	var uconditionValue = obj.options[obj.selectedIndex].value;
+	var obj1 = document.getElementById("uvipValue");
+	var uvipValue = obj1.options[obj1.selectedIndex].value;
+	alert("condi"+uconditionValue+"uvip"+uvipValue);
+	$.post("user/modify",{"userid":userid,"ucondition":uconditionValue,"uvip":uvipValue},function(data){
+		if(data){
+			alert("修改成功!!!");
+		}else{
+			alert("修改失败...");
+		}
+		location.href="back/userManage.jsp";
+	},"json");
+}
+
 
 
 

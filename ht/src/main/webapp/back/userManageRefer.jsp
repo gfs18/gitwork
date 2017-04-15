@@ -30,7 +30,7 @@
 						<li><a href="javascript:void(0)">歌手管理</a></li>
 						<li><a href="javascript:void(0)">专辑管理</a></li>
 						<li><a href="javascript:void(0)">短片管理</a></li>
-						<li><a href="javascript:void(0)">用户管理</a></li>
+						<li><a href="back/userManage.jsp">用户管理</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<c:if test="${login_admin != null }">
@@ -55,7 +55,6 @@
 			<ul class="nav nav-pills nav-stacked">
 				<li role="presentation" class="active"><a href="back/userManage.jsp">用户信息</a></li>
 				<li role="presentation"><a href="back/userManageRefer.jsp">用户查询</a></li>
-				<li role="presentation"><a href="back/userManageAdd.jsp">用户添加</a></li>
 				<li role="presentation"><a href="back/userManageModify.jsp">用户修改</a></li>
 			</ul>
 		</div>

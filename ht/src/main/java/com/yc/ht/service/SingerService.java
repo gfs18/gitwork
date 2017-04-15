@@ -29,6 +29,11 @@ public interface SingerService {
 	boolean modifySinger(Singer singer);
 	
 	boolean removeSinger(String sgid);
+
+	boolean addSinger(Singer singer);
 	
 	List<Singer> findSingerByName(String sgname);
+	
+	Singer findSingerName(String sgname);
+	
 }

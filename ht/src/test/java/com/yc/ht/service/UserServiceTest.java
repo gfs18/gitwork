@@ -25,7 +25,7 @@ public class UserServiceTest {
 		users=usersService.login(users);
 		System.out.println(users);
 	}
-	
+
 	@Test
 	public void testListUsers() {
 		PaginationBean<Users> a=usersService.listUsers("1", "1");
@@ -37,21 +37,32 @@ public class UserServiceTest {
 		System.out.println(com);
 		assertNotNull(com);
 	}*/
-	
+
 	//后台删除用户测试
 	@Test
 	public void testRemoveUser() {
 		boolean a=usersService.removeUser("10063");
 		System.out.println(a);
 	}
-	
+
 	//后台查询用户测试
-		@Test
-		public void testListReferUser() {
-			List<Users> users=usersService.listReferUser("哈");
-			System.out.println(users);
-			return;
-		}
-		
-		
+	@Test
+	public void testListReferUser() {
+		List<Users> users=usersService.listReferUser("哈");
+		System.out.println(users);
+		return;
+	}
+	
+	//后台修改用户测试
+	@Test
+	public void testModifyUser() {
+		Users users=new Users();
+		users.setUcondition(0);
+		users.setUvip(0);
+		users.setUserid(10064);
+		boolean a=usersService.modifyUser(users);
+		System.out.println(a);
+		return;
+	}	
+
 }

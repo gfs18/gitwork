@@ -26,4 +26,6 @@ public interface UserService {
 
 	List<Users> listReferUser(String uname);//用户的查找
 
+	boolean modifyUser(Users user);//用户的修改
+
 }

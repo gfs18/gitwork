@@ -19,9 +19,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(seq_users_uid.nextval,#{uname},#{upwd},#{uemail},'','',default,default,'')
 	</insert>
 
-    
-     
-    
      
 	<select id="Singgg" parameterType="String" resultType="Song" >
 		 select * from song where sgid like '${_parameter}'  	
@@ -32,8 +29,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 							 	
 	</select>
 	
-
-
 	<!-- 后台管理中的用户分页显示 -->
 	<select id="findPaginationUsers" parameterType="PaginationBean"
 		resultMap="PaginationBeanMap" useCache="false" flushCache="true">
@@ -69,4 +64,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findReferUser" parameterType="string" resultType="Users">
 		select * from users	where uname like '%${_parameter}%'
 	</select>
+	
+	<!-- 后台用户状态的修改 -->
+	<update id="updateUser" parameterType="users">
+		update users 
+		<set>
+			<if test="ucondition!=null">ucondition=#{ucondition},</if>
+			<if test="uvip!=null">uvip=#{uvip},</if>
+		</set>
+		where userid=#{userid}
+	</update>
+	
+	
 </mapper>

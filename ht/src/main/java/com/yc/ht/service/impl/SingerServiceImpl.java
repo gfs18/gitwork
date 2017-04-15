@@ -27,35 +27,30 @@ public class SingerServiceImpl implements SingerService {
 
 	@Override
 	public List<Languages> inquire(Languages languages) {
-		// TODO Auto-generated method stub
 		return singerMapper.refer(languages);
 	}
 
 
 	@Override
 	public List<Singer> refer(Singer singer) {
-		// TODO Auto-generated method stub
 		return singerMapper.refre(singer);
 	}
 
 
 	@Override
 	public List<Singer> click(String lgid) {
-		// TODO Auto-generated method stub
 		return singerMapper.clikee(lgid);
 	}
 
 
 	@Override
 	public List<Singer> Hot(String sgEname) {
-		// TODO Auto-generated method stub
 		return singerMapper.HOT(sgEname);
 	}
 
 
 	@Override
 	public List<Singer> WHole(Singer singer) {
-		// TODO Auto-generated method stub
 		return singerMapper.WHOle(singer);
 	}
 
@@ -140,7 +135,19 @@ public class SingerServiceImpl implements SingerService {
 
 	@Override
 	public List<Singer> findSingerByName(String sgname) {
-		return singerMapper.findSingerByName(sgname);
+		return singerMapper.findSingerByNames(sgname);
+	}
+
+
+	@Override
+	public boolean addSinger(Singer singer) {
+		return singerMapper.addSinger(singer)>0;
+	}
+
+
+	@Override
+	public Singer findSingerName(String sgname) {
+		return singerMapper.findSingerbyName(sgname);
 	}
 	
 	
