@@ -39,7 +39,7 @@ function InterNameReger(){
 			var str ="";
 			for (var i = 0; i < msg.result.song_info.song_list.length; i++) {
 				str += "<tr class='tableoverout'><th>"+msg.result.song_info.song_list[i].title+"</th><th>"+msg.result.song_info.song_list[i].author+"</th><th>"+msg.result.song_info.song_list[i].album_title+"</th><th>"+msg.result.song_info.song_list[i].pic_small+"</th><th>"+msg.result.song_info.song_list[i].lrclink+"</th>" +
-						"<th><a href='javascript:void(0)' onclick='AddSongInfo(this,"+msg.result.song_info.song_list[i].ting_uid+","+msg.result.song_info.song_list[i].album_id+")'><span class='glyphicon glyphicon-plus' aria-hidden='true'></span></a></th></tr>"
+				"<th><a href='javascript:void(0)' onclick='AddSongInfo(this,"+msg.result.song_info.song_list[i].ting_uid+","+msg.result.song_info.song_list[i].album_id+")'><span class='glyphicon glyphicon-plus' aria-hidden='true'></span></a></th></tr>"
 			}
 			str +='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#ffffff";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
 			$("#tableBody").html(str);

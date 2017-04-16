@@ -3,24 +3,40 @@ special();
 function special(){
 	$.get("special/index", function(data){
 		var specialStr = "";
-		for (var i = 0; i <5; i++) {
-			if(i==0){
-				specialStr+='<div class=""><a href="page/special_music.jsp?spid='+data[i].spid+'">';
-				specialStr+='<img id="img2" src="'+data[i].sppicPath+'" /></a>';
-				specialStr+='<div class="bf1"><a href=""><i	class="glyphicon glyphicon-headphones pull-left"><span>'+data[i].spclick+'</span></i></a>';
-				specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle"></i></a></div></div>';
-			}else{
-				specialStr+='<div class="zj1"><a href="page/special_music.jsp?spid='+data[i].spid+'">';
-				specialStr+='<img class="img3" src="'+data[i].sppicPath+'" /></a>';
-				specialStr+='<div class="bf2"><a href=""><i	class="glyphicon glyphicon-headphones pull-left headphones1"><span>'+data[i].spclick+'</span></i></a>';
-				specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
+		if(data.length>=5){
+			for (var i = 0; i<5; i++) {
+				if(i==0){
+					specialStr+='<div class=""><a href="page/special_music.jsp?spid='+data[i].spid+'">';
+					specialStr+='<img id="img2" src="'+data[i].sppicPath+'" /></a>';
+					specialStr+='<div class="bf1"><a href=""><i	class="glyphicon glyphicon-headphones pull-left"><span>'+data[i].spclick+'</span></i></a>';
+					specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle"></i></a></div></div>';
+				}else{
+					specialStr+='<div class="zj1"><a href="page/special_music.jsp?spid='+data[i].spid+'">';
+					specialStr+='<img class="img3" src="'+data[i].sppicPath+'" /></a>';
+					specialStr+='<div class="bf2"><a href=""><i	class="glyphicon glyphicon-headphones pull-left headphones1"><span>'+data[i].spclick+'</span></i></a>';
+					specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
+				}
+			}
+		}else{
+			for (var i = 0; i<data.length; i++) {
+				if(i==0){
+					specialStr+='<div class=""><a href="page/special_music.jsp?spid='+data[i].spid+'">';
+					specialStr+='<img id="img2" src="'+data[i].sppicPath+'" /></a>';
+					specialStr+='<div class="bf1"><a href=""><i	class="glyphicon glyphicon-headphones pull-left"><span>'+data[i].spclick+'</span></i></a>';
+					specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle"></i></a></div></div>';
+				}else{
+					specialStr+='<div class="zj1"><a href="page/special_music.jsp?spid='+data[i].spid+'">';
+					specialStr+='<img class="img3" src="'+data[i].sppicPath+'" /></a>';
+					specialStr+='<div class="bf2"><a href=""><i	class="glyphicon glyphicon-headphones pull-left headphones1"><span>'+data[i].spclick+'</span></i></a>';
+					specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
+				}
 			}
 		}
 		$(".content1_1_1").html(specialStr);
 	}, "json");
 }
 
-singer()
+singer();
 function singer(){
 	$.get("singer/index",function(data){
 		var singerStr="";
@@ -38,13 +54,25 @@ function singer(){
 function loadMv(){
 	$.get("mv/index",function(data){
 		var mvStr="";
-		for (var i = 0; i < 6; i++) {
-			mvStr+='<li><div class="mv-1"><a href=""><img src="'+data[i].mvpicPath+'"></a></div>';
-			mvStr+='<div class="mv_2"><a href=""><span>'+data[i].mvname+'</span><span class="mv_2_1">'+data[i].sgid+'</span></a></div>';
-			mvStr+='<div class="mv_3"><img src="images/cover_play.png"></div>';
-			mvStr+='<div class="mv_4"></div></li>';
+		if(data.length>=6){
+			for (var j = 0; j < 2; j++) {
+				for (var i = 0; i < 6; i++) {
+					mvStr+='<li><div class="mv-1"><a href=""><img src="'+data[i].mvpicPath+'"></a></div>';
+					mvStr+='<div class="mv_2"><a href=""><span>'+data[i].mvname+'</span><span class="mv_2_1">'+data[i].sgid+'</span></a></div>';
+					mvStr+='<div class="mv_3"><img src="images/cover_play.png"></div>';
+					mvStr+='<div class="mv_4"></div></li>';
+				}
+			}
+		}else{
+			for (var j = 0; j < 3; j++) {
+				for (var i = 0; i < data.length; i++) {
+					mvStr+='<li><div class="mv-1"><a href=""><img src="'+data[i].mvpicPath+'"></a></div>';
+					mvStr+='<div class="mv_2"><a href=""><span>'+data[i].mvname+'</span><span class="mv_2_1">'+data[i].sgid+'</span></a></div>';
+					mvStr+='<div class="mv_3"><img src="images/cover_play.png"></div>';
+					mvStr+='<div class="mv_4"></div></li>';
+				}
+			}
 		}
-
 		$("#warp").html(mvStr);
 	},"json");
 }
@@ -56,8 +84,12 @@ songList();
 function songList(){
 	$.post("song/list", function(data){
 		var songListStr = "";
-		for (var i = 0; i < 11; i++) {
-			songListStr+='<tr><td class="td"><span>'+data[i].soname+'</span></td>'+
+		for (var i = 0; i < data.length; i++) {
+			var soname = data[i].soname;
+			if(soname.length>10){
+				soname = data[i].soname.substring(0,10);
+			}
+			songListStr+='<tr><td class="td"><span>'+soname+'</span></td>'+
 			'<td><a href="page/demo.jsp?songid='+data[i].soid+'"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
 			'</a></td><td><a href=""><i class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td></tr>';
 		}
@@ -158,6 +190,4 @@ function run(){
 	}
 	s.innerHTML = s.innerHTML * 1 - 1;
 }
-
-
 

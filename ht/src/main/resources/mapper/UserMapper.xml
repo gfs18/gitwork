@@ -75,6 +75,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where userid=#{userid}
 	</update>
 	
+	<update id="modifyUserInfo" parameterType="Users">
+		update users
+		<trim prefix="set" suffixOverrides=",">
+			<if test="upicPath!=null">upicPath=#{upicPath}</if>
+			<if test="uemail!=null">uemail=#{uemail}</if>
+			<if test="uintroduce!=null">uintroduce=#{uintroduce}</if>
+		</trim>
+		where uname=#{uname}
+	</update>
+
 	<!-- 前台通过用户的id显示部分用户信息 -->
 	<select id="findShowUser" parameterType="integer" resultType="Users">
 		select * from users	where userid=#{userid}

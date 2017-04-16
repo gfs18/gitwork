@@ -163,7 +163,6 @@ public class SingerHandler {
 					intro = intro.trim().substring(0, 300);
 				}
 			}
-			
 			//性别格式转变
 			if("0".equals(gender)){
 				gender = "男";
