@@ -79,11 +79,7 @@
 						<label for="sgnation">国籍:</label> <input type="text"
 							class="form-control" id="sgnation" name="sgnation">
 					</div>
-					<div class="form-group">
-						<label>音乐语种:</label> 
-						<label id="labelid1"></label>
-						<input type="hidden" id="languaes" class="form-control" name="languaes" />
-					</div>
+					
 					<div class="form-group">
 						<label for="sggender">性别:</label> <input type="text"
 							class="form-control" id="sggender" name="sggender">

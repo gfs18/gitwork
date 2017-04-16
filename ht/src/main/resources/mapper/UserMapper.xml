@@ -75,5 +75,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where userid=#{userid}
 	</update>
 	
+	<!-- 前台通过用户的id显示部分用户信息 -->
+	<select id="findShowUser" parameterType="integer" resultType="Users">
+		select * from users	where userid=#{userid}
+	</select>
 	
 </mapper>

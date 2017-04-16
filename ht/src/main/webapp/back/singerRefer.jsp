@@ -53,10 +53,9 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation"><a href="back/manage.jsp">歌手信息</a></li>
-				<li role="presentation" class="active"><a
-					href="back/manageRefer.jsp">歌手查询</a></li>
-				<li role="presentation"><a href="back/manageModify.jsp">歌手修改</a></li>
+				<li role="presentation"><a href="back/singer.jsp">歌手信息</a></li>
+				<li role="presentation" class="active"><a href="back/singerRefer.jsp">歌手查询</a></li>
+				<li role="presentation"><a href="back/singerModify.jsp">歌手修改</a></li>
 				<li role="presentation"><a href="back/singerADD.jsp">歌手增加</a></li>
 			</ul>
 		</div>

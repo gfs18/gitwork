@@ -6,6 +6,7 @@ public class ServletUtil {
 	public static String UPLOAD_DIR;//图片上传路径
 	public static String DEPLOY_NAME;//项目的发布名
 	public static final String LOGIN_USER = "login_user";//登陆
+	public static final String LOGIN_USER_ID="login_user_id";//登录后存储当前用户的id
 	public static final String ERROR_MESSAGE = "errorMsg";//错误信息
 	public static final String VIRTUAL_UPLOAD_DIR = "/upload/";
 	public static final String LOGIN_ADMIN = "login_admin";//管理员登陆

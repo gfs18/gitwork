@@ -31,4 +31,7 @@ public interface UserMapper {
 	int updateUser(Users user);//用户的修改
 
 
+	Users findShowUser(Integer userid);//前台通过用户的id显示部分用户信息
+
+
 }
