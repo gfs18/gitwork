@@ -137,67 +137,7 @@
 					</div>
 					<div class="mv">
 						<ul id="warp">
-						<!-- mv显示 -->
-							<!-- <li><div class="mv-1">
-									<a href=""><img src="images/mv-1.jpg"></a>
-								</div>
-								<div class="mv_2">
-									<a href=""><span>每一天</span><span class="mv_2_1">鞠婧祎</span></a>
-								</div>
-								<div class="mv_3">
-									<img src="images/cover_play.png">
-								</div>
-								<div class="mv_4"></div></li>
-							<li><div class="mv-1">
-									<a href=""><img src="images/mv-2.jpg"></a>
-								</div>
-								<div class="mv_2">
-									<a href=""><span>告白气球</span><span class="mv_2_1">周杰伦</span></a>
-								</div>
-								<div class="mv_3">
-									<img src="images/cover_play.png">
-								</div>
-								<div class="mv_4"></div></li>
-							<li><div class="mv-1">
-									<a href=""><img src="images/mv-3.jpg"></a>
-								</div>
-								<div class="mv_2">
-									<a href=""><span>你一言我一语</span><span class="mv_2_1">李建</span></a>
-								</div>
-								<div class="mv_3">
-									<img src="images/cover_play.png">
-								</div>
-								<div class="mv_4"></div></li>
-							<li><div class="mv-1">
-									<a href=""><img src="images/mv-7.jpg"></a>
-								</div>
-								<div class="mv_2">
-									<a href=""><span>呵护</span><span class="mv_2_1">梁静茹</span></a>
-								</div>
-								<div class="mv_3">
-									<img src="images/cover_play.png">
-								</div>
-								<div class="mv_4"></div></li>
-							<li><div class="mv-1">
-									<a href=""><img src="images/mv-5.jpg"></a>
-								</div>
-								<div class="mv_2">
-									<a href=""><span>你干嘛</span><span class="mv_2_1">罗志祥</span></a>
-								</div>
-								<div class="mv_3">
-									<img src="images/cover_play.png">
-								</div>
-								<div class="mv_4"></div></li>
-							<li><div class="mv-1">
-									<a href=""><img src="images/mv-10.jpg"></a>
-								</div>
-								<div class="mv_2">
-									<a href=""><span>败将</span><span class="mv_2_1">陈势安</span></a>
-								</div>
-								<div class="mv_3">
-									<img src="images/cover_play.png">
-								</div>
-								<div class="mv_4"></div></li> -->
+							<!-- mv显示 -->
 						</ul>
 					</div>
 				</div>

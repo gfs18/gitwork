@@ -67,7 +67,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="findSongName" parameterType="Song" resultType="Song">
-		select * from song where soname = #{soname} and sgid =#{sgid}
+		select * from song where soname = #{soname} and sgid =#{sgid} and spid = #{spid}
 	</select>
 	
 	<!--添加单曲  -->

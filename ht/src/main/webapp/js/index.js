@@ -3,24 +3,40 @@ special();
 function special(){
 	$.get("special/index", function(data){
 		var specialStr = "";
-		for (var i = 0; i <5; i++) {
-			if(i==0){
-				specialStr+='<div class=""><a href="page/special_music.jsp?spid='+data[i].spid+'">';
-				specialStr+='<img id="img2" src="'+data[i].sppicPath+'" /></a>';
-				specialStr+='<div class="bf1"><a href=""><i	class="glyphicon glyphicon-headphones pull-left"><span>'+data[i].spclick+'</span></i></a>';
-				specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle"></i></a></div></div>';
-			}else{
-				specialStr+='<div class="zj1"><a href="page/special_music.jsp?spid='+data[i].spid+'">';
-				specialStr+='<img class="img3" src="'+data[i].sppicPath+'" /></a>';
-				specialStr+='<div class="bf2"><a href=""><i	class="glyphicon glyphicon-headphones pull-left headphones1"><span>'+data[i].spclick+'</span></i></a>';
-				specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
+		if(data.length>=5){
+			for (var i = 0; i<5; i++) {
+				if(i==0){
+					specialStr+='<div class=""><a href="page/special_music.jsp?spid='+data[i].spid+'">';
+					specialStr+='<img id="img2" src="'+data[i].sppicPath+'" /></a>';
+					specialStr+='<div class="bf1"><a href=""><i	class="glyphicon glyphicon-headphones pull-left"><span>'+data[i].spclick+'</span></i></a>';
+					specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle"></i></a></div></div>';
+				}else{
+					specialStr+='<div class="zj1"><a href="page/special_music.jsp?spid='+data[i].spid+'">';
+					specialStr+='<img class="img3" src="'+data[i].sppicPath+'" /></a>';
+					specialStr+='<div class="bf2"><a href=""><i	class="glyphicon glyphicon-headphones pull-left headphones1"><span>'+data[i].spclick+'</span></i></a>';
+					specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
+				}
+			}
+		}else{
+			for (var i = 0; i<data.length; i++) {
+				if(i==0){
+					specialStr+='<div class=""><a href="page/special_music.jsp?spid='+data[i].spid+'">';
+					specialStr+='<img id="img2" src="'+data[i].sppicPath+'" /></a>';
+					specialStr+='<div class="bf1"><a href=""><i	class="glyphicon glyphicon-headphones pull-left"><span>'+data[i].spclick+'</span></i></a>';
+					specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle"></i></a></div></div>';
+				}else{
+					specialStr+='<div class="zj1"><a href="page/special_music.jsp?spid='+data[i].spid+'">';
+					specialStr+='<img class="img3" src="'+data[i].sppicPath+'" /></a>';
+					specialStr+='<div class="bf2"><a href=""><i	class="glyphicon glyphicon-headphones pull-left headphones1"><span>'+data[i].spclick+'</span></i></a>';
+					specialStr+='<a href=""><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
+				}
 			}
 		}
 		$(".content1_1_1").html(specialStr);
 	}, "json");
 }
 
-singer()
+singer();
 function singer(){
 	$.get("singer/index",function(data){
 		var singerStr="";
@@ -38,13 +54,25 @@ function singer(){
 function loadMv(){
 	$.get("mv/index",function(data){
 		var mvStr="";
-		for (var i = 0; i < 6; i++) {
-			mvStr+='<li><div class="mv-1"><a href=""><img src="'+data[i].mvpicPath+'"></a></div>';
-			mvStr+='<div class="mv_2"><a href=""><span>'+data[i].mvname+'</span><span class="mv_2_1">'+data[i].sgid+'</span></a></div>';
-			mvStr+='<div class="mv_3"><img src="images/cover_play.png"></div>';
-			mvStr+='<div class="mv_4"></div></li>';
+		if(data.length>=6){
+			for (var j = 0; j < 2; j++) {
+				for (var i = 0; i < 6; i++) {
+					mvStr+='<li><div class="mv-1"><a href=""><img src="'+data[i].mvpicPath+'"></a></div>';
+					mvStr+='<div class="mv_2"><a href=""><span>'+data[i].mvname+'</span><span class="mv_2_1">'+data[i].sgid+'</span></a></div>';
+					mvStr+='<div class="mv_3"><img src="images/cover_play.png"></div>';
+					mvStr+='<div class="mv_4"></div></li>';
+				}
+			}
+		}else{
+			for (var j = 0; j < 3; j++) {
+				for (var i = 0; i < data.length; i++) {
+					mvStr+='<li><div class="mv-1"><a href=""><img src="'+data[i].mvpicPath+'"></a></div>';
+					mvStr+='<div class="mv_2"><a href=""><span>'+data[i].mvname+'</span><span class="mv_2_1">'+data[i].sgid+'</span></a></div>';
+					mvStr+='<div class="mv_3"><img src="images/cover_play.png"></div>';
+					mvStr+='<div class="mv_4"></div></li>';
+				}
+			}
 		}
-
 		$("#warp").html(mvStr);
 	},"json");
 }
@@ -56,8 +84,12 @@ songList();
 function songList(){
 	$.post("song/list", function(data){
 		var songListStr = "";
-		for (var i = 0; i < 11; i++) {
-			songListStr+='<tr><td class="td"><span>'+data[i].soname+'</span></td>'+
+		for (var i = 0; i < data.length; i++) {
+			var soname = data[i].soname;
+			if(soname.length>10){
+				soname = data[i].soname.substring(0,10);
+			}
+			songListStr+='<tr><td class="td"><span>'+soname+'</span></td>'+
 			'<td><a href="page/demo.jsp?songid='+data[i].soid+'"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
 			'</a></td><td><a href=""><i class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td></tr>';
 		}
@@ -159,333 +191,3 @@ function run(){
 	s.innerHTML = s.innerHTML * 1 - 1;
 }
 
-
-
-
-/////////////////////////////////音乐播放///////////////////////////
-$(".lable li").click(function(){
-    $(".special ul").css("display","none");
-    $(".special ul").eq($(this).index()).css("display","block");
-    $(".class").html($(".lable li a").eq($(this).index()).html());
-
-});
-
-
-$(".lable li a").on("click",function(){
-    $(".lable li a").removeClass("click");
-    $(this).addClass("click");
-
-});
-$(".lable li a").on("mouseover",function(){
-    $(".lable li a").removeClass("mouseover");
-    $(this).addClass("mouseover");
-
-});
-$(".lable li a").on("mouseout",function(){
-    $(".lable li a").removeClass("mouseover");
-
-});
-$(".lable li a").attr("style","color:#333");
-
-//播放
-
-var myflase=true;
-$(".muted").on("click",function(){
-    if(myflase){
-         $("#volume").css("display","block");
-     }else{
-          $("#volume").css("display","none");
-     }
-   
-});
-
-
-var timer;
-$("#volume").hover(function(){
-     clearTimeout(timer);
-},function(){
-    timer=setTimeout(function(){
-    $("#volume").css("display","none");
-    },1000);
-})
-$(".muted").hover(function(){
-     $("#volume").css("display","block");
-     clearTimeout(timer);
-},function(){
-    timer=setTimeout(function(){
-    $("#volume").css("display","none");
-    },1000);
-})
-var fl=true;
-$(".meu").on("click",function(){
-    if (fl) {
-         $(".mymeu").css("display","block");
-          fl=false;
-     }else{
-        $(".mymeu").css("display","none");
-        fl=true;
-     }
-   
-})
-
-
-$(".suo").on("click",function(){
-    $(".suo1").css("display","block");
-    $(this).css("display","none");
-    $(".bg").attr("id","bgover");
-
-})
-$(".suo1").on("click",function(){
-    $(".suo").css("display","block");
-    $(this).css("display","none");
-    $(".bg").attr("id","");
-
-})
-
-
-var music=document.getElementById("music");
-var play=document.getElementById("play");
-var audio=null;
-var myprogressTime=null;
-var playProgress=document.getElementById("playProgress");
-var progressWrap=document.getElementById("progressWrap");
-var showProgress=document.getElementById("showProgress");
-var volume_1=document.getElementById("volume_1");
-var volume_2=document.getElementById("volume_2");
-var muted=document.getElementById("muted");
-var show=document.getElementById("show");
-var fast=document.getElementById("fast");
-var meuli=document.getElementsByClassName("meuli");
-var span2=document.getElementsByClassName("span2");
-var index=0;
-var bl=true;
-音乐播放
-window.onload=function(){
-     audio=document.getElementById("music");
-}
-
-        //控制进度条
-        function getProgress1(){
-            //获取到时间的百分比
-            var mypercent=audio.currentTime/audio.duration;
-            playProgress.style.width=mypercent*(progressWrap.offsetWidth)+"px";
-            $("#playProgresshi").css("width",playProgress.style.width);
-            showProgress.getElementsByTagName("em")[0].innerHTML=sTom(audio.currentTime);
-            if (showProgress.getElementsByTagName("em")[0].innerHTML== showProgress.getElementsByTagName("em")[1].innerHTML) {
-                if (bl) {
-                    for(var j=0;j<span2.length;j++){
-                 if ("music/"+$(".span2").eq(j).html()+".mp3"==$("#music").attr("src")) {
-                     if (j+1==span2.length) {
-                           music.pause();
-                           clearInterval(myprogressTime);
-                     }else{
-                         $("#music").attr("src","music/"+$(".span2").eq(j+1).html()+".mp3");
-                     $(".p_title").html($(".span2").eq(j+1).html());
-                     myplay();
-
-                     }
-                    return;
-             }
-          }
-       }else{
-            mysj();
-            music.play();
-       }
-
-      };
-  }
-
-
-
-//音乐播放
- function myplay(obj){
-    setTimeout(function(){
-    if (music.paused) {
-        music.play();
-        myprogressTime=window.setInterval(getProgress1,1000);
-        showProgress.getElementsByTagName("em")[1].innerHTML=sTom(audio.duration);
-
-    }else{
-        music.pause();
-        clearInterval(myprogressTime);
-        obj.className="play";
-    }
-},500);
- }
-
-
-music.addEventListener("play",function(e){
-     play.src="images/playbar_08.png";
-},false);
-music.addEventListener("pause",function(e){
-     play.src="images/playbar_11.png";
-},false);
-
-//     调整音量
-if(isFirefox=navigator.userAgent.indexOf("Firefox")>0){//    volume_1.onmousedown=function(e){
-        volume_2.style.top=e.clientY-470+"px";
-        $("#volume_1_1").css("height",580-e.clientY);
-        if (((580-e.clientY)/100).toFixed(1)>1) {
-            audio.volume=1;
-        }else{
-            audio.volume=((580-e.clientY)/100).toFixed(1);
-        }
-}
-
-
-      if(window.navigator.userAgent.indexOf("Chrome") !== -1){
-          volume_1.onmousedown=function(e){
-              volume_2.style.top=e.clientY-475+"px";
-              $("#volume_1_1").css("height",585-e.clientY);
-              if (((585-e.clientY)/100).toFixed(1)>1) {
-                  audio.volume=1;
-
-              }else{
-                  audio.volume=((585-e.clientY)/100).toFixed(1);
-              }
-          }
-      }
-
-
-
-
-
-     //静音
-      var aodio;
-      function Muted(e){
-        if (audio.muted) {
-            audio.muted=false;
-            muted.src="images/playbar_14.png";
-            audio.volume=aodio;
-        }else{
-            audio.muted=true;
-            muted.src="images/playbar_46.png";
-            aodio=audio.volume;
-            audio.volume=0;
-        }
-      }
-
-     //   时间转换
-        function sTom(mytime){
-            var mystr="";
-            var mytime1=Math.round(mytime);
-     //       求分钟和秒            var mymin=Math.floor(mytime/60);
-            var mysrc=mytime1%60;
-     //       判断           
-            if(mymin>9){
-                mystr+=mymin+":";
-            }else{
-                mystr+="0"+mymin+":";
-           }
-            if(mysrc>9){
-                mystr+=mysrc;
-            }else{
-                mystr+="0"+mysrc;
-            }
-            return mystr;
-        }
-
-        progressWrap.onmousedown=function(e){
-            if(audio.paused||audio.ended){
-                myplay();
-                dragEvent1(e);
-            }else{
-                dragEvent1(e);
-            }
-        }
-
-        function dragEvent1(e){
-//            //首先消除计时器，当值都改变完的时候，在重新启动
-            clearInterval(myprogressTime);
-            var mylength=e.pageX-progressWrap.offsetLeft;
-            var myparcent=mylength/progressWrap.offsetWidth;
-//            //根据百分比 去计算长度和时间
-            playProgress.style.width=myparcent*(progressWrap.offsetWidth)+"px";
-            audio.currentTime=audio.duration*myparcent;
-          //  重新启动计时器 
-            myprogressTime=window.setInterval(getProgress1,1000); ;
-        }
-
-     $(".span2").each(function(i,item){
-            $(".span2").eq(i).on("click",function(){
-               $("#music").attr("src","music/"+$(this).html()+".mp3");
-               $(".p_title").html($(this).html());
-                 myplay();
-            });
-      });
-
-
-      show.onclick=function(){
-          for(var j=0;j<span2.length;j++){
-             if ("music/"+$(".span2").eq(j).html()+".mp3"==$("#music").attr("src")) {
-                 $("#music").attr("src","music/"+$(".span2").eq(j-1).html()+".mp3");
-                 $(".p_title").html($(".span2").eq(j-1).html());
-                 myplay();
-                 return;
-             }
-          }
-
-      }
-
-      fast.onclick=function(){
-        for(var j=0;j<span2.length;j++){
-             if ("music/"+$(".span2").eq(j).html()+".mp3"==$("#music").attr("src")) {
-                 $("#music").attr("src","music/"+$(".span2").eq(j+1).html()+".mp3");
-                 $(".p_title").html($(".span2").eq(j+1).html());
-                 myplay();
-                return;
-             }
-          }
-      }
-      function myxh(){
-       for(var k=0;k<$(".span2").length;k++){
-            if (k+1==$(".span2").length) {
-                k=-1;
-            }
-             $("#music").attr("src","music/"+$(".span2").eq(k+1).html()+".mp3");
-                 $(".p_title").html($(".span2").eq(k+1).html());
-
-        }
-      }
-     function mysj(){
-             var sj=Math.floor(Math.random()*$(".span2").length);
-            if ("music/"+$(".span2").eq(sj).html()+".mp3"==$("#music").attr("src")) {
-                  mysj();
-            }else{
-                 $("#music").attr("src","music/"+$(".span2").eq(sj).html()+".mp3");
-                  $(".p_title").html($(".span2").eq(sj).html());
-            }
-      }
-    $(".xh").on("click",function(){
-        $(".sj").css("display","block");
-        $(this).css("display","none");
-        bl=!bl;
-
-    });
-    $(".sj").on("click",function(){
-    $(".xh").css("display","block");
-    $(this).css("display","none");
-    })
-
-$(".suo").on("click",function(){
-	$(".suo1").css("display","block");
-	$(this).css("display","none");
-	$(".bg").attr("id","bgover");
-
-})
-$(".suo1").on("click",function(){
-	$(".suo").css("display","block");
-	$(this).css("display","none");
-	$(".bg").attr("id","");
-
-})
-
-$(".xh").on("click",function(){
-	$(".sj").css("display","block");
-	$(this).css("display","none");
-	bl=!bl;
-});
-$(".sj").on("click",function(){
-	$(".xh").css("display","block");
-	$(this).css("display","none");
-})

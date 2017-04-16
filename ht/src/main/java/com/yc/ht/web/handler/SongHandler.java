@@ -92,7 +92,7 @@ public class SongHandler {
 	@RequestMapping(value="add",method=RequestMethod.POST)
 	@ResponseBody
 	public boolean songAdd(String soname,String sgid,String spid,String songPic,String solyricPath){
-		Song s = songService.findSongName(new Song(Integer.valueOf(sgid), soname));
+		Song s = songService.findSongName(new Song(Integer.valueOf(sgid), soname,Integer.valueOf(spid)));
 		if(s == null || "".equals(s) ){
 			//图片下载
 			if(songPic != null && !songPic.isEmpty() && !"".equals(songPic)){

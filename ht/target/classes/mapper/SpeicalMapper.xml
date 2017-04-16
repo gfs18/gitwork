@@ -21,8 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			select="findLgname"/>
 	</resultMap>
 	<select id="specialDetail" parameterType="int" resultMap="SpecialDetailMap">
-		select
-		* from special where spid=#{spid}
+		select * from special where spid=#{spid}
 	</select>
 	<select id="findSgname" parameterType="int" resultType="Singer">
 		select *
@@ -181,7 +180,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 添加专辑 -->
 	<insert id="specialAdd" parameterType="Special">
-		insert into special values(seq_special_spid.nextval,#{sgid},#{spname},#{language.lgid},#{sppicPath},#{spintroduce},to_date('${sppubTime}','yyyy-MM-dd'),0,'')
+		insert into special values(seq_special_spid.nextval,#{sgid},#{spname},#{language.lgid},#{sppicPath},to_date('${sppubTime}','yyyy-MM-dd'),0,#{spintroduce},'',)
 	</insert>
 	
 </mapper>
