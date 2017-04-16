@@ -17,7 +17,7 @@ public interface SingerMapper {
 
 	List<Singer> refre(Singer singer);
 
-	List<Singer> clikee(@Param("sg")String sgna,@Param("sge")String sgen); //String sgna,String sgen
+	List<Singer> clikee(@Param("sg")String sgna,@Param("sge")String sgen); 
 
 	List<Singer> HOT(String sgEname);
 

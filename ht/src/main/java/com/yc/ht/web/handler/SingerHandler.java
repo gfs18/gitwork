@@ -127,7 +127,6 @@ public class SingerHandler {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Refer..............进来了");
 		return singerService.findSingerByName(sgname);
 	}
 

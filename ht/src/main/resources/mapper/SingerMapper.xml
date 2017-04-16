@@ -102,7 +102,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<select id="findSingerByNames" parameterType="String" resultType="Singer">
-		select * from Singer where sgname like '%${_parameter}%'
+		select * from Singer where sgname like '${_parameter}'
 	</select>
 	
 	<select id="findSingerbyName" parameterType="string" resultType="Singer">
