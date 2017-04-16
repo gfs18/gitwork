@@ -47,6 +47,8 @@ public class UserHandler {
 		if(user != null){
 			session.setAttribute(ServletUtil.LOGIN_USER, user.getUname());
 			session.setAttribute(ServletUtil.LOGIN_USER_ID, user.getUserid());
+			session.setAttribute(ServletUtil.LOGIN_USER_IMG, user.getUpicPath());
+			LogManager.getLogger().debug(session.getAttribute(ServletUtil.LOGIN_USER_IMG));
 		}else{
 			session.setAttribute("errorMsg", "用户名或密码错误!");
 		}
