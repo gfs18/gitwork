@@ -45,7 +45,8 @@ public class SongHandler {
 	public PaginationBean<Song> songPagiagetionList(String pageS,String currP){
 		return songService.listSong(pageS, currP);
 	}
-
+	
+	//热门
 	@RequestMapping(value="{sgEname}",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Singer> HOT(@PathVariable("sgEname") String sgEname){

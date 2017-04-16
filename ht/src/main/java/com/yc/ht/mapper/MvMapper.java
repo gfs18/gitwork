@@ -14,5 +14,5 @@ public interface MvMapper {
 	List<Mv> findMv();
 	int removeMv(Integer mvid);										//删除MV
 		
-	List<Mv> findReferMV(String mvName);							//查新MV
+	List<Mv> findReferMV(String mvName);							//查询MV
 }

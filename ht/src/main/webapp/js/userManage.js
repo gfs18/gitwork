@@ -8,18 +8,20 @@ function showUserManage(pageS,currP){
 			var img=data.rows[i].upicPath;
 			var ucondition=data.rows[i].ucondition;
 			var uvip=data.rows[i].uvip;
+			alert("ucondition111................"+ucondition);
+			alert("uvip111................"+uvip);
 			if(img!=null){
 				img=data.rows[i].upicPath;
 			}else{
 				img="images/img.png";
 			}
 			if(ucondition==1){
-				var strOptions='<select id="uconditionValue" style="border:1px solid #c0c0c0; width: 70px; height:25px;"><option value="0" >'+"可用"+'</option><option value="1">'+"不可用"+'</option></select>';
+				var strOptions='<select id="uconditionValue" style="border:1px solid #c0c0c0; width: 70px; height:25px;"><option value="1" >'+"可用"+'</option><option value="0">'+"不可用"+'</option></select>';
 			}else{
 				var strOptions='<select id="uconditionValue" style="border:1px solid #c0c0c0; width: 70px; height:25px;"><option value="0" >'+"不可用"+'</option><option value="1">'+"可用"+'</option></select>';
 			}
 			if(uvip==1){
-				var strOptions1='<select id="uvipValue" style="border:1px solid #c0c0c0; width: 70px; height:25px;"><option value="0">'+"会员"+'</option><option value="1">'+"非会员"+'</option></select>';
+				var strOptions1='<select id="uvipValue" style="border:1px solid #c0c0c0; width: 70px; height:25px;"><option value="1">'+"会员"+'</option><option value="0">'+"非会员"+'</option></select>';
 			}else{
 				var strOptions1='<select id="uvipValue" style="border:1px solid #c0c0c0; width: 70px; height:25px;"><option value="0">'+"非会员"+'</option><option value="1">'+"会员"+'</option></select>';
 			}
@@ -162,18 +164,27 @@ function removeReferUser(userid){
 
 //修改用户的状态
 function modifyUser(userid){
-	var obj = document.getElementById("uconditionValue");
-	var uconditionValue = obj.options[obj.selectedIndex].value;
-	var obj1 = document.getElementById("uvipValue");
-	var uvipValue = obj1.options[obj1.selectedIndex].value;
-	alert("condi"+uconditionValue+"uvip"+uvipValue);
+	alert(userid);
+	
+	var obj=document.getElementById('uconditionValue');
+	var index=obj.selectedIndex; 
+	var uconditionValue = obj.options[index].value;
+	
+	var objj=document.getElementById('uvipValue');
+	var indexx=objj.selectedIndex; 
+	var uvipValue = objj.options[indexx].value;
+	
+	alert("uconditionValue222....."+uconditionValue);
+	alert("uvipValue222....."+uvipValue);
+	
 	$.post("user/modify",{"userid":userid,"ucondition":uconditionValue,"uvip":uvipValue},function(data){
 		if(data){
 			alert("修改成功!!!");
+			location.href="back/userManage.jsp";
 		}else{
 			alert("修改失败...");
 		}
-		location.href="back/userManage.jsp";
+		
 	},"json");
 }
 

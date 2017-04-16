@@ -10,11 +10,11 @@ import com.yc.ht.entity.Song;
 public interface SingerService {
 
 	List<Singer> findSinger();
-	List<Languages> inquire(Languages languages);
+	List<Singer> inquire(Singer singer);
 
 	List<Singer> refer(Singer singer);
 
-	List<Singer> click(String lgid);
+	List<Singer> click(String sgna,String sgen);
 
 	List<Singer> Hot(String sgEname);
 

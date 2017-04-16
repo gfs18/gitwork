@@ -37,22 +37,34 @@ public class SingerHandler {
 		LogManager.getLogger().debug("首页歌手图片进来了");
 		return singerService.findSinger();
 	}
-
+	
+	//显示中国男歌手 singer
 	@RequestMapping(value="s",method=RequestMethod.GET)
 	@ResponseBody
-	public List<Languages> load(Languages languages){
-		return singerService.inquire(languages);
+	public List<Singer> load(Singer singer){
+		return singerService.inquire(singer);
 	}
 
 
 
-
-	@RequestMapping(value="{lgid}",method=RequestMethod.GET)
+	//查询中国男歌手 +sgnatio+sggende
+	@RequestMapping(value="/{sgnatio}",method=RequestMethod.GET)
 	@ResponseBody
-	public List<Singer> Click(@PathVariable("lgid") String lgid){
-		return singerService.click(lgid);
+	public List<Singer> Click(@PathVariable("sgnatio") String sgnatio){
+		try {
+			sgnatio = new String(sgnatio.getBytes("iso-8859-1"),"utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		//System.out.println(sgnatio);
+		String sgna=sgnatio.trim().substring(0, 2);
+		String sgen=sgnatio.trim().substring(2, 3);
+		return singerService.click(sgna,sgen);
+		
 	}
-
+	
+	
+	
 	@RequestMapping(value="whole",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Singer> Whole(Singer singer){
@@ -115,7 +127,6 @@ public class SingerHandler {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Refer..............进来了");
 		return singerService.findSingerByName(sgname);
 	}
 

@@ -26,8 +26,8 @@ public class SingerServiceImpl implements SingerService {
 	
 
 	@Override
-	public List<Languages> inquire(Languages languages) {
-		return singerMapper.refer(languages);
+	public List<Singer> inquire(Singer singer) {
+		return singerMapper.refer(singer);
 	}
 
 
@@ -38,8 +38,8 @@ public class SingerServiceImpl implements SingerService {
 
 
 	@Override
-	public List<Singer> click(String lgid) {
-		return singerMapper.clikee(lgid);
+	public List<Singer> click(String sgna,String sgen) {
+		return singerMapper.clikee(sgna,sgen);
 	}
 
 

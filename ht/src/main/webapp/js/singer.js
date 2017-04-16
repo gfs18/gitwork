@@ -75,21 +75,24 @@ function loadS(){
 		$("#picture5").html(c5);
 	},'json');
 }
+
+//加载中国男歌手。。。。
 function load(){
 	$.get("singer/s",function(data){
 		var b="";
-		for(var i = 0; i < data.length; i++){ 
-			b+='<tr><td><li><a href="javascript:void(0)" onClick="loadg(\''+data[i].lgid+'\')">'+ data[i].language+'</a></li></td></tr>';														
-		}
+		for(var i = 0; i < data.length; i++){                          //\''+ data[i].sgnation+","+data[i].sggender+'\'
+			b+='<tr><td><li><a href="javascript:void(0)" onClick="loadg(\''+ data[i].sgnation+','+data[i].sggender+'\')">'+ data[i].sgnation+data[i].sggender+'歌手'+'</a></li></td></tr>';														
+		}                                                                         '"+data[i].sgnation+"','"+data[i].sggender+"'
 		document.getElementById('loa').innerHTML=b;
-		//$("#loa").HTML(b);
 	},"json");
 }
 
 
-
-function loadg(lgid){
-	$.get("singer/"+lgid,function(data){
+//查询中国男歌手
+function loadg(sgnation){
+	var sgnatio=sgnation.split(",")[0];
+	var sggende=sgnation.split(",")[1];
+	$.get("singer/"+sgnatio+sggende,function(data){
 		var c="";
 		var c1="";
 		var c2="";
@@ -131,8 +134,9 @@ function loadg(lgid){
 	
 }
 
-
+//热门
 function hot(sgEname){
+	var sgEname=sgEname.toLowerCase();
 	$.get("song/"+sgEname,function(data){
 		var c="";
 		var c1="";

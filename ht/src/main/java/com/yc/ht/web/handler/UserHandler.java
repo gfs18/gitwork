@@ -49,6 +49,7 @@ public class UserHandler {
 		LogManager.getLogger().debug("user:"+user);
 		if(user != null){
 			session.setAttribute(ServletUtil.LOGIN_USER, user.getUname());
+			session.setAttribute(ServletUtil.LOGIN_USER_ID, user.getUserid());
 		}else{
 			session.setAttribute("errorMsg", "用户名或密码错误!");
 		}
@@ -144,7 +145,7 @@ public class UserHandler {
 	}
 	
 	/**
-	 * 用户的查询
+	 * 后台通过用户的名称模糊查询
 	 */
 	@RequestMapping(value="referUser/{uname}",method=RequestMethod.POST)
 	@ResponseBody
@@ -156,14 +157,34 @@ public class UserHandler {
 				e.printStackTrace();
 			}
 		}
-		return userService.listReferUser(uname);
+		List<Users> users=userService.listReferUser(uname);
+		System.out.println("users:"+users);
+		 return users;
+	}
+	
+	/**
+	 * 前台通过用户的id显示
+	 */
+	@RequestMapping(value="showUser/{userid}",method=RequestMethod.POST)
+	@ResponseBody
+	public Users ShowUser(@PathVariable("userid") String userid){
+		if(userid!=null){
+			try {
+				userid=new String(userid.getBytes("ISO-8859-1"),"UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+		}
+		Users users=userService.showUser(userid);
+		System.out.println("users:"+users);
+		return users;
 	}
 	
 	/**
 	 * 用户的修改
 	 */
 	@RequestMapping(value="modify",method=RequestMethod.POST)
-	public String modifyUser(@RequestParam("picData") MultipartFile picData,Users user){
+	public String modifyUserInfo(@RequestParam("picData") MultipartFile picData,Users user){
 		LogManager.getLogger().debug("用户修改个人信息");
 		String picPath = null;
 		if(picData != null && !picData.isEmpty()){//判断是否文件上传
@@ -180,6 +201,12 @@ public class UserHandler {
 		}else{
 			return "forward:/page/userModify.jsp";
 		}
+	}
+	
+	@RequestMapping(value="modify",method=RequestMethod.POST)
+	@ResponseBody
+	public boolean modifyUser(Users user){
+		return userService.modifyUser(user);
 	}
 	
 }

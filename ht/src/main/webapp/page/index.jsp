@@ -23,8 +23,8 @@
 					</div>
 					<ul class="nav navbar-nav navbar-right" id="nav_a">
 						<c:choose>
-							<c:when test="${login_user !=null}">
-								<li><a href="javascript:void(0)"
+							<c:when test="${login_user !=null && login_user_id!=null}">
+								<li><a href="page/user.jsp?userid=${login_user_id}"
 									class="hidden-md hidden-sm hidden-xs">${login_user }</a></li>
 								<li class="dropdown"><a href="javascript:void(0)"
 								class="dropdown-toggle" data-toggle="dropdown" role="button"

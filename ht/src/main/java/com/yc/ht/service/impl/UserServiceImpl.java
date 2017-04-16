@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserMapper userMapper;
-	
+
 	/**
 	 * 用户的登录
 	 */
@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
 	public Users login(Users user) {
 		return userMapper.login(user);
 	}
-	
+
 	/**
 	 * 注册
 	 */
@@ -107,5 +107,10 @@ public class UserServiceImpl implements UserService {
 	public boolean modifyUserInfo(Users user) {
 		return userMapper.modifyUserInfo(user)>0;
 	}
-	
+	//前台通过用户的id显示部分用户信息
+	@Override
+	public Users showUser(String userid) {
+		return userMapper.findShowUser(Integer.valueOf(userid));
+	}
+
 }
