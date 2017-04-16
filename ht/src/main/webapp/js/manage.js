@@ -16,23 +16,16 @@ function showSongInfo(pageS,currP){
 	});
 }
 
-
-
-
-
 function paginationSong(totalP){
 	var pStr = "";
 	if(totalP>=5){
 		pStr +='<li><a href="javascript:void(0)" onclick="paginatorPrevious('+totalP+')">&laquo;</a></li>';
-
-		
 		for (var j = 1; j <= 5; j++) {
 			pStr +='<li><a href="javascript:void(0)" onclick="showSongInfo(5,'+(j+(count*5))+')">'+(j+count*5)+'</a></li>';
 		}
 		pStr +='<li><a href="javascript:void(0)" onclick="paginatorNext('+totalP+')" >&raquo;</a></li>';
 		
-	}
-		else{
+	}else{
 		pStr +='<li><a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
 		for (var i = 1; i <= totalP; i++) {
 			pStr +='<li><a href="javascript:void(0)" onclick="showSongInfo(5,'+i+')">'+i+'</a></li>';

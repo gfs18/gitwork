@@ -5,7 +5,7 @@ function showSpecialInfo(rows,page){
 		var str = "";
 		for (var i = 0; i < data.rows.length; i++) {
 			str += "<tr class='tableoverout'><th>"+data.rows[i].spid+"</th><th>"+data.rows[i].spname+"<input  hidden='true' id='spname' style='width:100px'/></th><th>"+data.rows[i].singer.sgname+"<select  hidden='true' /></th><th>"
-			+data.rows[i].language.language+"<select  hidden='true' /></th><th>"+data.rows[i].sppicPath+"</th><th>"
+			+data.rows[i].language.language+"<select  hidden='true' /></th><th><img class='show_img' src='"+data.rows[i].sppicPath+"'></th><th>"
 			+data.rows[i].sppubTime.substring(0,10)+"<input  hidden='true' id='sppubTime' style='width:80px'/></th><th>"+data.rows[i].spclick+"<input  hidden='true' id='spclick' style='width:30px'/></th>"
 			+"<th><a href='back/specialModify.jsp?spid="+data.rows[i].spid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
 			+"<a onclick='removeSpecial("+data.rows[i].spid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";

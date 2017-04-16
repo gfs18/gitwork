@@ -9,6 +9,9 @@ import com.yc.ht.entity.PaginationBean;
 public interface MvMapper {
 	PaginationBean<Mv> findPaginationMv(PaginationBean<Mv> userBean);//分页
 	
+
+
+	List<Mv> findMv();
 	int removeMv(Integer mvid);										//删除MV
 		
 	List<Mv> findReferMV(String mvName);							//查询MV

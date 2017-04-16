@@ -1,5 +1,6 @@
 package com.yc.ht.web.handler;
 
+
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
@@ -11,10 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sun.mail.imap.MessageVanishedEvent;
 import com.yc.ht.entity.Mv;
 import com.yc.ht.entity.PaginationBean;
-import com.yc.ht.entity.Users;
 import com.yc.ht.service.MvService;
 
 @RequestMapping("mv")
@@ -38,6 +37,12 @@ public class MvHandler {
 		return mvservice.removeMv(id);
 	}
 	
+	@RequestMapping(value="index",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Mv> findMv(){
+		LogManager.getLogger().debug("mv进来");
+		return mvservice.findMv();
+	}
 	/*MV的查询*/
 	@RequestMapping(value="refer/{mvName}",method=RequestMethod.POST)
 	@ResponseBody

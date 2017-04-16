@@ -58,7 +58,6 @@ public class SongServiceImpl implements SongService{
 	@Override
 
 	public List<Singer> Hot(String sgEname) {
-		// TODO Auto-generated method stub
 		return songMapper.HOT(sgEname);
 }
 	public boolean removeSong(String soid) {
@@ -79,6 +78,16 @@ public class SongServiceImpl implements SongService{
 	public List<Song> findSongByName(String soname) {
 		return songMapper.findSongByName(soname);
 
+	}
+
+	@Override
+	public Song findSongName(Song song) {
+		return songMapper.findSongName(song);
+	}
+
+	@Override
+	public boolean addSong(Song song) {
+		return songMapper.addSong(song)>0;
 	}
 	
 }

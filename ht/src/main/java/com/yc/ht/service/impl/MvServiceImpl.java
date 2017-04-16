@@ -54,6 +54,10 @@ public class MvServiceImpl implements MvService{
 		return mvMapper.removeMv(Integer.valueOf(id))>0;
 	}
 
+	@Override
+	public List<Mv> findMv() {
+		return mvMapper.findMv();
+	}
 	/*查找MV*/
 	@Override
 	public List<Mv> listReferMv(String mvName) {

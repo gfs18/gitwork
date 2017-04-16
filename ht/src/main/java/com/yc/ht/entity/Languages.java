@@ -9,13 +9,9 @@ public class Languages {
 	private String language; //语种
 	public Languages() {
 	}
-	
-	public Languages(String language) {
-		this.language = language;
-	}
 
 	public Languages(Integer lgid, String language) {
-		this(language);
+		this.language = language;
 		this.lgid = lgid;
 	}
 	public Integer getLgid() {

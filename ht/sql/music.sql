@@ -59,7 +59,7 @@ insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.valu
 --歌手表
 create table singer(
        sgid number(20) primary key,     --歌手编号
-       sgname varchar2(20) not null,  --歌手名
+       sgname varchar2(40) not null,  --歌手名
        sgEname varchar2(40) not null, --歌手英文名
        sgnation varchar2(20),  --国籍
        sggender varchar2(10) not null,  --性别
@@ -67,6 +67,7 @@ create table singer(
        sgintroduce varchar2(1000)not null,     --歌手介绍
        mark varchar2(100)       --预留字段
 );
+--alter table singer modify sgname varchar2(40)
 --select seq_singer_sgid.nextval from dual;
 insert into singer values(seq_singer_sgid.nextval,'夏婉安','X','中国',10001,'女','images/xwa.jpg','夏婉安,黑龙江哈尔滨人,最有潜力的90后网络原创歌手。\r\n','');
 insert into singer values(seq_singer_sgid.nextval,'韩红','H','中国',10001,'女','images/hh.jpg','韩红，全国政协委员，华录百纳娱乐公司董事长兼CEO。\r\n','');
@@ -83,9 +84,9 @@ create table special(
       spname varchar2(50)not null,     --专辑名
       lgid number(20) not null,--语种编号
       sppicPath varchar2(100) not null,   --封面图片路径
-      spintroduce varchar2(1000), --专辑描述
       sppubTime date not null,   --出版时间
       spclick number(20,2), --点击量
+      spintroduce varchar2(1000),--专辑描述
       mark varchar2(100)       --预留字段
 );
 --select * from special;
@@ -131,11 +132,11 @@ create table song(
        vipDownload varchar2(10) default '否',    --是否是会员才能下载
        mark varchar2(100)       --预留字段
 );
-
+select * from song;
+--delete from song where soid=10046;
 --insert into song values (10024,1,2,'童话镇','images/2_1.png',
 to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 insert into song values(seq_song_soid.nextval,10001,10076,'忘记时间','images/singer1.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/wangjishijian.lrc','music/wangjishijian.mp3','3:50','','');
-
 insert into song values(seq_song_soid.nextval,10001,10076,'忘记时间','images/singer1.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/wangjishijian.lrc','music/wangjishijian.mp3','3:50','','');
 insert into song values(seq_song_soid.nextval,10001,10076,'会不会','images/mv-0.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/yuai.lrc','music/yuai.mp3','4:10','','');
 insert into song values(seq_song_soid.nextval,10001,10076,'哈哈','images/singer1.jpg',to_date('2017-4-1','yyyy-mm-dd'),'music/wangjishijian.lrc','music/wangjishijian.mp3','3:50','','');
@@ -163,6 +164,7 @@ create table languages(
 	lgid number(20) primary key, --编号
 	language varchar2(20)       --语种
 );
+insert into languages values(seq_lgid.nextval,'彝语')
 
 insert into LANGUAGES values(10001,'华语');
 insert into LANGUAGES values(10002,'日韩');
@@ -220,6 +222,7 @@ create table comments(
        commentPicPath varchar2(100), --评论图片路径
        mark varchar2(100)     --预留字段  
 );
+--drop table comments
 
 insert into COMMENTS values (seq_comments_cid.nextval,10041,'我好喜欢童话这首歌錒！！！',to_date('2000-11-26 00:04','yyyy-mm-dd hh24:mi:ss'),'images/2_1.png','');
 insert into comments values (seq_comments_cid.nextval,10001,'hh我好喜欢童话这首歌錒！！！',sysdate,'images/2_1.png','')
@@ -249,7 +252,7 @@ create sequence seq_mv_mvid start with 10001;
 create sequence seq_comments_cid start with 10001;
 create sequence seq_collect_coid start with 10001;
 
-
+select * from special where lgid=10001
 
 
 

@@ -443,7 +443,7 @@ a:hover{
     outline:none !important;
 }
 .login{
-    width: 100%;
+    width:460px;
     height: 100%;
 }
 .login_top,.reg_top{
@@ -518,10 +518,12 @@ a:hover{
     top:30px;
     right:40px;
     cursor:pointer;
+    left:400px;
     background-image:url("../images/close.png");
     -webkit-transition-origin:rigth bottom;
     -webkit-transition:0.5s;
     transition:0.5s;
+   
 }
 .login_close:hover,.reg_close:hover{
     background-image: url("../images/close_hover.png");

@@ -14,6 +14,8 @@ public interface SongService {
 	
 	List<Song> findSongByName(String soname);
 	
+	Song findSongName(Song song);
+	
 	PaginationBean<Song> listSong(String pageS,String currP);
 	
 	boolean removeSong(String soid);
@@ -21,6 +23,8 @@ public interface SongService {
 	boolean modifySong(Song song);
 
 	List<Singer> Hot(String sgEname);
+	
+	boolean addSong(Song song);
 
 }
 
