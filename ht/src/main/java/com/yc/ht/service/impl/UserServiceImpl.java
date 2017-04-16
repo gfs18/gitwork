@@ -102,5 +102,11 @@ public class UserServiceImpl implements UserService {
 	public boolean modifyUser(Users user) {
 		return userMapper.updateUser(user)>0;
 	}
+
+	//前台通过用户的id显示部分用户信息
+	@Override
+	public Users showUser(String userid) {
+		return userMapper.findShowUser(Integer.valueOf(userid));
+	}
 	
 }

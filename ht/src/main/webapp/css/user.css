@@ -385,18 +385,19 @@
 
 /*****************************等级*************************/
 #lv{
-    width:50px;
-    height:20px;
+    height:30px;
     margin-left:10px;
+    padding:3px;
     line-height:20px;
     cursor:default;
     color: #2DC17A;
+    font-size:16px;
     background:none;
-    border:1px solid #2DC17A;
+    border:3px solid #2DC17A;
     border-radius:20px;
 }
 #personal,.myemail,#social{
-    font-size:12px;
+    font-size:14px;
     margin-left:10px;
 }
 #follow,#fans{
