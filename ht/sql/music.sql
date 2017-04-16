@@ -16,17 +16,18 @@ create table users(
     upwd varchar2(40) not null,   --密码
     uemail varchar2(40) not null, --邮箱
    	upicPath varchar2(40),  --头像路径
-    uintroduce varchar2(100),    --个人简介
+    uintroduce varchar2(1000),    --个人简介
     ucondition int default 1, --账号状态 1可用 0不可用
     uvip int default 0,  --会员状态 1是   0否
   	mark varchar2(100)   ----预留字段 
 );
 --select * from users;
 --alter table users modify uemail varchar2(40);
+alter table users modify uintroduce varchar2(1000)
 --insert into users values(seq_users_uid.nextval,'哈哈哈哈','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/bg.png','很美啊',0,1,null);
 --insert into users values(seq_users_uid.nextval,'admin11111','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/bg.png','很美啊',1,0,null);
 --insert into users values(seq_users_uid.nextval,'admin111','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/touxiang.png','很美啊',1,0,null);
-
+--insert into users values(seq_users_uid.nextval,'rozz','3b3690fba8bd08059eae130425396eb05ded1b7d','960089677@qq.com','images/bg.png','很美啊',0,1,null);
 
 --drop table users;
 
@@ -48,6 +49,7 @@ create table admin(
 	mark varchar2(100)   ----预留字段 
 );
 
+insert into admin values(seq_aid.nextval,'admin','3b3690fba8bd08059eae130425396eb05ded1b7d',1,'');
 insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.value(4,10)),'3b3690fba8bd08059eae130425396eb05ded1b7d',
 1,'' from dual connect by level <10;
 
@@ -69,10 +71,10 @@ create table singer(
 );
 --alter table singer modify sgname varchar2(100)
 --select seq_singer_sgid.nextval from dual;
-insert into singer values(seq_singer_sgid.nextval,'夏婉安','X','中国',10001,'女','images/xwa.jpg','夏婉安,黑龙江哈尔滨人,最有潜力的90后网络原创歌手。\r\n','');
-insert into singer values(seq_singer_sgid.nextval,'韩红','H','中国',10001,'女','images/hh.jpg','韩红，全国政协委员，华录百纳娱乐公司董事长兼CEO。\r\n','');
-insert into singer values(seq_singer_sgid.nextval,'张杰','Z','中国',10002,'男','images/zhangjie.jpg', '张杰，1982年12月20日出生于四川成都，毕业于四川师范大学，中国内地流行歌手。\r\n','');
-insert into singer values(seq_singer_sgid.nextval,'金沙','J','中国',10003,'女','images/jinsha.jpg', '金莎（Kym），出生于中国上海，曾就读于星海音乐学院、新加坡东亚商学院','');
+insert into singer values(seq_singer_sgid.nextval,'夏婉安','X','内陆','女','images/xwa.jpg','夏婉安,黑龙江哈尔滨人,最有潜力的90后网络原创歌手。','');
+insert into singer values(seq_singer_sgid.nextval,'韩红','H','中国','女','images/hh.jpg','韩红，全国政协委员，华录百纳娱乐公司董事长兼CEO。','');
+insert into singer values(seq_singer_sgid.nextval,'张杰','Z','中国','男','images/zhangjie.jpg', '张杰，1982年12月20日出生于四川成都，毕业于四川师范大学，中国内地流行歌手。','');
+insert into singer values(seq_singer_sgid.nextval,'金沙','J','中国','女','images/jinsha.jpg', '金莎（Kym），出生于中国上海，曾就读于星海音乐学院、新加坡东亚商学院','');
 --select * from singer;
 -- drop table singer;
 select * from singer;
@@ -154,7 +156,7 @@ insert into song values(seq_song_soid.nextval,10002,10073,'快快快','images/mv
 --to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 --select * from song;
 --drop table song;
-update song set spid=10041 where  spid=10002;
+update song set spid=10002 where  spid>10073;
 
 
 update song set sgid=10001;
@@ -167,17 +169,12 @@ create table languages(
 );
 insert into languages values(seq_lgid.nextval,'彝语')
 
-insert into LANGUAGES values(10001,'华语');
-insert into LANGUAGES values(10002,'日韩');
-insert into LANGUAGES values(10003,'欧美');
-insert into LANGUAGES values(10004,'粤语');
---音乐类型表
-create table musicStyle(
-	msid number(20) primary key,   --类型编号
-    msstyle varchar2(20)          --风格类型
-);
+insert into LANGUAGES values(seq_lgid.nextval,'华语');
+insert into LANGUAGES values(seq_lgid.nextval,'日韩');
+insert into LANGUAGES values(seq_lgid.nextval,'欧美');
+insert into LANGUAGES values(seq_lgid.nextval,'粤语');
 
---drop table musicStyle;
+
 
 create table mv(
        mvid number(20) primary key,        --mv编号
@@ -253,7 +250,16 @@ create sequence seq_mv_mvid start with 10001;
 create sequence seq_comments_cid start with 10001;
 create sequence seq_collect_coid start with 10001;
 
-select * from special where lgid=10001
+drop sequence seq_aid;
+drop sequence seq_msid;
+drop sequence seq_lgid;
+drop sequence seq_users_uid ;
+drop sequence seq_singer_sgid;
+drop sequence seq_special_spid;
+drop sequence seq_song_soid;
+drop sequence seq_mv_mvid;
+drop sequence seq_comments_cid;
+drop sequence seq_collect_coid;
 
 
 
