@@ -163,7 +163,7 @@ function run(){
 
 
 /////////////////////////////////音乐播放///////////////////////////
-$(".lable li").click(function(){
+/*$(".lable li").click(function(){
     $(".special ul").css("display","none");
     $(".special ul").eq($(this).index()).css("display","block");
     $(".class").html($(".lable li a").eq($(this).index()).html());
@@ -488,4 +488,4 @@ $(".xh").on("click",function(){
 $(".sj").on("click",function(){
 	$(".xh").css("display","block");
 	$(this).css("display","none");
-})
+})*/

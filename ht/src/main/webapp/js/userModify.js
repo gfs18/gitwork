@@ -20,7 +20,7 @@ function loginOut(){
 	},"json");
 }
 
-init();
+//init();
 function init(){
 	var userid= location.href.split("=")[1];
 	if(userid != null && userid!=""){
