@@ -85,7 +85,6 @@ function songList(){
 	$.post("song/list", function(data){
 		var songListStr = "";
 		for (var i = 0; i < data.length; i++) {
-			songListStr+='<tr><td class="td"><span>'+data[i].soname+'</span></td>';
 			var soname = data[i].soname;
 			if(soname.length>10){
 				soname = data[i].soname.substring(0,10);

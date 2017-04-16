@@ -29,7 +29,7 @@
 							href="back/manage.jsp">单曲管理</a></li>
 						<li><a href="back/singer.jsp">歌手管理</a></li>
 						<li><a href="back/specialInfo.jsp">专辑管理</a></li>
-						<li><a href="back/mvmanage.jsp">短片管理</a></li>
+						<li><a href="back/mvManage.jsp">短片管理</a></li>
 						<li><a href="back/userManage.jsp">用户管理</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
@@ -55,7 +55,6 @@
 			<ul class="nav nav-pills nav-stacked">
 				<li role="presentation" class="active"><a href="back/userManage.jsp">用户信息</a></li>
 				<li role="presentation"><a href="back/userManageRefer.jsp">用户查询</a></li>
-				<li role="presentation"><a href="back/userManageModify.jsp">用户修改</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">

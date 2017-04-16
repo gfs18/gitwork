@@ -49,9 +49,9 @@ function paginatorNext(totalP){
 function removeSong(id){
 	$.post("song/remove",{"id":id},function(data){
 		if(data){
-			alert("修改成功!!!");
+			alert("删除成功!!!");
 		}else{
-			alert("修改失败...");
+			alert("删除失败...");
 		}
 		location.href="back/manage.jsp";
 	},"json");
