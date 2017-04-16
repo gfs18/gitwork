@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="dist/css/bootstrap.css">
 </head>
 <body>
-	<header>
-	<nav id="head">
+	<!-- <header> -->
+		<nav id="head">
 			<nav class="navbar navbar-default" id="lognav">
 				<div class="container">
 					<div class="navbar-header navbar-left">
@@ -26,13 +26,6 @@
 							<c:when test="${login_user !=null}">
 								<li><a href="javascript:void(0)"
 									class="hidden-md hidden-sm hidden-xs">${login_user }</a></li>
-								<li class="dropdown"><a href="javascript:void(0)"
-								class="dropdown-toggle" data-toggle="dropdown" role="button"
-								aria-haspopup="true" aria-expanded="false"><span
-									class="caret"></span> </a>
-								<ul class="dropdown-menu">
-									<li><a href="page/userinfoModify.jsp?uname=${login_user }">修改个人信息</a></li>
-								</ul></li>
 								<li><a href='javascript:void(0)'
 									class="hidden-md hidden-sm hidden-xs" onclick='userout()'
 									id='tuichu'>退出</a></li>
@@ -83,7 +76,7 @@
 			</nav>
 
 		</nav>
-		<div class="banner">
+		<!-- <div class="banner">
 			<div class="row">
 				<div id="myCarousel" class="carousel slide">
 					<div class="carousel-inner">
@@ -108,70 +101,10 @@
 						id="carousel_right" data-slide="next">&rsaquo;</a>
 				</div>
 			</div>
-		</div>
-	</header>
-	<article>
-		<div class="content1">
-			<div class="container">
-				<div class="row">
-					<div class="album">
-						<a class="pull-left"><h4>热门专辑</h4></a> <a
-							href="javascript:void(0)" class="pull-right more">更多</a>
-					</div>
-					<div class="content1_1">
-						<div class="content1_1_1">
-							<!-- 站内专辑显示 -->
-						</div>
-
-						<div class="content1_1_2 hidden-md hidden-sm hidden-xs">
-							<span class="span1">站内歌曲</span>
-
-							<table id="mytablet">
-
-								<!-- 显示歌曲 -->
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="content2">
-			<div class="container">
-				<div class="row">
-					<div class="mymv">
-						<a class="pull-left"><h4>最新MV</h4></a> <a href=""
-							class="pull-right more">更多</a>
-					</div>
-					<div class="mv">
-						<ul id="warp">
-						<!-- mv显示 -->
-							
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="content3">
-			<div class="container">
-				<div class="row">
-					<div class="sing">
-						<a class="pull-left"><h4>站内歌手</h4></a> <a href=""
-							class="pull-right more">更多</a>
-					</div>
-
-					<div class="content3_1">
-						<!-- 显示歌手 -->
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</article>
+		</div> -->
+	<!-- </header> -->
 	
-	<!-- 底部注入 -->
-      <iframe width=100% height=108 src="iframe/footer.jsp"></iframe>
-      
-	<div> 
+	<!-- <div> 
 		<div id="mylogin">
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 				aria-labelledby="myModalLabel" aria-hidden="true">
@@ -229,7 +162,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
+	
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>

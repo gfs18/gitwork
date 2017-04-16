@@ -56,7 +56,7 @@ songList();
 function songList(){
 	$.post("song/list", function(data){
 		var songListStr = "";
-		for (var i = 0; i < 11; i++) {
+		for (var i = 0; i < data.length; i++) {
 			songListStr+='<tr><td class="td"><span>'+data[i].soname+'</span></td>'+
 			'<td><a href="page/demo.jsp?songid='+data[i].soid+'"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
 			'</a></td><td><a href=""><i class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td></tr>';
@@ -259,7 +259,7 @@ var meuli=document.getElementsByClassName("meuli");
 var span2=document.getElementsByClassName("span2");
 var index=0;
 var bl=true;
-音乐播放
+//音乐播放
 window.onload=function(){
      audio=document.getElementById("music");
 }

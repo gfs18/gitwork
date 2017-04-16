@@ -30,5 +30,7 @@ public interface UserMapper {
 
 	int updateUser(Users user);//用户的修改
 
+	int modifyUserInfo(Users user);
+
 
 }

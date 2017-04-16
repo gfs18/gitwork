@@ -28,4 +28,6 @@ public interface UserService {
 
 	boolean modifyUser(Users user);//用户的修改
 
+	boolean modifyUserInfo(Users user);
+
 }

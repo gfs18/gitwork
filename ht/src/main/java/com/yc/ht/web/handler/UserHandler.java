@@ -2,6 +2,7 @@ package com.yc.ht.web.handler;
 
 
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
@@ -14,13 +15,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+import org.springframework.web.multipart.MultipartFile;
 
 import com.yc.ht.entity.Singer;
 
 import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Song;
+import com.yc.ht.entity.Special;
 import com.yc.ht.entity.Users;
 import com.yc.ht.service.UserService;
 import com.yc.ht.util.EmailUtils;
@@ -160,11 +163,23 @@ public class UserHandler {
 	 * 用户的修改
 	 */
 	@RequestMapping(value="modify",method=RequestMethod.POST)
-	@ResponseBody
-	public boolean modifyUser(Users user){
-		System.out.println("----"+user);
-		return userService.modifyUser(user);
+	public String modifyUser(@RequestParam("picData") MultipartFile picData,Users user){
+		LogManager.getLogger().debug("用户修改个人信息");
+		String picPath = null;
+		if(picData != null && !picData.isEmpty()){//判断是否文件上传
+			try {
+				picData.transferTo(ServletUtil.getUploadFile(picData.getOriginalFilename()));
+				picPath = ServletUtil.VIRTUAL_UPLOAD_DIR + picData.getOriginalFilename();
+			} catch (IllegalStateException | IOException e) {
+				e.printStackTrace();
+			}
+		}
+		user.setUpicPath(picPath);
+		if(userService.modifyUserInfo(user)){
+			return "redirect:/page/user.jsp";
+		}else{
+			return "forward:/page/userModify.jsp";
+		}
 	}
-	
 	
 }

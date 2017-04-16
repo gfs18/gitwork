@@ -16,13 +16,14 @@ create table users(
     upwd varchar2(40) not null,   --密码
     uemail varchar2(40) not null, --邮箱
    	upicPath varchar2(40),  --头像路径
-    uintroduce varchar2(100),    --个人简介
+    uintroduce varchar2(1000),    --个人简介
     ucondition int default 1, --账号状态 1可用 0不可用
     uvip int default 0,  --会员状态 1是   0否
   	mark varchar2(100)   ----预留字段 
 );
 --select * from users;
 --alter table users modify uemail varchar2(40);
+alter table users modify uintroduce varchar2(1000)
 --insert into users values(seq_users_uid.nextval,'哈哈哈哈','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/bg.png','很美啊',0,1,null);
 --insert into users values(seq_users_uid.nextval,'admin','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','picpath','很美啊',1,0,null);
 
