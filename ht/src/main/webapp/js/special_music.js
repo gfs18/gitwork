@@ -3,8 +3,6 @@ specialDetail();
 function specialDetail(){
 	var spid=location.href.split("=")[1];
 	$.get("special/detail",{"spid":spid},function(data){
-		alert(JSON.stringify(data));
-		alert(data.spintroduce);
 		var spDetailStr="";
 		spDetailStr+='<div class="left col-lg-4 col-md-4 hidden-sm hidden-xs">';
 		spDetailStr+='<img id="img" src="'+data.sppicPath+'"><div class="cover"></div></div>';

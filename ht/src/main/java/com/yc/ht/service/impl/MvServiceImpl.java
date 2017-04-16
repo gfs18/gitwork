@@ -1,5 +1,7 @@
 package com.yc.ht.service.impl;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,7 @@ public class MvServiceImpl implements MvService{
 	@Autowired
 	private MvMapper mvMapper;
 	
+	/*MV的分页显示*/
 	@Override
 	public PaginationBean<Mv> listMv(String pageS, String currP) {
 		int pageSize = 10;
@@ -45,9 +48,20 @@ public class MvServiceImpl implements MvService{
 		return pb;
 	}
 
+	/*删除MV*/
 	@Override
 	public boolean removeMv(String id) {
 		return mvMapper.removeMv(Integer.valueOf(id))>0;
+	}
+
+	@Override
+	public List<Mv> findMv() {
+		return mvMapper.findMv();
+	}
+	/*查找MV*/
+	@Override
+	public List<Mv> listReferMv(String mvName) {
+		return mvMapper.findReferMV(mvName);
 	}
 
 }

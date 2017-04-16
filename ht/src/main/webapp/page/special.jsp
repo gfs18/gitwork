@@ -49,10 +49,7 @@
    	  <div class="lable row">
    	  	  	<li class="col-lg-2 col-md-2 col-sm-3 col-xs-3" id="new_ul"><a href="javascript:void(0)" onclick="newestSpecial(8,1,0)" class="click">最新专辑</a></li>
    	  	  	<li class="col-lg-2 col-md-2 col-sm-3 col-xs-3" id="hot_ul"><a href="javascript:void(0)" onclick="hottestSpecial(8,1,0)">热门专辑</a></li>
-   	  	  	<!-- 专辑类型 -->
-   	  	  	<!-- <li class="col-lg-2 col-md-2 col-sm-3 hidden-xs" id="china_ul"><a href="javascript:void(0)">华语</a></li>
-   	  	  	<li class="col-lg-2 col-md-2 hidden-sm hidden-xs" id="hip_ul"><a href="javascript:void(0)">日韩</a></li>
-   	  	  	<li class="col-lg-2 col-md-2 hidden-sm hidden-xs" id="eng_ul"><a href="javascript:void(0)">欧美</a></li> -->
+   	  	  	<!-- 语种类型 -->
 
    	  </div>
            <p class="class">最新专辑</p>
@@ -60,10 +57,7 @@
                 <ul class="new_ul">
                     <!-- 最新专辑分页显示 -->
                 </ul>
-                <ul class="hot_ul"><!-- 热门专辑分页显示 --></ul>
-                <ul class="china_ul"></ul>
-                <ul class="hip_ul"></ul>
-                <ul class="eng_ul"></ul>
+                
             </div>
       <ul class="pagination pagination-lg" id="page">
       	<!-- 分页页码 -->
@@ -75,7 +69,7 @@
 	<!-- 底部注入 -->
       <iframe width=100% height=105 src="iframe/footer.jsp"></iframe>
 	
-      <nav class="navbar navbar-default navbar-fixed-bottom bg">
+      <!-- <nav class="navbar navbar-default navbar-fixed-bottom bg">
         <audio id="music" src="music/夏婉安 - 一个人.mp3"></audio>
         <i><img class="show" id="show" src="images/playbar_02.png"></i>
         <i><img class="play" id="play" onclick="myplay(this)" src="images/playbar_11.png"></i>
@@ -120,7 +114,7 @@
             </ul>
         </div>
         <p class="shuo">0</p>
-    </nav>
+    </nav> -->
 	<div>
     <div id="mylogin">
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

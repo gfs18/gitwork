@@ -64,9 +64,10 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th width="100px">单曲名</th>
-							<th width="150px">歌手名</th>
+							<th>单曲名</th>
+							<th>歌手名</th>
 							<th>专辑名</th>
+							<th>图片路径</th>
 							<th>歌词路径</th>
 							<th width="200px">
 								<div id="formRefer">

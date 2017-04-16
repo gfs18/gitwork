@@ -61,8 +61,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where soid=#{soid}
 	</update>
 	
-	<!-- 单曲查询(根据soname) -->
+	<!-- 单曲查询模糊(根据soname) -->
 	<select id="findSongByName" parameterType="string" resultType="Song">
 		select * from song where soname like '%${_parameter}%'
 	</select>
+	
+	<select id="findSongName" parameterType="Song" resultType="Song">
+		select * from song where soname = #{soname} and sgid =#{sgid}
+	</select>
+	
+	<!--添加单曲  -->
+	<insert id="addSong" parameterType="Song">
+		insert into song values(seq_song_soid.nextval,#{sgid},
+		<choose><when test="spid != null">#{spid}</when><otherwise>''</otherwise></choose>,#{soname},
+		<choose><when test="sopicPath != null">#{sopicPath}</when><otherwise>''</otherwise></choose>,
+		<choose><when test="sopubTime != null">#{sopubTime}</when><otherwise>sysdate</otherwise></choose>,
+		#{solyricPath},#{sopath},
+		<choose><when test="soduration != null">#{soduration}</when><otherwise>300</otherwise></choose>,
+		<choose><when test="vipDownload != null">#{vipDownload}</when><otherwise>default</otherwise></choose>,'')
+	</insert>
 </mapper>

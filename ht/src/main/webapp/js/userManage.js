@@ -13,7 +13,7 @@ function showUserManage(pageS,currP){
 			if(img!=null){
 				img=data.rows[i].upicPath;
 			}else{
-				img="images/not_image.png";
+				img="images/img.png";
 			}
 			if(ucondition==1){
 				var strOptions='<select id="uconditionValue" style="border:1px solid #c0c0c0; width: 70px; height:25px;"><option value="1" >'+"可用"+'</option><option value="0">'+"不可用"+'</option></select>';
@@ -108,7 +108,7 @@ function loginOut(){
 referUser();
 function referUser(){
 	var uname=location.href.split('=')[1];
-	if(uname!=null){
+	if(uname!=null&& uname!=""){
 		$.post("user/referUser/"+uname,function(data){
 			var str = "";
 			for (var i = 0; i < data.length; i++) {

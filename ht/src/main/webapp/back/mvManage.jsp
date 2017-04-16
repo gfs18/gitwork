@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
 <link rel="shortcut icon" type="image/icon" href="images/log.png" />
-<link rel="stylesheet" type="text/css" href="css/manage.css" />
+<link rel="stylesheet" type="text/css" href="css/mvmanage.css" />
 <link rel="stylesheet" href="dist/css/bootstrap.css">
 </head>
 <body>
@@ -23,17 +23,15 @@
 					</a>
 				</div>
 				<div class="collapse navbar-collapse"
-					id="bs-example-navbar-collapse-1">
+					id="bs-example-navbar-collapse-1">			
 					<ul class="nav navbar-nav navbar-left" id="topnav">
 						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
 							href="back/manage.jsp">单曲管理</a></li>
-
 						<li><a href="back/singer.jsp">歌手管理</a></li>
 						<li><a href="back/specialInfo.jsp">专辑管理</a></li>
-
 						<li><a href="back/mvManage.jsp">短片管理</a></li>
 						<li><a href="back/userManage.jsp">用户管理</a></li>
-						</ul>
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<c:if test="${login_admin != null }">
 							<li><a href="javascript:void(0)">${login_admin }</a></li>
@@ -55,9 +53,9 @@
 	<article>
 		<div id="articleDiv">
 			<ul class="nav nav-pills nav-stacked">
-				<li role="presentation" class="active"><a href="back/manage.jsp">单曲信息</a></li>
-				<li role="presentation"><a href="back/manageRefer.jsp">单曲查询</a></li>
-				<li role="presentation"><a href="back/manageAdd.jsp">单曲添加</a></li>
+				<li role="presentation" class="active"><a href="back/mvManage.jsp">MV信息</a></li>
+				<li role="presentation"><a href="back/mvManageRefer.jsp">MV查询</a></li>
+				<li role="presentation"><a href="back/mvManageAdd.jsp">MV添加</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
@@ -65,14 +63,14 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>单曲编号</th>
-							<th>单曲名</th>
-							<th width="100px">图片路径</th>
+							<th>Mv编号</th>
+							<th>Mv名称</th>
+							<th>歌手名称</th>
+							<th>单曲名称</th>
+							<th>MV时长</th>
+							<th>图片路径</th>
 							<th>出版时间</th>
-							<th>歌词路径</th>
-							<th>单曲路径</th>
-							<th>单曲时长</th>
-							<th>是否为Vip下载</th>
+							<th>MV路径</th>
 							<th>操作</th>
 						</tr>
 					</thead>
@@ -105,6 +103,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/manage.js"></script>
+	<script type="text/javascript" src="js/mvmanage.js"></script>
 </body>
 </html>

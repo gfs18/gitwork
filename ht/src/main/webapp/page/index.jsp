@@ -137,7 +137,8 @@
 					</div>
 					<div class="mv">
 						<ul id="warp">
-							<li><div class="mv-1">
+						<!-- mv显示 -->
+							<!-- <li><div class="mv-1">
 									<a href=""><img src="images/mv-1.jpg"></a>
 								</div>
 								<div class="mv_2">
@@ -196,9 +197,8 @@
 								<div class="mv_3">
 									<img src="images/cover_play.png">
 								</div>
-								<div class="mv_4"></div></li>
+								<div class="mv_4"></div></li> -->
 						</ul>
-
 					</div>
 				</div>
 			</div>
