@@ -18,15 +18,15 @@ public class Song {
 	public Song() {
 	}
 	
-	public Song(Integer sgid, String soname) {
+	public Song(Integer sgid, String soname,Integer spid) {
+		this.spid = spid;
 		this.sgid = sgid;
 		this.soname = soname;
 	}
 
 
 	public Song(Integer sgid, Integer spid, String soname, String sopicPath, String solyricPath, String sopath) {
-		this(sgid, soname);
-		this.spid = spid;
+		this(sgid, soname,spid);
 		this.sopicPath = sopicPath;
 		this.solyricPath = solyricPath;
 		this.sopath = sopath;

@@ -161,6 +161,10 @@ public class SpecialHandler {
 		if(info.isEmpty()){
 			info = null;
 		}
+		if("0000-00-00".equals(publishtime)){
+			publishtime = null;
+		}
+		
 		Special spc = specialService.SpecialFindByName(title);
 		if(spc != null && !"".equals(spc)){
 			map.put("spid", String.valueOf(spc.getSpid()));

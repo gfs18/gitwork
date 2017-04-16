@@ -27,7 +27,7 @@ public class SongServiceTest {
 	
 	@Test
 	public void testfindSong() {
-		Song song=songService.findSongName(new Song(1003,"童话镇"));
+		Song song=songService.findSongName(new Song(1003,"童话镇",1003));
 		System.out.println(song);
 	}
 	

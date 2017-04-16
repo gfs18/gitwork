@@ -22,13 +22,28 @@
 					<a href="" class="navbar-brand"><h3>幻听音乐</h3></a>
 				</div>
 				<ul class="nav navbar-nav navbar-right" id="nav_a">
-					<li><a href="javascript:void(0)"
-						class="hidden-md hidden-sm hidden-xs" id="denglu"
-						data-toggle="modal" data-target="#myModal">登录</a></li>
-					<li id="newL"><a href="javascript:void(0)"
-						class="hidden-md hidden-sm hidden-xs" id="out" data-toggle="modal"
-						data-target="#myModals">注册</a></li>
-				</ul>
+						<c:choose>
+							<c:when test="${login_user !=null}">
+								<li><a href="javascript:void(0)"
+									class="hidden-md hidden-sm hidden-xs">${login_user }</a></li>
+								<li><a href='javascript:void(0)'
+									class="hidden-md hidden-sm hidden-xs" onclick='userout()'
+									id='tuichu'>退出</a></li>
+							</c:when>
+							<c:otherwise>
+								<li><a href="javascript:void(0)"
+									class="hidden-md hidden-sm hidden-xs" id="denglu"
+									data-toggle="modal" data-target="#myModal">登录</a></li>
+								<li id="newL"><a href="javescript:void(0)"
+									class="hidden-md hidden-sm hidden-xs" id="out"
+									data-toggle="modal" data-target="#myModals">注册</a></li>
+							</c:otherwise>
+						</c:choose>
+						<li><a href="page/vip.jsp"
+							class="hidden-md hidden-sm hidden-xs">VIP</a></li>
+						<li><a href="javascript:void(0)"
+							class="hidden-md hidden-sm hidden-xs">关于我们</a></li>
+					</ul>
 			</div>
 		</nav>
 		<nav class="navbar navbar-default" id="navbartop">
