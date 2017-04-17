@@ -8,6 +8,7 @@ var count= 0 ;
 commentShow(3,1);
 function commentShow(pageS,currP){
 	$.get("friend/PaginationCommentShow",{"pageS":pageS,"currP":currP},function(data){
+		alert(JSON.stringify(data));
 		var commentStr = "";
 		for (var i = 0; i < data.rows.length; i++) {
 			var img=data.rows[i].user.upicPath;

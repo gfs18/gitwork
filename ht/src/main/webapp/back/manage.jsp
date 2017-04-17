@@ -67,7 +67,7 @@
 						<tr>
 							<th>单曲编号</th>
 							<th width="80px">单曲名</th>
-							<th width="100px">图片路径</th>
+							<th width="100px">图片</th>
 							<th>出版时间</th>
 							<th>歌词路径</th>
 							<th>单曲路径</th>

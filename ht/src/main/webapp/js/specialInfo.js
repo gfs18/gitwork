@@ -6,12 +6,12 @@ function showSpecialInfo(rows,page){
 		for (var i = 0; i < data.rows.length; i++) {
 			str += "<tr class='tableoverout'><th>"+data.rows[i].spid+"</th><th>"+data.rows[i].spname+"</th>";
 			if(data.rows[i].singer==null){
-				str +="<th>无名氏</th>";
+				str +="<th> </th>";
 			}else{
 				str +="<th>"+data.rows[i].singer.sgname+"</th>";
 			}
 			if(data.rows[i].language == null){
-				str+="<th>无</th>";
+				str+="<th> </th>";
 			}else{
 				str+="<th>"+data.rows[i].language.language+"</th>";
 			}

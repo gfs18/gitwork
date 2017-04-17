@@ -28,7 +28,6 @@ function init(){
 			$("#spid").val(data.spid);
 			$("#labelid").html(data.spid);
 			$("#spname").val(data.spname);
-		/*	$("#sgname").val(data.singer.sgname);*/
 			if(data.language!=null){
 				$("#lgname").val(data.language.language);
 			}else{
@@ -43,6 +42,6 @@ function init(){
 }
 
 function chgPic(obj){
-	$("#sopicPath").attr("src",window.URL.createObjectURL(obj.files[0]));
+	$("#sppicPath").attr("src",window.URL.createObjectURL(obj.files[0]));
 }
 
