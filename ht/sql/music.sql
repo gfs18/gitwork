@@ -167,8 +167,10 @@ create table languages(
 	lgid number(20) primary key, --编号
 	language varchar2(20)       --语种
 );
-insert into languages values(seq_lgid.nextval,'彝语')
 
+
+select * from languages;
+insert into languages values(seq_lgid.nextval,'彝语')
 insert into LANGUAGES values(seq_lgid.nextval,'华语');
 insert into LANGUAGES values(seq_lgid.nextval,'日韩');
 insert into LANGUAGES values(seq_lgid.nextval,'欧美');

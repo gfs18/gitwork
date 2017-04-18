@@ -50,9 +50,9 @@
             <div class="container">
                 <div class="row">
                     <ul class="nav navbar-nav navbar-left" id="topnav">
-                        <li><div class="mydiv hidden-md hidden-sm hidden-xs"></div><a href="page/index.jsp"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
+                        <li><a href="page/index.jsp"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
                         <li><a href="page/singer.jsp"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
-                        <li><a href="page/special.jsp"  class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
+                        <li><div class="mydiv hidden-md hidden-sm hidden-xs"></div><a href="page/special.jsp"  class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
                         <li><a href=""  class="col-lg-2 col-md-2  hidden-xs  hidden-sm hidden-xs">MV</a></li>
                         <li><a href=""  class="col-lg-2 hidden-md hidden-sm hidden-xs">电台</a></li>
                     </ul>
@@ -88,6 +88,8 @@
 </div>
 </article>
 
+<!-- 底部注入 -->
+<iframe width=100% height=105 src="iframe/footer.jsp"></iframe>
     
 <div>
     <div id="mylogin">

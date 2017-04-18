@@ -25,11 +25,7 @@ import com.yc.ht.service.LanguageService;
 import com.yc.ht.service.SpecialService;
 import com.yc.ht.util.InternetRes;
 import com.yc.ht.util.ServletUtil;
-/**
- * 
- * @author Lcl
- *
- */
+
 @Controller("specialHandler")
 @RequestMapping("special")
 public class SpecialHandler {
@@ -188,10 +184,14 @@ public class SpecialHandler {
 					info = info.trim().substring(0, 300);
 				}
 			}
-			Languages languages = languageService.findLanguageByName(language);
-			if(languages ==null || "".equals(languages)){
-				languageService.addLanguage(language);
-				languages = languageService.findLanguageByName(language);
+			Languages languages = null;
+			System.out.println("language:"+language);
+			if(language != null && !"".equals(language)){
+				 languages = languageService.findLanguageByName(language);
+				if(languages == null || "".equals(languages)){
+					languageService.addLanguage(language);
+					languages = languageService.findLanguageByName(language);
+				}
 			}
 			Special special = new Special(Integer.valueOf(sgid), title, languages, pic_s500, publishtime, info);
 			boolean result =specialService.specialAdd(special);

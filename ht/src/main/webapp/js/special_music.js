@@ -36,9 +36,9 @@ function specialSong(){
 		for(var i=0; i<data.length;i++){
 			musicStr+='<div class="row"><div  class="list_no col-lg-1 col-md-1 col-sm-1 col-xs-1">'+(i+1)+'</div>'
 	        	+'<div  class="list_name col-lg-7 col-md-7 col-sm-11 col-xs-11">'
-	            +'<a href=""><i class="glyphicon glyphicon-play-circle" id="tp1_1"  title="播放"></i></a>'
-	            +'<a href=""><i class="glyphicon glyphicon-save" id="tp2_1" title="下载"></i></a>'
-	            +' <a href="" class="m_name">'+data[i].soname+'</a></div>';
+	            +'<a href="javascript:void(0)"><i class="glyphicon glyphicon-play-circle" id="tp1_1"  title="播放"></i></a>'
+	            +'<a href="javascript:void(0)"><i class="glyphicon glyphicon-save" id="tp2_1" title="下载"></i></a>'
+	            +' <a href="javascript:void(0)" class="m_name">'+data[i].soname+'</a></div>';
 			if(data[i].singer==null){
 				musicStr+='<div  class="list_play col-lg-2 col-md-2 hidden-sm hidden-xs">无名氏</div>'
 			}else{
