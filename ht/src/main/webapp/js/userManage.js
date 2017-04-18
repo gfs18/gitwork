@@ -8,8 +8,8 @@ function showUserManage(pageS,currP){
 			var img=data.rows[i].upicPath;
 			var ucondition=data.rows[i].ucondition;
 			var uvip=data.rows[i].uvip;
-			alert("ucondition111................"+ucondition);
-			alert("uvip111................"+uvip);
+			/*alert("ucondition111................"+ucondition);
+			alert("uvip111................"+uvip);*/
 			if(img!=null){
 				img=data.rows[i].upicPath;
 			}else{
@@ -142,6 +142,7 @@ function referUser(){
 			
 			//行变色
 			str +='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#ffffff";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
+			$("#tableBody").html();
 			$("#tableBody").html(str);
 			$(".pagination").html("");
 		});
