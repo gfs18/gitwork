@@ -43,6 +43,9 @@ public interface SpecialService {
 	Special SpecialFindByName(String spname);
 
 	boolean specialAdd(Special special);
+
+	//点击量
+	boolean clickSpecial(Special special);
 	
 }
 

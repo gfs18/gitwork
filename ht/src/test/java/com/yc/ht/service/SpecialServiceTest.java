@@ -129,4 +129,14 @@ public class SpecialServiceTest {
 		boolean result=specialService.specialAdd(special);
 		System.out.println(result);
 	}
+	
+	@Test
+	public void testClickSpecial() {
+		Special special=new Special();
+		special.setSpid(10080);
+		special.setSpclick(6.0);
+		boolean result=specialService.clickSpecial(special);
+		System.out.println(result);
+		assertEquals(true,result);
+	}
 }

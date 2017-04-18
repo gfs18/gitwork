@@ -201,4 +201,15 @@ public class SpecialHandler {
 		}
 		return map;
 	}
+	
+	@RequestMapping(value="click", method=RequestMethod.POST)
+	@ResponseBody
+	public boolean clickSpecial(int spid){
+		LogManager.getLogger().debug("点击量进来了。。。。。"+spid);
+		Special special=specialService.specialDetail(spid);
+		Double clickRate=special.getSpclick();
+		clickRate+=1;
+		special.setSpclick(clickRate);
+		return specialService.clickSpecial(special);
+	}
 }

@@ -40,6 +40,34 @@ function showUserManage(pageS,currP){
 		paginationUserManage(data.totalPage);
 	});
 }
+
+
+//修改用户的状态
+function modifyUser(userid){
+	alert(userid);
+	
+	var obj=document.getElementById('uconditionValue');
+	var index=obj.selectedIndex; 
+	var uconditionValue = obj.options[index].value;
+	
+	var objj=document.getElementById('uvipValue');
+	var indexx=objj.selectedIndex; 
+	var uvipValue = objj.options[indexx].value;
+	
+	alert("uconditionValue222....."+uconditionValue);
+	alert("uvipValue222....."+uvipValue);
+	
+	$.post("user/modify",{"userid":userid,"ucondition":uconditionValue,"uvip":uvipValue},function(data){
+		if(data){
+			alert("修改成功!!!");
+			location.href="back/userManage.jsp";
+		}else{
+			alert("修改失败...");
+		}
+		
+	},"json");
+}
+
 function paginationUserManage(totalP){
 	var pStr = "";
 	if(totalP>=5){
@@ -163,31 +191,6 @@ function removeReferUser(userid){
 }
 
 
-//修改用户的状态
-function modifyUser(userid){
-	alert(userid);
-	
-	var obj=document.getElementById('uconditionValue');
-	var index=obj.selectedIndex; 
-	var uconditionValue = obj.options[index].value;
-	
-	var objj=document.getElementById('uvipValue');
-	var indexx=objj.selectedIndex; 
-	var uvipValue = objj.options[indexx].value;
-	
-	alert("uconditionValue222....."+uconditionValue);
-	alert("uvipValue222....."+uvipValue);
-	
-	$.post("user/modify",{"userid":userid,"ucondition":uconditionValue,"uvip":uvipValue},function(data){
-		if(data){
-			alert("修改成功!!!");
-			location.href="back/userManage.jsp";
-		}else{
-			alert("修改失败...");
-		}
-		
-	},"json");
-}
 
 
 
