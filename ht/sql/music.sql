@@ -120,6 +120,7 @@ insert into SPECIAL values(seq_special_spid.nextval,10001,'我知道你离我不
 insert into SPECIAL values(seq_special_spid.nextval,10004,'咔咔寿女2',10002,'images/zj-5.jpg',to_date('2017-2-11','yyyy-mm-dd'),0.98,'','');
 select * from special;
 --drop table special;
+update special set lgdi=1003 wher lgid=10001
 update special set spintroduce='即将发行的这一波第三首新歌将延续“薛氏情歌”的风格，与此前已发行的两首新歌不同的是，《高尚》描写的是大众的“价值观”，《动物世界》描写的是大众的“感情观”，而这一首，更多的像是对现代感情现状的一种描述。曲风也与前两首很不一样，这一首则加入了更多的温柔和细腻，更加贴近“薛氏情歌”的特点。值得一提的是，前两首歌曲《高尚》及《动物世界》虽由薛之谦来主攻作词，但作曲分别由周以力及郭顶来操刀，而即将发行的这一首，词曲则由薛之谦全部包办，更大程度的展现了薛氏情歌的特点'
 --单曲表
 create table song(
@@ -167,6 +168,10 @@ create table languages(
 	lgid number(20) primary key, --编号
 	language varchar2(20)       --语种
 );
+<<<<<<< HEAD
+=======
+insert into languages values(seq_lgid.nextval,'');
+>>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 
 
 select * from languages;
@@ -175,6 +180,7 @@ insert into LANGUAGES values(seq_lgid.nextval,'华语');
 insert into LANGUAGES values(seq_lgid.nextval,'日韩');
 insert into LANGUAGES values(seq_lgid.nextval,'欧美');
 insert into LANGUAGES values(seq_lgid.nextval,'粤语');
+select * from languages
 
 
 

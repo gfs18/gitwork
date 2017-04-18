@@ -18,16 +18,38 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			column="{pageSize=pageSize,currPage=currPage}" ofType="Comments"
 			select="getComments" />
 	</resultMap>
-	<select id="getComments" resultType="Comments" useCache="false" flushCache="true">
+	
+	<select id="getComments" resultMap="CommentsMap" useCache="false" flushCache="true">
 		select * from 
 		(select rownum rn,
 		c.* from (select * from Comments order by cid desc ) c
 		 where  ${pageSize} *${currPage} >=rownum) where rn>( ${currPage} - 1) * ${pageSize}
 	</select>
+	
+	<resultMap type="Comments" id="CommentsMap">
+		<id column="cid" property="cid"/>
+		<result column="userid" property="userid" />
+		<result column="content" property="content" />
+		<result column="commentTime" property="commentTime" />
+		<result column="commentPicPath" property="commentPicPath" />
+		<association property="user"
+			column="userid" javaType="Users"
+			select="findUserImg" /><!-- 通过singer的实体类将两个表连接 -->
+	</resultMap>
+	<select id="findUserImg" parameterType="int" resultType="Users">
+		select *
+		from Users where userid=#{userid}
+	</select>
+		
 		
 	<!-- 发表评论 -->
 	<insert id="insertComment" parameterType="Comments">
-		insert into comments values (seq_comments_cid.nextval,10001,
+		insert into comments values (seq_comments_cid.nextval,
+		<choose>
+			<when test="userid!=null">#{userid}</when>
+			<otherwise>''</otherwise>
+		</choose>
+		,
 		<choose>
 			<when test="content!=null">#{content}</when>
 			<otherwise>''</otherwise>

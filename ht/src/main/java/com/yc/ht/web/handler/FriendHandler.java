@@ -3,8 +3,8 @@ package com.yc.ht.web.handler;
 
 import java.io.IOException;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,17 +30,20 @@ public class FriendHandler {
 	/*评论的显示*/
 	@RequestMapping(value="PaginationCommentShow",method=RequestMethod.GET)
 	@ResponseBody
-	public PaginationBean<Comments>  PaginationCommentShowList(String pageS,String currP){
+	public PaginationBean<Comments>  PaginationCommentShowList(String pageS,String currP,HttpSession session){
 		LogManager.getLogger().debug("friend的handler里面的显示进来了。。。"+commentService.listComment(pageS, currP));
+		/*Object currUserImg=session.getAttribute(ServletUtil.LOGIN_USER_IMG);
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("img", currUserImg);
+		map.put("CommentList", commentService.listComment(pageS, currP));*/
 		return commentService.listComment(pageS, currP);
-
 	}
 		
 
 	/*评论的插入*/
 	@RequestMapping(value="commentInsert",method=RequestMethod.POST)
 	@ResponseBody
-	public void  commentPublish(@RequestParam("picData") MultipartFile picData ,String content,Comments comment,HttpServletResponse response) throws IOException{
+	public void  commentPublish(@RequestParam("picData") MultipartFile picData ,String content,Comments comment,HttpServletResponse response,HttpSession session) throws IOException{
 		LogManager.getLogger().debug("friend的handler里面的插入进来了。。。");
 		
 		if(content!=null){
@@ -62,6 +65,9 @@ public class FriendHandler {
 			}
 		}
 		LogManager.getLogger().debug("上传图片===>"+comment);
+		int userid=(int) session.getAttribute(ServletUtil.LOGIN_USER_ID);
+		LogManager.getLogger().debug("userid====>"+userid);
+		comment.setUserid(userid);
 		commentService.updateComment(comment);
 		response.sendRedirect("../page/friend.jsp");
 		return;

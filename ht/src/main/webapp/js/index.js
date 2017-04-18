@@ -190,4 +190,3 @@ function run(){
 	}
 	s.innerHTML = s.innerHTML * 1 - 1;
 }
-

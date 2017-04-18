@@ -25,8 +25,8 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left" id="topnav">
-						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
-							href="back/manage.jsp">单曲管理</a></li>
+						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> 
+						<a href="back/manage.jsp">单曲管理</a></li>
 
 						<li><a href="back/singer.jsp">歌手管理</a></li>
 						<li><a href="back/specialInfo.jsp">专辑管理</a></li>
@@ -67,7 +67,7 @@
 						<tr>
 							<th>单曲编号</th>
 							<th width="80px">单曲名</th>
-							<th width="100px">图片路径</th>
+							<th width="100px">图片</th>
 							<th>出版时间</th>
 							<th>歌词路径</th>
 							<th>单曲路径</th>

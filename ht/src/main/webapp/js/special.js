@@ -99,15 +99,13 @@ function specialStyle(){
 	$.get("special/style",function(data){
 		///alert(JSON.stringify(data));
 		for(var i=0;i<data.length;i++){
-			$(".lable").append('<li class="col-lg-2 col-md-2 col-sm-3 hidden-xs" id="china_ul"><a href="javascript:void(0)" onclick="getSpecialByStyle(8,1,'+data[i].lgid+')">'+data[i].language+'</a></li>');
+			if(data[i].language!=null){
+				$(".lable").append('<li class="col-lg-2 col-md-2 col-sm-3 hidden-xs" id="china_ul"><a href="javascript:void(0)" onclick="getSpecialByStyle(8,1,'+data[i].lgid+')">'+data[i].language+'</a></li>');
+			}
 		}
-		
 		
 		$(".lable").append('<script type="text/javascript">'+
 				'$(".lable li").click(function(){'+
-				/*'$(".special ul").css("display","none");});'+
-				'alert($(this).index());if($(this).index()>1){$(this).index();}'+*/
-				/*'$(".special ul").eq($(this).index()).css("display","block");'+*/
 				'$(".class").html($(".lable li a").eq($(this).index()).html());});'+
 				'$(".lable li a").on("click",function(){'+
 				'$(".lable li a").removeClass("click");'+
