@@ -1,4 +1,4 @@
-///////////////////////////////站内专辑图片显示///////////////////////////
+/*站内专辑图片显示*/
 special();
 function special(){
 	$.get("special/index", function(data){
@@ -57,7 +57,7 @@ function singer(){
 }
 
 
-///首页mv显示///
+/*首页mv显示*/
 function loadMv(){
 	$.get("mv/index",function(data){
 		var mvStr="";
@@ -86,7 +86,7 @@ function loadMv(){
 loadMv();
 
 
-/////////////////////////////////站内歌曲显示///////////////////////////
+/*站内歌曲显/*/
 songList();
 function songList(){
 	$.post("song/list", function(data){
@@ -197,4 +197,3 @@ function run(){
 	}
 	s.innerHTML = s.innerHTML * 1 - 1;
 }
-
