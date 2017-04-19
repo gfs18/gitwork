@@ -84,11 +84,11 @@
 					</div>
 					<div class="btns">
 						<button class="t_play">
-							<span class="glyphicon glyphicon-play"></span> 播放歌手歌曲
+							<span class="glyphicon glyphicon-play"></span> 播放歌曲
 						</button>
-						<button class="t_add hidden-sm hidden-xs">
+						<!-- <button class="t_add hidden-sm hidden-xs">
 							<span class="glyphicon glyphicon-plus"></span> 关注该歌手
-						</button>
+						</button> -->
 					</div>
 				</div>
 				<p id="zp">作品</p>
@@ -100,9 +100,8 @@
 							<span class="m_name_1">歌曲名</span>
 						</div>
 						<div class="opus_play_1 col-lg-2 col-md-2 hidden-sm hidden-xs"
-							style="border-left: 1px solid #E1E1E1;">时长</div>
-						<div class="opus_add_1 col-lg-2 col-md-2 hidden-sm hidden-xs"
-							style="border-left: 1px solid #E1E1E1;">歌手</div>
+							style="border-left: 1px solid #E1E1E1; width:379px;">时长</div>
+						
 					</div>
 					<div id="big">
 
@@ -175,6 +174,6 @@
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript" src="js/singer-more.js"></script>
+	<script type="text/javascript" src="js/singer_more.js"></script>
 </body>
 </html>

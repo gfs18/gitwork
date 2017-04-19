@@ -3,6 +3,9 @@
     padding: 0px;
 }
 
+#musicNameShow{
+	margin-top:-14px;
+}
 
 #head{
     width: 100%;
@@ -529,6 +532,7 @@
     padding-left:15px !important;
     cursor: pointer;
 }
+
 
 .tp1{
     line-height:30px !important;
