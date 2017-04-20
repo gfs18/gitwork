@@ -20,8 +20,7 @@ function specialDetail(){
 		}else{
 			spDetailStr+='<p class="info_4">语种：'+data.language.language+'</p>';
 		}
-		spDetailStr+='<div class="btns"><button class="mplay"><span class="glyphicon glyphicon-play" ></span> 播放</button>';
-		spDetailStr+='<button class="add hidden-sm hidden-xs"><span class="glyphicon glyphicon-heart-empty" ></span> 收藏</button></div></div>';
+		spDetailStr+='<div class="btns"><button class="mplay glyphicon glyphicon-play ">播放</button>';
 		$("#S_big").html(spDetailStr);
 		$(".info").html(data.spintroduce);
 	},"json");
@@ -36,9 +35,10 @@ function specialSong(){
 		for(var i=0; i<data.length;i++){
 			musicStr+='<div class="row"><div  class="list_no col-lg-1 col-md-1 col-sm-1 col-xs-1">'+(i+1)+'</div>'
 	        	+'<div  class="list_name col-lg-7 col-md-7 col-sm-11 col-xs-11">'
+	        	+'<p><label style="width:50px;">'+data[i].soname+'</label>'
 	            +'<a href="javascript:void(0)"><i class="glyphicon glyphicon-play-circle" id="tp1_1"  title="播放"></i></a>'
-	            +'<a href="javascript:void(0)"><i class="glyphicon glyphicon-save" id="tp2_1" title="下载"></i></a>'
-	            +' <a href="javascript:void(0)" class="m_name">'+data[i].soname+'</a></div>';
+	            +'<a href="javascript:void(0)"><i class="glyphicon glyphicon-save" id="tp2_1" title="下载"></i></a></p>'
+	            +'</div>';
 			if(data[i].singer==null){
 				musicStr+='<div  class="list_play col-lg-2 col-md-2 hidden-sm hidden-xs">无名氏</div>'
 			}else{

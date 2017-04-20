@@ -10,11 +10,16 @@ function special(){
 					specialStr+='<img id="img2" src="'+data[i].sppicPath+'" /></a>';
 					specialStr+='<div class="bf1"><a href=""><i	class="glyphicon glyphicon-headphones pull-left"><span>'+data[i].spclick+'</span></i></a>';
 					specialStr+='<a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')"><i class="glyphicon glyphicon-play-circle"></i></a></div></div>';
-				}else{
+				}else if(i<3){
 					specialStr+='<div class="zj1"><a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')">';
 					specialStr+='<img class="img3" src="'+data[i].sppicPath+'" /></a>';
 					specialStr+='<div class="bf2"><a href=""><i	class="glyphicon glyphicon-headphones pull-left headphones1"><span>'+data[i].spclick+'</span></i></a>';
-					specialStr+='<a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
+					specialStr+='<a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')"><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
+				}else{
+					specialStr+='<div class="zj2"><a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')">'
+					+'<img class="img3" src="'+data[i].sppicPath+'"/></a>'
+					+'<div class="bf3"><a href=""><i class="glyphicon glyphicon-headphones pull-left headphones1"><span>'+data[i].spclick+'</span></i></a>'
+					+'<a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')"><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
 				}
 			}
 		}else{
@@ -23,12 +28,17 @@ function special(){
 					specialStr+='<div class=""><a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')">';
 					specialStr+='<img id="img2" src="'+data[i].sppicPath+'" /></a>';
 					specialStr+='<div class="bf1"><a href=""><i	class="glyphicon glyphicon-headphones pull-left"><span>'+data[i].spclick+'</span></i></a>';
-					specialStr+='<a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')"<i class="glyphicon glyphicon-play-circle"></i></a></div></div>';
-				}else{
+					specialStr+='<a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')"><i class="glyphicon glyphicon-play-circle"></i></a></div></div>';
+				}else if(i<3){
 					specialStr+='<div class="zj1"><a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')">';
 					specialStr+='<img class="img3" src="'+data[i].sppicPath+'" /></a>';
 					specialStr+='<div class="bf2"><a href=""><i	class="glyphicon glyphicon-headphones pull-left headphones1"><span>'+data[i].spclick+'</span></i></a>';
-					specialStr+='<a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')"<i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
+					specialStr+='<a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')"><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
+				}else{
+					specialStr+='<div class="zj2"><a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')">'
+					+'<img class="img3" src="'+data[i].sppicPath+'"/></a>'
+					+'<div class="bf3"><a href=""><i class="glyphicon glyphicon-headphones pull-left headphones1"><span>'+data[i].spclick+'</span></i></a>'
+					+'<a href="page/special_music.jsp?spid='+data[i].spid+'" onclick="clickRate('+data[i].spid+')"><i class="glyphicon glyphicon-play-circle glyphicon1"></i></a></div></div>';
 				}
 			}
 		}
