@@ -187,4 +187,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<choose><when test="spintroduce !=null">#{spintroduce}</when><otherwise>''</otherwise></choose>,'')
 	</insert>
 	
+	<!-- 点击量 -->
+	<update id="updateClickRate" parameterType="Special">
+		update special
+		<trim prefix="set" suffixOverrides=",">
+			<if test="spclick!=null">spclick=#{spclick}</if>
+		</trim> 
+		where spid=#{spid}
+	</update>
+	
+	
 </mapper>

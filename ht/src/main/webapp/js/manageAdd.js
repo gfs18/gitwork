@@ -59,31 +59,35 @@ function AddSongInfo(song,tingid,albumid){
 	var songth =  $(song).parent().parent().children();
 	//获取歌手信息
 	$.get("http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.artist.getinfo&format=json&tinguid="+tingid,function(InterSinger){
-		$.post("singer/add",InterSinger,function(sgreq){
-			if(albumid == 0 || albumid== null){
-				$.post("song/add",{"soname":songth[0].innerText,"sgid":sgreq.sgid,"spid":null,"songPic":songth[3].innerText,"solyricPath":songth[4].innerText},function(songMsg){
-					if(songMsg){
-						alert("添加成功");
-					}else{
-						alert("添加失败,或者数据库已有");
-					}
-				},"json");
-			}else{
-				//获取专辑信息
-				$.get("http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.album.getAlbumInfo&format=json&album_id="+albumid,function(InterAlbum){
-					$.post("special/add?sgid="+sgreq.sgid,InterAlbum.albumInfo,function(abreq){
-						//添加单曲信息
-						$.post("song/add",{"soname":songth[0].innerText,"sgid":sgreq.sgid,"spid":abreq.spid,"songPic":songth[3].innerText,"solyricPath":songth[4].innerText},function(songMsg){
-							if(songMsg){
-								alert("添加成功");
-							}else{
-								alert("添加失败,或者数据库已有");
-							}
-						},"json");
+		if(InterSinger.error_code == null || "".InterSinger.error_code){
+			$.post("singer/add",InterSinger,function(sgreq){
+				if(albumid == 0 || albumid== null){
+					$.post("song/add",{"soname":songth[0].innerText,"sgid":sgreq.sgid,"spid":null,"songPic":songth[3].innerText,"solyricPath":songth[4].innerText},function(songMsg){
+						if(songMsg){
+							alert("添加成功");
+						}else{
+							alert("添加失败,或者数据库已有");
+						}
 					},"json");
-				},"jsonp");
-			}
-		},"json");
+				}else{
+					//获取专辑信息
+					$.get("http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.album.getAlbumInfo&format=json&album_id="+albumid,function(InterAlbum){
+						$.post("special/add?sgid="+sgreq.sgid,InterAlbum.albumInfo,function(abreq){
+							//添加单曲信息
+							$.post("song/add",{"soname":songth[0].innerText,"sgid":sgreq.sgid,"spid":abreq.spid,"songPic":songth[3].innerText,"solyricPath":songth[4].innerText},function(songMsg){
+								if(songMsg){
+									alert("添加成功");
+								}else{
+									alert("添加失败,或者数据库已有");
+								}
+							},"json");
+						},"json");
+					},"jsonp");
+				}
+			},"json");
+		}else{
+			alert("添加失败,未找到这个歌手");
+		}
 	},"jsonp");
 }
 

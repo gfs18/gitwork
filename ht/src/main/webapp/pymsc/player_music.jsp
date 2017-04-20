@@ -10,7 +10,8 @@
 <link rel="shortcut icon" type="image/icon" href="images/log.png" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <link rel="stylesheet" href="dist/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="css/special_music.css">
+<link rel="stylesheet" type="text/css" href="pymsc/css/player_music.css">
+<link rel="stylesheet" href="pymsc/src/css/smusic.css" />
 </head>
 <body>
 	<header>
@@ -23,17 +24,9 @@
 					</div>
 					<ul class="nav navbar-nav navbar-right" id="nav_a">
 						<c:choose>
-							<c:when test="${login_user !=null && login_user_id!=null}">
-								<li><a href="page/user.jsp?userid=${login_user_id}"
+							<c:when test="${login_user !=null}">
+								<li><a href="javascript:void(0)"
 									class="hidden-md hidden-sm hidden-xs">${login_user }</a></li>
-								<li class="dropdown"><a href="javascript:void(0)"
-									class="dropdown-toggle" data-toggle="dropdown" role="button"
-									aria-haspopup="true" aria-expanded="false"><span
-										class="caret"></span> </a>
-									<ul class="dropdown-menu">
-										<li><a
-											href="page/userinfoModify.jsp?userid=${login_user_id}">修改个人信息</a></li>
-									</ul></li>
 								<li><a href='javascript:void(0)'
 									class="hidden-md hidden-sm hidden-xs" onclick='userout()'
 									id='tuichu'>退出</a></li>
@@ -66,50 +59,51 @@
 								class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
 							<li><a href="page/special.jsp"
 								class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
-							<li><a href="page/mv.jsp"
+							<li><a href=""
 								class="col-lg-2 col-md-2  hidden-xs  hidden-sm hidden-xs">MV</a></li>
-							<li><a href="page/friend.jsp"
-								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
+							<li><a href=""
+								class="col-lg-2 hidden-md hidden-sm hidden-xs">电台</a></li>
 						</ul>
-						<form id="search" class="navbar-form navbar-left" role="search">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="单曲/歌手/专辑">
-							</div>
-							<button type="submit" class="btn btn-default">查询</button>
-						</form>
 					</div>
 				</div>
 			</nav>
 		</div>
 	</header>
-
 	<article>
-		<div class="container">
-			<div class="special_music">
-				<div class="head row" id="S_big">
-					<!-- 专辑详情 -->
-				</div>
-				<div class="specialDetail">
-					<h4>专辑介绍：</h4>
-					<div class="info"></div>
-				</div>
-
-				<div class="music_list">
-					<div class="row" style="margin-left: 0px; margin-top: 2px">
-						<div class="list_no_1 col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-						<div class="list_name_! col-lg-7 col-md-7 col-sm-11 col-xs-11"
-							style="border-left: 1px solid #E1E1E1;">
-							<span class="m_name_1">歌曲名</span>
+		<!--内容  -->
+		<div id="MyPlayerDiv">
+			<div class="grid-music-container f-usn">
+				<div class="m-music-play-wrap">
+					<div class="u-cover"></div>
+					<div class="m-now-info">
+						<h1 class="u-music-title">
+							<strong>标题</strong><small>歌手</small>
+						</h1>
+						<div class="m-now-controls">
+							<div class="u-control u-process">
+								<span class="buffer-process"></span> <span
+									class="current-process"></span>
+							</div>
+							<div class="u-control u-time">00:00/00:00</div>
+							<div class="u-control u-volume">
+								<div class="volume-process" data-volume="0.50">
+									<span class="volume-current"></span> <span class="volume-bar"></span>
+									<span class="volume-event"></span>
+								</div>
+								<a class="volume-control"></a>
+							</div>
 						</div>
-						<div class="list_play_1 col-lg-2 col-md-2 hidden-sm hidden-xs"
-							style="border-left: 1px solid #E1E1E1;">歌手</div>
-						<div class=";list_add_1 col-lg-2 col-md-2 hidden-sm hidden-xs"
-							style="border-left: 1px solid #E1E1E1;">时长</div>
-					</div>
-					<div class="S_box">
-						<!--专辑包含歌曲 -->
+						<div class="m-play-controls">
+							<a class="u-play-btn prev" title="上一曲"></a> <a
+								class="u-play-btn ctrl-play play" title="暂停"></a> <a
+								class="u-play-btn next" title="下一曲"></a> <a
+								class="u-play-btn mode mode-list current" title="列表循环"></a> <a
+								class="u-play-btn mode mode-random" title="随机播放"></a> <a
+								class="u-play-btn mode mode-single" title="单曲循环"></a>
+						</div>
 					</div>
 				</div>
+				<div class="m-music-list-wrap"></div>
 			</div>
 		</div>
 	</article>
@@ -130,8 +124,8 @@
 						<div class="login_content">
 							<form>
 								<input type="text" id="uname" placeholder="请输入您的用户名" /><br />
-								<input type="password" id="pwd" placeholder="请输入您的密码" /><br />
-								<p id="go" onclick="userLogin()">登录</p>
+								<input type="text" id="pwd" placeholder="请输入您的密码" /><br />
+								<button id="go">登录</button>
 							</form>
 						</div>
 						<div class="login_bottom"></div>
@@ -151,23 +145,11 @@
 						</div>
 						<div class="reg_content">
 							<form>
-								<div class="ins">
-									<input type="text" id="newname" placeholder="账户名由4-7个字符组成" /><span
-										class=""></span>
-								</div>
-								<div class="ins">
-									<input type="password" id="newpwd"
-										placeholder="密码名由6-16个数字、字母组成" /><span class=""></span>
-								</div>
-								<div class="ins">
-									<input type="email" id="email" placeholder="您的邮箱账户" /><span
-										class=""></span>
-								</div>
-								<div class="ins">
-									<input type="text" id="txt" placeholder="请输入您收到的验证码" /> <span
-										id="myspanb" onclick="sendCode()">获取验证码</span>
-								</div>
-								<p id="new" onclick="userRegister()">马上注册</p>
+								<input type="text" id="newname" placeholder="设置我的账户名" /><br />
+								<input type="text" id="newpwd" placeholder="请设置我的密码" /><br />
+								<input type="email" id="email" placeholder="您的邮箱账户" /><br /> <input
+									type="text" id="txt" placeholder="请输入您收到的验证码" /><br />
+								<button id="new">马上注册</button>
 							</form>
 						</div>
 						<div class="reg_bottom"></div>
@@ -176,10 +158,41 @@
 			</div>
 		</div>
 	</div>
-</body>
+	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="pymsc/js/player_music.js"></script>
+	<script src="pymsc/src/js/smusic.min.js"></script>
+	<script type="text/javascript">
 
-<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
-<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-<script type="text/javascript" src="js/special_music.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+	var musicList = [
+	             	{
+	             		title : 'Sugar',
+	             		singer : 'Maroon 5',
+	             		cover  : 'pymsc/images/Maroon5.jpg',
+	             		src    : ''
+	             	},
+	             	{
+	             		title : '洋葱',
+	             		singer : '平安',
+	             		cover  : 'pymsc/images/yangcong.jpg',
+	             		src    : ''
+	             	},	
+	             	{
+	             		title : '她说',
+	             		singer : '张碧晨',
+	             		cover  : 'pymsc/images/yangcong.jpg',
+	             		src    : ''
+	             	},
+	             	{
+	             		title : '海阔天空',
+	             		singer : 'beyond',
+	             		cover  : 'pymsc/images/yangcong.jpg',
+	             		src    : ''
+	             	}
+	 ];
+	new SMusic({
+	       musicList:musicList
+	 });
+	</script>
+</body>
 </html>

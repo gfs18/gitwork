@@ -59,10 +59,9 @@
 				<div class="container">
 					<div class="row">
 						<ul class="nav navbar-nav navbar-left" id="topnav">
-							<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div>
-								<a href="page/index.jsp"
+							<li><a href="page/index.jsp"
 								class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
-							<li><a href="page/singer.jsp"
+							<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div><a href="page/singer.jsp"
 								class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
 							<li><a href="page/special.jsp"
 								class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
