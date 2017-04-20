@@ -112,5 +112,4 @@ public class UserServiceImpl implements UserService {
 	public Users showUser(String userid) {
 		return userMapper.findShowUser(Integer.valueOf(userid));
 	}
-
 }

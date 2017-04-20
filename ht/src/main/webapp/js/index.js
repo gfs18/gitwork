@@ -36,6 +36,8 @@ function special(){
 	}, "json");
 }
 
+
+///////////////////////////////站内歌手图片显示///////////////////////////
 singer();
 function singer(){
 	$.get("singer/index",function(data){
@@ -190,4 +192,6 @@ function run(){
 	}
 	s.innerHTML = s.innerHTML * 1 - 1;
 }
+
+
 

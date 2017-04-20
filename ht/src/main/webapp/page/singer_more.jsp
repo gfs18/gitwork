@@ -24,9 +24,17 @@
 					</div>
 					<ul class="nav navbar-nav navbar-right" id="nav_a">
 						<c:choose>
-							<c:when test="${login_user !=null}">
-								<li><a href="javascript:void(0)"
+							<c:when test="${login_user !=null && login_user_id!=null}">
+								<li><a href="page/user.jsp?userid=${login_user_id}"
 									class="hidden-md hidden-sm hidden-xs">${login_user }</a></li>
+								<li class="dropdown"><a href="javascript:void(0)"
+									class="dropdown-toggle" data-toggle="dropdown" role="button"
+									aria-haspopup="true" aria-expanded="false"><span
+										class="caret"></span> </a>
+									<ul class="dropdown-menu">
+										<li><a
+											href="page/userinfoModify.jsp?userid=${login_user_id}">修改个人信息</a></li>
+									</ul></li>
 								<li><a href='javascript:void(0)'
 									class="hidden-md hidden-sm hidden-xs" onclick='userout()'
 									id='tuichu'>退出</a></li>
@@ -59,11 +67,17 @@
 								class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
 							<li><a href="page/special.jsp"
 								class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
-							<li><a href=""
+							<li><a href="page/mv.jsp"
 								class="col-lg-2 col-md-2  hidden-xs  hidden-sm hidden-xs">MV</a></li>
-							<li><a href=""
-								class="col-lg-2 hidden-md hidden-sm hidden-xs">电台</a></li>
+							<li><a href="page/friend.jsp"
+								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 						</ul>
+						<!-- <form  id="search" class="navbar-form navbar-left" role="search">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="单曲/歌手/专辑">
+							</div>
+							<button type="submit" class="btn btn-default">查询</button>
+						</form> -->
 					</div>
 				</div>
 			</nav>
@@ -136,9 +150,9 @@
 						</div>
 						<div class="login_content">
 							<form>
-								<input type="text" id="uname" placeholder="请输入您的用户名" /><br /> <input
-									type="text" id="pwd" placeholder="请输入您的密码" /><br />
-								<button id="go">登录</button>
+								<input type="text" id="uname" placeholder="请输入您的用户名" /><br />
+								<input type="password" id="pwd" placeholder="请输入您的密码" /><br />
+								<p id="go" onclick="userLogin()">登录</p>
 							</form>
 						</div>
 						<div class="login_bottom"></div>
@@ -158,11 +172,23 @@
 						</div>
 						<div class="reg_content">
 							<form>
-								<input type="text" id="newname" placeholder="设置我的账户名" /><br /> <input
-									type="text" id="newpwd" placeholder="请设置我的密码" /><br /> <input
-									type="email" id="email" placeholder="您的邮箱账户" /><br /> <input
-									type="text" id="txt" placeholder="请输入您收到的验证码" /><br />
-								<button id="new">马上注册</button>
+								<div class="ins">
+									<input type="text" id="newname" placeholder="账户名由4-7个字符组成" /><span
+										class=""></span>
+								</div>
+								<div class="ins">
+									<input type="password" id="newpwd"
+										placeholder="密码名由6-16个数字、字母组成" /><span class=""></span>
+								</div>
+								<div class="ins">
+									<input type="email" id="email" placeholder="您的邮箱账户" /><span
+										class=""></span>
+								</div>
+								<div class="ins">
+									<input type="text" id="txt" placeholder="请输入您收到的验证码" /> <span
+										id="myspanb" onclick="sendCode()">获取验证码</span>
+								</div>
+								<p id="new" onclick="userRegister()">马上注册</p>
 							</form>
 						</div>
 						<div class="reg_bottom"></div>

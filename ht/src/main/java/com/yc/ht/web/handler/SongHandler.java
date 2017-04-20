@@ -6,6 +6,10 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -139,5 +143,21 @@ public class SongHandler {
 		}else{
 			return false;
 		}
+	}
+	
+	@RequestMapping(value="search",method=RequestMethod.POST)
+	public List<Song> searchSong(String soname,HttpServletResponse response){
+		LogManager.getLogger().debug("搜索歌曲");
+		try {
+			if(songService.findSongByName(soname) != null){
+				response.sendRedirect("../page/search.jsp");
+			}else{
+				response.sendRedirect("../page/index.jsp");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		//return songService.findSongByName(soname);
+		return null;
 	}
 }

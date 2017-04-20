@@ -4,7 +4,6 @@
 --drop table song;
 --drop table mv;
 --drop table languages;
---drop table musicStyle;
 --drop table comments;
 --drop table collects;
 --drop table admin;

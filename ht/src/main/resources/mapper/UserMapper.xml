@@ -78,11 +78,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="modifyUserInfo" parameterType="Users">
 		update users
 		<trim prefix="set" suffixOverrides=",">
-			<if test="upicPath!=null">upicPath=#{upicPath}</if>
-			<if test="uemail!=null">uemail=#{uemail}</if>
+			<if test="upicPath!=null">upicPath=#{upicPath},</if>
+			<if test="uemail!=null">uemail=#{uemail},</if>
 			<if test="uintroduce!=null">uintroduce=#{uintroduce}</if>
 		</trim>
-		where uname=#{uname}
+		where userid=#{userid}
 	</update>
 
 	<!-- 前台通过用户的id显示部分用户信息 -->

@@ -185,7 +185,7 @@ public class UserHandler {
 	/**
 	 * 用户的修改
 	 */
-	/*@RequestMapping(value="modify",method=RequestMethod.POST)
+	@RequestMapping(value="modifyFore",method=RequestMethod.POST)
 	public String modifyUserInfo(@RequestParam("picData") MultipartFile picData,Users user){
 		LogManager.getLogger().debug("用户修改个人信息");
 		String picPath = null;
@@ -199,11 +199,11 @@ public class UserHandler {
 		}
 		user.setUpicPath(picPath);
 		if(userService.modifyUserInfo(user)){
-			return "redirect:/page/user.jsp";
+			return "redirect:/page/user.jsp?userid="+user.getUserid();
 		}else{
 			return "forward:/page/userModify.jsp";
 		}
-	}*/
+	}
 	
 	@RequestMapping(value="modify",method=RequestMethod.POST)
 	@ResponseBody
