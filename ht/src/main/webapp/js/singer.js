@@ -131,11 +131,11 @@ function loadg(sgnation){
 //热门
 function hot(sgEname){
 	var sgEname=sgEname.toLowerCase();
-	$.get("singer/hot?sgEname"+sgEname,function(data){
+	$.get("singer/hot?sgEname="+sgEname,function(data){
 		var c="";
 		var c1="";
-		var c2="";
-		var c3="";
+			var c2="";
+			var c3="";
 		var c4="";
 		var c5="";
 		for(var i = 0; i < data.length; i++){

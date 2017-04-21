@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	 <!-- 热门 -->
 	<select id="HOT" resultType="Singer" parameterType="String">
-		select * from singer where sgEname like '${_parameter}%'
+		select * from singer where sgEname like #{sgEname}||'%'
 	</select>
 	
 	<select id="WHOle" resultType="Singer" parameterType="Singer">
