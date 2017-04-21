@@ -7,9 +7,9 @@ loadSinger(lgid);
 loadSim(lgid);
 function loadSim(lgid){
 	$.get("user/Sin/"+lgid,function(data){
-		alert(JSON.stringify(data));
-		for(var i = 0; i < data.length; i++){																									//onclick="Download(\''+data[i].sopath+'\')"
-			$("#ROW").append('<div class="opus_no col-lg-1 col-md-1 col-sm-1 col-xs-1">'+(i+1)+'</div>'+'<div  class="opus_name col-lg-7 col-md-7 col-sm-11 col-xs-11">'+'<i class="glyphicon glyphicon-play-circle" id="tp1_2"  title="播放"></i>'+'<i class="glyphicon glyphicon-save " id="tp2_2" title="下载" onclick="Download(\''+data[i].sopath+'\')" ></i>'+'<a href="" class="m_name">'+data[i].soname+'</a></div>'+'<div class="opus_add col-lg-2 col-md-2 hidden-sm hidden-xs">'+data[i].soduration+'</div>');
+		alert(JSON.stringify(data)); 
+		for(var i = 0; i < data.length; i++){																									//onclick="Download(\''+data[i].sopath+'\')" onclick="Download(\''+data[i].sopath+'\')"
+			$("#ROW").append('<div class="opus_no col-lg-1 col-md-1 col-sm-1 col-xs-1">'+(i+1)+'</div>'+'<div  class="opus_name col-lg-7 col-md-7 col-sm-11 col-xs-11">'+'<i class="glyphicon glyphicon-play-circle" id="tp1_2"  title="播放"></i>'+'<a href='+data[i].sopath+' download><i class="glyphicon glyphicon-save " id="tp2_2" title="下载"  ></i></a>'+'<a href="" class="m_name">'+data[i].soname+'</a></div>'+'<div class="opus_add col-lg-2 col-md-2 hidden-sm hidden-xs">'+data[i].soduration+'</div>');
 		}
 	},"json")
 }
