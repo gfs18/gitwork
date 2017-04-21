@@ -51,8 +51,7 @@ function clickRate(spid){
 	},"json");
 }
 
-
-
+//歌手显示
 singer();
 function singer(){
 	$.get("singer/index",function(data){
@@ -65,7 +64,6 @@ function singer(){
 		$(".content3_1").html(singerStr);
 	},"json");
 }
-
 
 /*首页mv显示*/
 function loadMv(){
@@ -96,7 +94,7 @@ function loadMv(){
 loadMv();
 
 
-/*站内歌曲显/*/
+/*站内歌曲显示*/
 songList();
 function songList(){
 	$.post("song/list", function(data){
