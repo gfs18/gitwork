@@ -148,7 +148,7 @@ public class SongHandler {
 	@RequestMapping(value="search",method=RequestMethod.POST)
 	public List<Song> searchSong(String soname,HttpServletResponse response){
 		LogManager.getLogger().debug("搜索歌曲");
-		try {
+		/*try {
 			if(songService.findSongByName(soname) != null){
 				response.sendRedirect("../page/search.jsp");
 			}else{
@@ -156,8 +156,8 @@ public class SongHandler {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		//return songService.findSongByName(soname);
-		return null;
+		}*/
+		return songService.findSongByName(soname);
+		//return null;
 	}
 }

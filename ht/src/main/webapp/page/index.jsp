@@ -71,12 +71,12 @@
 							<li><a href="page/friend.jsp"
 								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 						</ul>
-						<form action="song/search" method="post" id="search" class="navbar-form navbar-left" role="search">
+						<div id="search" class="navbar-form navbar-left" role="search">
 							<div class="form-group">
 								<input type="text" name="soname" class="form-control soname" placeholder="单曲" >
 							</div>
-							<button type="submit" class="btn btn-default">查询</button>
-						</form>
+							<a class="btn btn-default" href="page/search.jsp" onclick="search()">查询</a>
+						</div>
 					</div>
 				</div>
 			</nav>

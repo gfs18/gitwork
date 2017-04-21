@@ -1,5 +1,5 @@
 ///////////////////////////////搜索///////////////////////////
-$(".btn").on("click",function(){
+function search(){
 	var soname=$(".soname").val();
 	alert(soname);
 	$.post("song/search",{"soname":soname},function(data){
@@ -14,4 +14,4 @@ $(".btn").on("click",function(){
 		str +='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#ffffff";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
 		$("#tableBody").html(str);
 	},"json");
-});
+}

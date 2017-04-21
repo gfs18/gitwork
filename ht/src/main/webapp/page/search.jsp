@@ -72,12 +72,12 @@
 							<li><a href="page/friend.jsp"
 								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 						</ul>
-						<form  id="search" class="navbar-form navbar-left" role="search">
+						<div  id="search" class="navbar-form navbar-left" role="search">
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="单曲/歌手/专辑">
 							</div>
-							<button type="submit" class="btn btn-default">查询</button>
-						</form>
+							<a class="btn btn-default" href="page/index.jsp">查询</a>
+						</div>
 					</div>
 				</div>
 			</nav>
@@ -90,7 +90,7 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th width="80px">单曲名</th>
+							<th width="150px">单曲名</th>
 							<th width="100px">图片</th>
 							<th>出版时间</th>
 							<th>单曲时长</th>

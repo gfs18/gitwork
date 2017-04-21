@@ -30,13 +30,14 @@ function paginatorNext(totalP){
 	newestSpecial(5,1 + 5*(count) );
 }
 
+
 //最新专辑分页显示
 newestSpecial(8,1);
 function newestSpecial(rows,page){
 	$.get("special/newest",{"rows":rows,"page":page},function(data){
 		var newestSpeStr="";
 		for(var i=0;i<data.rows.length;i++){
-			newestSpeStr+='<li class="s_li"><div class="list_img"><a href="page/special_music.jsp?spid='+data.rows[i].spid+'">'
+			newestSpeStr+='<li class="s_li"><div class="list_img"><a href="page/special_music.jsp?spid='+data.rows[i].spid+'" onclick="clickRate('+data.rows[i].spid+')">'
 				+'<img src="'+data.rows[i].sppicPath+'" class="myimg"></a></div>'
 				+'<span class="s_p">'+data.rows[i].spname+'</span><span class="s_p">点击量：'+data.rows[i].spclick+'</span>'
 				+'<span class="s_p">'+data.rows[i].sppubTime.substring(0,10)+'</span></li>';
@@ -80,7 +81,7 @@ function hottestSpecial(rows,page){
 		var hottestSpeStr="";
 		for(var i=0;i<data.rows.length;i++){
 			
-			hottestSpeStr+='<li class="s_li"><div class="list_img"><a href="page/special_music.jsp?spid='+data.rows[i].spid+'">'
+			hottestSpeStr+='<li class="s_li"><div class="list_img"><a href="page/special_music.jsp?spid='+data.rows[i].spid+'" onclick="clickRate('+data.rows[i].spid+')">'
 				+'<img src="'+data.rows[i].sppicPath+'" class="myimg" href="page/special_music.jsp?spid='+data.rows[i].spid+'"></a></div>'
 				+'<span class="s_p">'+data.rows[i].spname+'</span><span class="s_p">点击量：'+data.rows[i].spclick+'</span>'
 				+'<span class="s_p">'+data.rows[i].sppubTime.substring(0,10)+'</span></li>';
@@ -153,7 +154,7 @@ function getSpecialByStyle(rows,page,lgid){
 	$.get("special/language",{"rows":rows,"page":page,"lgid":lgid},function(data){
 		var speStr="";
 		for(var i=0;i<data.rows.length;i++){
-			speStr+='<li class="s_li"><div class="list_img"><a href="page/special_music.jsp?spid='+data.rows[i].spid+'">'
+			speStr+='<li class="s_li"><div class="list_img"><a href="page/special_music.jsp?spid='+data.rows[i].spid+'" onclick="clickRate('+data.rows[i].spid+')">'
 			+'<img src="'+data.rows[i].sppicPath+'" class="myimg" href="page/special_music.jsp?spid='+data.rows[i].spid+'"></a></div>'
 				+'<span class="s_p">'+data.rows[i].spname+'</span><span class="s_p">点击量：'+data.rows[i].spclick+'</span>'
 				+'<span class="s_p">'+data.rows[i].sppubTime.substring(0,10)+'</span></li>';
@@ -161,4 +162,10 @@ function getSpecialByStyle(rows,page,lgid){
 		$(".new_ul").html(speStr);
 		Pagination(data.totalPage,lgid);
 	});
+}
+
+//点击量
+function clickRate(spid){
+	$.post("special/click",{"spid":spid},function(data){
+	},"json");
 }
