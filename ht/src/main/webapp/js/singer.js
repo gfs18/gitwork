@@ -98,11 +98,6 @@ function load(){
 				b+='<tr><td><li><a href="javascript:void(0)" onClick="loadg(\''+ result[i]+'\')" style="color:#333">'+result[i]+'歌手'+'</a></li></td></tr>';														
 			}
 			
-			/*if(result[i]==null){
-				//b+='<tr><td><li><a href="javascript:void(0)" onClick="loadgs(\''+Singerinfo[i]+'\')">'+Singerinfo[i]+'歌手'+'</a></li></td></tr>';
-			}else{
-				b+='<tr><td><li><a href="javascript:void(0)" onClick="loadg(\''+ result[i]+'\')">'+result[i]+'歌手'+'</a></li></td></tr>';														
-			}*/
 			document.getElementById('loa').innerHTML=b;
 
 		}                                                                     
@@ -185,9 +180,6 @@ function sggender(sggender){
 				if(i>=30 && i<36){
 					c5+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
 				}
-
-
-
 			}
 			$("#picture").html(c);
 			$("#picture1").html(c1);
@@ -199,7 +191,7 @@ function sggender(sggender){
 
 	}
 
-//	热门
+	//热门
 	function hot(sgEname){
 		var sgEname=sgEname.toLowerCase();
 		$.get("song/"+sgEname,function(data){
@@ -241,10 +233,8 @@ function sggender(sggender){
 	}
 
 
-
-
-	loaName(5,1);     //每页数据  当前页
-	function loaName(pageS,currP){
+loaName(5,1);     //每页数据  当前页
+function loaName(pageS,currP){
 		$.get("singer/pagination",{"pageS":pageS,"currP":currP},function(data){
 
 			var a="";
@@ -289,21 +279,8 @@ function sggender(sggender){
 
 	function paginatorNext(totalPage){
 		count = count < (totalPage / 5)?(count+1):totalPage ;
-		//alert(count);
 		loaName(5,1 + 5*(count) );
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
