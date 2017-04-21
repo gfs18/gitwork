@@ -20,20 +20,17 @@ function loginOut(){
 	},"json");
 }
 
-//init();
+init();
 function init(){
 	var userid= location.href.split("=")[1];
 	if(userid != null && userid!=""){
-		$.post("user/findUserByid",{"userid":userid},function(data){
+		$.post("user/showUser/"+userid,function(data){
 			alert(JSON.stringify(data));
-			//$("#userid").val(data.userid);
+			$("#userid").val(data.userid);
 			$("#labelid").html(data.userid);
-			//$("#uname").val(data.uname);
+			$("#uname").val(data.uname);
 			$("#labelname").html(data.uname);
-			$("#upwd").val("");
-			$("#newpwd").val("");
-			$("#newpassword").val("");
-			$("#sopicPath").attr("src",(data.upicPath == "" || data.sopicPath == null) ? "images/not_pic.jpg" : data[0].upicPath);
+			$("#upicPath").attr("src",(data.upicPath == "" || data.upicPath == null) ? "images/not_pic.jpg" : data.upicPath);
 			$("#uemail").val(data.uemail);
 			$("#uintroduce").val(data.uintroduce);
 		},"json");
@@ -41,6 +38,6 @@ function init(){
 }
 
 function chgPic(obj){
-	$("#sopicPath").attr("src",window.URL.createObjectURL(obj.files[0]));
+	$("#upicPath").attr("src",window.URL.createObjectURL(obj.files[0]));
 }
 

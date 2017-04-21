@@ -61,8 +61,7 @@ public class SingerHandler {
 		return singerService.inquire(singer);
 	}
 
-
-
+	
 	//查询中国男歌手 +sgnatio+sggende
 	@RequestMapping(value="/{sgnatio}",method=RequestMethod.GET)
 	@ResponseBody
@@ -79,8 +78,13 @@ public class SingerHandler {
 
 	}
 	
-	//查询男歌手
+	@RequestMapping(value="hot",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Singer> Hot(String sgEname) {
+		return singerService.Hot(sgEname);
+	}
 	
+	//查询男歌手
 	@RequestMapping(value="whole",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Singer> Whole(Singer singer){
@@ -145,6 +149,7 @@ public class SingerHandler {
 		}
 		return singerService.findSingerByName(sgname);
 	}
+	
 
 	@RequestMapping(value="add",method=RequestMethod.POST)
 	@ResponseBody

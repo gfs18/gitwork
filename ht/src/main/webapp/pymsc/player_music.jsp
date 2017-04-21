@@ -168,26 +168,26 @@
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="pymsc/js/player_music.js"></script>
 	<script src="pymsc/src/js/smusic.min.js"></script>
-	<script type="text/javascript">
+<script type="text/javascript">
 		var musicList = [ {
 			title : '啦啦啦',
 			singer : '啦啦啦',
-			cover : '/upload/images/127390424.jpg',
+			cover : '/upload/images/86424286.jpg',
 			src : ' /music/1.mp3'
 		}, {
 			title : '洋葱',
 			singer : '平安',
-			cover : 'pymsc/images/yangcong.jpg',
+			cover : '/upload/images/88376737.jpg',
 			src : ''
 		}, {
 			title : '她说',
 			singer : '张碧晨',
-			cover : 'pymsc/images/yangcong.jpg',
+			cover : '/upload/images/88387504.jpg',
 			src : ''
 		}, {
 			title : '海阔天空',
 			singer : 'beyond',
-			cover : 'pymsc/images/yangcong.jpg',
+			cover : '/upload/images/88389085.jpg',
 			src : ''
 		} ];
 		new SMusic({

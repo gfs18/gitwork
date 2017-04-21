@@ -13,7 +13,7 @@
 </head>
 <body>
 	<header>
-	<nav id="head">
+		<nav id="head">
 			<nav class="navbar navbar-default" id="lognav">
 				<div class="container">
 					<div class="navbar-header navbar-left">
@@ -27,12 +27,13 @@
 								<li><a href="page/user.jsp?userid=${login_user_id}"
 									class="hidden-md hidden-sm hidden-xs">${login_user }</a></li>
 								<li class="dropdown"><a href="javascript:void(0)"
-								class="dropdown-toggle" data-toggle="dropdown" role="button"
-								aria-haspopup="true" aria-expanded="false"><span
-									class="caret"></span> </a>
-								<ul class="dropdown-menu">
-									<li><a href="page/userinfoModify.jsp?uname=${login_user }">修改个人信息</a></li>
-								</ul></li>
+									class="dropdown-toggle" data-toggle="dropdown" role="button"
+									aria-haspopup="true" aria-expanded="false"><span
+										class="caret"></span> </a>
+									<ul class="dropdown-menu">
+										<li><a
+											href="page/userinfoModify.jsp?userid=${login_user_id}">修改个人信息</a></li>
+									</ul></li>
 								<li><a href='javascript:void(0)'
 									class="hidden-md hidden-sm hidden-xs" onclick='userout()'
 									id='tuichu'>退出</a></li>
@@ -70,18 +71,15 @@
 							<li><a href="page/friend.jsp"
 								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 						</ul>
-						<form  id="search" class="navbar-form navbar-left" role="search">
+						<div id="search" class="navbar-form navbar-left" role="search">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="单曲/歌手/专辑">
+								<input type="text" name="soname" class="form-control soname" placeholder="单曲" >
 							</div>
-							<button type="submit" class="btn btn-default">查询</button>
-						</form>
+							<a class="btn btn-default" href="page/search.jsp" onclick="search()">查询</a>
+						</div>
 					</div>
-
 				</div>
-
 			</nav>
-
 		</nav>
 		<div class="banner">
 			<div class="row">
@@ -144,7 +142,7 @@
 					</div>
 					<div class="mv">
 						<ul id="warp">
-						<!-- mv显示 -->
+							<!-- mv显示 -->
 
 						</ul>
 					</div>
@@ -167,11 +165,11 @@
 			</div>
 		</div>
 	</article>
-	
+
 	<!-- 底部注入 -->
-      <iframe width=100% height=108 src="iframe/footer.jsp"></iframe>
-      
-	<div> 
+	<iframe width=100% height=108 src="iframe/footer.jsp"></iframe>
+
+	<div>
 		<div id="mylogin">
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 				aria-labelledby="myModalLabel" aria-hidden="true">
@@ -234,5 +232,6 @@
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>

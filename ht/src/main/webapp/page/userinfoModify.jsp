@@ -28,38 +28,25 @@
 	<article>
 		<div id="panelDiv">
 			<div class="formDiv">
-				<form action="user/modify" method="post" enctype="multipart/form-data" >
+				<form action="user/modifyFore" method="post" enctype="multipart/form-data" >
 					<div class="form-group"> 
 						<label>用户编号:</label>
 						<label id="labelid"></label>
-						<!-- <input type="hidden" id="userid" class="form-control" name="userid" /> -->
+						<input type="hidden" id="userid" class="form-control" name="userid" />
 					</div>
 					<div class="form-group">
 						<label>用户名:</label>
 						<label id="labelname"></label>
-						<!--  <input type="hidden" class="form-control"  name="uname"> -->
-					</div>
-					<div class="form-group">
-						<label for="upwd">旧密码:</label> <input type="password"
-							class="form-control" id="upwd" name="upwd">
-					</div>
-					<div class="form-group">
-						<label >新密码:</label> <input type="password"
-							class="form-control" id="newpwd" name="newpwd">
-					</div>
-					<div class="form-group">
-						<label >确定新密码:</label> <input type="password"
-							class="form-control" id="newpassword" name="newpassword">
+						 <input type="hidden" class="form-control"  name="uname">
 					</div>
 					<div class="form-group">
 						<label for="uemail">用户邮箱:</label> <input type="text"
 							class="form-control" id="uemail" name="uemail" />
 					</div>
 					<div class="form-group">
-						<label>头像:</label><img src="images/not_image.png" class="show_img"> <input type="file"
-						 name="picData" onchange="chgPic(this)"><img id="sopicPath"/>
+						<label>头像:</label> <input type="file"
+						 name="picData" onchange="chgPic(this)"><img id="upicPath"/>
 					</div>
-					
 					<div class="form-group">
 						<label for="uintroduce">简介:</label> <input type="text" id="uintroduce"
 							class="form-control" name="uintroduce" />
