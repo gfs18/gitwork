@@ -57,9 +57,6 @@ public class SongServiceImpl implements SongService{
 
 	@Override
 
-	public List<Singer> Hot(String sgEname) {
-		return songMapper.HOT(sgEname);
-}
 	public boolean removeSong(String soid) {
 		return songMapper.removeSong(Integer.valueOf(soid))>0;
 	}

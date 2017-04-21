@@ -22,8 +22,6 @@ public interface SongService {
 	
 	boolean modifySong(Song song);
 
-	List<Singer> Hot(String sgEname);
-	
 	boolean addSong(Song song);
 
 }

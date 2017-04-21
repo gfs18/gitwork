@@ -78,8 +78,13 @@ public class SingerHandler {
 
 	}
 	
-	//查询男歌手
+	@RequestMapping(value="hot",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Singer> Hot(String sgEname) {
+		return singerService.Hot(sgEname);
+	}
 	
+	//查询男歌手
 	@RequestMapping(value="whole",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Singer> Whole(Singer singer){

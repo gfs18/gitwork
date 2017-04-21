@@ -121,10 +121,6 @@
 #panelDiv{
 	float:left;
 	width: 80%;
-<<<<<<< HEAD
-	
-=======
->>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 	margin-top: -14px;
 }
 
@@ -178,6 +174,10 @@
 
 
 #sppicPath{
+	width: 80px;
+	height: 80px;
+}
+#upicPath{
 	width: 80px;
 	height: 80px;
 }

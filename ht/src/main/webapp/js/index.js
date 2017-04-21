@@ -53,6 +53,8 @@ function clickRate(spid){
 
 
 
+
+///////////////////////////////站内歌手图片显示///////////////////////////
 singer();
 function singer(){
 	$.get("singer/index",function(data){
@@ -115,7 +117,7 @@ function songList(){
 }
 
 //轮播
-$('.carousel').carousel({
+$(".carousel").carousel({
 	interval:4000,
 	pause:"hover",	
 });
@@ -207,3 +209,4 @@ function run(){
 	}
 	s.innerHTML = s.innerHTML * 1 - 1;
 }
+
