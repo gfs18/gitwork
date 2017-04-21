@@ -185,6 +185,9 @@ public class UserHandler {
 	/**
 	 * 用户的修改
 	 */
+
+	//@RequestMapping(value="modify/mo{userid}",method=RequestMethod.POST)
+
 	/*@RequestMapping(value="modify",method=RequestMethod.POST)
 	public String modifyUserInfo(@RequestParam("picData") MultipartFile picData,Users user){
 		LogManager.getLogger().debug("用户修改个人信息");
@@ -207,8 +210,11 @@ public class UserHandler {
 	
 	@RequestMapping(value="modify",method=RequestMethod.POST)
 	@ResponseBody
-	public boolean modifyUser(Users user){
-		return userService.modifyUser(user);
+	public boolean modifyUser(@PathVariable("userid") int userid,Users user){
+		System.out.println("进来了。。。。。。。。。。"+user);
+
+		return userService.modifyUser(userid);
+		//return true;
 	}
 	
 }

@@ -77,7 +77,6 @@ function Refersinger(){
 					"<th>"+data[i].sgname+"</th>" +
 					"<th>"+data[i].sgEname+"</th>" +
 					"<th>"+data[i].sgnation+"</th>" +
-					
 					"<th>"+data[i].sggender+"</th>" +
 					"<th><img src="+data[i].sgpicPath+" id='dpic' width='50' height='50'></th>" +
 					"<th>"+data[i].sgintroduce+"</th>" +         

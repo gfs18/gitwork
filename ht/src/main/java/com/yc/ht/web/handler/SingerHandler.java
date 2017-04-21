@@ -1,14 +1,26 @@
 package com.yc.ht.web.handler;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,14 +32,17 @@ import org.springframework.web.multipart.MultipartFile;
 import com.yc.ht.entity.Languages;
 import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Singer;
+import com.yc.ht.entity.Song;
 import com.yc.ht.service.SingerService;
 import com.yc.ht.util.ChineseToEnglish;
 import com.yc.ht.util.InternetRes;
 import com.yc.ht.util.ServletUtil;
 
+
 @Controller("singerHandler")
 @RequestMapping("singer")
 public class SingerHandler {
+	private String savaPath="D:\\a\\abc.mp3";//保存文件路径
 	@Autowired
 	private SingerService singerService;
 
@@ -42,6 +57,7 @@ public class SingerHandler {
 	@RequestMapping(value="s",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Singer> load(Singer singer){
+
 		return singerService.inquire(singer);
 	}
 
@@ -56,14 +72,14 @@ public class SingerHandler {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-		//System.out.println(sgnatio);
-		String sgna=sgnatio.trim().substring(0, 2);
-		String sgen=sgnatio.trim().substring(2, 3);
-		return singerService.click(sgna,sgen);
+			String sgna=sgnatio.trim().substring(0, 2);
+			String sgen=sgnatio.trim().substring(2, 3);
+			return singerService.click(sgna,sgen);
 		
+
 	}
 	
-	
+	//查询男歌手
 	
 	@RequestMapping(value="whole",method=RequestMethod.GET)
 	@ResponseBody
@@ -177,4 +193,32 @@ public class SingerHandler {
 		}
 		return map;
 	}
+	
+	//下载歌曲                                             
+	@RequestMapping(value="download/do",method=RequestMethod.GET)
+	@ResponseBody
+	public boolean DownLoad(Song song,HttpServletResponse response) throws IOException{
+         	
+           System.out.println("filePath...=="+song.getSopath().substring(8, 22)); 
+           
+           response.setContentType("application/octet-stream");
+          
+           response.setCharacterEncoding("UTF-8");
+      
+           response.setHeader("Content-Disposition", "attachment;fileName=\"" + song.getSopath() + "\"");
+     
+           BufferedInputStream in = new BufferedInputStream(new FileInputStream("D:\\apache-tomcat-7.0.52\\webapps"+song.getSopath()));
+           FileOutputStream fos=new FileOutputStream(savaPath);
+           BufferedOutputStream bufos=new BufferedOutputStream(fos);
+           
+           int len=0;
+			byte[] bs=new byte[1024*1024];
+			while ((len=in.read(bs)) != -1) {
+				bufos.write(bs,0,len);
+			}
+			fos.close();
+			bufos.close();
+			return true;
+	}
+	
 }
