@@ -85,11 +85,9 @@ function run(){
 var i;
 $(".play-music-list").click( function () { 
      if(i){
-    	 alert(0);
     	 $(this).attr("src","pymsc/src/img/playbar_47.png");
-    	 i=flase;
+    	 i=0;
      }else{
-    	 alert(1);
     	 $(this).attr("src","pymsc/src/img/playbar_48.png");
     	 i=true;
      }
