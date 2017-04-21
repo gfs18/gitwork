@@ -12,8 +12,7 @@
 
 /****************播放列表操作*******************/
 .m-music-list-wrap{
-	border: 0px;
-	/* display:none; */
+	display:none;
 }
 
 .play-music-list{
@@ -59,7 +58,7 @@
 /*播放标题*/
 .u-music-title{
 	margin-left:400px;
-	width:200px;
+	width:300px;
 	height:25px;
 }
 /*播放进度条*/

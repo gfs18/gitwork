@@ -65,9 +65,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from users	where uname like '%${_parameter}%'
 	</select>
 	
-	<!-- 后台用户状态的修改 -->
-	<update id="updateUser" parameterType="users">
-		update users 
+	<!-- 后台用户状态的修改     ucondition=#{ucondition}  uvip=#{uvip}                -->
+	<update id="updateUser" parameterType="Integer">
+		update Users 
 		<set>
 			<if test="ucondition!=null">ucondition=#{ucondition},</if>
 			<if test="uvip!=null">uvip=#{uvip},</if>

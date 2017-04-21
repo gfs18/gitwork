@@ -168,7 +168,7 @@
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="pymsc/js/player_music.js"></script>
 	<script src="pymsc/src/js/smusic.min.js"></script>
-	<script type="text/javascript">
+<script type="text/javascript">
 		var musicList = [ {
 			title : '啦啦啦',
 			singer : '啦啦啦',
