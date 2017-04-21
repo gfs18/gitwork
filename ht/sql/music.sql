@@ -27,7 +27,7 @@ alter table users modify uintroduce varchar2(1000)
 --insert into users values(seq_users_uid.nextval,'哈哈哈哈','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/bg.png','很美啊',0,1,null);
 --insert into users values(seq_users_uid.nextval,'admin11111','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/bg.png','很美啊',1,0,null);
 --insert into users values(seq_users_uid.nextval,'admin111','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/touxiang.png','很美啊',1,0,null);
---insert into users values(seq_users_uid.nextval,'rozz','3b3690fba8bd08059eae130425396eb05ded1b7d','960089677@qq.com','images/bg.png','很美啊',0,1,null);
+--insert into users values(seq_users_uid.nextval,'hui','3b3690fba8bd08059eae130425396eb05ded1b7d','960089677@qq.com','images/log.png','很美啊',0,1,null);
 
 --drop table users;
 
@@ -168,10 +168,7 @@ create table languages(
 	lgid number(20) primary key, --编号
 	language varchar2(20)       --语种
 );
-<<<<<<< HEAD
-=======
 insert into languages values(seq_lgid.nextval,'');
->>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 
 
 select * from languages;

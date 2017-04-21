@@ -78,7 +78,6 @@ public class SpecialServiceImpl implements SpecialService{
 		return specialMapper.getSpecialByStyle(map);
 	}
 
-
 	@Override
 	public boolean specialDelete(String spid) {
 		return specialMapper.specialDelete(Integer.valueOf(spid))>0;
@@ -106,8 +105,6 @@ public class SpecialServiceImpl implements SpecialService{
 		return specialMapper.specialSearch(spname);
 	}
 
-
-
 	@Override
 	public int findLgid(String lgname) {
 		return specialMapper.findLgid(lgname);
@@ -131,6 +128,12 @@ public class SpecialServiceImpl implements SpecialService{
 	@Override
 	public boolean specialAdd(Special special) {
 		return specialMapper.specialAdd(special)>0;
+	}
+
+	//点击量
+	@Override
+	public boolean clickSpecial(Special special) {
+		return specialMapper.updateClickRate(special)>0;
 	}
 	
 }
