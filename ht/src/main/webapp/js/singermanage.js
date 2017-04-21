@@ -64,8 +64,6 @@ function paginatorNext(totalP){
 
 
 
-
-
 function Refersinger(){
 	var sgname = location.href.split("=")[1];
 	if(sgname != null && sgname !=""){

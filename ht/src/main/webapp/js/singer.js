@@ -63,9 +63,6 @@ function loadS(){
 			if(i>=30 && i<36){
 				c5+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
 			}
-			
-			
-		
 		}
 		$("#picture").html(c);
 		$("#picture1").html(c1);
@@ -120,9 +117,6 @@ function loadg(sgnation){
 			if(i>=30 && i<36){
 				c5+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
 			}
-			
-			
-		
 		}
 		$("#picture").html(c);
 		$("#picture1").html(c1);
@@ -137,7 +131,7 @@ function loadg(sgnation){
 //热门
 function hot(sgEname){
 	var sgEname=sgEname.toLowerCase();
-	$.get("song/"+sgEname,function(data){
+	$.get("singer/hot?sgEname"+sgEname,function(data){
 		var c="";
 		var c1="";
 		var c2="";
@@ -181,7 +175,6 @@ function hot(sgEname){
 loaName(5,1);     //每页数据  当前页
 function loaName(pageS,currP){
 	$.get("singer/pagination",{"pageS":pageS,"currP":currP},function(data){
-	
 		var a="";
 		for(var i = 0; i < data.rows.length; i++){  
 		a+='<tr><td>'
@@ -227,19 +220,6 @@ function paginatorNext(totalPage){
 	//alert(count);
 	loaName(5,1 + 5*(count) );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
  var before = document.querySelector("#carouse_left");   

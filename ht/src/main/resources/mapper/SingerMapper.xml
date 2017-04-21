@@ -23,9 +23,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from singer where sgnation = #{sg} and sggender = #{sge}
 	</select>
 	
-	 <!-- <select id="HOT" resultType="Singer" parameterType="String">
-		select * from singer where sgEname like '${_parameter}'
-	</select> --> 
+	 <!-- 热门 -->
+	<select id="HOT" resultType="Singer" parameterType="String">
+		select * from singer where sgEname like '${_parameter}%'
+	</select>
 	
 	<select id="WHOle" resultType="Singer" parameterType="Singer">
 		select * from singer 
@@ -102,7 +103,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<select id="findSingerByNames" parameterType="String" resultType="Singer">
-		select * from Singer where sgname like '${_parameter}'
+		select * from Singer where sgname like '%'||#{_parameter}||'%'
 	</select>
 	
 	<select id="findSingerbyName" parameterType="string" resultType="Singer">

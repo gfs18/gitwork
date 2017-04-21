@@ -39,10 +39,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		${currPage} >= rownum) where rn > ( ${currPage} - 1) * ${pageSize}
 	</select>
 	
-	<!-- 热门 -->
-	<select id="HOT" resultType="Singer" parameterType="String">
-		select * from singer where sgEname like '${_parameter}%'
-	</select>
 	<!-- 单曲删除 -->
 	<delete id="removeSong" parameterType="integer">
 		delete song where soid=#{soid}
@@ -63,7 +59,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 单曲查询模糊(根据soname) -->
 	<select id="findSongByName" parameterType="string" resultType="Song">
-		select * from song where soname like '%${_parameter}%'
+		select * from song where soname like '%'||#{soname}||'%'
 	</select>
 	
 	<select id="findSongName" parameterType="Song" resultType="Song">

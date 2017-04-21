@@ -50,13 +50,6 @@ public class SongHandler {
 		return songService.listSong(pageS, currP);
 	}
 	
-	//热门
-	@RequestMapping(value="{sgEname}",method=RequestMethod.GET)
-	@ResponseBody
-	public List<Singer> HOT(@PathVariable("sgEname") String sgEname){
-		return songService.Hot(sgEname);
-	}
-
 	@RequestMapping(value="remove",method=RequestMethod.POST)
 	@ResponseBody
 	public boolean removeSong(String id){
