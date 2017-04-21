@@ -177,17 +177,17 @@
 		}, {
 			title : '洋葱',
 			singer : '平安',
-			cover : 'pymsc/images/yangcong.jpg',
+			cover : '/upload/images/241870629.jpg',
 			src : ''
 		}, {
 			title : '她说',
 			singer : '张碧晨',
-			cover : 'pymsc/images/yangcong.jpg',
+			cover : '/upload/images/246586325.jpg',
 			src : ''
 		}, {
 			title : '海阔天空',
 			singer : 'beyond',
-			cover : 'pymsc/images/yangcong.jpg',
+			cover : '/upload/images/246709740.jpg',
 			src : ''
 		} ];
 		new SMusic({
