@@ -12,19 +12,6 @@
 <link rel="stylesheet" href="dist/css/bootstrap.css">
 </head>
 <body>
-
-<!-- <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>iframe</title>
-</head>
-<body style="margin:0; padding:0;">
-<div style="height:100px;">头部div</div>
-<iframe style="height:600px; width:100%">
-</iframe>
-<div style="height:100px;">底部div</div>
-</body>
-</html> -->
-
 	<footer>
 		<div class="container-fluid" id="myfooter">
 			<div class="container" id="footer_content">

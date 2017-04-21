@@ -82,6 +82,16 @@ function run(){
 }
 
 /************************播放**************************/
+var i;
+$(".play-music-list").click( function () { 
+     if(i){
+    	 $(this).attr("src","pymsc/src/img/playbar_47.png");
+    	 i=0;
+     }else{
+    	 $(this).attr("src","pymsc/src/img/playbar_48.png");
+    	 i=true;
+     }
+});
 
 
 

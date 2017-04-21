@@ -1,3 +1,78 @@
+
+#navbartop{
+	border: 1px #797A7C	solid;
+}
+
+#MyPlayerDiv{
+	margin-top:-20px;
+	width: 100%;
+	height:515px;
+	background-image: url("../src/img/iebg.jpg");
+}
+
+/****************播放列表操作*******************/
 .m-music-list-wrap{
-	display:none;
+	border: 0px;
+	/* display:none; */
+}
+
+.play-music-list{
+	width:59px;
+	height:24px;
+	margin-top:33px;
+	margin-left: -15px;
+}
+
+
+/********************旋转图片***************************/
+.m-music-play-wrap .u-cover{
+	float:left;
+	margin-left: 130px;
+}
+
+/************************操作****************************/
+.m-now-info{
+	width:1366px;
+    position: fixed;
+    margin-left:-160px;
+    margin-top:32%;
+    height:10%;
+    background-color: rgba(73,74,72,.7);
+}
+
+/*歌曲操作*/
+.m-play-controls{
+	float:left;
+	width:180px;
+}
+
+.play-control-1{
+	padding-top:10px;
+	margin-left: 270px;
+}
+
+.play-control-2{
+	margin-top:-100px;
+	margin-left: 750px; 
+}
+
+/*播放标题*/
+.u-music-title{
+	margin-left:400px;
+	width:200px;
+	height:25px;
+}
+/*播放进度条*/
+.m-now-controls .u-process{
+	margin-top:-70px;
+	margin-left:450px;
+}
+/*时间*/
+.m-now-controls .u-time{
+	color:#fff;
+	margin-top:-100px;
+}
+/*音量*/
+.m-now-controls .u-volume{
+	margin-top:-90px;
 }
