@@ -151,7 +151,6 @@ function sggender(sggender){
 function hot(sgEname){
 	var sgEname=sgEname.toLowerCase();
 	$.get("singer/hot?sgEname="+sgEname,function(data){
-		alert(sgEname+data);
 		var c="";
 		var c1="";
 		var c2="";
@@ -222,57 +221,18 @@ function loadg(sgnation){
 				c5+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
 			}
 		}
+		$("#picture").html(c);
+		$("#picture1").html(c1);
+		$("#picture2").html(c2);
+		$("#picture3").html(c3);
+		$("#picture4").html(c4);
+		$("#picture5").html(c5);
+		
 	},"json");
 
 }
 
 
-loaName(5,1);     //每页数据  当前页
-function loaName(pageS,currP){
-	$.get("singer/pagination",{"pageS":pageS,"currP":currP},function(data){
-		var a="";
-		for(var i = 0; i < data.rows.length; i++){  
-			a+='<tr><td>'
-				a+='<ul class="singer_list_txt">'
-					a+='<li class="singer_list_txt__item"><a href="javascript:void(0)">'+ data.rows[i].sgname+'</a></li>'
-					a+='</ul>'
-						a+='</td></tr>'
-		}
-		document.getElementById('sName').innerHTML=a;
-		paginationSong(data.totalPage);
-	},"json");
-}
-var count= 0 ;
-//总页数
-function paginationSong(totalPage){
-	var pStr = "";
-	if(totalPage>=5){
-		pStr +='<li class="pagenation"><a href="javascript:void(0)" onclick="paginatorPrevious('+totalPage+')">&laquo;</a></li>';
-
-		for (var j = 1; j <= 5; j++) {
-			pStr +='<li class="pagenation"><a href="javascript:void(0)" onclick="loaName(5,'+(j+(count*5))+')">'+(j+count*5)+'</a></li>';
-		}
-		pStr +='<li class="pagenation"><a href="javascript:void(0)" onclick="paginatorNext('+totalPage+')">&raquo;</a></li>';
-	}else{
-		pStr +='<li class="pagenation"><a href="javascript:void(0)">&laquo;</a></li>';
-		for (var i = 1; i <= totalPage; i++) {
-			pStr +='<li class="pagenation"><a href="javascript:void(0)" onclick="loaName(5,'+i+')">'+i+'</a></li>';
-		}
-		pStr +='<li class="pagenation"><a href="javascript:void(0)">&raquo;</a></li>';
-	}
-	$("#picture").html(c);
-	$("#picture1").html(c1);
-	$("#picture2").html(c2);
-	$("#picture3").html(c3);
-	$("#picture4").html(c4);
-	$("#picture5").html(c5);
-}
-
-function paginatorNext(totalPage){
-	count = count < (totalPage / 5)?(count+1):totalPage ;
-	//alert(count);
-	loaName(5,1 + 5*(count) );
-}
 loaName(5,1);     //每页数据  当前页
 function loaName(pageS,currP){
 	$.get("singer/pagination",{"pageS":pageS,"currP":currP},function(data){
