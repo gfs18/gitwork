@@ -94,16 +94,12 @@ function load(){
 			}else if(i<10){
 				b+='<tr><td><li><a href="javascript:void(0)" onClick="loadg(\''+ result[i]+'\')" style="color:#333">'+result[i]+'歌手'+'</a></li></td></tr>';														
 			}
-<<<<<<< HEAD
-			
-=======
 
 			/*if(result[i]==null){
 				//b+='<tr><td><li><a href="javascript:void(0)" onClick="loadgs(\''+Singerinfo[i]+'\')">'+Singerinfo[i]+'歌手'+'</a></li></td></tr>';
 			}else{
 				b+='<tr><td><li><a href="javascript:void(0)" onClick="loadg(\''+ result[i]+'\')">'+result[i]+'歌手'+'</a></li></td></tr>';														
 			}*/
->>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 			document.getElementById('loa').innerHTML=b;
 
 		}                                                                     
@@ -192,40 +188,6 @@ function hot(sgEname){
 	},"json");
 }
 
-<<<<<<< HEAD
-//	查询中国男歌手
-	function loadg(sgnation){
-		var sgnatio=sgnation.split(",")[0];
-		var sggende=sgnation.split(",")[1];
-		$.get("singer/"+sgnatio+sggende,function(data){
-			var c="";
-			var c1="";
-			var c2="";
-			var c3="";
-			var c4="";
-			var c5="";
-			for(var i = 0; i < data.length; i++){
-				if(i<6){
-					c+='<li class="singer_list__item" ><div class="singer_list__item_box" ><a href="page/singer_more.jsp"><img src="'+data[i].sgpicPath+'"></a><h4><a href="javascript:void(0)">'+data[i].sgname+'</a></h4></div></li>';
-				}
-
-				if(i>=6 && i<12){
-					c1+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';
-				}
-
-				if(i>=12 && i<18){
-					c2+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
-				}
-				if(i>=18 && i<24){
-					c3+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
-				}
-				if(i>=24 && i<30){
-					c4+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
-				}
-				if(i>=30 && i<36){
-					c5+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
-				}
-=======
 //查询中国男歌手
 function loadg(sgnation){
 	var sgnatio=sgnation.split(",")[0];
@@ -240,66 +202,14 @@ function loadg(sgnation){
 		for(var i = 0; i < data.length; i++){
 			if(i<6){
 				c+='<li class="singer_list__item" ><div class="singer_list__item_box" ><a href="page/singer_more.jsp"><img src="'+data[i].sgpicPath+'"></a><h4><a href="javascript:void(0)">'+data[i].sgname+'</a></h4></div></li>';
->>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 			}
 
-<<<<<<< HEAD
-	}
-
-	//热门
-	function hot(sgEname){
-		var sgEname=sgEname.toLowerCase();
-		$.get("song/"+sgEname,function(data){
-			var c="";
-			var c1="";
-			var c2="";
-			var c3="";
-			var c4="";
-			var c5="";
-			for(var i = 0; i < data.length; i++){
-				if(i<6){
-					c+='<li class="singer_list__item" ><div class="singer_list__item_box" ><a href="javascript:void(0)"><img src="'+data[i].sgpicPath+'"></a><h4><a href="javascript:void(0)">'+data[i].sgname+'</a></h4></div></li>';
-
-				}
-				if(i>=6 && i<12){
-					c1+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';
-				}
-
-				if(i>=12 && i<18){
-					c2+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
-				}
-				if(i>=18 && i<24){
-					c3+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
-				}
-				if(i>=24 && i<30){
-					c4+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
-				}
-				if(i>=30 && i<36){
-					c5+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
-				}
-=======
 			if(i>=6 && i<12){
 				c1+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';
->>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 			}
 
-<<<<<<< HEAD
-
-loaName(5,1);     //每页数据  当前页
-function loaName(pageS,currP){
-		$.get("singer/pagination",{"pageS":pageS,"currP":currP},function(data){
-
-			var a="";
-			for(var i = 0; i < data.rows.length; i++){  
-				a+='<tr><td>'
-					a+='<ul class="singer_list_txt">'
-						a+='<li class="singer_list_txt__item"><a href="javascript:void(0)">'+ data.rows[i].sgname+'</a></li>'
-						a+='</ul>'
-							a+='</td></tr>'
-=======
 			if(i>=12 && i<18){
 				c2+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
->>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 			}
 			if(i>=18 && i<24){
 				c3+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
@@ -367,26 +277,6 @@ function paginatorPrevious(totalPage){
 	loaName(5,1 + 5*(count));
 }
 
-<<<<<<< HEAD
-	function paginatorNext(totalPage){
-		count = count < (totalPage / 5)?(count+1):totalPage ;
-		loaName(5,1 + 5*(count) );
-	}
-
-
-
-	var before = document.querySelector("#carouse_left");   
-	var after = document.querySelector("#carouse_right");   
-	var book = document.querySelector(".book");   
-	var page = document.getElementsByClassName("page_right");   
-	rotate();
-
-	function rotate(){   
-		var middle = 0;        
-		for(var z=0;z<page.length;z++){   
-			page[z].style.zIndex = page.length-z;  
-
-=======
 function paginatorNext(totalPage){
 	count = count < (totalPage / 5)?(count+1):totalPage ;
 	loaName(5,1 + 5*(count) );
@@ -411,7 +301,6 @@ function rotate(){
 			middle++;   
 		}else{   
 			middle = page.length;   
->>>>>>> branch 'master' of ssh://git@github.com/CuteHuiHui/htm
 		}   
 	};   
 	before.onclick = function(){   
