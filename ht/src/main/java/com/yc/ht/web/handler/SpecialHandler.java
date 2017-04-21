@@ -25,11 +25,7 @@ import com.yc.ht.service.LanguageService;
 import com.yc.ht.service.SpecialService;
 import com.yc.ht.util.InternetRes;
 import com.yc.ht.util.ServletUtil;
-/**
- * 
- * @author Lcl
- *
- */
+
 @Controller("specialHandler")
 @RequestMapping("special")
 public class SpecialHandler {
@@ -161,6 +157,10 @@ public class SpecialHandler {
 		if(info.isEmpty()){
 			info = null;
 		}
+		if("0000-00-00".equals(publishtime)){
+			publishtime = null;
+		}
+		
 		Special spc = specialService.SpecialFindByName(title);
 		if(spc != null && !"".equals(spc)){
 			map.put("spid", String.valueOf(spc.getSpid()));
@@ -184,10 +184,14 @@ public class SpecialHandler {
 					info = info.trim().substring(0, 300);
 				}
 			}
-			Languages languages = languageService.findLanguageByName(language);
-			if(languages ==null || "".equals(languages)){
-				languageService.addLanguage(language);
-				languages = languageService.findLanguageByName(language);
+			Languages languages = null;
+			System.out.println("language:"+language);
+			if(language != null && !"".equals(language)){
+				 languages = languageService.findLanguageByName(language);
+				if(languages == null || "".equals(languages)){
+					languageService.addLanguage(language);
+					languages = languageService.findLanguageByName(language);
+				}
 			}
 			Special special = new Special(Integer.valueOf(sgid), title, languages, pic_s500, publishtime, info);
 			boolean result =specialService.specialAdd(special);
@@ -196,5 +200,16 @@ public class SpecialHandler {
 			}
 		}
 		return map;
+	}
+	
+	@RequestMapping(value="click", method=RequestMethod.POST)
+	@ResponseBody
+	public boolean clickSpecial(int spid){
+		LogManager.getLogger().debug("点击量进来了。。。。。"+spid);
+		Special special=specialService.specialDetail(spid);
+		Double clickRate=special.getSpclick();
+		clickRate+=1;
+		special.setSpclick(clickRate);
+		return specialService.clickSpecial(special);
 	}
 }

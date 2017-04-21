@@ -29,8 +29,16 @@ public interface UserMapper {
 	
 	List<Users> findReferUser(String uname);//后台用户的查找
 
+
 	//int updateUser(Users user);//用户的修改
 	int updateUser(Integer userid);
+
+	int updateUser(Users user);//用户的修改
+
+
+	int modifyUserInfo(Users user);
+
+
 
 	Users findShowUser(Integer userid);//前台通过用户的id显示部分用户信息
 

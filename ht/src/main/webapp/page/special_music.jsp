@@ -50,9 +50,9 @@
             <div class="container">
                 <div class="row">
                     <ul class="nav navbar-nav navbar-left" id="topnav">
-                        <li><div class="mydiv hidden-md hidden-sm hidden-xs"></div><a href="page/index.jsp"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
+                        <li><a href="page/index.jsp"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
                         <li><a href="page/singer.jsp"  class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
-                        <li><a href="page/special.jsp"  class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
+                        <li><div class="mydiv hidden-md hidden-sm hidden-xs"></div><a href="page/special.jsp"  class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
                         <li><a href=""  class="col-lg-2 col-md-2  hidden-xs  hidden-sm hidden-xs">MV</a></li>
                         <li><a href=""  class="col-lg-2 hidden-md hidden-sm hidden-xs">电台</a></li>
                     </ul>
@@ -64,7 +64,6 @@
 <article>
 <div class="container">
     <div class="special_music">
-    
       <div class="head row" id="S_big">
             <!-- 专辑详情 -->
         </div> 
@@ -87,61 +86,10 @@
 </div>
 </div>
 </div>
-
-
 </article>
 
 <!-- 底部注入 -->
-      <iframe width=100% height=105 src="iframe/footer.jsp"></iframe>
-      
-<!-- 底部音乐播放 -->
-    <nav class="navbar navbar-default navbar-fixed-bottom bg">
-        <audio id="music" src="music/夏婉安 - 一个人.mp3"></audio>
-        <i><img class="show" id="show" src="images/playbar_02.png"></i>
-        <i><img class="play" id="play" onclick="myplay(this)" src="images/playbar_11.png"></i>
-        <i><img class="fast" id="fast" src="images/playbar_05.png"></i>
-        <i class="mask"><img class="mask1" src="images/fwq.jpg"></i>
-        <p class="p_title">一个人</p>
-        <div id="progressWrap"> 
-        <div id="playProgress"> 
-        <div id="playProgresshi"></div>
-        </div>
-        </div>
-        <span id="showProgress"><em>00:00</em>/ <em>00:00</em></span>
-        <div class="suop">
-            <i><img class="suo" src="images/playbar_49.png"></i>
-            <i><img class="suo1" src="images/playbar_51.png"></i>
-        </div>
-        <i><img title="顺序播放" class="xh" id="xh" src="images/playbar_23.png"></i>
-        <i><img title="随机播放" class="sj" id="sj" src="images/playbar_17.png"></i>
-        <i><img class="sc" title="收藏" src="images/playbar_40.png"></i>
-        <i><img class="muted" id="muted" onclick="Muted(this)" src="images/playbar_14.png"></i>
-        <div id="volume">
-         <div class="volume_1" id="volume_1">
-            <div class="volume_1_1" id="volume_1_1"></div>
-         </div>
-         <div class="volume_2" id="volume_2"></div>
-        </div>
-        <i><img class="meu" tabindex="0" hidefocus="true" src="images/playbar_48.png"></i>
-        <div class="mymeu">
-            <ul>
-                <li class="meuli">
-                    <span class="span2">阿悄 - 死皮赖脸</span>
-                    <span class="span3">03:14</span>
-                </li>
-                <li class="meuli">
-                    <span class="span2">夏婉安 - 一个人</span>
-                    <span class="span3">03:14</span>
-                </li>
-                <li class="meuli">
-                    <span class="span2">威仔 - 不爱又何必纠缠</span>
-                    <span class="span3">03:14</span>
-                </li>
-            </ul>
-        </div>
-        <p class="shuo">0</p>
-    </nav>
-    
+<iframe width=100% height=105 src="iframe/footer.jsp"></iframe>
     
 <div>
     <div id="mylogin">

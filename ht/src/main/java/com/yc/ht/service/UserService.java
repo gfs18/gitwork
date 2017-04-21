@@ -26,8 +26,16 @@ public interface UserService {
 
 	List<Users> listReferUser(String uname);//用户的查找
 
+
 	//boolean modifyUser(Users user);//用户的修改
 	boolean modifyUser(Integer userid);
+
+	boolean modifyUser(Users user);//用户的修改
+
+
+	boolean modifyUserInfo(Users user);
+
+
 	Users showUser(String userid);//前台通过用户的id显示部分用户信息
 
 	

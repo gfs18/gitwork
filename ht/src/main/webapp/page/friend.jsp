@@ -50,7 +50,7 @@
 			<div class="container">
 				<div class="row">
 					<ul class="nav navbar-nav navbar-left" id="topnav">
-						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div> <a
+						<li> <a
 							href="page/index.jsp" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"
 							id="">首页</a></li>
 						<li><a href="page/singer.jsp"
@@ -59,7 +59,7 @@
 							class="col-lg-2 col-md-2  col-xs-2  hidden-sm hidden-xs">专辑</a></li>
 						<li><a href="page/mv.jsp"
 							class="col-lg-2 col-md-2  hidden-xs  hidden-sm hidden-xs">MV</a></li>
-						<li><a href="page/friend.jsp"
+						<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div><a href="page/friend.jsp"
 							class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 
 					</ul>
@@ -148,5 +148,6 @@
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/friend.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

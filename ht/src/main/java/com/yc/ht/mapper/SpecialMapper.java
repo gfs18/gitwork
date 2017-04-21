@@ -44,4 +44,7 @@ public interface SpecialMapper {
 	Special specialFindByName(String spname);
 	
 	int specialAdd(Special special);
+
+	//点击量
+	int updateClickRate(Special special);
 }

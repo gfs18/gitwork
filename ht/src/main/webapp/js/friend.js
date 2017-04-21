@@ -10,9 +10,15 @@ function commentShow(pageS,currP){
 	$.get("friend/PaginationCommentShow",{"pageS":pageS,"currP":currP},function(data){
 		var commentStr = "";
 		for (var i = 0; i < data.rows.length; i++) {
+			var img=data.rows[i].user.upicPath;
+			if(img!=null && img!=""){
+				img=data.rows[i].user.upicPath;
+			}else{
+				img="images/not_imgs.png";
+			}
 			commentStr+='<div class="con"><div class="con_0 hidden-md hidden-sm hidden-xs">'+
-			'<img class="user_icon" src="images/user.jpg"></div>'+
-			'<div class="con_1"><span>'+data.rows[i].userid+'</span>：</div>'+
+			'<img class="user_icon"  src="'+img+'"></div>'+
+			'<div class="con_1"><span>'+data.rows[i].user.uname+'</span>：</div>'+
 			'<div class="con_2">'+data.rows[i].commentTime.split(".")[0]+'</div>';
 			if(data.rows[i].content!=null){
 				commentStr+='<div class="con_3">'+data.rows[i].content+'</div>';
@@ -25,9 +31,6 @@ function commentShow(pageS,currP){
 				commentStr+="";
 			}
 		}
-		/*if(commentStr==""){
-			$(".content").html('<a>暂无动态,亲，来发表我们的动态吧...</a>');
-		}*/
 		$(".content").html(commentStr);
 		paginationComments(data.totalPage);
 	}, "json");

@@ -2,6 +2,7 @@ package com.yc.ht.web.handler;
 
 
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
@@ -14,13 +15,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+import org.springframework.web.multipart.MultipartFile;
 
 import com.yc.ht.entity.Singer;
 
 import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Song;
+import com.yc.ht.entity.Special;
 import com.yc.ht.entity.Users;
 import com.yc.ht.service.UserService;
 import com.yc.ht.util.EmailUtils;
@@ -47,6 +50,8 @@ public class UserHandler {
 		if(user != null){
 			session.setAttribute(ServletUtil.LOGIN_USER, user.getUname());
 			session.setAttribute(ServletUtil.LOGIN_USER_ID, user.getUserid());
+			session.setAttribute(ServletUtil.LOGIN_USER_IMG, user.getUpicPath());
+			LogManager.getLogger().debug(session.getAttribute(ServletUtil.LOGIN_USER_IMG));
 		}else{
 			session.setAttribute("errorMsg", "用户名或密码错误!");
 		}
@@ -180,7 +185,30 @@ public class UserHandler {
 	/**
 	 * 用户的修改
 	 */
-	@RequestMapping(value="modify/mo{userid}",method=RequestMethod.POST)
+
+	//@RequestMapping(value="modify/mo{userid}",method=RequestMethod.POST)
+
+	/*@RequestMapping(value="modify",method=RequestMethod.POST)
+	public String modifyUserInfo(@RequestParam("picData") MultipartFile picData,Users user){
+		LogManager.getLogger().debug("用户修改个人信息");
+		String picPath = null;
+		if(picData != null && !picData.isEmpty()){//判断是否文件上传
+			try {
+				picData.transferTo(ServletUtil.getUploadFile(picData.getOriginalFilename()));
+				picPath = ServletUtil.VIRTUAL_UPLOAD_DIR + picData.getOriginalFilename();
+			} catch (IllegalStateException | IOException e) {
+				e.printStackTrace();
+			}
+		}
+		user.setUpicPath(picPath);
+		if(userService.modifyUserInfo(user)){
+			return "redirect:/page/user.jsp";
+		}else{
+			return "forward:/page/userModify.jsp";
+		}
+	}*/
+	
+	@RequestMapping(value="modify",method=RequestMethod.POST)
 	@ResponseBody
 	public boolean modifyUser(@PathVariable("userid") int userid,Users user){
 		System.out.println("进来了。。。。。。。。。。"+user);
@@ -188,6 +216,5 @@ public class UserHandler {
 		return userService.modifyUser(userid);
 		//return true;
 	}
-	
 	
 }

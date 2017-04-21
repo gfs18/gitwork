@@ -195,9 +195,23 @@ a:hover{
 	width: 180px;
 	height: 175px;
 }
+.bf1{
+   position: absolute;
+   width: 360px;
+   height: 40px;
+   top: 910px;
+   background: rgba(000,000,000,0.3);
+}
 .bf2{
    position: absolute;
    top: 735px;
+   width: 180px;
+   height: 30px;
+   background: rgba(000,000,000,0.3);
+}
+.bf3{
+   position: absolute;
+   top: 920px;
    width: 180px;
    height: 30px;
    background: rgba(000,000,000,0.3);
@@ -210,17 +224,11 @@ a:hover{
 	margin-left: 80px;
 }
 .zj2{
-	margin-top: 10px;
+	margin-top: 5px;
 	margin-left: 10px;
 	float: left;
 }
-.bf3{
-	 position: absolute;
-   top: 920px;
-   width: 180px;
-   height: 30px;
-   background: rgba(000,000,000,0.3);
-}
+
 .content1_1_2{
 	width: 220px;
 	height: 370px;
@@ -819,275 +827,6 @@ a:hover{
     }
     
 }
-.show{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    left: 160px;
-    top: 10px;
-    cursor: pointer;
-}
-.show:hover{
-    width: 30px;
-    height: 30px;
-    background: url(../images/playbar_03.png);
-}
-#music{
-    width: 100px;
-    height: 10px;
-    cursor: pointer;
-}
-#play{
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    left: 195px;
-    top:2px;
-    cursor: pointer;
-}
-.fast{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    left: 240px;
-    top: 10px;
-    cursor: pointer;
-}
-.fast:hover{
-    width: 30px;
-    height: 30px;
-    background: url(../images/playbar_06.png);
-}
-.mask{
-    display: inline-block;
-    width: 45px;
-    height: 45px;
-    position: absolute;
-    left: 300px;
-    top: 3px;
-    border-radius: 5px;
-    border: 2px solid #000;
-    cursor: pointer;
-}
-.mask1{
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    cursor: pointer;
-}
-.p_title{
-    width: 550px;
-    height: 20px;
-    position: absolute;
-    left: 360px;
-    top: 8px;
-    color: #AAAAAA!important;
-    line-height: 20px;
-    font-family: "微软雅黑";
-    cursor: pointer;
-}
-#playProgress{
-    width: 0px;
-    height: 3px;
-    position: absolute;
-}
-#progressWrap{
-    width: 550px;
-    height: 3px;
-    background: #67686A;
-    position: absolute;
-    left: 360px;
-    top: 35px;
-}
-#playProgresshi{
-    width:0px;
-    height: 3px;
-    background: #2DC17A;
-    position: absolute;
-}
-#showProgress{
-    position: absolute;
-    left: 830px;
-    top: 5px;
-    color: #808080;
-}
-.suo{
-    width:18px;
-    height: 15px;
-    position: absolute;
-    left: 10px;
-    top: 2px;
-    cursor: pointer;
-}
-.suo:hover{
-    width:18px;
-    height: 15px;
-    background-image: url(../images/playbar_50.png);
-}
-.suo1{
-    width:12px;
-    height: 15px;
-    position: absolute;
-    left: 13px;
-    top: 2px;
-    display: none;
-    cursor: pointer;
-}
-.suo1:hover{
-    width:12px;
-    height: 15px;
-    background-image: url(../images/playbar_52.png);
-}
-.suop{
-    width:40px;
-    height: 15px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    position: absolute;
-    right: 20px; 
-    top: -15px;
-    cursor: pointer;
-    background: rgba(000,000,000,0.9) !important;
-}
-.xh{
-    width: 22px;
-    height: 22px;
-    position: absolute;
-    top: 22px;
-    left:950px;
-    cursor: pointer;
-}
-.xh:hover{
-   width: 22px;
-   height: 22px;
-   background: url(../images/playbar_25.png); 
-}
-.sj{
-    width: 27px;
-    height: 25px;
-    position: absolute;
-    top: 20px;
-    left:950px;
-    cursor: pointer;
-    display: none;
-}
-.sj:hover{
-   width: 27px;
-   height: 25px;
-   background: url(../images/playbar_18.png); 
-}
-.sc{
-    width: 20px;
-    height: 22px;
-    position: absolute;
-    top: 20px;
-    left: 990px;
-    cursor: pointer;
-}
-.sc:hover{
-    width: 20px;
-    height: 22px;
-    background: url(../images/playbar_41.png); 
-}
-.muted{
-    width: 30px;
-    height: 25px;
-    position: absolute;
-    top: 20px;
-    left: 1020px;
-    cursor: pointer;
-}
-
-#volume{
-     width: 40px;
-     height: 144px;
-     position: absolute;
-     top: -144px;
-     left: 1015px;
-     background: rgba(000,000,000,0.9) !important;
-     display: none;
-}
- #volume .volume_1{
-      width: 6px;
-      height: 100px;
-      position: absolute;
-      top:20px;
-      left: 17px;
-       background-color: #67686A;
- }
- #volume_1_1{
-     width: 6px;
-     height:0px;
-     position: absolute;
-     bottom: 0px;
-     background-color: #2DC17A;
- }
-  #volume .volume_2{
-      width: 10px;
-      height: 10px;
-      position: absolute;
-      top:115px;
-      left: 15px;
-      border-radius: 50px;
-      background-color: #2DC17A;
- }
- .meu{
-    width: 59px;
-    height: 24px;
-    position: absolute;
-    top: 20px;
-    left: 1060px;
-    outline: none !important;
-    cursor: pointer;
- }
- .meu:hover{
-    width: 59px;
-    height: 25px;
-    background: url(../images/playbar_47.png);
- }
- .mymeu{
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    background: rgba(000,000,000,0.9) !important;
-    top: -405px;
-    left: 870px;
-    display: none;
- }
-.mymeu .meuli{
-    width: 398px;
-    height: 30px;
-    color: #fff;
-    line-height: 30px;
-    cursor: pointer;
-    list-style: none;
-    float: left;
-}
-.span2{
-    float: left;
-    display: inline-block;
-    width: 200px;
-    height: 30px;
-    margin-left: 10px;
-}
-.span3{
-    float: left;
-    display: inline-block;
-    width: 50px;
-    height: 30px;
-    margin-left:90px;
-}
- .shuo{
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 1093px;
-    top: 22px;
-    color: #67686A;
-    cursor: pointer;
- }
 
 
 /*********************************验证*************************/

@@ -9,6 +9,8 @@ function showUserManage(pageS,currP){
 			var img=data.rows[i].upicPath;
 			var ucondition=data.rows[i].ucondition;
 			var uvip=data.rows[i].uvip;
+
+
 			if(img!=null){
 				img=data.rows[i].upicPath;
 			}else{
@@ -39,6 +41,34 @@ function showUserManage(pageS,currP){
 		paginationUserManage(data.totalPage);
 	});
 }
+
+
+//修改用户的状态
+function modifyUser(userid){
+	alert(userid);
+	
+	var obj=document.getElementById('uconditionValue');
+	var index=obj.selectedIndex; 
+	var uconditionValue = obj.options[index].value;
+	
+	var objj=document.getElementById('uvipValue');
+	var indexx=objj.selectedIndex; 
+	var uvipValue = objj.options[indexx].value;
+	
+	alert("uconditionValue222....."+uconditionValue);
+	alert("uvipValue222....."+uvipValue);
+	
+	$.post("user/modify",{"userid":userid,"ucondition":uconditionValue,"uvip":uvipValue},function(data){
+		if(data){
+			alert("修改成功!!!");
+			location.href="back/userManage.jsp";
+		}else{
+			alert("修改失败...");
+		}
+		
+	},"json");
+}
+
 function paginationUserManage(totalP){
 	var pStr = "";
 	if(totalP>=5){
@@ -141,6 +171,7 @@ function referUser(){
 			
 			//行变色
 			str +='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#ffffff";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
+			$("#tableBody").html();
 			$("#tableBody").html(str);
 			$(".pagination").html("");
 		});
@@ -159,6 +190,7 @@ function removeReferUser(userid){
 		referUser();
 	},"json");
 }
+
 
 
 //修改用户的状态
@@ -188,6 +220,8 @@ function modifyUser(userid){
 		
 	},"json");
 }
+
+
 
 
 

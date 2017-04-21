@@ -13,7 +13,7 @@
 </head>
 <body>
 	<header>
-		<nav id="head">
+	<nav id="head">
 			<nav class="navbar navbar-default" id="lognav">
 				<div class="container">
 					<div class="navbar-header navbar-left">
@@ -26,6 +26,13 @@
 							<c:when test="${login_user !=null && login_user_id!=null}">
 								<li><a href="page/user.jsp?userid=${login_user_id}"
 									class="hidden-md hidden-sm hidden-xs">${login_user }</a></li>
+								<li class="dropdown"><a href="javascript:void(0)"
+								class="dropdown-toggle" data-toggle="dropdown" role="button"
+								aria-haspopup="true" aria-expanded="false"><span
+									class="caret"></span> </a>
+								<ul class="dropdown-menu">
+									<li><a href="page/userinfoModify.jsp?uname=${login_user }">修改个人信息</a></li>
+								</ul></li>
 								<li><a href='javascript:void(0)'
 									class="hidden-md hidden-sm hidden-xs" onclick='userout()'
 									id='tuichu'>退出</a></li>
@@ -108,7 +115,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="album">
-						<a class="pull-left"><h4>专辑上架</h4></a> <a
+						<a class="pull-left"><h4>热门专辑</h4></a> <a
 							href="javascript:void(0)" class="pull-right more">更多</a>
 					</div>
 					<div class="content1_1">
@@ -138,66 +145,7 @@
 					<div class="mv">
 						<ul id="warp">
 						<!-- mv显示 -->
-							<!-- <li><div class="mv-1">
-									<a href=""><img src="images/mv-1.jpg"></a>
-								</div>
-								<div class="mv_2">
-									<a href=""><span>每一天</span><span class="mv_2_1">鞠婧祎</span></a>
-								</div>
-								<div class="mv_3">
-									<img src="images/cover_play.png">
-								</div>
-								<div class="mv_4"></div></li>
-							<li><div class="mv-1">
-									<a href=""><img src="images/mv-2.jpg"></a>
-								</div>
-								<div class="mv_2">
-									<a href=""><span>告白气球</span><span class="mv_2_1">周杰伦</span></a>
-								</div>
-								<div class="mv_3">
-									<img src="images/cover_play.png">
-								</div>
-								<div class="mv_4"></div></li>
-							<li><div class="mv-1">
-									<a href=""><img src="images/mv-3.jpg"></a>
-								</div>
-								<div class="mv_2">
-									<a href=""><span>你一言我一语</span><span class="mv_2_1">李建</span></a>
-								</div>
-								<div class="mv_3">
-									<img src="images/cover_play.png">
-								</div>
-								<div class="mv_4"></div></li>
-							<li><div class="mv-1">
-									<a href=""><img src="images/mv-7.jpg"></a>
-								</div>
-								<div class="mv_2">
-									<a href=""><span>呵护</span><span class="mv_2_1">梁静茹</span></a>
-								</div>
-								<div class="mv_3">
-									<img src="images/cover_play.png">
-								</div>
-								<div class="mv_4"></div></li>
-							<li><div class="mv-1">
-									<a href=""><img src="images/mv-5.jpg"></a>
-								</div>
-								<div class="mv_2">
-									<a href=""><span>你干嘛</span><span class="mv_2_1">罗志祥</span></a>
-								</div>
-								<div class="mv_3">
-									<img src="images/cover_play.png">
-								</div>
-								<div class="mv_4"></div></li>
-							<li><div class="mv-1">
-									<a href=""><img src="images/mv-10.jpg"></a>
-								</div>
-								<div class="mv_2">
-									<a href=""><span>败将</span><span class="mv_2_1">陈势安</span></a>
-								</div>
-								<div class="mv_3">
-									<img src="images/cover_play.png">
-								</div>
-								<div class="mv_4"></div></li> -->
+
 						</ul>
 					</div>
 				</div>

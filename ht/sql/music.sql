@@ -1,13 +1,13 @@
-drop table users;
-drop table singer;
-drop table special;
-drop table song;
-drop table mv;
-drop table languages;
-drop table musicStyle;
-drop table comments;
-drop table collects;
-drop table admin;
+--drop table users;
+--drop table singer;
+--drop table special;
+--drop table song;
+--drop table mv;
+--drop table languages;
+--drop table musicStyle;
+--drop table comments;
+--drop table collects;
+--drop table admin;
 
 --用户表
 create table users(
@@ -16,17 +16,18 @@ create table users(
     upwd varchar2(40) not null,   --密码
     uemail varchar2(40) not null, --邮箱
    	upicPath varchar2(40),  --头像路径
-    uintroduce varchar2(100),    --个人简介
+    uintroduce varchar2(1000),    --个人简介
     ucondition int default 1, --账号状态 1可用 0不可用
     uvip int default 0,  --会员状态 1是   0否
   	mark varchar2(100)   ----预留字段 
 );
 --select * from users;
 --alter table users modify uemail varchar2(40);
+alter table users modify uintroduce varchar2(1000)
 --insert into users values(seq_users_uid.nextval,'哈哈哈哈','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/bg.png','很美啊',0,1,null);
 --insert into users values(seq_users_uid.nextval,'admin11111','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/bg.png','很美啊',1,0,null);
 --insert into users values(seq_users_uid.nextval,'admin111','3b3690fba8bd08059eae130425396eb05ded1b7d','qq.com','images/touxiang.png','很美啊',1,0,null);
-
+--insert into users values(seq_users_uid.nextval,'hui','3b3690fba8bd08059eae130425396eb05ded1b7d','960089677@qq.com','images/log.png','很美啊',0,1,null);
 
 --drop table users;
 
@@ -48,6 +49,7 @@ create table admin(
 	mark varchar2(100)   ----预留字段 
 );
 
+insert into admin values(seq_aid.nextval,'admin','3b3690fba8bd08059eae130425396eb05ded1b7d',1,'');
 insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.value(4,10)),'3b3690fba8bd08059eae130425396eb05ded1b7d',
 1,'' from dual connect by level <10;
 
@@ -59,7 +61,7 @@ insert into admin select seq_aid.nextval,dbms_random.string('1',dbms_random.valu
 --歌手表
 create table singer(
        sgid number(20) primary key,     --歌手编号
-       sgname varchar2(40) not null,  --歌手名
+       sgname varchar2(100) not null,  --歌手名
        sgEname varchar2(40) not null, --歌手英文名
        sgnation varchar2(20),  --国籍
        sggender varchar2(10) not null,  --性别
@@ -67,12 +69,12 @@ create table singer(
        sgintroduce varchar2(1000)not null,     --歌手介绍
        mark varchar2(100)       --预留字段
 );
---alter table singer modify sgname varchar2(40)
+--alter table singer modify sgname varchar2(100)
 --select seq_singer_sgid.nextval from dual;
-insert into singer values(seq_singer_sgid.nextval,'夏婉安','X','中国',10001,'女','images/xwa.jpg','夏婉安,黑龙江哈尔滨人,最有潜力的90后网络原创歌手。\r\n','');
-insert into singer values(seq_singer_sgid.nextval,'韩红','H','中国',10001,'女','images/hh.jpg','韩红，全国政协委员，华录百纳娱乐公司董事长兼CEO。\r\n','');
-insert into singer values(seq_singer_sgid.nextval,'张杰','Z','中国',10002,'男','images/zhangjie.jpg', '张杰，1982年12月20日出生于四川成都，毕业于四川师范大学，中国内地流行歌手。\r\n','');
-insert into singer values(seq_singer_sgid.nextval,'金沙','J','中国',10003,'女','images/jinsha.jpg', '金莎（Kym），出生于中国上海，曾就读于星海音乐学院、新加坡东亚商学院','');
+insert into singer values(seq_singer_sgid.nextval,'夏婉安','X','内陆','女','images/xwa.jpg','夏婉安,黑龙江哈尔滨人,最有潜力的90后网络原创歌手。','');
+insert into singer values(seq_singer_sgid.nextval,'韩红','H','中国','女','images/hh.jpg','韩红，全国政协委员，华录百纳娱乐公司董事长兼CEO。','');
+insert into singer values(seq_singer_sgid.nextval,'张杰','Z','中国','男','images/zhangjie.jpg', '张杰，1982年12月20日出生于四川成都，毕业于四川师范大学，中国内地流行歌手。','');
+insert into singer values(seq_singer_sgid.nextval,'金沙','J','中国','女','images/jinsha.jpg', '金莎（Kym），出生于中国上海，曾就读于星海音乐学院、新加坡东亚商学院','');
 --select * from singer;
 -- drop table singer;
 select * from singer;
@@ -81,7 +83,7 @@ select * from singer;
 create table special(
       spid number(20) primary key,     --专辑编号
       sgid number(20) not null, --歌手编号
-      spname varchar2(50)not null,     --专辑名
+      spname varchar2(100)not null,     --专辑名
       lgid number(20) not null,--语种编号
       sppicPath varchar2(100) not null,   --封面图片路径
       sppubTime date not null,   --出版时间
@@ -91,6 +93,7 @@ create table special(
 );
 --select * from special;
 --delete SPECIAL where spid = 10002
+--alter table special modify spname varchar2(100)
 insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
 1001,'images/zj-2.jpg',to_date('2016-11-4','yyyy-mm-dd'),20,'');
 insert into special values (seq_special_spid.nextval,1002,'Water Under the Bridge (无法挽回)',
@@ -117,6 +120,7 @@ insert into SPECIAL values(seq_special_spid.nextval,10001,'我知道你离我不
 insert into SPECIAL values(seq_special_spid.nextval,10004,'咔咔寿女2',10002,'images/zj-5.jpg',to_date('2017-2-11','yyyy-mm-dd'),0.98,'','');
 select * from special;
 --drop table special;
+update special set lgdi=1003 wher lgid=10001
 update special set spintroduce='即将发行的这一波第三首新歌将延续“薛氏情歌”的风格，与此前已发行的两首新歌不同的是，《高尚》描写的是大众的“价值观”，《动物世界》描写的是大众的“感情观”，而这一首，更多的像是对现代感情现状的一种描述。曲风也与前两首很不一样，这一首则加入了更多的温柔和细腻，更加贴近“薛氏情歌”的特点。值得一提的是，前两首歌曲《高尚》及《动物世界》虽由薛之谦来主攻作词，但作曲分别由周以力及郭顶来操刀，而即将发行的这一首，词曲则由薛之谦全部包办，更大程度的展现了薛氏情歌的特点'
 --单曲表
 create table song(
@@ -153,7 +157,7 @@ insert into song values(seq_song_soid.nextval,10002,10073,'快快快','images/mv
 --to_date('2017-04-03','yyyy-mm-dd'),'','F:\test','20','否','');
 --select * from song;
 --drop table song;
-update song set spid=10041 where  spid=10002;
+update song set spid=10002 where  spid>10073;
 
 
 update song set sgid=10001;
@@ -164,19 +168,18 @@ create table languages(
 	lgid number(20) primary key, --编号
 	language varchar2(20)       --语种
 );
+insert into languages values(seq_lgid.nextval,'');
+
+
+select * from languages;
 insert into languages values(seq_lgid.nextval,'彝语')
+insert into LANGUAGES values(seq_lgid.nextval,'华语');
+insert into LANGUAGES values(seq_lgid.nextval,'日韩');
+insert into LANGUAGES values(seq_lgid.nextval,'欧美');
+insert into LANGUAGES values(seq_lgid.nextval,'粤语');
+select * from languages
 
-insert into LANGUAGES values(10001,'华语');
-insert into LANGUAGES values(10002,'日韩');
-insert into LANGUAGES values(10003,'欧美');
-insert into LANGUAGES values(10004,'粤语');
---音乐类型表
-create table musicStyle(
-	msid number(20) primary key,   --类型编号
-    msstyle varchar2(20)          --风格类型
-);
 
---drop table musicStyle;
 
 create table mv(
        mvid number(20) primary key,        --mv编号
@@ -252,7 +255,16 @@ create sequence seq_mv_mvid start with 10001;
 create sequence seq_comments_cid start with 10001;
 create sequence seq_collect_coid start with 10001;
 
-select * from special where lgid=10001
+drop sequence seq_aid;
+drop sequence seq_msid;
+drop sequence seq_lgid;
+drop sequence seq_users_uid ;
+drop sequence seq_singer_sgid;
+drop sequence seq_special_spid;
+drop sequence seq_song_soid;
+drop sequence seq_mv_mvid;
+drop sequence seq_comments_cid;
+drop sequence seq_collect_coid;
 
 
 

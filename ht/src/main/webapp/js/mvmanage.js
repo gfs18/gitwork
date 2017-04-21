@@ -2,15 +2,27 @@ var count= 0 ;
 function showMvInfo(pageS,currP){
 	$.post("mv/pagination",{"pageS":pageS,"currP":currP},function(data){
 		var str = "";
-		for (var i = 0; i < 3; i++) {
+		for (var i = 0; i < data.rows.length; i++) {
 			var img=data.rows[i].mvpicPath;   
 			if(img!=null){
 				img=data.rows[i].mvpicPath;
 			}else{
 				img="images/not_image.png";
 			}
-			str += "<tr class='tableoverout'><th>"+data.rows[i].mvid+"</th><th>"+data.rows[i].mvname+"</th><th>"+data.rows[i].singer.sgname+"</th><th>"
-			+data.rows[i].song.soname+"</th><th>"+data.rows[i].mvduration+"</th>"
+			str += "<tr class='tableoverout'><th>"+data.rows[i].mvid+"</th><th>"+data.rows[i].mvname+"</th>";
+			if(data.rows[i].singer!=null){
+				str +="<th>"+data.rows[i].singer.sgname+"</th>";
+			}else{
+				str +="<th> </th>";
+			}
+			
+			if(data.rows[i].song != null){
+				str +="<th>"+data.rows[i].song.soname+"</th>";
+			}else{
+				str +="<th> </th>";
+			}
+			
+			str +="<th>"+data.rows[i].mvduration+"</th>"
 			+"<th>"+'<img src='+img +' class="show_img">'+"</th>"
 			+"<th>"+data.rows[i].mvpubTime+"</th><th>"+data.rows[i].mvPath+"</th>"
 			+"<th><a href='back/mvmanageModify.jsp?soid="+data.rows[i].mvid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
@@ -95,15 +107,26 @@ function referMV(){
 		$.post("mv/refer/"+mvName,function(data){
 			alert("mvName:"+mvName+"data:"+data);
 			var str = "";
-			for (var i = 0; i <1; i++) {
+			for (var i = 0; i <data.length; i++) {
 				var img=data[i].mvpicPath;   
 				if(img!=null){
 					img=data[i].mvpicPath;
 				}else{
 					img="images/not_image.png";
 				}
-				str += "<tr class='tableoverout'><th>"+data[i].mvid+"</th><th>"+data[i].mvname+"</th><th>"+data[i].singer.sgname+"</th><th>"
-				+data[i].song.soname+"</th><th>"+data[i].mvduration+"</th>"
+				str += "<tr class='tableoverout'><th>"+data[i].mvid+"</th><th>"+data[i].mvname+"</th>";
+				if(data[i].singer!=null){
+					str +="<th>"+data[i].singer.sgname+"</th>";
+				}else{
+					str +="<th> </th>";
+				}
+				
+				if(data[i].song != null){
+					str +="<th>"+data[i].song.soname+"</th>";
+				}else{
+					str +="<th> </th>";
+				}
+				str +="<th>"+data[i].mvduration+"</th>"
 				+"<th>"+'<img src='+img +' class="show_img">'+"</th>"
 				+"<th>"+data[i].mvpubTime+"</th><th>"+data[i].mvPath+"</th>"
 				+"<th><a href='back/mvmanageModify.jsp?soid="+data[i].mvid+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"

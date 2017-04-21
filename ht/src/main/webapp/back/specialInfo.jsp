@@ -29,11 +29,11 @@
 							href="back/manage.jsp">单曲管理</a></li>
 						<li><a href="back/singer.jsp">歌手管理</a></li>
 						<li><a href="back/specialInfo.jsp">专辑管理</a></li>
-						<li><a href="back/mvmanage.jsp">短片管理</a></li>
+						<li><a href="back/mvManage.jsp">短片管理</a></li>
 						<li><a href="back/userManage.jsp">用户管理</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<%-- <c:if test="${login_admin != null }"> --%>
+						<c:if test="${login_admin != null }">
 							<li><a href="javascript:void(0)">${login_admin }</a></li>
 							<li class="dropdown"><a href="javascript:void(0)"
 							class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -43,7 +43,7 @@
 								<li><a href="javascript:void(0)" onclick="loginOut()">注销</a></li>
 								<li><a href="back/login.jsp">切换用户</a></li>
 							</ul></li>
-						<%-- </c:if> --%>
+						</c:if>
 					</ul>
 				</div>
 			</div>
@@ -55,7 +55,6 @@
 			<ul class="nav nav-pills nav-stacked">
 				<li role="presentation" class="active"><a href="back/specialInfo.jsp">专辑信息</a></li>
 				<li role="presentation"><a href="back/specialRefer.jsp">专辑查询</a></li>
-				<li role="presentation"><a href="back/specialAdd.jsp">专辑添加</a></li>
 			</ul>
 		</div>
 		<div id="panelDiv">
@@ -67,7 +66,7 @@
 							<th>专辑名</th>
 							<th>歌手</th>
 							<th>所属语种</th>
-							<th>图片路径</th>
+							<th>专辑图片</th>
 							<th>出版时间</th>
 							<th>点击量</th>
 							<th>操作</th>
