@@ -24,9 +24,11 @@ public class SingerServiceImpl implements SingerService {
 		return singerMapper.findSinger();
 	}
 	
-
+	
+	//查询所有的
 	@Override
 	public List<Singer> inquire(Singer singer) {
+		System.out.println("singer2222222....."+singer);
 		return singerMapper.refer(singer);
 	}
 

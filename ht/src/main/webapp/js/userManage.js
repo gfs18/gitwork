@@ -3,13 +3,12 @@ var count= 0 ;
 showUserManage(5,1);
 function showUserManage(pageS,currP){
 	$.get("user/pagination",{"pageS":pageS,"currP":currP},function(data){
+		
 		var str = "";
 		for (var i = 0; i < data.rows.length; i++) {
 			var img=data.rows[i].upicPath;
 			var ucondition=data.rows[i].ucondition;
 			var uvip=data.rows[i].uvip;
-			alert("ucondition111................"+ucondition);
-			alert("uvip111................"+uvip);
 			if(img!=null){
 				img=data.rows[i].upicPath;
 			}else{
@@ -164,20 +163,22 @@ function removeReferUser(userid){
 
 //修改用户的状态
 function modifyUser(userid){
-	alert(userid);
-	
+	//alert(userid);
+	/*
 	var obj=document.getElementById('uconditionValue');
 	var index=obj.selectedIndex; 
-	var uconditionValue = obj.options[index].value;
+	var ucondition = obj.options[index].value;
 	
 	var objj=document.getElementById('uvipValue');
 	var indexx=objj.selectedIndex; 
-	var uvipValue = objj.options[indexx].value;
+	var uvip = objj.options[indexx].value;
 	
-	alert("uconditionValue222....."+uconditionValue);
-	alert("uvipValue222....."+uvipValue);
-	
-	$.post("user/modify",{"userid":userid,"ucondition":uconditionValue,"uvip":uvipValue},function(data){
+	alert("uconditionValue11111111111....."+ucondition);
+	alert("uvipValue11111111111....."+uvip);*/
+	//"userid":userid,"ucondition":ucondition,"uvip":uvip
+	//{"userid":userid,"ucondition":uconditionValue,"uvip":uvipValue},
+	$.post("user/modify/mo"+userid,function(data){
+		alert(JSON.stringify(data));
 		if(data){
 			alert("修改成功!!!");
 			location.href="back/userManage.jsp";

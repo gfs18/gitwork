@@ -180,10 +180,13 @@ public class UserHandler {
 	/**
 	 * 用户的修改
 	 */
-	@RequestMapping(value="modify",method=RequestMethod.POST)
+	@RequestMapping(value="modify/mo{userid}",method=RequestMethod.POST)
 	@ResponseBody
-	public boolean modifyUser(Users user){
-		return userService.modifyUser(user);
+	public boolean modifyUser(@PathVariable("userid") int userid,Users user){
+		System.out.println("进来了。。。。。。。。。。"+user);
+
+		return userService.modifyUser(userid);
+		//return true;
 	}
 	
 	

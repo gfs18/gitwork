@@ -99,14 +99,24 @@ public class UserServiceImpl implements UserService {
 	 * 后台用户的修改
 	 */
 	@Override
+	public boolean modifyUser(Integer userid) {
+		// TODO Auto-generated method stub
+		return userMapper.updateUser(userid)>0;
+	}
+	
+	/*@Override
 	public boolean modifyUser(Users user) {
 		return userMapper.updateUser(user)>0;
 	}
-
+*/
 	//前台通过用户的id显示部分用户信息
 	@Override
 	public Users showUser(String userid) {
 		return userMapper.findShowUser(Integer.valueOf(userid));
 	}
+
+	
+
+	
 	
 }
