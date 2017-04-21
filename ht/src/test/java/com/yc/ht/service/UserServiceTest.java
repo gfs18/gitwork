@@ -53,7 +53,7 @@ public class UserServiceTest {
 		return;
 	}
 	
-	//后台修改用户测试
+	/*//后台修改用户测试
 	@Test
 	public void testModifyUser() {
 		Users users=new Users();
@@ -63,6 +63,6 @@ public class UserServiceTest {
 		boolean a=usersService.modifyUser(users);
 		System.out.println(a);
 		return;
-	}	
+	}	*/
 
 }

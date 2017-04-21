@@ -73,12 +73,20 @@
 		<!--内容  -->
 		<div id="MyPlayerDiv">
 			<div class="grid-music-container f-usn">
+				<!-- 播放操作 -->
 				<div class="m-music-play-wrap">
 					<div class="u-cover"></div>
 					<div class="m-now-info">
-						<h1 class="u-music-title">
-							<strong>标题</strong><small>歌手</small>
-						</h1>
+						<div class="play-control-1">
+							<div class="m-play-controls">
+								<a class="u-play-btn prev" title="上一曲"></a> <a
+									class="u-play-btn ctrl-play play" title="暂停"></a> <a
+									class="u-play-btn next" title="下一曲"></a>
+							</div>
+						</div>
+						<div class="u-music-title">
+							<strong></strong><small></small>
+						</div>
 						<div class="m-now-controls">
 							<div class="u-control u-process">
 								<span class="buffer-process"></span> <span
@@ -93,23 +101,21 @@
 								<a class="volume-control"></a>
 							</div>
 						</div>
-						<div class="m-play-controls">
-							<a class="u-play-btn prev" title="上一曲"></a> <a
-								class="u-play-btn ctrl-play play" title="暂停"></a> <a
-								class="u-play-btn next" title="下一曲"></a> <a
-								class="u-play-btn mode mode-list current" title="列表循环"></a> <a
-								class="u-play-btn mode mode-random" title="随机播放"></a> <a
-								class="u-play-btn mode mode-single" title="单曲循环"></a>
+						<div class="play-control-2">
+							<div class="m-play-controls">
+								<a class="u-play-btn mode mode-list current" title="列表循环"></a> <a
+									class="u-play-btn mode mode-random" title="随机播放"></a> <a
+									class="u-play-btn mode mode-single" title="单曲循环"></a>
+									
+							</div> 
 						</div>
+						<img class="play-music-list"  src="pymsc/src/img/playbar_48.png">
 					</div>
 				</div>
-				<div class="m-music-list-wrap"></div>
+				<div class="m-music-list-wrap">播放列表</div>
 			</div>
 		</div>
 	</article>
-
-	<!-- 底部注入 -->
-	<iframe width=100% height=105 src="iframe/footer.jsp"></iframe>
 
 	<div>
 		<div id="mylogin">
@@ -163,36 +169,30 @@
 	<script type="text/javascript" src="pymsc/js/player_music.js"></script>
 	<script src="pymsc/src/js/smusic.min.js"></script>
 	<script type="text/javascript">
-
-	var musicList = [
-	             	{
-	             		title : 'Sugar',
-	             		singer : 'Maroon 5',
-	             		cover  : 'pymsc/images/Maroon5.jpg',
-	             		src    : ''
-	             	},
-	             	{
-	             		title : '洋葱',
-	             		singer : '平安',
-	             		cover  : 'pymsc/images/yangcong.jpg',
-	             		src    : ''
-	             	},	
-	             	{
-	             		title : '她说',
-	             		singer : '张碧晨',
-	             		cover  : 'pymsc/images/yangcong.jpg',
-	             		src    : ''
-	             	},
-	             	{
-	             		title : '海阔天空',
-	             		singer : 'beyond',
-	             		cover  : 'pymsc/images/yangcong.jpg',
-	             		src    : ''
-	             	}
-	 ];
-	new SMusic({
-	       musicList:musicList
-	 });
+		var musicList = [ {
+			title : '啦啦啦',
+			singer : '啦啦啦',
+			cover : '/upload/images/127390424.jpg',
+			src : ' /music/1.mp3'
+		}, {
+			title : '洋葱',
+			singer : '平安',
+			cover : '/upload/images/241870629.jpg',
+			src : ''
+		}, {
+			title : '她说',
+			singer : '张碧晨',
+			cover : '/upload/images/246586325.jpg',
+			src : ''
+		}, {
+			title : '海阔天空',
+			singer : 'beyond',
+			cover : '/upload/images/246709740.jpg',
+			src : ''
+		} ];
+		new SMusic({
+			musicList : musicList
+		});
 	</script>
 </body>
 </html>

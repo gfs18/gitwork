@@ -3,6 +3,7 @@ var count= 0 ;
 showUserManage(5,1);
 function showUserManage(pageS,currP){
 	$.get("user/pagination",{"pageS":pageS,"currP":currP},function(data){
+		
 		var str = "";
 		for (var i = 0; i < data.rows.length; i++) {
 			var img=data.rows[i].upicPath;
@@ -180,6 +181,36 @@ function removeReferUser(userid){
 			alert("删除失败...");
 		}
 		referUser();
+	},"json");
+}
+
+
+
+//修改用户的状态
+function modifyUser(userid){
+	//alert(userid);
+	/*
+	var obj=document.getElementById('uconditionValue');
+	var index=obj.selectedIndex; 
+	var ucondition = obj.options[index].value;
+	
+	var objj=document.getElementById('uvipValue');
+	var indexx=objj.selectedIndex; 
+	var uvip = objj.options[indexx].value;
+	
+	alert("uconditionValue11111111111....."+ucondition);
+	alert("uvipValue11111111111....."+uvip);*/
+	//"userid":userid,"ucondition":ucondition,"uvip":uvip
+	//{"userid":userid,"ucondition":uconditionValue,"uvip":uvipValue},
+	$.post("user/modify/mo"+userid,function(data){
+		alert(JSON.stringify(data));
+		if(data){
+			alert("修改成功!!!");
+			location.href="back/userManage.jsp";
+		}else{
+			alert("修改失败...");
+		}
+		
 	},"json");
 }
 
