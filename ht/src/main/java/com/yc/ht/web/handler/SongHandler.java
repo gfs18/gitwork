@@ -49,7 +49,7 @@ public class SongHandler {
 	public PaginationBean<Song> songPagiagetionList(String pageS,String currP){
 		return songService.listSong(pageS, currP);
 	}
-	
+
 	@RequestMapping(value="remove",method=RequestMethod.POST)
 	@ResponseBody
 	public boolean removeSong(String id){
@@ -136,21 +136,5 @@ public class SongHandler {
 		}else{
 			return false;
 		}
-	}
-	
-	@RequestMapping(value="search",method=RequestMethod.POST)
-	public List<Song> searchSong(String soname,HttpServletResponse response){
-		LogManager.getLogger().debug("搜索歌曲");
-		/*try {
-			if(songService.findSongByName(soname) != null){
-				response.sendRedirect("../page/search.jsp");
-			}else{
-				response.sendRedirect("../page/index.jsp");
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}*/
-		return songService.findSongByName(soname);
-		//return null;
-	}
+	}		
 }
