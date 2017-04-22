@@ -76,6 +76,8 @@
 				<!-- 播放操作 -->
 				<div class="m-music-play-wrap">
 					<div class="u-cover"></div>
+					<div class="show-music-title"><h1></h1><p></p></div>
+					<div class="show-solyric"><ul><li>暂无歌词</li></ul></div>
 					<div class="m-now-info">
 						<div class="play-control-1">
 							<div class="m-play-controls">
@@ -106,7 +108,6 @@
 								<a class="u-play-btn mode mode-list current" title="列表循环"></a> <a
 									class="u-play-btn mode mode-random" title="随机播放"></a> <a
 									class="u-play-btn mode mode-single" title="单曲循环"></a>
-									
 							</div> 
 						</div>
 						<img class="play-music-list"  src="pymsc/src/img/playbar_48.png">
@@ -166,33 +167,7 @@
 	</div>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="pymsc/js/player_music.js"></script>
 	<script src="pymsc/src/js/smusic.min.js"></script>
-<script type="text/javascript">
-		var musicList = [ {
-			title : '啦啦啦',
-			singer : '啦啦啦',
-			cover : '/upload/images/86424286.jpg',
-			src : ' /music/1.mp3'
-		}, {
-			title : '洋葱',
-			singer : '平安',
-			cover : '/upload/images/88376737.jpg',
-			src : ''
-		}, {
-			title : '她说',
-			singer : '张碧晨',
-			cover : '/upload/images/88387504.jpg',
-			src : ''
-		}, {
-			title : '海阔天空',
-			singer : 'beyond',
-			cover : '/upload/images/88389085.jpg',
-			src : ''
-		} ];
-		new SMusic({
-			musicList : musicList
-		});
-	</script>
+	<script type="text/javascript" src="pymsc/js/player_music.js"></script>
 </body>
 </html>
