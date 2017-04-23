@@ -195,8 +195,8 @@ function removeReferUser(userid){
 
 //修改用户的状态
 function modifyUser(userid){
-	//alert(userid);
-	/*
+	alert(userid);
+	
 	var obj=document.getElementById('uconditionValue');
 	var index=obj.selectedIndex; 
 	var ucondition = obj.options[index].value;
@@ -206,7 +206,7 @@ function modifyUser(userid){
 	var uvip = objj.options[indexx].value;
 	
 	alert("uconditionValue11111111111....."+ucondition);
-	alert("uvipValue11111111111....."+uvip);*/
+	alert("uvipValue11111111111....."+uvip);
 	//"userid":userid,"ucondition":ucondition,"uvip":uvip
 	//{"userid":userid,"ucondition":uconditionValue,"uvip":uvipValue},
 	$.post("user/modify/mo"+userid,function(data){
