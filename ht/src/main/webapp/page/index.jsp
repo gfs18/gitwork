@@ -71,12 +71,12 @@
 							<li><a href="page/friend.jsp"
 								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 						</ul>
-						<div id="search" class="navbar-form navbar-left" role="search">
+						<form id="search" class="navbar-form navbar-left" role="search">
 							<div class="form-group">
-								<input type="text" name="soname" class="form-control soname" placeholder="单曲" >
+								<input type="text" class="form-control" id="soname" placeholder="单曲/歌手/专辑" name="soname">
 							</div>
-							<a class="btn btn-default" href="page/search.jsp" onclick="search()">查询</a>
-						</div>
+							<a id="searchByName" class="btn btn-default" onclick="findByName()" >查询</a>
+						</form>
 					</div>
 				</div>
 			</nav>
@@ -231,6 +231,5 @@
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>

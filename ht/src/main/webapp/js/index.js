@@ -51,10 +51,7 @@ function clickRate(spid){
 	},"json");
 }
 
-
-
-
-///////////////////////////////站内歌手图片显示///////////////////////////
+//歌手显示
 singer();
 function singer(){
 	$.get("singer/index",function(data){
@@ -67,7 +64,6 @@ function singer(){
 		$(".content3_1").html(singerStr);
 	},"json");
 }
-
 
 /*首页mv显示*/
 function loadMv(){
@@ -98,7 +94,7 @@ function loadMv(){
 loadMv();
 
 
-/*站内歌曲显/*/
+/*站内歌曲显示*/
 songList();
 function songList(){
 	$.post("song/list", function(data){
@@ -114,6 +110,13 @@ function songList(){
 		}
 		$("#mytablet").html(songListStr);
 	}, "json");
+}
+
+
+//搜索
+function findByName(){
+	var soname = $.trim($("#soname").val());
+	$("#searchByName").attr("href","page/search.jsp?soname="+soname);
 }
 
 //轮播

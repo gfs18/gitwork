@@ -105,7 +105,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
-	 <script type="text/javascript" src="js/manage.js"></script> 
 	<script type="text/javascript" src="js/singermanage.js"></script>
 	<script type="text/javascript" src="js/singerRefer.js"></script>
 </body>
