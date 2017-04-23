@@ -29,6 +29,47 @@
 	margin-left: 130px;
 }
 
+
+/************************歌词显示********************************/
+.show-music-title{
+	position: absolute;
+	height: 100px;
+	width:450px;
+	line-height:40px;
+	margin-left: 500px;
+	font-family: "Microsoft Yahei","微软雅黑";
+	color: #fff;
+}
+.show-music-title h1{
+	font-size: 25px;
+	font-family: "Microsoft Yahei","微软雅黑";
+}
+.show-music-title p{
+	font-size: 15px;
+	font-size: "微软雅黑";
+}
+
+
+.show-solyric{
+	position:absolute;
+	border: 1px #fff solid;
+	width:450px;
+	height:250px;
+	margin-top:100px;
+	margin-left:500px;
+	font-size:18px;
+	color:#C4DEFA;
+	font-family: "Microsoft Yahei","微软雅黑","Helvetica Neue","Hiragino Sans GB",Helvetica,Tahoma,sans-serif;
+}
+.show-solyric ul{
+	list-style: none;
+}
+.show-solyric li{
+	font-family: "Microsoft Yahei","微软雅黑","Helvetica Neue","Hiragino Sans GB",Helvetica,Tahoma,sans-serif;
+}
+
+
+
 /************************操作****************************/
 .m-now-info{
 	width:1366px;

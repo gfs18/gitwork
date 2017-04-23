@@ -73,9 +73,9 @@
 						</ul>
 						<form id="search" class="navbar-form navbar-left" role="search">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="单曲/歌手/专辑">
+								<input type="text" class="form-control" id="soname" placeholder="单曲/歌手/专辑" name="soname">
 							</div>
-							<button type="submit" class="btn btn-default">查询</button>
+							<a id="searchByName" class="btn btn-default" onclick="findByName()" >查询</a>
 						</form>
 					</div>
 				</div>

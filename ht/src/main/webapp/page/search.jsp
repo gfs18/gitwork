@@ -7,20 +7,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
 <link rel="shortcut icon" type="image/icon" href="images/log.png" />
-<link rel="stylesheet" type="text/css" href="css/manage.css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
-<link rel="stylesheet" type="text/css" href="css/singer.css">
 <link rel="stylesheet" href="dist/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/special.css">
+<link rel="stylesheet" type="text/css" href="css/search.css">
 </head>
 <body>
 	<!-- 头部 -->
 	<header>
-		<div id="head">
+		<nav id="head">
 			<nav class="navbar navbar-default" id="lognav">
 				<div class="container">
 					<div class="navbar-header navbar-left">
-						<a href="" class="navbar-brand"><img src="images/log.png"></a>
-						<a href="" class="navbar-brand"><h3>幻听音乐</h3></a>
+						<a href="javascript:void(0)" class="navbar-brand"><img
+							src="images/log.png"></a> <a href="javascript:void(0)"
+							class="navbar-brand"><h3>幻听音乐</h3></a>
 					</div>
 					<ul class="nav navbar-nav navbar-right" id="nav_a">
 						<c:choose>
@@ -62,7 +63,7 @@
 						<ul class="nav navbar-nav navbar-left" id="topnav">
 							<li><div class="mydiv hidden-md hidden-sm hidden-xs"></div>
 								<a href="page/index.jsp"
-								class="col-lg-2 col-md-2 col-sm-3 col-xs-4" id="">首页</a></li>
+								class="col-lg-2 col-md-2 col-sm-3 col-xs-4">首页</a></li>
 							<li><a href="page/singer.jsp"
 								class="col-lg-2 col-md-2 col-sm-3 col-xs-4">歌手</a></li>
 							<li><a href="page/special.jsp"
@@ -72,60 +73,106 @@
 							<li><a href="page/friend.jsp"
 								class="col-lg-2 hidden-md hidden-sm hidden-xs">朋友</a></li>
 						</ul>
-						<div  id="search" class="navbar-form navbar-left" role="search">
+						<form id="search" class="navbar-form navbar-left" role="search">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="单曲/歌手/专辑">
+								<input type="text" class="form-control" id="soname" placeholder="单曲/歌手/专辑" name="soname">
 							</div>
-							<a class="btn btn-default" href="page/index.jsp">查询</a>
-						</div>
+							<a id="searchByName" class="btn btn-default" onclick="findByName()" >查询</a>
+						</form>
 					</div>
 				</div>
 			</nav>
-		</div>
+		</nav>
 	</header>
-	<!-- 内容 -->
 	<article>
-		<div id="panelDiv">
-			<div class="panel panel-default">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th width="150px">单曲名</th>
-							<th width="100px">图片</th>
-							<th>出版时间</th>
-							<th>单曲时长</th>
-							<th> </th>
-						</tr>
-					</thead>
-					<tbody id="tableBody"></tbody>
-				</table>
+		<div class="container">
+			<div class="lable row">
+				<li class="col-lg-2 col-md-2 col-sm-3 col-xs-3" id="new_ul"><a
+					href="javascript:void(0)" onclick="searchSong()"
+					class="click">单曲</a></li>
+				<li class="col-lg-2 col-md-2 col-sm-3 col-xs-3" id="hot_ul"><a
+					href="javascript:void(0)" onclick="searchSinger()">歌手</a></li>
+				<li class="col-lg-2 col-md-2 col-sm-3 col-xs-3" id="china_ul"><a 
+					href="javascript:void(0)" onclick="searchSpecial()">专辑</a></li>'
+
 			</div>
-
-			<!-- 分页 -->
-			<nav>
-				<ul class="pagination"></ul>
-			</nav>
-
+			<!-- <p class="class">单曲</p> -->
+			<div class="special">
+				<!-- 搜索结果显示 -->
+			</div>
+			<ul class="pagination pagination-lg" id="page">
+				<!-- 分页页码 -->
+			</ul>
 		</div>
+
 	</article>
-	<!-- 底部 -->
-	<footer>
-		<div class="container-fluid" id="myfooter">
-			<div class="container" id="footer_content">
-				<div class="row" id="myrow">
-					<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3">关于我们</span> <span
-						class="col-lg-3 col-md-3 col-sm-3 col-xs-3">幻听服务</span> <span
-						class="col-lg-3 col-md-3 col-sm-3 col-xs-3">联系我们</span> <span
-						class="col-lg-3 col-md-3 col-sm-3 col-xs-3">招商合作</span>
+	<!-- 底部注入 -->
+	<iframe width=100% height=108 src="iframe/footer.jsp"></iframe>
+
+	<div>
+		<div id="mylogin">
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" id="admin">
+					<div class="login">
+						<div class="login_top">
+							<p>登录幻听</p>
+							<div class="login_close" data-dismiss="modal"></div>
+						</div>
+						<div class="login_content">
+							<form>
+								<input type="text" id="uname" placeholder="请输入您的用户名" /><br />
+								<input type="password" id="pwd" placeholder="请输入您的密码" /><br />
+								<p id="go" onclick="userLogin()">登录</p>
+							</form>
+						</div>
+						<div class="login_bottom"></div>
+					</div>
 				</div>
-				<p>幻听-原创音乐网站-版权所有 ©</p>
 			</div>
 		</div>
-	</footer>
+
+		<div id="myreg">
+			<div class="modal fade" id="myModals" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" id="regs">
+					<div class="regs">
+						<div class="reg_top">
+							<p>注册用户</p>
+							<div class="reg_close" data-dismiss="modal"></div>
+						</div>
+						<div class="reg_content">
+							<form>
+								<div class="ins">
+									<input type="text" id="newname" placeholder="账户名由4-7个字符组成" /><span
+										class=""></span>
+								</div>
+								<div class="ins">
+									<input type="password" id="newpwd"
+										placeholder="密码名由6-16个数字、字母组成" /><span class=""></span>
+								</div>
+								<div class="ins">
+									<input type="email" id="email" placeholder="您的邮箱账户" /><span
+										class=""></span>
+								</div>
+								<div class="ins">
+									<input type="text" id="txt" placeholder="请输入您收到的验证码" /> <span
+										id="myspanb" onclick="sendCode()">获取验证码</span>
+								</div>
+								<p id="new" onclick="userRegister()">马上注册</p>
+							</form>
+						</div>
+						<div class="reg_bottom"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>
