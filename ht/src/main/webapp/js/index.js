@@ -116,6 +116,13 @@ function songList(){
 	}, "json");
 }
 
+
+//搜索
+function findByName(){
+	var soname = $.trim($("#soname").val());
+	$("#searchByName").attr("href","page/search.jsp?soname="+soname);
+}
+
 //轮播
 $(".carousel").carousel({
 	interval:4000,
