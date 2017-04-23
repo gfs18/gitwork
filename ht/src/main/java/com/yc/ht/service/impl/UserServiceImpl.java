@@ -100,7 +100,6 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	public boolean modifyUser(Integer userid) {
-		// TODO Auto-generated method stub
 		return userMapper.updateUser(userid)>0;
 	}
 	
@@ -123,7 +122,4 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	
-
 }

@@ -17,10 +17,6 @@ public interface SongMapper {
 	
 	PaginationBean<Song> findPaginationSong(PaginationBean<Song> userBean);//分页
 
-
-	List<Singer> HOT(String sgEname);
-
-	
 	int removeSong(Integer soid);
 	
 	int modifySong(Song song);

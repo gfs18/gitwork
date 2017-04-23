@@ -8,7 +8,7 @@ function specialDetail(){
 		spDetailStr+='<img id="img" src="'+data.sppicPath+'"><div class="cover"></div></div>';
 		spDetailStr+='<div class="right col-lg-8 col-md-8 col-sm-8 col-xs-8"><p class="info_1">'+data.spname+'</p>';
 		if(data.singer==null){
-			spDetailStr+='<p class="info_2">歌手：无名氏</p>';
+			spDetailStr+='<p class="info_2">歌手： </p>';
 		}else{
 			spDetailStr+='<p class="info_2">歌手：'+data.singer.sgname+'</p>';
 		}
@@ -35,7 +35,7 @@ function specialSong(){
 		for(var i=0; i<data.length;i++){
 			musicStr+='<div class="row"><div  class="list_no col-lg-1 col-md-1 col-sm-1 col-xs-1">'+(i+1)+'</div>'
 	        	+'<div  class="list_name col-lg-7 col-md-7 col-sm-11 col-xs-11">'
-	        	+'<p><label style="width:50px;">'+data[i].soname+'</label>'
+	        	+'<p><label style="width:300px;">'+data[i].soname+'</label>'
 	            +'<a href="javascript:void(0)"><i class="glyphicon glyphicon-play-circle" id="tp1_1"  title="播放"></i></a>'
 	            +'<a href="javascript:void(0)"><i class="glyphicon glyphicon-save" id="tp2_1" title="下载"></i></a></p>'
 	            +'</div>';

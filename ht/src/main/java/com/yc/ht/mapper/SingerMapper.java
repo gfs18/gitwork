@@ -1,11 +1,9 @@
 package com.yc.ht.mapper;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.yc.ht.entity.Languages;
 import com.yc.ht.entity.PaginationBean;
 import com.yc.ht.entity.Singer;
 

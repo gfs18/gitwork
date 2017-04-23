@@ -113,7 +113,7 @@ function songList(){
 }
 
 //轮播
-$('.carousel').carousel({
+$(".carousel").carousel({
 	interval:4000,
 	pause:"hover",	
 });
@@ -205,3 +205,4 @@ function run(){
 	}
 	s.innerHTML = s.innerHTML * 1 - 1;
 }
+

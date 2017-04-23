@@ -24,6 +24,7 @@ public class PaginationBean <T> {
 	public Integer getCurrPage() {
 		return currPage;
 	}
+
 	public void setCurrPage(Integer currPage) {
 		this.currPage = currPage;
 	}

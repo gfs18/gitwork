@@ -61,8 +61,7 @@ public class SingerHandler {
 		return singerService.inquire(singer);
 	}
 
-
-
+	
 	//查询中国男歌手 +sgnatio+sggende
 	@RequestMapping(value="/{sgnatio}",method=RequestMethod.GET)
 	@ResponseBody
@@ -79,8 +78,13 @@ public class SingerHandler {
 
 	}
 	
-	//查询男歌手
+	@RequestMapping(value="hot",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Singer> Hot(String sgEname) {
+		return singerService.Hot(sgEname);
+	}
 	
+	//查询男歌手
 	@RequestMapping(value="whole",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Singer> Whole(Singer singer){
@@ -145,6 +149,7 @@ public class SingerHandler {
 		}
 		return singerService.findSingerByName(sgname);
 	}
+	
 
 	@RequestMapping(value="add",method=RequestMethod.POST)
 	@ResponseBody
@@ -198,16 +203,17 @@ public class SingerHandler {
 	@RequestMapping(value="download/do",method=RequestMethod.GET)
 	@ResponseBody
 	public boolean DownLoad(Song song,HttpServletResponse response) throws IOException{
-         	
-           System.out.println("filePath...=="+song.getSopath().substring(8, 22)); 
+         	String sopath=song.getSopath().split("/")[2];
+           System.out.println("sopath...=="+sopath); 
            
            response.setContentType("application/octet-stream");
           
            response.setCharacterEncoding("UTF-8");
       
-           response.setHeader("Content-Disposition", "attachment;fileName=\"" + song.getSopath() + "\"");
+           response.setHeader("Content-Disposition", "attachment;fileName=\"" + sopath + "\"");
      
            BufferedInputStream in = new BufferedInputStream(new FileInputStream("D:\\apache-tomcat-7.0.52\\webapps"+song.getSopath()));
+          
            FileOutputStream fos=new FileOutputStream(savaPath);
            BufferedOutputStream bufos=new BufferedOutputStream(fos);
            
