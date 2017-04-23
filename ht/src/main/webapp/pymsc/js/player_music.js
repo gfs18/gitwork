@@ -83,30 +83,27 @@ function run(){
 
 
 /******************************歌曲加载***********************************/
-var musicList = [ {
-	title : '暧昧',
-	singer : '张碧晨',
-	cover : '/upload/images/246680097.jpg',
-	src : '/upload/music/aimei.mp3'
-},{
-	title : '17岁',
-	singer : '平安',
-	cover : '/upload/images/246586325.jpg',
-	src : '/upload/music/17sui.mp3'
-},{
-	title : '啦啦啦',
-	singer : '啦啦啦',
-	cover : '/upload/images/241870629.jpg',
-	src : ' /upload/music/1.mp3'
-},{
-	title : '海阔天空',
-	singer : 'beyond',
-	cover : '/upload/images/274041589.jpg',
-	src : '/upload/music/aixiaodeyanjing.mp3'
-}];
-new SMusic({
-	musicList : musicList
-});
+var musicList = [];
+
+function loadMusicList(){
+	var controlStr=location.href.split("?")[1].split("&");
+	var songid = controlStr[1].split("=")[1];
+	$.get("song/refsong/"+songid,function(data){
+		var listInfo =  {title:data[0].soname,singer:data[0].singer.sgname,cover:data[0].sopicPath,src:data[0].sopath,spid:data[0].spid,sgid:data[0].singer.sgid,solyricPath:data[0].solyricPath};
+		musicList.push(listInfo);
+		if(controlStr[0].split("=")[1]=="player"){//播放
+		}
+		if(controlStr[0].split("=")[1]=="add"){//添加到播放列表
+		}
+		
+		//加载到musicList列表去
+		new SMusic({
+			musicList : musicList
+		});
+		
+	},"json");
+}
+loadMusicList();
 
 /*********************歌词同步************************************/
 
@@ -120,7 +117,7 @@ function parseLyric(text) {
 	result = [];   
 	//去掉不含时间的行    
 	while (!pattern.test(lines[0])) {    
-		lineslines = lines.slice(1);    
+		lines = lines.slice(1);    
 	};    
 	//上面用'\n'生成生成数组时，结果中最后一个为空元素，这里将去掉    
 	lines[lines.length - 1].length === 0 && lines.pop(); 
@@ -144,7 +141,7 @@ function parseLyric(text) {
 	return result;    
 }  
 
-
+//获取歌名和歌手
 var songName = $(".u-music-title strong").html();
 var singer = $(".u-music-title small").html().replace("&nbsp;","");
 
@@ -154,7 +151,6 @@ if(songName != null && songName != ""){
 if(singer != null && singer !=""){
 	$(".show-music-title p").append('<label style="color: #C4DEFA">歌手&nbsp;:&nbsp;</label><a style="color: #FFF" href="javascript:void(0)">'+singer+'</a>');
 }
-
 $(".show-music-title h1").change(function(){
 	alert(12);
 });
@@ -166,13 +162,49 @@ if(songName != null && songName != "" && singer != null && singer !=""){
 		if($.trim(musicList[i].singer) == $.trim(singer) && $.trim(musicList[i].title) == $.trim(songName)){
 			var sgname = musicList[i].src.split("/");
 			sgname = sgname[sgname.length-1].split(".")[0];
-		
+			fn(sgname);
 		}
 	}
 }
 
 
-
+function fn(sgname){ 
+	$.get('/upload/solyric/'+sgname+'.lrc',function(data){
+		if(data != null && data != ""){
+			$('.show-solyric ul').html("");
+			var str=parseLyric(data);
+			//歌词显示
+			for(var i=0,li;i<str.length;i++){   
+				li=$('<li>'+str[i][1]+'</li>');    
+				$('.show-solyric ul').append(li);    
+			}    
+			/*$('#aud')[0].ontimeupdate=function(){//视屏 音频当前的播放位置发生改变时触发    
+				for (var i = 0, l = str.length; i < l; i++) {    
+					if (this.currentTime 当前播放的时间 > str[i][0]) {    
+						//显示到页面    
+						$('#gc ul').css('top',-i*40+200+'px'); //让歌词向上移动    
+						$('#gc ul li').css('color','#fff');    
+						$('#gc ul li:nth-child('+(i+1)+')').css('color','red'); //高亮显示当前播放的哪一句歌词    
+					}    
+				}    
+				if(this.ended){ //判断当前播放的音乐是否播放完毕    
+					var songslen=$('.songs_list li').length;    
+					for(var i= 0,val;i<songslen;i++){    
+						val=$('.songs_list li:nth-child('+(i+1)+')').text();    
+						if(val==sgname){    
+							i=(i==(songslen-1))?1:i+2;    
+							sgname=$('.songs_list li:nth-child('+i+')').text(); //音乐播放完毕之后切换下一首音乐    
+							$('#gc ul').empty(); //清空歌词    
+							$('#aud').attr('src','music/'+sgname+'.mp3');    
+							fn(sgname);    
+							return;    
+						}    
+					}    
+				}    
+			};    */
+		}
+	});
+} 
 
 
 /************************播放列表图标**************************/

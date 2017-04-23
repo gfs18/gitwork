@@ -135,6 +135,9 @@ create table song(
        vipDownload varchar2(10) default '否',    --是否是会员才能下载
        mark varchar2(100)       --预留字段
 );
+
+select * from song s join singer sg on s.soid=10066 and s.sgid=sg.sgid
+
 select * from song;
 --delete from song where soid=10046;
 --insert into song values (10024,1,2,'童话镇','images/2_1.png',

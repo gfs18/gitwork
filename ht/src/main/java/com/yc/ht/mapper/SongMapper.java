@@ -11,6 +11,8 @@ public interface SongMapper {
 	
 	List<Song> findSongById(Integer soid);
 	
+	List<Song> finSongAndSingerById(Integer soid);
+	
 	List<Song> findSongByName(String soname);
 	
 	Song findSongName(Song song);

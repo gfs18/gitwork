@@ -109,8 +109,8 @@ function songList(){
 				soname = data[i].soname.substring(0,10);
 			}
 			songListStr+='<tr><td class="td"><span>'+soname+'</span></td>'+
-			'<td><a href="page/demo.jsp?songid='+data[i].soid+'"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
-			'</a></td><td><a href=""><i class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td></tr>';
+			'<td><a href="pymsc/player_music.jsp?control=player&songid='+data[i].soid+'"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
+			'</a></td><td><a href="pymsc/player_music.jsp?control=add&songid='+data[i].soid+'"><i class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td></tr>';
 		}
 		$("#mytablet").html(songListStr);
 	}, "json");

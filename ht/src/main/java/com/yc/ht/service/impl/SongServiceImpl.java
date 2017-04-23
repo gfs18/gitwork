@@ -65,6 +65,11 @@ public class SongServiceImpl implements SongService{
 	public List<Song> findSongById(String soid) {
 		return songMapper.findSongById(Integer.valueOf(soid));
 	}
+	
+	@Override
+	public List<Song> findSongAndSingerById(String soid) {
+		return songMapper.finSongAndSingerById(Integer.valueOf(soid));
+	}
 
 	@Override
 	public boolean modifySong(Song song) {
@@ -86,6 +91,7 @@ public class SongServiceImpl implements SongService{
 	public boolean addSong(Song song) {
 		return songMapper.addSong(song)>0;
 	}
+
 	
 }
 
