@@ -86,8 +86,8 @@ function run(){
 var musicList = [ {
 	title : '暧昧',
 	singer : '张碧晨',
-	cover : '/upload/images/246680097.jpg',
-	src : '/upload/music/aimei.mp3'
+	cover : '/upload/images/246585046.jpg',
+	src : '/upload/music/1463849572.mp3'
 },{
 	title : '17岁',
 	singer : '平安',

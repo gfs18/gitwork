@@ -91,7 +91,7 @@
 	<footer>
 		<div class="container-fluid" id="myfooter">
 			<div class="container" id="footer_content">
-				<div class="row" id="myrow">
+				<div  class="row" id="myrow">
 					<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3">关于我们</span> <span
 						class="col-lg-3 col-md-3 col-sm-3 col-xs-3">幻听服务</span> <span
 						class="col-lg-3 col-md-3 col-sm-3 col-xs-3">联系我们</span> <span
@@ -101,7 +101,6 @@
 			</div>
 		</div>
 	</footer>
-
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>

@@ -147,44 +147,32 @@
 		<div class="book">
 
 			<div class="page_left">
-				<ul class="singer_list__list" id="picture">
-
-				</ul>
+				<ul class="singer_list__list" id="picture"></ul>
 				<p class="p1">1</p>
 			</div>
 
 
 			<div class="page_right">
-				<span><ul class="singer_list__list" id="picture1">
-
-					</ul>
+				<span><ul class="singer_list__list" id="picture1"></ul>
 					<p class="p2">2</p> </span> <span>
-					<ul class="singer_list__list" id="picture2">
-
-					</ul>
+					
+					<ul class="singer_list__list" id="picture2"></ul>
 					<p class="p1">3</p>
 				</span>
-
 			</div>
 
 
 			<div class="page_right">
-				<span><ul class="singer_list__list" id="picture3">
-
-
-					</ul>
-
-					<p class="p2">4</p></span> <span><ul class="singer_list__list"
-						id="picture4">
-
-
-
-					</ul>
+				<span><ul class="singer_list__list" id="picture3"></ul>
+					<p class="p2">4</p></span> 
+					
+					<span><ul class="singer_list__list" id="picture4"></ul>
 					<p class="p1">5</p></span>
 			</div>
+			
 			<div class="page_right_end">
-				<span><ul class="singer_list__list" id="picture5">
-					</ul>
+				<span>
+					<ul class="singer_list__list" id="picture5"></ul>
 					<p class="p2">End</p></span>
 			</div>
 		</div>
