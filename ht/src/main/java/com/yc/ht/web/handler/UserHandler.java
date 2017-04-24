@@ -7,6 +7,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.mail.MessagingException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
@@ -184,12 +186,11 @@ public class UserHandler {
 	
 	/**
 	 * 用户的修改
+	 * @throws IOException 
 	 */
-	//@RequestMapping(value="modifyFore",method=RequestMethod.POST)
-	//@RequestMapping(value="modify/mo{userid}",method=RequestMethod.POST)
-
-	/*@RequestMapping(value="modify",method=RequestMethod.POST)
-	public String modifyUserInfo(@RequestParam("picData") MultipartFile picData,Users user){
+	@RequestMapping(value="modifyFore",method=RequestMethod.POST)
+	@ResponseBody
+	public String modifyUserInfo(@RequestParam("picData") MultipartFile picData,Users user,HttpServletResponse response) throws IOException{
 		LogManager.getLogger().debug("用户修改个人信息");
 		String picPath = null;
 		if(picData != null && !picData.isEmpty()){//判断是否文件上传
@@ -202,19 +203,18 @@ public class UserHandler {
 		}
 		user.setUpicPath(picPath);
 		if(userService.modifyUserInfo(user)){
-			return "redirect:/page/user.jsp?userid="+user.getUserid();
+			response.sendRedirect("../page/user.jsp?userid="+user.getUserid());
 		}else{
-			return "forward:/page/userModify.jsp";
+			response.sendRedirect("../page/user.jsp");
 		}
+		return null;
 	}
 	
 	@RequestMapping(value="modify",method=RequestMethod.POST)
 	@ResponseBody
 	public boolean modifyUser(@PathVariable("userid") int userid,Users user){
 		System.out.println("进来了。。。。。。。。。。"+user);
-
 		return userService.modifyUser(userid);
-		//return true;
-	}*/
+	}
 	
 }

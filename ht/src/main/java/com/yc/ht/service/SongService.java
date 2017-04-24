@@ -3,7 +3,6 @@ package com.yc.ht.service;
 import java.util.List;
 
 import com.yc.ht.entity.PaginationBean;
-import com.yc.ht.entity.Singer;
 import com.yc.ht.entity.Song;
 
 public interface SongService {
@@ -14,6 +13,8 @@ public interface SongService {
 	
 	List<Song> findSongByName(String soname);
 	
+	List<Song> findSongAndSingerById(String soid);
+	
 	Song findSongName(Song song);
 	
 	PaginationBean<Song> listSong(String pageS,String currP);
@@ -23,6 +24,7 @@ public interface SongService {
 	boolean modifySong(Song song);
 
 	boolean addSong(Song song);
+
 
 }
 

@@ -51,10 +51,7 @@ function clickRate(spid){
 	},"json");
 }
 
-
-
-
-///////////////////////////////站内歌手图片显示///////////////////////////
+//歌手显示
 singer();
 function singer(){
 	$.get("singer/index",function(data){
@@ -67,7 +64,6 @@ function singer(){
 		$(".content3_1").html(singerStr);
 	},"json");
 }
-
 
 /*首页mv显示*/
 function loadMv(){
@@ -98,7 +94,7 @@ function loadMv(){
 loadMv();
 
 
-/*站内歌曲显/*/
+/*站内歌曲显示*/
 songList();
 function songList(){
 	$.post("song/list", function(data){
@@ -109,8 +105,8 @@ function songList(){
 				soname = data[i].soname.substring(0,10);
 			}
 			songListStr+='<tr><td class="td"><span>'+soname+'</span></td>'+
-			'<td><a href="page/demo.jsp?songid='+data[i].soid+'"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
-			'</a></td><td><a href=""><i class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td></tr>';
+			'<td><a href="pymsc/player_music.jsp?control=player&songid='+data[i].soid+'"><i class="glyphicon glyphicon-play-circle tp1" title="播放"></i>'+
+			'</a></td><td><a href="pymsc/player_music.jsp?control=add&songid='+data[i].soid+'"><i class="glyphicon glyphicon-plus-sign tp2" title="添加到播放列表"></i></a></td></tr>';
 		}
 		$("#mytablet").html(songListStr);
 	}, "json");

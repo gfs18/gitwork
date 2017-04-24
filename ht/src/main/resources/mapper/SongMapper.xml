@@ -16,6 +16,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from song where soid=#{soid}
 	</select>
 	
+	<resultMap type="Song" id="SongSingerMap">
+		<id column="soid" property="soid"/>
+		<result column="spid" property="spid"/>
+		<result column="soname" property="soname"/>
+		<result column="sopicPath" property="sopicPath"/>
+		<result column="sopubTime" property="sopubTime"/>
+		<result column="solyricPath" property="solyricPath"/>
+		<result column="sopath" property="sopath"/>
+		<result column="vipDownload" property="vipDownload"/>
+		<collection property="singer" column="{sgid=sgid}" ofType="Singer" select="findSingerByid"/>
+	</resultMap>
+	
+	<select id="findSingerByid" resultType="Singer">
+		select * from singer where sgid=${sgid}
+	</select>
+	
+	<select id="finSongAndSingerById" parameterType="integer" resultMap="SongSingerMap">
+		select * from song where soid=#{soid} 
+	</select>
+	
 	<!-- 单曲显示使用分页 -->
 	<resultMap type="PaginationBean" id="PaginationBeanMap">
 		<result column="pageSize" property="pageSize" />

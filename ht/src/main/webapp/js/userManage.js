@@ -9,8 +9,6 @@ function showUserManage(pageS,currP){
 			var img=data.rows[i].upicPath;
 			var ucondition=data.rows[i].ucondition;
 			var uvip=data.rows[i].uvip;
-
-
 			if(img!=null){
 				img=data.rows[i].upicPath;
 			}else{
@@ -30,10 +28,8 @@ function showUserManage(pageS,currP){
 			+data.rows[i].uemail+"</th><th>"+'<img src='+img +' class="show_img">'+"</th><th>"
 			+data.rows[i].uintroduce+"</th><th>"+strOptions+"</th>"
 			+"<th>"+strOptions1+"</th>"
-			+"<th><a onclick='modifyUser("+data.rows[i].userid+")'><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></a>&nbsp;&nbsp;"
+			+"<th><a onclick='modifyUser("+data.rows[i].userid+","+ucondition+","+uvip+")'><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></a>&nbsp;&nbsp;"
 			+"<a onclick='removeUser("+data.rows[i].userid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
-		
-		
 		}
 		//行变色
 		str +='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#008080";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
@@ -44,20 +40,17 @@ function showUserManage(pageS,currP){
 
 
 //修改用户的状态
-function modifyUser(userid){
-	alert(userid);
-	
+function modifyUser(userid,ucondition,uvip){
+/*	alert("userid:"+userid+"ubon:"+ucondition);
 	var obj=document.getElementById('uconditionValue');
 	var index=obj.selectedIndex; 
-	var uconditionValue = obj.options[index].value;
-	
+
 	var objj=document.getElementById('uvipValue');
 	var indexx=objj.selectedIndex; 
-	var uvipValue = objj.options[indexx].value;
-	
-	alert("uconditionValue222....."+uconditionValue);
-	alert("uvipValue222....."+uvipValue);
-	
+	alert("index:"+index+"indexx:"+indexx);
+
+*/
+	alert("userid:"+userid+"ubon:"+ucondition+"uvip:"+uvip);
 	$.post("user/modify",{"userid":userid,"ucondition":uconditionValue,"uvip":uvipValue},function(data){
 		if(data){
 			alert("修改成功!!!");
@@ -65,7 +58,7 @@ function modifyUser(userid){
 		}else{
 			alert("修改失败...");
 		}
-		
+
 	},"json");
 }
 
@@ -168,7 +161,7 @@ function referUser(){
 				+"<th><a href='back/userManageModify.jsp?uname="+data[i].uname+"'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></a>&nbsp;&nbsp;"
 				+"<a onclick='removeReferUser("+data[i].userid+")'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></th></tr>";
 			}
-			
+
 			//行变色
 			str +='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#ffffff";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
 			$("#tableBody").html();

@@ -1,5 +1,5 @@
 var count= 0 ;
-showSongInfo(5,1);
+showSongInfo(3,1);
 function showSongInfo(pageS,currP){
 	$.get("song/pagination",{"pageS":pageS,"currP":currP},function(data){
 		var str = "";
@@ -21,14 +21,14 @@ function paginationSong(totalP){
 	if(totalP>=5){
 		pStr +='<li><a href="javascript:void(0)" onclick="paginatorPrevious('+totalP+')">&laquo;</a></li>';
 		for (var j = 1; j <= 5; j++) {
-			pStr +='<li><a href="javascript:void(0)" onclick="showSongInfo(5,'+(j+(count*5))+')">'+(j+count*5)+'</a></li>';
+			pStr +='<li><a href="javascript:void(0)" onclick="showSongInfo(3,'+(j+(count*5))+')">'+(j+count*5)+'</a></li>';
 		}
 		pStr +='<li><a href="javascript:void(0)" onclick="paginatorNext('+totalP+')" >&raquo;</a></li>';
 		
 	}else{
 		pStr +='<li><a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
 		for (var i = 1; i <= totalP; i++) {
-			pStr +='<li><a href="javascript:void(0)" onclick="showSongInfo(5,'+i+')">'+i+'</a></li>';
+			pStr +='<li><a href="javascript:void(0)" onclick="showSongInfo(3,'+i+')">'+i+'</a></li>';
 		}
 		pStr +='<li><a href="javascript:void(0)" aria-label="Next"> <span aria-hidden="true">&raquo;</span></a></li>';
 	}
@@ -37,13 +37,13 @@ function paginationSong(totalP){
 
 function paginatorPrevious(totalP){
 	count= count > 0?(count-1):0 ;
-	showSongInfo(5,1 + 5*(count));
+	showSongInfo(3,1 + 5*(count));
 }
 
 function paginatorNext(totalP){
 	var totalCount=parseInt(totalP/5);
 	count = count < totalCount?(count+1):totalCount ;
-	showSongInfo(5,1 + 5*(count) );
+	showSongInfo(3,1 + 5*(count) );
 }
 
 function removeSong(id){
@@ -97,7 +97,7 @@ function ReferSong(){
 			$("#tableBody").html(str);
 		},"json");
 	}else{
-		showSongInfo(5,1);
+		showSongInfo(3,1);
 	}
 }
 ReferSong();

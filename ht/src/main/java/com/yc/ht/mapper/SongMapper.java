@@ -11,16 +11,14 @@ public interface SongMapper {
 	
 	List<Song> findSongById(Integer soid);
 	
+	List<Song> finSongAndSingerById(Integer soid);
+	
 	List<Song> findSongByName(String soname);
 	
 	Song findSongName(Song song);
 	
 	PaginationBean<Song> findPaginationSong(PaginationBean<Song> userBean);//分页
 
-
-	List<Singer> HOT(String sgEname);
-
-	
 	int removeSong(Integer soid);
 	
 	int modifySong(Song song);
