@@ -10,18 +10,21 @@ function showSingerInfo(PageSize,currPage){
 				"<th>"+data.rows[i].sgnation+"</th>" +
 				"<th>"+data.rows[i].sggender+"</th>" +
 				"<th><img src="+data.rows[i].sgpicPath+" id='dpic' width='50' height='50'></th>" +
-				"<th>"+data.rows[i].sgintroduce+"</th>" +         
+				"<th class='contents' onmouseover='mOver(this)'>"+data.rows[i].sgintroduce+"</th>" +     
 				"<th><a href='back/singerModify.jsp?sgid="+data.rows[i].sgid+"'><span class='glyphicon glyphicon-edit'></span></a>&nbsp;" +
 				"<a onclick='removeSinger("+data.rows[i].sgid+")'><span class='glyphicon glyphicon-remove-circle'></span></a></th>" +
 				"</tr>";
 		}      
-		
 		str+='<script type="text/javascript">$(".tableoverout").mouseover(function(){this.style.backgroundColor="#30C27B";this.style.color="#ffffff";}); $(".tableoverout").mouseout(function(){this.style.backgroundColor="";this.style.color="#000000";});</script>';
 		$("#tableBody").html(str+"</hr>");
 		paginationSinger(data.totalPage);
+		
 	},"json");
 }
-
+//显示歌手介绍
+function mOver(thi){
+	thi.title = thi.innerHTML;
+}
 function removeSinger(sgid){
 	$.post("singer/remove",{"sgid":sgid},function(data){
 		if(data){

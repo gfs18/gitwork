@@ -83,6 +83,31 @@ function run(){
 
 
 /******************************歌曲加载***********************************/
+
+var musicList = [ {
+	title : '暧昧',
+	singer : '张碧晨',
+	cover : '/upload/images/246585046.jpg',
+	src : '/upload/music/1463849572.mp3'
+},{
+	title : '17岁',
+	singer : '平安',
+	cover : '/upload/images/246586325.jpg',
+	src : '/upload/music/17sui.mp3'
+},{
+	title : '啦啦啦',
+	singer : '啦啦啦',
+	cover : '/upload/images/241870629.jpg',
+	src : ' /upload/music/1.mp3'
+},{
+	title : '海阔天空',
+	singer : 'beyond',
+	cover : '/upload/images/274041589.jpg',
+	src : '/upload/music/aixiaodeyanjing.mp3'
+}];
+new SMusic({
+	musicList : musicList
+});
 var musicList = [];
 
 function loadMusicList(){
@@ -107,6 +132,7 @@ function loadMusicList(){
 	},"json");
 }
 loadMusicList();
+
 
 /*********************歌词同步************************************/
 function sync(){

@@ -37,6 +37,7 @@ loadS();
 
 function loadS(){
 	$.get("singer/whole",function(data){
+		alert(data.length);
 		var c="";
 		var c1="";
 		var c2="";
@@ -46,6 +47,7 @@ function loadS(){
 		for(var i = 0; i < data.length; i++){
 			if(i<6){
 				c+='<li class="singer_list__item" ><div class="singer_list__item_box" ><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'" onC></a><h4><a href="javascript:void(0)">'+data[i].sgname+'</a></h4></div></li>';
+				 
 			}
 
 			if(i>=6 && i<12){
@@ -64,6 +66,7 @@ function loadS(){
 			if(i>=30 && i<36){
 				c5+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';	
 			}
+			
 		}
 		$("#picture").html(c);
 		$("#picture1").html(c1);
@@ -160,7 +163,10 @@ function hot(sgEname){
 		for(var i = 0; i < data.length; i++){
 			if(i<6){
 				c+='<li class="singer_list__item" ><div class="singer_list__item_box" ><a href="javascript:void(0)"><img src="'+data[i].sgpicPath+'"></a><h4><a href="javascript:void(0)">'+data[i].sgname+'</a></h4></div></li>';
-
+			
+				 $('#pagee').css('display','none');
+				 $('#pager').css('display','none');
+				 $('#pagere').css('display','none');
 			}
 			if(i>=6 && i<12){
 				c1+='<li class="singer_list__item"><div class="singer_list__item_box"><a href="page/singer_more.jsp?id='+data[i].sgid+'"><img src="'+data[i].sgpicPath+'"></a><h4><a href="">'+data[i].sgname+'</a></h4></div></li>';
@@ -202,6 +208,7 @@ function loadg(sgnation){
 		for(var i = 0; i < data.length; i++){
 			if(i<6){
 				c+='<li class="singer_list__item" ><div class="singer_list__item_box" ><a href="page/singer_more.jsp"><img src="'+data[i].sgpicPath+'"></a><h4><a href="javascript:void(0)">'+data[i].sgname+'</a></h4></div></li>';
+				
 			}
 
 			if(i>=6 && i<12){
